@@ -207,27 +207,25 @@ div.article-summary p.article-media-contacts {
 div.article-summary img.attachment-spine-thumbnail_size {
   display: block;
 }
-/*▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒*/
-/*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ DIV.COLUMN ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
+/*================================================================================================*/
+/*=----------------------------------------- DIV.COLUMN -----------------------------------------=*/
 div.column {
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ MODIFYING CLASSES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
+  /*=------------------------------------- MODIFYING CLASSES --------------------------------------=*/
   /*header.article-header {
 		display: none;
 	}
 	header.article-header.show-header {
 		display: block;
 	}*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ HEADERS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ HORIZONTAL RULES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ HYPERLINKS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ASIDES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ UNORDERED LISTS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ORDERED LISTS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PARAGRAPHS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ SECTIONS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ TABLES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
-  /*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ADDITIONAL CLASSES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
+  /*=------------------------------------------ HEADERS -------------------------------------------=*/
+  /*=-------------------------------------- HORIZONTAL RULES --------------------------------------=*/
+  /*=----------------------------------------- HYPERLINKS -----------------------------------------=*/
+  /*=------------------------------------------- ASIDES -------------------------------------------=*/
+  /*=-------------------------------------- UNORDERED LISTS ---------------------------------------=*/
+  /*=--------------------------------------- ORDERED LISTS ----------------------------------------=*/
+  /*=------------------------------------------ SECTIONS ------------------------------------------=*/
+  /*=------------------------------------- ADDITIONAL CLASSES -------------------------------------=*/
 }
 div.column.hides-overflow {
   overflow: hidden;
@@ -635,71 +633,87 @@ div.column ol ol {
 div.column ol ol ol {
   list-style-type: lower-roman;
 }
-div.column p {
+div.column section {
+  position: relative;
+}
+div.column .crimson-text {
+  color: #981e32;
+}
+div.column .dark-blue-text {
+  color: #3f6b72;
+}
+div.column .centered-text {
+  text-align: center;
+}
+/*================================================================================================*/
+/*▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒*/
+/*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ DIV.COLUMN ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
+/*▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ Paragraphs ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒*/
+div.column > p {
   padding-bottom: 0;
   text-align: justify;
 }
-div.column p.centered {
+div.column > p.centered {
   text-align: center;
 }
 @media all and (min-width: 1209px) {
-  div.column p {
+  div.column > p {
     font-size: 1rem;
     line-height: 1.35em;
   }
 }
 @media all and (max-width: 1208px) {
-  div.column p {
+  div.column > p {
     font-size: calc(1rem * 0.875);
     line-height: 1.35em;
   }
 }
-div.column p:last-child:not(.no-bottom-pad) {
+div.column > p:last-child:not(.no-bottom-pad) {
   padding-bottom: 1rem;
 }
-div.column p:not(:last-child) {
+div.column > p:not(:last-child) {
   margin-bottom: 1rem;
 }
-div.column p.article-deck {
+div.column > p.article-deck {
   color: #72652a;
   font-size: 1.2rem;
   line-height: 1.35em;
 }
 @media all and all and (max-width: 480px) {
-  div.column p.article-deck {
+  div.column > p.article-deck {
     font-size: calc(1.2rem * 0.875 * 0.875);
     line-height: 1.35em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 1208px) {
-  div.column p.article-deck {
+  div.column > p.article-deck {
     font-size: calc(1.2rem * 0.875);
     line-height: 1.35em;
   }
 }
-div.column p.article-deck strong {
+div.column > p.article-deck strong {
   color: #8f7e35;
 }
-div.column p.article-tagline {
+div.column > p.article-tagline {
   font-family: "Palatino";
   font-size: 1.6rem;
   line-height: normal;
   font-weight: 550;
 }
 @media all and (max-width: 480px) {
-  div.column p.article-tagline {
+  div.column > p.article-tagline {
     font-size: 1.225rem;
   }
 }
 @media all and (min-width: 481px) and (max-width: 1208px) {
-  div.column p.article-tagline {
+  div.column > p.article-tagline {
     font-size: 1.4rem;
   }
 }
-div.column p.no-bottom-pad {
+div.column > p.no-bottom-pad {
   padding-bottom: 0;
 }
-div.column p.vpue-jump-bar {
+div.column > p.vpue-jump-bar {
   background-color: rgba(0, 165, 189, 0.5);
   color: #464e54;
   margin-top: 2rem;
@@ -709,36 +723,36 @@ div.column p.vpue-jump-bar {
   text-align: center;
   width: 100%;
 }
-div.column p.vpue-jump-bar span.title {
+div.column > p.vpue-jump-bar span.title {
   font-size: 1em;
   font-variant: small-caps;
   font-weight: bold;
   line-height: 2em;
 }
-div.column p.vpue-jump-back {
+div.column > p.vpue-jump-back {
   font-size: .6875rem;
   line-height: calc(0.6875rem * 1.35);
   padding-bottom: .3333rem;
   margin-bottom: .3333rem;
 }
-div.column p.article-media-contacts {
+div.column > p.article-media-contacts {
   font-size: .8em;
   line-height: normal;
   padding-left: 2em;
 }
-div.column p.award-quote {
+div.column > p.award-quote {
   margin-right: 2rem;
   margin-left: 2rem;
   margin-bottom: .5rem;
 }
-div.column p.award-quote-source {
+div.column > p.award-quote-source {
   font-style: italic;
   margin-right: 2rem;
   margin-left: 2rem;
   padding-right: 2rem;
   padding-left: 2rem;
 }
-div.column p.banner-text-gray-with-towers {
+div.column > p.banner-text-gray-with-towers {
   color: #2A3033;
   background-color: rgba(141, 149, 154, 0.5);
   border: 32px solid transparent;
@@ -749,18 +763,18 @@ div.column p.banner-text-gray-with-towers {
   padding: 7px;
 }
 @media all and (min-width: 1209px) {
-  div.column p.banner-text-gray-with-towers {
+  div.column > p.banner-text-gray-with-towers {
     font-size: 1.25rem;
     line-height: calc(1.25rem * 1.35);
   }
 }
 @media all and (max-width: 1208px) {
-  div.column p.banner-text-gray-with-towers {
+  div.column > p.banner-text-gray-with-towers {
     font-size: calc(1.25rem * 0.875);
     line-height: calc(1.25rem * 1.35 *0.875);
   }
 }
-div.column p.banner-text-orange-with-towers {
+div.column > p.banner-text-orange-with-towers {
   color: #492E14;
   background-color: rgba(182, 114, 51, 0.5);
   border: 32px solid transparent;
@@ -771,20 +785,22 @@ div.column p.banner-text-orange-with-towers {
   padding: 7px;
 }
 @media all and (min-width: 1209px) {
-  div.column p.banner-text-orange-with-towers {
+  div.column > p.banner-text-orange-with-towers {
     font-size: 1.25rem;
     line-height: calc(1.25rem * 1.35);
   }
 }
 @media all and (max-width: 1208px) {
-  div.column p.banner-text-orange-with-towers {
+  div.column > p.banner-text-orange-with-towers {
     font-size: calc(1.25rem * 0.875);
     line-height: calc(1.25rem * 1.35 *0.875);
   }
 }
-div.column section {
-  position: relative;
-}
+/*▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒*/
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ ######################################## DIV.COLUMN ######################################## ║
+ *  ║ #---------------------------------------   Tables   ---------------------------------------# ║
+ */
 div.column table.plain {
   border-collapse: separate;
   border-spacing: 0;
@@ -874,16 +890,42 @@ div.column table.peopleList tbody td:first-of-type {
   width: 20%;
   text-align: center;
 }
-div.column .crimson-text {
+table.navigational-map {
   color: #981e32;
+  font-size: 13px;
+  width: 100%;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
-div.column .dark-blue-text {
-  color: #3f6b72;
+table.navigational-map a {
+  color: inherit;
 }
-div.column .centered-text {
-  text-align: center;
+table.navigational-map th {
+  border-bottom: 1px solid #b5babe;
+  font-size: inherit;
+  font-weight: bold;
+  vertical-align: bottom;
 }
-/*▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒*/
+table.navigational-map th.table-spacer {
+  width: 15px;
+}
+table.navigational-map th:nth-child(4n+3) {
+  color: #c60c30;
+}
+table.navigational-map td p {
+  padding-bottom: 0px;
+}
+table.navigational-map td p:not(:last-child) {
+  border-bottom: 1px solid #d7dadb;
+}
+table.navigational-map td:nth-child(4n+3) {
+  color: #c60c30;
+}
+/*  ║ #---------------------------------------   Tables   ---------------------------------------# ║ 
+ *  ║ ######################################## DIV.COLUMN ######################################## ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 div.interactively-flipped-panels {
   background-color: #5e6a71;
   margin-top: 1em;
@@ -2923,4 +2965,27 @@ div.column aside.article-sidebar {
 }
 div.column aside.article-sidebar p {
   font-size: inherit;
+}
+h1#welcome-message {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans Condensed';
+  font-size: 5rem;
+  text-align: center;
+}
+div#post-welcome-message {
+  display: none;
+  border: 1px solid #aec7cb;
+  background-color: #edf3f4;
+  box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+div#post-welcome-message > h3 {
+  font-family: 'Open Sans Condensed';
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
 }
