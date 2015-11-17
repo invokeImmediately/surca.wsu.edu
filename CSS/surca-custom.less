@@ -1,118 +1,151 @@
-/*
-Welcome to custom CSS for the WSU Spine Theme!
-
-You may delete these comments and get started with your custom stylesheet.
-Before doing so, please review the WSU web standards:
-
-http://brand.wsu.edu/media/web/web-standards/
-
-As a general rule of thumb, if your styles target aspects of the spine
-(#spine), that's against standard, whereas if you're styling elsewhere on
-the page, it's all good.
-*/
 @import "C:\Users\CamilleandDaniel\Documents\GitHub\WSU-UE---CSS\wp-master-style-sheet.less";
 
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Custom styling, unique to the SURCA website, of elements associated with the WordPress WSU   ║
+ *  ║ Spine Theme.                                                                                 ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 body {
-	background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) left top fixed repeat;
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+    background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) left top fixed repeat;
+    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
 
 main {
-/*background: #fff url(/wp-content/uploads/sites/51/2015/04/tileable-papar-texture_500x500_opacity-0.75.png) left top repeat;*/
-	background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
+    background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
 }
 
 #binder {
-	border-right: 1px solid rgba(42,48,51,0.5);
-	box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
+    border-right: 1px solid rgba(42,48,51,0.5);
+    box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
 }
 
 #jacket {
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	background-attachment: fixed;
+    background-position: right bottom;
+     background-attachment: fixed;
+     background-repeat: no-repeat;
 }
 
-/*#spine.lighter #glue:before {
-	background: #b5babe url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_500x300_opacity-0.20.png) left top repeat scroll;
-}*/
 
 header.main-header {
-	background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left center no-repeat;
-/*	background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-80px-height_v2015-05-06c.png) no-repeat right bottom, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;*/
-	color: #fff !important;
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-	text-shadow: .5px .5px 1px #000;
+    background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left center no-repeat;
+    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+    color: #fff !important;
+    text-shadow: .5px .5px 1px #000;
 }
 
 @media print {
-	header.main-header {
-		background: @hex-darkest-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
-	}
+    header.main-header {
+        background: @hex-darkest-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
+    }
 }
 
 /*@media all and (min-width: 906px) and (max-width: 1279px) {
-	header.main-header {
-		background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
+    header.main-header {
+        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+    }
 }
 
 @media all and (min-width: 792px) and (max-width: 905px) {
-	header.main-header {
-		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
+    header.main-header {
+        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+    }
 }
 
 @media all and (min-width: 710px) and (max-width: 791px) {
-	header.main-header {
-		background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
+    header.main-header {
+        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+    }
 }
 
 @media all and (max-width: 709px) {
-	header.main-header {
-		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+    header.main-header {
+        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
 	}
 }*/
 
 .main-header sub:not(.unset), .main-header sup:not(.unset) {
-	color: #fff !important;
+    color: #fff !important;
 }
 
-/*nav.spine-sitenav ul li {
-	a[href="#disabled"] {
-		pointer-events: none;
-	}
-	h4 {
-		color: #981E32;
-		font-size: .85rem;
-		margin-top: .85rem;
-		padding-top: 0;
-		padding-bottom: 0;
-		text-transform: uppercase;
-		&.normal {
-			margin-top: 0;
-		}
-	}
-	&:nth-child(1) h4 {
-		margin-top: 0;
-		padding-top: 0;
-	}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### NAV.SPINE ############################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ The code below was removed for being considered against standard by WSU UComm. I am still    ║
+ *  ║ awaiting an answer on whether utilizing <hX>...</hX> elements within the spine is considered ║
+ *  ║ against standard. From a design perspective, an default-styled h6 element could be used to   ║
+ *  ║ achieve level-1 categorization of content—might be considered OK.                            ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+/*#spine.lighter #glue:before {
+    background: #b5babe url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_500x300_opacity-0.20.png) left top repeat scroll;
+}
+nav.spine-sitenav ul li {
+    a[href="#disabled"] {
+        pointer-events: none;
+    }
+    h4 {
+        color: #981E32;
+        font-size: .85rem;
+        margin-top: .85rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-transform: uppercase;
+        &.normal {
+            margin-top: 0;
+        }
+    }
+    &:nth-child(1) h4 {
+        margin-top: 0;
+        padding-top: 0;
+    }
 }*/
 
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SECTION HEADERS ####################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Style definitions of unique banner headers that serve to visually distinguish each grouping  ║
+ *  ║ of pages on the SURCA website.                                                               ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.column {
+	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+	section {
+        &.header-news {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+        }
+        &.header-attending {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
+        }
+    }
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+// TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
+// TODO: Pull these classes into an imported *.LESS file ■
 div.green-marble-sidebar {
+	padding-top: 2rem;
+	 padding-right: 2rem;
+	 padding-bottom: 2em;
+	 padding-left: 1rem;
+	margin-right: 10px;
 	background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
 	border: 1px solid #afa370;
 	box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
-	color: #2a3033;
 	font-size: .9em;
-	margin-right: 10px;
-	padding-left: 1rem;
-	padding-top: 2rem;
-	padding-right: 2rem;
-	padding-bottom: 2em;
+	color: #2a3033;
 }
-
 div.bluish-gray-acrylic-sidebar {
 	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
 	background-size: 100% auto;
@@ -127,22 +160,20 @@ div.bluish-gray-acrylic-sidebar {
 	padding-right: 1rem;
 	padding-bottom: 1rem;
 }
-
 div.gray-acrylic-sidebar {
+	padding-top: 1rem;
+	 padding-right: 1rem;
+	 padding-bottom: 1em;
+	 padding-left: 1rem;
+	margin-right: 10px;
+	 margin-bottom: 10px;
 	background: #fff url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	background-size: 100% auto;
+	 background-size: 100% auto;
 	border: 1px solid #464e54;
 	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	color: #2a3033;
 	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1em;
+	color: #2a3033;
 }
-
 div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-sidebar {
 	p {
 		font-size: .75rem;
@@ -167,23 +198,29 @@ div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-side
 
 div.column {
 	aside.article-sidebar {
+		float: right;
+		width: 33%;
+		padding: .8rem;
+		margin-bottom: 1rem;
+		 margin-left: 1rem;
 		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
 		border: 1px solid #6d441f;
 		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
-		color: #464e54;
-		float: right;
 		font-size: .8rem;
-		margin-left: 1rem;
-		margin-bottom: 1rem;
-		padding: .8rem;
-		width: 33%;
-		
+		color: #464e54;
 		p {
 			font-size: inherit;
 		}
 	}
 }
 
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SURCA WELCOME MESSAGE ################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ The SURCA website displays an h1 element as a welcome message that automatically fades out   ║
+ *  ║ after a slight delay. As the h1 fades away, a div element fades in to take its place.        ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 h1#welcome-message {
     margin-top: 2rem;
      margin-bottom: 2rem;
@@ -191,20 +228,19 @@ h1#welcome-message {
     font-size: 5rem;
     text-align: center;
 }
-
 div#post-welcome-message {
     display: none;
-    border: 1px solid #aec7cb;
-    background-color: #edf3f4;
-    box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
+    padding-right: 8px;
+     padding-left: 8px;
     margin-top: 2rem;
      margin-bottom: 2rem;
-    padding-right: 8px;
-    padding-left: 8px;
+    background-color: #edf3f4;
+    border: 1px solid #aec7cb;
+    box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
     & > h3 {
+        margin-bottom: 1em;
         font-family: 'Open Sans Condensed';
         font-weight: bold;
         text-align: center;
-        margin-bottom: 1em;
     }
 }
