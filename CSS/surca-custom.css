@@ -174,7 +174,7 @@ the page, it's all good.
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ASIDES ################################################################################ ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <aside>...</aside> elements.                                              ║
+ *  ║ Styling applied to [aside]...[/aside] elements.                                              ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 aside:not(:first-child).widget header {
@@ -190,7 +190,7 @@ aside.widget_archive label.screen-reader-text {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CHARACTER FORMATTING ################################################################## ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <strong>...</strong>, <span>...</span>, <mark></mark>, etc. elements.     ║
+ *  ║ Styling applied to [strong]...[/strong], [span]...[/span], [mark][/mark], etc. elements.     ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 strong.opening-line {
@@ -213,7 +213,7 @@ span.accentuated-text {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CITES ################################################################################# ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <cite>...</cite> elements.                                                ║
+ *  ║ Styling applied to [cite]...[/cite] elements.                                                ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 cite.article-author {
@@ -222,7 +222,7 @@ cite.article-author {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIVS ################################################################################## ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <div>...</div> elements.                                                  ║
+ *  ║ Styling applied to [div]...[/div] elements.                                                  ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.award-banner {
@@ -696,13 +696,13 @@ div.column p {
 div.column p.centered {
   text-align: center;
 }
-@media all and (min-width: 1209px) {
+@media all and (min-width: 481px) {
   div.column p {
     font-size: 1rem;
     line-height: 1.35em;
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (max-width: 480px) {
   div.column p {
     font-size: calc(1rem * 0.875);
     line-height: 1.35em;
@@ -817,6 +817,43 @@ div.column p.banner-text-gray-with-towers {
     font-size: calc(1.25rem * 0.875);
     line-height: calc(1.25rem * 1.35 *0.875);
   }
+}
+div.column p.banner-text {
+  max-width: 700px;
+  padding: 7px;
+  margin-left: auto;
+  margin-bottom: 2rem;
+  margin-right: auto;
+  background-color: rgba(94, 106, 113, 0.5);
+  border: 1px solid #2a3033;
+  line-height: 1.35em;
+  color: #2a3033;
+}
+@media all and (min-width: 1209px) {
+  div.column p.banner-text {
+    font-size: 1.25rem;
+  }
+}
+@media all and (max-width: 1208px) {
+  div.column p.banner-text {
+    font-size: calc(1.25rem * 0.875);
+  }
+}
+div.column p.banner-text.orange {
+  background-color: rgba(182, 114, 51, 0.5);
+  border: 1px solid #492e14;
+}
+div.column p.banner-text.blue {
+  background-color: rgba(79, 134, 142, 0.5);
+  border: 1px solid #203639;
+}
+div.column p.banner-text.yellow {
+  background-color: rgba(198, 146, 20, 0.5);
+  border: 1px solid #4f3a08;
+}
+div.column p.banner-text.green {
+  background-color: rgba(143, 126, 53, 0.5);
+  border: 1px solid #393215;
 }
 div.column p.banner-text-orange-with-towers {
   color: #492E14;
@@ -1631,21 +1668,10 @@ div.auto-scroller ul li {
   list-style-type: none;
   list-style-image: none;
 }
-div.read-more-target {
-  height: 0;
-  overflow: hidden;
-  margin-top: .5rem;
-  opacity: 0;
-  transition: .333s ease;
-  -webkit-transition: .333s ease;
-}
-.read-more-state:checked ~ p label.read-more-trigger:before {
-  content: 'Show less';
-}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### FOOTERS ############################################################################### ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <footer>...</footer> elements and their children.                         ║
+ *  ║ Styling applied to [footer]...[/footer] elements and their children.                         ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 footer.article-footer div.author-info {
@@ -1654,7 +1680,7 @@ footer.article-footer div.author-info {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### HEADERS ############################################################################### ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <header>...</header>, <h1>...</h1>, <h2>...</h2>, etc. elements.          ║
+ *  ║ Styling applied to [header]...[/header], [h1]...[/h1], [h2]...[/h2], etc. elements.          ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 h2.article-title a {
@@ -1724,7 +1750,7 @@ header.main-header span.sup-header-default {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### IMAGES ################################################################################ ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <img>...</img> elements.                                                  ║
+ *  ║ Styling applied to [img]...[/img] elements.                                                  ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 img.autoScaled {
@@ -1816,7 +1842,7 @@ img.symbolic-image {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### INPUTS ################################################################################ ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <input>...</input> and <label>...</label> elements.                       ║
+ *  ║ Styling applied to [input]...[/input] and [label]...[/label] elements.                       ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 input.read-more-state {
@@ -1833,7 +1859,7 @@ input.read-more-state ~ p label.read-more-trigger:before {
 label.read-more-trigger {
   display: inline-block;
   padding: 0 .5rem;
-  background-color: rgba(249, 244, 231, 0.25);
+  background-color: rgba(255, 184, 28, 0.25);
   border: 1px solid #2a3033;
   border-radius: .25rem;
   font-size: .9rem;
@@ -1851,39 +1877,54 @@ label.read-more-trigger {
 }
 @keyframes read-more-trigger-glow {
   0% {
-    background-color: rgba(249, 244, 231, 0.25);
-    box-shadow: 0 0 9px rgba(249, 244, 231, 0);
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
     color: #5e6a71;
   }
   50% {
-    background-color: rgba(249, 244, 231, 0.5);
-    box-shadow: 0 0 18px rgba(249, 244, 231, 0.5);
+    background-color: rgba(198, 146, 20, 0.5);
+    box-shadow: 0 0 18px rgba(198, 146, 20, 0.5);
+    color: #2a3033;
   }
   100% {
-    background-color: rgba(249, 244, 231, 0.25);
-    box-shadow: 0 0 9px rgba(249, 244, 231, 0);
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
   }
 }
 @-webkit-keyframes read-more-trigger-glow {
   0% {
-    background-color: rgba(249, 244, 231, 0.25);
-    box-shadow: 0 0 9px rgba(249, 244, 231, 0);
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
   }
   50% {
-    background-color: rgba(249, 244, 231, 0.5);
-    box-shadow: 0 0 18px rgba(249, 244, 231, 0.5);
+    background-color: rgba(255, 184, 28, 0.5);
+    box-shadow: 0 0 18px rgba(255, 184, 28, 0.5);
     color: #2a3033;
   }
   100% {
-    background-color: rgba(249, 244, 231, 0.25);
-    box-shadow: 0 0 9px rgba(249, 244, 231, 0);
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
     color: #5e6a71;
   }
 }
 label.read-more-trigger:hover {
-  background-color: rgba(249, 244, 231, 0.5);
+  animation: none;
+  -webkit-animation: none;
+  background-color: #ffb81c;
+  box-shadow: 0 0 18px rgba(255, 184, 28, 0.6667);
   border: 1px solid #2a3033;
   color: #2a3033;
+}
+div.read-more-target {
+  height: 0;
+  overflow: hidden;
+  margin-top: .5rem;
+  opacity: 0;
+  transition: .333s ease;
+  -webkit-transition: .333s ease;
+}
+.read-more-state:checked ~ p label.read-more-trigger:before {
+  content: 'Show less';
 }
 @media screen and (min-width: 906px) {
   div.readability-controlled {
@@ -1940,7 +1981,7 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <ul>...</ul> and <ol>...</ol> elements with low specificity.              ║
+ *  ║ Styling applied to [ul]...[/ul] and [ol]...[/ol] elements with low specificity.              ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 ul.external-links li {
@@ -1949,7 +1990,7 @@ ul.external-links li {
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SECTIONS ############################################################################## ║
  *  ╠==============================================================================================╣
- *  ║ Styling applied to <section>...</section> elements with low specificity.                     ║
+ *  ║ Styling applied to [section]...[/section] elements with low specificity.                     ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 section.column-one-with-bottom-margin > div.one {
@@ -1998,6 +2039,50 @@ section.article-header div.header-content {
 }
 section.halves div.column p {
   text-align: left;
+}
+@media all and (min-width: 875px) {
+  section.side-right.large-format-friendly,
+  section.row.side-right.large-format-friendly {
+    overflow: hidden;
+  }
+  section.side-right.large-format-friendly div.column.one,
+  section.row.side-right.large-format-friendly div.column.one {
+    width: 660px;
+  }
+  section.side-right.large-format-friendly div.column.two,
+  section.row.side-right.large-format-friendly div.column.two {
+    width: calc(100% - 660px);
+  }
+  section.side-right.large-format-friendly div.column.two:not(.graphical),
+  section.row.side-right.large-format-friendly div.column.two:not(.graphical) {
+    position: relative;
+  }
+  section.side-right.large-format-friendly div.column.two:not(.graphical)::before,
+  section.row.side-right.large-format-friendly div.column.two:not(.graphical)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: 0;
+    padding-bottom: 1000em;
+    margin-bottom: -1000em;
+    background: #eff0f1;
+  }
+}
+@media all and (max-width: 874px) {
+  section.side-right.large-format-friendly,
+  section.row.side-right.large-format-friendly {
+    overflow: hidden;
+  }
+  section.side-right.large-format-friendly div.column.one,
+  section.row.side-right.large-format-friendly div.column.one {
+    width: 100%;
+    padding-right: 2rem;
+  }
+  section.side-right.large-format-friendly div.column.two,
+  section.row.side-right.large-format-friendly div.column.two {
+    display: none;
+  }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### "SUPERCLASS" SPECIFICATIONS ########################################################### ║
@@ -2999,6 +3084,9 @@ div.column {
 }
 div.column section.header-news {
   background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+}
+div.column section.header-attending {
+  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIV.SIDEBAR ########################################################################### ║
