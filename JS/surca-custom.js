@@ -10,6 +10,9 @@
 			$('div.column > h2').each(function () {
 					$(this).prev('hr').addClass('narrow-bottom-margin dark-gray thicker');
 			});
+			$('div.column > h3').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson');
+			});
 
 			/**********************************************************************************************
 			 * Tweak HTML source to work around some quirks of the WordPress setup                        *
