@@ -15,6 +15,14 @@
 			});
 
 			/**********************************************************************************************
+			 * Set column heights on fluid-width containters                                              *
+			 **********************************************************************************************/
+			$('.large-format-friendly > div.column.two').each(function () {
+					var $this = $(this);
+                    $this.height($this.parent().height());
+			});
+            
+			/**********************************************************************************************
 			 * Tweak HTML source to work around some quirks of the WordPress setup                        *
 			 **********************************************************************************************/
 			var surcaSiteURL = window.location.pathname;
@@ -61,6 +69,10 @@
             $('#welcome-message').delay(1000).fadeOut(500, function () {
                 $('#post-welcome-message').fadeIn(500);
             });
+            $("dl.toggled dt").click(function() {
+                $(this).next("dd").slideToggle();
+            });
+            $("dd").hide();            
             
 	});
 })(jQuery);
