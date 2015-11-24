@@ -19,7 +19,7 @@
 			 **********************************************************************************************/
 			$('.large-format-friendly > div.column.two').each(function () {
 					var $this = $(this);
-                    $this.height($this.parent().height());
+                    $this.height($this.prev('div.column.one').height());
 			});
             
 			/**********************************************************************************************
@@ -70,9 +70,16 @@
                 $('#post-welcome-message').fadeIn(500);
             });
             $("dl.toggled dt").click(function() {
-                $(this).next("dd").slideToggle();
+                var $this = $(this);
+                $this.toggleClass('activated');
+                $this.next("dd").slideToggle(400, function () {
+                    var $parent = $this.parents('.large-format-friendly > div.column.one');
+                    var $prntNxt = $parent.next('div.column.two');
+                    // $prntNxt.height($parent.height());
+                    $prntNxt.animate({height: $parent.css('height')}, 400);
+                });
             });
-            $("dd").hide();            
+            $("dd").hide();           
             
 	});
 })(jQuery);
