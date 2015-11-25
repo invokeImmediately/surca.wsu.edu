@@ -21,6 +21,15 @@
 					var $this = $(this);
                     $this.height($this.prev('div.column.one').height());
 			});
+            $(window).resize(function () {
+                $('.large-format-friendly > div.column.two').each(function () {
+					var $this = $(this);
+                    var $thisPrev = $this.prev('div.column.one');
+                    if($this.height() != $thisPrev.height() ) {
+                        $this.height($thisPrev.height());
+                    }
+                });
+            });
             
 			/**********************************************************************************************
 			 * Tweak HTML source to work around some quirks of the WordPress setup                        *
@@ -76,7 +85,7 @@
                     var $parent = $this.parents('.large-format-friendly > div.column.one');
                     var $prntNxt = $parent.next('div.column.two');
                     // $prntNxt.height($parent.height());
-                    $prntNxt.animate({height: $parent.css('height')}, 400);
+                    $prntNxt.animate({height: $parent.css('height')}, 100);
                 });
             });
             $("dd").hide();           
