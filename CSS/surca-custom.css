@@ -1232,6 +1232,8 @@ div.column table.wsu-blue-theme {
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #3f6b72;
+}
+div.column table.wsu-blue-theme:not(.no-bottom-border) {
   border-bottom: 1px solid #3f6b72;
 }
 @media all and (min-width: 891px) {
@@ -1261,7 +1263,7 @@ div.column table.wsu-blue-theme > thead > tr.supra-header-row > th {
   font-weight: bold;
   color: #ffffff;
 }
-div.column table.wsu-blue-theme > tbody > tr:nth-child(2n) > td {
+div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -1271,7 +1273,27 @@ div.column table.wsu-blue-theme > tbody > tr:nth-child(2n) > td {
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-blue-theme > tbody > tr:nth-child(2n + 1) > td {
+div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n + 1) > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #d3e1e3;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #ffffff;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -3502,6 +3524,9 @@ div.column section.header-attending {
 }
 div.column section.header-participants {
   background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
+}
+div.column section.header-judges {
+  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIV.SIDEBAR ########################################################################### ║
