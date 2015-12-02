@@ -661,6 +661,20 @@ div.column a.pop-out-link:hover {
   line-height: calc(1.05em * 1.05);
   color: #f6861f;
 }
+div.column a.dark-red-button {
+  display: block;
+  color: #ffffff;
+  background-color: #981e32;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3333s linear;
+  padding: 0.5em 1em;
+}
+div.column a.dark-red-button:hover {
+  background-color: #c60c30;
+}
 div.column a img {
   border: 1px solid rgba(94, 106, 113, 0.5);
   box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.25);
@@ -826,9 +840,6 @@ div.column ul + p {
   div.column ul {
     font-size: 0.875rem;
   }
-}
-div.column ul li {
-  list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
 }
 div.column ul li.no-bottom-pad {
   padding-bottom: 0;
@@ -3608,6 +3619,13 @@ div.green-marble-sidebar h4,
 div.gray-acrylic-sidebar h4 {
   font-size: 1.05rem;
 }
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 div.column aside.article-sidebar {
   float: right;
   width: 33%;
