@@ -1,4 +1,8 @@
-# 2015-12-08
+####################################################################################################
+# 2015-12-08 ************************************************************************************* #
+####################################################################################################
+
+# Files added
 git add HTML\judges.html
 git commit -m "Source code added to repository: info for SURCA judges"
 git add HTML\judges_directors-message.html
@@ -33,11 +37,27 @@ git add HTML\support-surca_committee.html
 git commit -m "Source code added to repository: SURCA organizing & staging committee"
 git push
 
-CSS\surca-custom.css
-CSS\surca-custom.less
-CSS\surca-custom.min.css
-HTML\awards.html
-HTML\home.html
-HTML\participants_directors-message.html
-JS\wp-custom-javascript-source.surca.js
+git add git-log.txt
+git commit -m "Added a log for PowerShell commands utilized in using Git to work with this repository"
+git push
 
+# Files updated
+git add CSS\surca-custom.css
+git commit -m "Rebuilt production file to incorporate recent changes to source code"
+git add CSS\surca-custom.less
+git commit -m "Added a header section for pages associated with past SURCA events"
+git add CSS\surca-custom.min.css
+git commit -m "Rebuilt production file to incorporate recent changes to source code"
+git add HTML\awards.html
+git commit -m "Added missing SURCA 2015 award sponsors"
+git add HTML\home.html
+git commit -m "Modified outdated URLs in links contained within the 'welcome to SURCA' menu"
+git add HTML\participants_directors-message.html
+git commit -m "Added a new line to beautify code"
+git add JS\wp-custom-javascript-source.surca.js
+git commit -m "Updated source file location for custom SURCA JS"
+git push
+
+git add git-log.txt
+git commit -m "Updated CLI log to incorporate recent commands"
+git push
