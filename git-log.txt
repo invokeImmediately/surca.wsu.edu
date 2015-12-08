@@ -1,0 +1,43 @@
+# 2015-12-08
+git add HTML\judges.html
+git commit -m "Source code added to repository: info for SURCA judges"
+git add HTML\judges_directors-message.html
+git commit -m "Source code added to repository: message from the SURCA director to judges"
+git add HTML\judges_faqs.html
+git commit -m "Source code added to repository: FAQs page for SURCA judges"
+git add HTML\judges_past-judges.html
+git commit -m "Source code added to repository: list of past SURCA judges"
+git add HTML\past-surca.html
+git commit -m "Source code added to repository: portal to information about past SURCA events"
+git add HTML\past-surca_abstracts-2012.html
+git commit -m "Source code added to repository: page leading to the SURCA 2012 abstract book"
+git add HTML\past-surca_abstracts-2013.html
+git commit -m "Source code added to repository: page leading to the SURCA 2013 abstract book"
+git add HTML\past-surca_abstracts-2014.html
+git commit -m "Source code added to repository: page leading to the SURCA 2014 abstract book"
+git add HTML\past-surca_abstracts-2015.html
+git commit -m "Source code added to repository: page leading to the SURCA 2015 abstract book"
+git add HTML\past-surca_awards-2012.html
+git commit -m "Source code added to repository: list of award winners for SURCA 2012"
+git add HTML\past-surca_awards-2013.html
+git commit -m "Source code added to repository: list of award winners for SURCA 2013"
+git add HTML\past-surca_awards-2014.html
+git commit -m "Source code added to repository: list of award winners for SURCA 2014"
+git add HTML\past-surca_awards-2015.html
+git commit -m "Source code added to repository: list of award winners for SURCA 2015"
+git add HTML\support-surca.html
+git commit -m "Source code added to repository: information on supporting SURCA & list of sponsors"
+git add HTML\support-surca_be-a-sponsor.html
+git commit -m "Source code added to repository: guidance on becoming a SURCA sponsor"
+git add HTML\support-surca_committee.html
+git commit -m "Source code added to repository: SURCA organizing & staging committee"
+git push
+
+CSS\surca-custom.css
+CSS\surca-custom.less
+CSS\surca-custom.min.css
+HTML\awards.html
+HTML\home.html
+HTML\participants_directors-message.html
+JS\wp-custom-javascript-source.surca.js
+
