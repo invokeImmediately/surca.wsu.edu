@@ -942,6 +942,9 @@ div.column p:last-child:not(.no-bottom-pad) {
 div.column p:not(:last-child):not(.no-btm-margin) {
   margin-bottom: 1rem;
 }
+div.column p.double-margins:not(:last-child) {
+  margin-bottom: 2rem;
+}
 div.column p.half-margins:not(:last-child) {
   margin-bottom: 0.5rem;
 }
@@ -3538,6 +3541,9 @@ div.column section.header-participants {
 }
 div.column section.header-judges {
   background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
+}
+div.column section.header-pastEvents {
+  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIV.SIDEBAR ########################################################################### ║
