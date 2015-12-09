@@ -8,7 +8,9 @@
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 body {
-    background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) left top fixed repeat;
+    /* REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should disappear when the screen is narrow enough.
+     * background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) left top fixed repeat; */
+    background: @hex-bright-gray;
     font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
 
@@ -16,10 +18,11 @@ main {
     background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
 }
 
+/* REMOVED FOR NOW: Can add back later when we come up with a better background solution.
 #binder {
     border-right: 1px solid rgba(42,48,51,0.5);
     box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
-}
+}*/
 
 #jacket {
     background-position: right bottom;
