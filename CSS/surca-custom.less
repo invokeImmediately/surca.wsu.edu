@@ -44,66 +44,9 @@ header.main-header {
     }
 }
 
-/*@media all and (min-width: 906px) and (max-width: 1279px) {
-    header.main-header {
-        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (min-width: 792px) and (max-width: 905px) {
-    header.main-header {
-        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (min-width: 710px) and (max-width: 791px) {
-    header.main-header {
-        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (max-width: 709px) {
-    header.main-header {
-        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}*/
-
 .main-header sub:not(.unset), .main-header sup:not(.unset) {
     color: #fff !important;
 }
-
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### NAV.SPINE ############################################################################# ║
- *  ╠==============================================================================================╣
- *  ║ The code below was removed for being considered against standard by WSU UComm. I am still    ║
- *  ║ awaiting an answer on whether utilizing <hX>...</hX> elements within the spine is considered ║
- *  ║ against standard. From a design perspective, an default-styled h6 element could be used to   ║
- *  ║ achieve level-1 categorization of content—might be considered OK.                            ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-/*#spine.lighter #glue:before {
-    background: #b5babe url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_500x300_opacity-0.20.png) left top repeat scroll;
-}
-nav.spine-sitenav ul li {
-    a[href="#disabled"] {
-        pointer-events: none;
-    }
-    h4 {
-        color: #981E32;
-        font-size: .85rem;
-        margin-top: .85rem;
-        padding-top: 0;
-        padding-bottom: 0;
-        text-transform: uppercase;
-        &.normal {
-            margin-top: 0;
-        }
-    }
-    &:nth-child(1) h4 {
-        margin-top: 0;
-        padding-top: 0;
-    }
-}*/
 
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SECTION HEADERS ####################################################################### ║
@@ -240,6 +183,18 @@ div.column {
 	}
 }
 
+section {
+    &.side-right.large-format-friendly, &.row.side-right.large-format-friendly {
+        @media all {
+            @media (min-width: (@v-lrgfrmt-thrshld + 1)) {
+                div.column.two:before {
+                    .rgb-lighter-gray(); background: rgba(@rval, @gval, @bval, 0.8);
+                }
+            }
+        }
+    }
+}
+
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SURCA WELCOME MESSAGE ################################################################# ║
  *  ╠==============================================================================================╣
@@ -269,5 +224,37 @@ div#post-welcome-message {
         font-family: 'Open Sans Condensed';
         font-weight: bold;
         text-align: center;
+    }
+}
+
+@media screen {
+    @media (max-width: 695px), (min-width: (@v-spn-thrshld + 1)) and (max-width: 895px) {
+        div.column table.navigational-map {
+            display: block;
+            thead, tr, th {
+                display: block;
+            }
+            tbody {
+                display: none;
+            }
+            th {
+                border: none;
+                text-align: center;
+                text-transform: none;
+                &.table-spacer, br {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+h3.drop-down-toggle {
+    transition: all 0.3s ease;
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     -o-transition: all 0.3s ease;    
+    &:hover {
+        color: @hex-light-crimson;
     }
 }
