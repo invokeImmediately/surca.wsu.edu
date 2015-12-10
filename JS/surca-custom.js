@@ -36,12 +36,6 @@
 			 **********************************************************************************************/
 			var surcaSiteURL = window.location.pathname;
 			switch(surcaSiteURL) {
-                /* TEMPORARILY REMOVED PENDING UCOMM APPROVAL:
-                case '/':
-					$('#menu-item-XX').remove();
-					$('#spine-sitenav ul li').first().css('border-top', 'none');
-					$('#spine-sitenav').addClass('homeless');
-					break; */
 				case '/news/':
 					$('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>');
 					break;
@@ -51,7 +45,9 @@
 			 * Implement dynamic behaviors of interactive elements                                        *
 			 **********************************************************************************************/
 			$('.drop-down-toggle').click(function () {
-                $(this).next('.toggled-panel').toggle(500)
+                var $this = $(this);
+                $this.toggleClass('activated');
+                $this.next('.toggled-panel').toggle(500)
 			});
 			$('.read-more-toggle-in-ctrl').click(function () {
                 var $this = $(this);
@@ -84,7 +80,6 @@
                 $this.next("dd").slideToggle(400, function () {
                     var $parent = $this.parents('.large-format-friendly > div.column.one');
                     var $prntNxt = $parent.next('div.column.two');
-                    // $prntNxt.height($parent.height());
                     $prntNxt.animate({height: $parent.css('height')}, 100);
                 });
             });
