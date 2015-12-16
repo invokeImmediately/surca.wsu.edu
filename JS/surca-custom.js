@@ -2,8 +2,8 @@
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
 (function ($) {
+    "use strict";
 	$(document).ready(function () {
-			"use strict";
 			/**********************************************************************************************
 			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
 			 **********************************************************************************************/
