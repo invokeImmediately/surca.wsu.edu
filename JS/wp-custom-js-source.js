@@ -2,35 +2,8 @@
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
 (function ($) {
+    "use strict";
 	$(document).ready(function () {
-			"use strict";
-			/**********************************************************************************************
-			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
-			 **********************************************************************************************/
-			$('div.column > h2').each(function () {
-					$(this).prev('hr').addClass('narrow-bottom-margin dark-gray thicker');
-			});
-			$('div.column > h3').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson');
-			});
-
-			/**********************************************************************************************
-			 * Set column heights on fluid-width containters                                              *
-			 **********************************************************************************************/
-			$('.large-format-friendly > div.column.two').each(function () {
-					var $this = $(this);
-                    $this.height($this.prev('div.column.one').height());
-			});
-            $(window).resize(function () {
-                $('.large-format-friendly > div.column.two').each(function () {
-					var $this = $(this);
-                    var $thisPrev = $this.prev('div.column.one');
-                    if($this.height() != $thisPrev.height() ) {
-                        $this.height($thisPrev.height());
-                    }
-                });
-            });
-            
 			/**********************************************************************************************
 			 * Tweak HTML source to work around some quirks of the WordPress setup                        *
 			 **********************************************************************************************/
@@ -40,7 +13,66 @@
 					$('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>');
 					break;
 			}
-			
+	});
+})(jQuery);
+/**********************************************************************************************************************
+ CUSTOM JQUERY-BASED DYNAMIC CONTENT
+ *********************************************************************************************************************/
+(function ($) {
+    "use strict";
+	$(document).ready(function () {
+			/**********************************************************************************************
+			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
+			 **********************************************************************************************/
+            var $lrgFrmtSnglSctns = $('.single.large-format-friendly');
+            if ($lrgFrmtSnglSctns.length > 0) {
+                var $mainHeader = $('header.main-header');
+                $mainHeader.addClass('centered');
+                var $mnHdrChldDiv = $mainHeader.find('div.header-group');
+                $mnHdrChldDiv.addClass('centered');
+            }
+			$('.column > h2:not(.fancy), .column > section > h2:not(.fancy)').each(function () {
+					var $this = $(this);
+                    $this.addClass('no-top-margin');
+                    $this.prev('hr:not(.subSection)').addClass('narrow-bottom-margin dark-gray thicker', 250);
+			});
+			$('.column > h2.fancy, .column > section > h2.fancy').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin dark-gray thicker encroach-horizontal', 250);
+			});
+			$('.column > h3:not(.fancy), .column > section > h3:not(.fancy)').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson', 250);
+			});
+			$('.column > h3.fancy, .column > section > h3.fancy').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin crimson encroach-horizontal', 250);
+			});
+
+			/**********************************************************************************************
+			 * Set column heights on fluid-width containters                                              *
+			 **********************************************************************************************/
+            // TODO: Move the code below to document.ready + replace it with a check to ensure image loading hasn't changed the heights we are working with
+            $(window).load(function () {
+                if($(window).width() >= 1051) {
+                    $('.large-format-friendly > div.column.two').each(function () {
+                            var $this = $(this);
+                            $this.height($this.prev('div.column.one').height());
+                            $this.animate({opacity: 1.0}, 100);
+                    });
+                }
+            });
+            $(window).resize(function () {
+                $('.large-format-friendly > div.column.two').each(function () {
+					var $this = $(this);
+                    var crrntOpacity = $this.css("opacity");
+                    if (crrntOpacity == 0 && $(window).width() >= 1051) {
+                        $this.animate({opacity: 1.0}, 100);
+                    }
+                    var $thisPrev = $this.prev('div.column.one');
+                    if($this.height() != $thisPrev.height() ) {
+                        $this.height($thisPrev.height());
+                    }
+                });
+            });
+            
 			/**********************************************************************************************
 			 * Implement dynamic behaviors of interactive elements                                        *
 			 **********************************************************************************************/
@@ -143,12 +175,14 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 (function ($) {
     $(document).ready(function () {
         var qTipContentSource;
+        var qTipStyle;
         var $this;
         $('.has-tool-tip').each(function () {
             $this = $(this);
+            $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
             if ($this.hasClass('parental-neighbor-is-source')) {
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.parent().next('div')},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
@@ -168,7 +202,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
             } else {
                 $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.next(qTipContentSource)},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
