@@ -1,5 +1,12 @@
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
+// ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+// ║ #### SURCA-SPECIFIC LESS VARIABLES #################################################################### ║
+// ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+@url-gold-texture: "wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png";
+@url-ruby-texture: "wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png";
+@url-sandstone-texture: "wp-content/uploads/sites/706/2016/03/texture_sandstone.png";
+
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
  *  ╠==============================================================================================╣
@@ -188,7 +195,7 @@ section {
         @media all {
             @media (min-width: (@v-lrgfrmt-thrshld + 1)) {
                 div.column.two:before {
-                    .rgb-lighter-gray(); background: rgba(@rval, @gval, @bval, 0.8);
+                    background: @hex-lighter-gray url("/@{url-sandstone-texture}");
                 }
             }
         }
