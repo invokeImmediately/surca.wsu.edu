@@ -3,8 +3,8 @@
 // ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 // ║ #### SURCA-SPECIFIC LESS VARIABLES #################################################################### ║
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-@url-gold-texture: "wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png";
-@url-ruby-texture: "wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png";
+@url-gold-texture: "wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png";
+@url-ruby-texture: "wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png";
 @url-sandstone-texture: "wp-content/uploads/sites/706/2016/03/texture_sandstone.png";
 
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
@@ -198,6 +198,35 @@ section {
                     background: @hex-lighter-gray url("/@{url-sandstone-texture}");
                 }
             }
+        }
+    }
+}
+
+section.article-notice {
+    &.has-countdown {
+        display: none;
+    }
+    div.column {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background: @hex-gold url("/@{url-gold-texture}") no-repeat scroll left top;
+        background-size: cover;
+        .rgb-black(); box-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.3);
+        color: @hex-darker-gray;
+        & > p {
+            &:extend(.has-alt-font);
+            font-size: (@v-p-sz * @v-scl-up  * @v-scl-up);
+            letter-spacing: 0.5px;
+            color: @hex-darker-gray;
+            .rgb-white(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
+            &:first-child { padding-top: @v-btm-pads; } // Use same amount of top padding as that typically used for bottom of paragraph.
+        }
+    }
+    &.ruby div.column {
+        background: @hex-light-crimson url("/@{url-ruby-texture}") no-repeat scroll left top;
+        & > p {
+            color: @hex-white;
+            .rgb-black(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
         }
     }
 }
