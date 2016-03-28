@@ -179,15 +179,22 @@ div.column {
 		padding: .8rem;
 		margin-bottom: 1rem;
 		 margin-left: 1rem;
-		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
 		border: 1px solid #6d441f;
+		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
 		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
 		font-size: .8rem;
 		color: #464e54;
-		p {
-			font-size: inherit;
-		}
 	}
+}
+
+div.column {
+    aside.important-reminder {
+        &:extend(div.column aside.article-sidebar);
+		border: 1px solid #f77891;
+        background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
+		box-shadow: 1px 1px 2px rgba(247,120,145,0.5);
+        p:last-child { padding-bottom: 0; }
+    }
 }
 
 section {
