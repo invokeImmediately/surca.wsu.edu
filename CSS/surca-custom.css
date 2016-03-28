@@ -1387,7 +1387,8 @@ div.column h4 > a,
 .gform_heading h3.gform_title > a {
   line-height: 1.35em;
 }
-div.column aside.article-sidebar {
+div.column aside.article-sidebar,
+div.column aside.important-reminder {
   float: right;
   width: 33%;
   min-width: 230px;
@@ -1441,7 +1442,8 @@ div.column aside.article-sidebar h4:first-child {
   margin-top: 0;
 }
 @media screen and (min-width: 792px) and (max-width: 900px) {
-  div.column aside.article-sidebar {
+  div.column aside.article-sidebar,
+  div.column aside.important-reminder {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -1464,7 +1466,8 @@ div.column aside.article-sidebar h4:first-child {
   }
 }
 @media screen and (max-width: 640px) {
-  div.column aside.article-sidebar {
+  div.column aside.article-sidebar,
+  div.column aside.important-reminder {
     position: absolute;
     right: -2rem;
     top: 0px;
@@ -3840,20 +3843,26 @@ div.gray-acrylic-sidebar h4 {
  *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-div.column aside.article-sidebar {
+div.column aside.article-sidebar,
+div.column aside.important-reminder {
   float: right;
   width: 33%;
   padding: .8rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
-  background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
   border: 1px solid #6d441f;
+  background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
   box-shadow: 1px 1px 2px rgba(109, 68, 31, 0.5);
   font-size: .8rem;
   color: #464e54;
 }
-div.column aside.article-sidebar p {
-  font-size: inherit;
+div.column aside.important-reminder {
+  border: 1px solid #f77891;
+  background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
+  box-shadow: 1px 1px 2px rgba(247, 120, 145, 0.5);
+}
+div.column aside.important-reminder p:last-child {
+  padding-bottom: 0;
 }
 @media all and (min-width: 1051px) {
   section.side-right.large-format-friendly div.column.two:before,
