@@ -97,7 +97,8 @@ div.column,
 }
 .has-alt-font,
 div.column p.article-tagline.sans,
-span.accentuated-text {
+span.accentuated-text,
+section.article-notice div.column > p {
   font-family: 'Open Sans Condensed', 'Geneva', 'Verdana', 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;
 }
 .soft-gray-border {
@@ -3960,6 +3961,33 @@ div.column aside.article-sidebar p {
   section.row.side-right.large-format-friendly div.column.two:before {
     background: #d7dadb url("/wp-content/uploads/sites/706/2016/03/texture_sandstone.png");
   }
+}
+section.article-notice.has-countdown {
+  display: none;
+}
+section.article-notice div.column {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background: #e9c024 url("/wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png") no-repeat scroll left top;
+  background-size: cover;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  color: #464e54;
+}
+section.article-notice div.column > p {
+  font-size: 1.17647058rem;
+  letter-spacing: 0.5px;
+  color: #464e54;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+section.article-notice div.column > p:first-child {
+  padding-top: 1rem;
+}
+section.article-notice.ruby div.column {
+  background: #c60c30 url("/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png") no-repeat scroll left top;
+}
+section.article-notice.ruby div.column > p {
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LIST STYLES ########################################################################### ║
