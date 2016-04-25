@@ -343,6 +343,10 @@ html {
 div.column article + article {
   margin-top: 1.5em;
 }
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++ SECTION selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 section.column-one-with-bottom-margin > div.one {
   margin-bottom: 2rem;
 }
@@ -358,21 +362,36 @@ section.article-header div.header-content {
   transform: translateY(-50%);
 }
 @media screen {
+  section.article-header div.header-content h1,
+  section.article-header div.header-content h2 {
+    color: #ffffff;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    /*.rgb-black(); text-shadow: 0 1px 0 #bbb,
+                     0 2px 0 #999, 0 3px 0 #777,
+                     0 4px 1px rgba(@rval,@gval,@bval,.1),
+                     0 0 5px rgba(@rval,@gval,@bval,.1),
+                     0 1px 3px rgba(@rval,@gval,@bval,.3),
+                     0 3px 5px rgba(@rval,@gval,@bval,.2),
+                     0 5px 10px rgba(@rval,@gval,@bval,.25),
+                     0 0 2px #000, 0 4px 2px #000;*/
+  }
   section.article-header div.header-content h1 {
     font-size: 70px;
     line-height: 1.071428571428571em;
-    color: #ffffff;
-    text-shadow: 0 1px 0 #bbbbbb, 0 2px 0 #999999, 0 3px 0 #777777, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 0 2px #000000, 0 4px 2px #000000;
-    -webkit-font-smoothing: antialiased !important;
   }
   section.article-header div.header-content h2 {
     margin-bottom: .75rem;
     font-size: 3.0238rem;
     line-height: 0.8em;
     text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 0 1px 0 #bbbbbb, 0 2px 0 #999999, 0 3px 0 #777777, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 0 2px #000000, 0 4px 2px #000000;
-    -webkit-font-smoothing: antialiased !important;
+    /*.rgb-black(); text-shadow: 0 1px 0 #bbb,
+                     0 2px 0 #999, 0 3px 0 #777,
+                     0 4px 1px rgba(@rval,@gval,@bval,.1),
+                     0 0 5px rgba(@rval,@gval,@bval,.1),
+                     0 1px 3px rgba(@rval,@gval,@bval,.3),
+                     0 3px 5px rgba(@rval,@gval,@bval,.2),
+                     0 5px 10px rgba(@rval,@gval,@bval,.25),
+                     0 0 2px #000, 0 4px 2px #000;*/
   }
   section.article-header div.header-content h3 {
     padding: .1rem .2rem .2rem;
@@ -384,7 +403,6 @@ section.article-header div.header-content {
     text-transform: uppercase;
     color: #ffffff;
     text-shadow: 0 0.5px 0 #aaaaaa, 0 1px 0 #888888, 0 1.5px 0.5px rgba(152, 30, 50, 0.1), 0 0 2.5px rgba(152, 30, 50, 0.1), 0 0.5px 1.5px rgba(152, 30, 50, 0.3), 0 1px 2.5px rgba(152, 30, 50, 0.2), 0 0 0.5px #000000, 0 1.5px 1px #000000;
-    -webkit-font-smoothing: antialiased !important;
   }
 }
 section.halves div.column p {
@@ -399,35 +417,18 @@ section.halves div.column p {
     max-width: 800px;
   }
 }
-@media (min-width: 891px) and (max-width: 1049px) {
+@media (min-width: 990px) and (max-width: 1049px) {
   section.single.large-format-friendly div.column.one,
   section.row.single.large-format-friendly div.column.one {
     max-width: 800px;
   }
 }
-@media all {
-  section.side-right.large-format-friendly,
-  section.row.side-right.large-format-friendly {
-    /*            @media (min-width: (@v-tblt-thrshld + 1)) and (max-width: @v-lrgfrmt-thrshld) {
-                div.column.one {
-                    width: @v-w-cnstrn-lrg;
-                }
-                div.column.two {
-                    display: none;
-                }
-            }
-            @media (max-width: @v-tblt-thrshld) {
-                div.column.one {
-                    width: 100%;
-                    max-width: @v-w-cnstrn-nrml;
-                    float: none;
-                    .margin-centered;
-                    padding-right: 2rem;
-                }
-                div.column.two {
-                    display: none;
-                }
-            }*/
+@media (min-width: 792px) and (max-width: 989px) {
+  section.single.large-format-friendly div.column.one,
+  section.row.single.large-format-friendly div.column.one {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px;
   }
 }
 @media all and (min-width: 1051px) {
@@ -478,6 +479,10 @@ section.halves div.column p {
     top: 1rem;
   }
 }
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 aside:not(:first-child).widget header {
   margin-top: 1rem;
 }
@@ -492,11 +497,116 @@ section.side-right div.column.two aside,
 section.row.side-right div.column.two aside {
   padding: 1rem;
   background: rgba(215, 218, 219, 0.8);
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.9), 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.9), 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 section.side-right div.column.two aside p:not(.centered),
 section.row.side-right div.column.two aside p:not(.centered) {
   text-align: left;
+}
+/*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ASIDE children of div.column elements ············································ │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+div.column aside.article-sidebar,
+div.column aside.important-reminder {
+  float: right;
+  width: 33%;
+  min-width: 230px;
+  padding: .8rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  background: #f8f1eb;
+  border: 1px solid #6d441f;
+  box-shadow: 1px 1px 2px rgba(109, 68, 31, 0.5);
+  font-size: .8rem;
+  color: #464e54;
+}
+div.column aside.article-sidebar:first-child + h1,
+div.column aside.article-sidebar:first-child + h2,
+div.column aside.article-sidebar:first-child + h3,
+div.column aside.article-sidebar:first-child + h4 {
+  margin-top: 0;
+}
+div.column aside.article-sidebar p,
+div.column aside.article-sidebar ol,
+div.column aside.article-sidebar ul {
+  font-size: inherit;
+  line-height: normal;
+}
+div.column aside.article-sidebar p {
+  text-align: left;
+}
+div.column aside.article-sidebar p:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+div.column aside.article-sidebar ol,
+div.column aside.article-sidebar ul {
+  padding-bottom: 0;
+}
+div.column aside.article-sidebar h2 + hr {
+  margin-top: .25rem;
+  background-color: rgba(70, 78, 84, 0.75);
+}
+div.column aside.article-sidebar h3 {
+  font-size: 1.275rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
+div.column aside.article-sidebar h3:first-child {
+  margin-top: 0;
+}
+div.column aside.article-sidebar h4 {
+  font-size: 1.05rem;
+}
+div.column aside.article-sidebar h4:first-child {
+  margin-top: 0;
+}
+@media screen and (min-width: 990px) and (max-width: 1098px) {
+  div.column aside.article-sidebar,
+  div.column aside.important-reminder {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 230px;
+    -webkit-transform-origin: 100% 0% 0;
+    -ms-transform-origin: 100% 0% 0;
+    transform-origin: 100% 0% 0;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transition: transform .25s ease-out;
+    -moz-transition: transform .25s ease-out;
+    transition: transform .25s ease-out;
+  }
+  div.column aside.article-sidebar:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  div.column aside.article-sidebar,
+  div.column aside.important-reminder {
+    position: absolute;
+    right: -2rem;
+    top: 0px;
+    width: 230px;
+    -webkit-transform-origin: 100% 0% 0;
+    -ms-transform-origin: 100% 0% 0;
+    transform-origin: 100% 0% 0;
+    -webkit-transform: rotate(-90deg) translateY(-2rem);
+    -moz-transform: rotate(-90deg) translateY(-2rem);
+    transform: rotate(-90deg) translateY(-2rem);
+    -webkit-transition: transform .25s ease-out;
+    -moz-transition: transform .25s ease-out;
+    transition: transform .25s ease-out;
+  }
+  div.column aside.article-sidebar:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
 }
 div.column > header:first-child {
   display: none;
@@ -768,7 +878,34 @@ header.main-header span.sup-header-default {
     text-align: center;
   }
 }
+@media (min-width: 990px) and (max-width: 1049px) {
+  header.main-header.centered {
+    text-align: left;
+  }
+}
+@media (min-width: 792px) and (max-width: 989px) {
+  header.main-header.centered {
+    text-align: center;
+  }
+}
+@media (max-width: 791px) {
+  header.main-header.centered {
+    text-align: left;
+  }
+}
+header.main-header div.header-group {
+  text-align: inherit;
+}
 @media (min-width: 1050px) {
+  header.main-header div.header-group.centered {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+}
+@media (min-width: 792px) and (max-width: 989px) {
   header.main-header div.header-group.centered {
     width: 100%;
     left: 50%;
@@ -1007,26 +1144,42 @@ div.award-banner {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+           │ ···· Builder Template Slideshows ······················································ │
+           ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+           │ Styling modifications of builder template slideshows added through the WordPress        │
+           │ interface.                                                                              │
+           └-----------------------------------------------------------------------------------------┘        
+*/
+@media screen and (max-width: 480px) {
+  div.column div.builder-section-content.cycle-slideshow {
+    margin-left: -2em;
+    margin-right: -2em;
+  }
+}
 div.column div.builder-banner-content {
   padding: 0 0 10px 0;
   font-size: 1rem;
   line-height: 1.35rem;
-  transition: font-size 0.15s linear, line-height 0.15s linear;
-  -webkit-transition: font-size 0.15s linear, line-height 0.15s linear;
-  -moz-transition: font-size 0.15s linear, line-height 0.15s linear;
-  -o-transition: font-size 0.15s linear, line-height 0.15s linear;
+  border: 0;
+  -webkit-transition: font-size .15s linear, line-height .15s linear;
+  -moz-transition: font-size .15s linear, line-height .15s linear;
+  transition: font-size .15s linear, line-height .15s linear;
 }
 div.column div.builder-banner-content:hover {
   font-size: 1.3333rem;
   line-height: 1.799955rem;
 }
-div.column div.builder-banner-content:hover ~ .builder-banner-overlay {
+div.column div.builder-banner-content:hover > div.builder-banner-inner-content {
   background-color: rgba(0, 0, 0, 0.9);
-  height: calc(3.59991rem + 20px);
-  top: calc(100% - 3.59991rem - 20px);
 }
 div.column div.builder-banner-inner-content {
-  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: inherit;
+  line-height: inherit;
 }
 div.column div.builder-banner-inner-content p {
   padding: 10px;
@@ -1053,15 +1206,7 @@ div.column div.builder-banner-inner-content a:hover {
   border-color: rgba(106, 120, 128, 0.4);
 }
 div.column div.builder-banner-overlay {
-  height: calc(2.7rem + 20px);
-  top: calc(100% - 2.7rem - 20px);
-  background-color: rgba(0, 0, 0, 0.6667);
-  border-color: rgba(0, 0, 0, 0.4);
-  color: #949b9d;
-  transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -webkit-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -moz-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -o-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
+  display: none;
 }
 @media screen and (max-width: 1204px) {
   div.column div.builder-banner-content {
@@ -1072,14 +1217,6 @@ div.column div.builder-banner-overlay {
     font-size: 1.7704vw;
     line-height: 2.39004vw;
   }
-  div.column div.builder-banner-content:hover ~ div.builder-banner-overlay {
-    top: calc(100% - 4.78008vw - 1.66vw);
-    height: calc(4.78008vw + 1.66vw);
-  }
-  div.column div.builder-banner-overlay {
-    top: calc(100% - 3.58506vw - 1.66vw);
-    height: calc(3.58506vw + 1.66vw);
-  }
   div.column div.builder-banner-inner-content p {
     padding: 1.0vw;
   }
@@ -1087,7 +1224,7 @@ div.column div.builder-banner-overlay {
     padding-bottom: 1.0vw;
   }
 }
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 989px) {
   div.column div.builder-banner-content {
     font-size: 12px;
     line-height: 16.2px;
@@ -1096,14 +1233,9 @@ div.column div.builder-banner-overlay {
     font-size: 14px;
     line-height: 18.9px;
   }
-  div.column div.builder-banner-overlay {
-    height: auto;
-  }
 }
 @media screen and (min-width: 906px) {
   div.readability-controlled {
-    /*      margin-right: auto;
-        margin-left: auto; */
     width: 70%;
   }
 }
@@ -1111,21 +1243,47 @@ section.pad-top.half-pad,
 section.pad-top div.column.half-pad {
   padding-top: 1rem;
 }
-/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
- *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *  ├----------------------------------------------------------------------------------------------┤
- *  │ Highly specific styling applied to div.column container elements as specified in the WSU     │
- *  │ Spine WordPress Theme.                                                                       │
- *  ├----------------------------------------------------------------------------------------------┤
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· div.column ······································································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ Highly specific styling applied to div.column container elements as specified in the    │
+ *         │ WSU Spine WordPress Theme.                                                              │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
  */
 div.column {
   font-size: 1rem;
-  /*	header.article-header {
-        display: none;
-    }
-    header.article-header.show-header {
-        display: block;
-    }*/
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │············ GENERIC CLASSES for div.column content containers ························· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │············ DEFINITION LIST elements contained within div.column containers ··········· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │···· HORIZONTAL RULE children of div.column elements ··································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· HYPERLINK elements contained within div.column elements ·························· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· UNORDERED LIST elements contained within div.column elements ····················· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ORDERED LIST elements contained within div.column elements ······················· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· SECTION children of div.column elements ·········································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ADDITIONAL CLASSES for elements contained within div.column elements ············· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
 }
 div.column:nth-child(1) {
   margin-top: 0;
@@ -1149,10 +1307,9 @@ div.column dl.faq dt {
   margin: 5px -10px;
   background-color: #d7dadb;
   font-weight: bold;
-  transition: all 0.25s linear;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 @media all {
   div.column dl.faq dt {
@@ -1182,10 +1339,9 @@ div.column dl.faq dt:after {
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
-  transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 div.column dl.faq dt:hover {
   background-color: #5e6a71;
@@ -1387,108 +1543,6 @@ div.column h4 > a,
 .gform_heading h3.gform_title > a {
   line-height: 1.35em;
 }
-div.column aside.article-sidebar,
-div.column aside.important-reminder {
-  float: right;
-  width: 33%;
-  min-width: 230px;
-  padding: .8rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  background: #f8f1eb;
-  border: 1px solid #6d441f;
-  box-shadow: 1px 1px 2px rgba(109, 68, 31, 0.5);
-  font-size: .8rem;
-  color: #464e54;
-}
-div.column aside.article-sidebar:first-child + h1,
-div.column aside.article-sidebar:first-child + h2,
-div.column aside.article-sidebar:first-child + h3,
-div.column aside.article-sidebar:first-child + h4 {
-  margin-top: 0;
-}
-div.column aside.article-sidebar p,
-div.column aside.article-sidebar ol,
-div.column aside.article-sidebar ul {
-  font-size: inherit;
-  line-height: normal;
-}
-div.column aside.article-sidebar p {
-  text-align: left;
-}
-div.column aside.article-sidebar p:not(:last-child) {
-  margin-bottom: 0.8rem;
-}
-div.column aside.article-sidebar ol,
-div.column aside.article-sidebar ul {
-  padding-bottom: 0;
-}
-div.column aside.article-sidebar h2 + hr {
-  margin-top: .25rem;
-  background-color: rgba(70, 78, 84, 0.75);
-}
-div.column aside.article-sidebar h3 {
-  font-size: 1.275rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0;
-}
-div.column aside.article-sidebar h3:first-child {
-  margin-top: 0;
-}
-div.column aside.article-sidebar h4 {
-  font-size: 1.05rem;
-}
-div.column aside.article-sidebar h4:first-child {
-  margin-top: 0;
-}
-@media screen and (min-width: 792px) and (max-width: 900px) {
-  div.column aside.article-sidebar,
-  div.column aside.important-reminder {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 230px;
-    transform-origin: 100% 0%;
-    -webkit-transform-origin: 100% 0%;
-    -ms-transform-origin: 100% 0%;
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transition: transform 0.25s ease-out;
-    -webkit-transition: transform 0.25s ease-out;
-    -moz-transition: transform 0.25s ease-out;
-    -o-transition: transform 0.25s ease-out;
-  }
-  div.column aside.article-sidebar:hover {
-    transform: none;
-    -webkit-transform: none;
-    -ms-transform: none;
-  }
-}
-@media screen and (max-width: 640px) {
-  div.column aside.article-sidebar,
-  div.column aside.important-reminder {
-    position: absolute;
-    right: -2rem;
-    top: 0px;
-    width: 230px;
-    transform-origin: 100% 0%;
-    -webkit-transform-origin: 100% 0%;
-    -ms-transform-origin: 100% 0%;
-    transform: rotate(-90deg) translateY(-2rem);
-    -webkit-transform: rotate(-90deg) translateY(-2rem);
-    -ms-transform: rotate(-90deg) translateY(-2rem);
-    -webkit-transition: transform 0.25s ease-out;
-    transition: transform 0.25s ease-out;
-    -moz-transition: transform 0.25s ease-out;
-    -o-transition: transform 0.25s ease-out;
-  }
-  div.column aside.article-sidebar:hover {
-    transform: none;
-    -webkit-transform: none;
-    -ms-transform: none;
-  }
-}
 div.column ul {
   padding-bottom: 0;
 }
@@ -1578,12 +1632,12 @@ div.column .has-smaller-text {
     max-width: 800px;
   }
 }
-@media (min-width: 891px) and (max-width: 1049px) {
+@media (min-width: 792px) and (max-width: 1049px) {
   div.column .large-format-friendly {
     max-width: 792px;
   }
 }
-/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+/*         └-----------------------------------------------------------------------------------------┘        
  */
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ div.interactively-flipped-panels ++++++++++++++++++++++++++++++++++++++++++++++++++ │
@@ -2345,6 +2399,10 @@ mark.highlight {
   font-style: normal;
   color: #AEC7CB;
 }
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++ SPAN selectors +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 span.accentuated-text {
   font-weight: 700;
   font-size: 1.3em;
@@ -2375,6 +2433,26 @@ span.has-tool-tip:hover {
   background-color: rgba(0, 165, 189, 0.2);
   border-color: rgba(0, 165, 189, 0.67);
   color: #2f5055;
+}
+@media all and (max-width: 989px) {
+  span.hides-with-spine {
+    display: none;
+  }
+}
+@media all and (min-width: 990px) {
+  span.hides-from-spine {
+    display: none;
+  }
+}
+@media all and (max-width: 693px) {
+  span.hides-with-rghtclmn {
+    display: none;
+  }
+}
+@media all and (min-width: 694px) {
+  span.hides-from-rghtclmn {
+    display: none;
+  }
 }
 cite.article-author {
   display: none;
@@ -3022,31 +3100,52 @@ div.column .gform_wrapper #extensions_message {
   width: 0;
   height: 0;
   transform: translateY(-50%);
-  border-top: 8px solid #981e32;
-  border-right: 8px solid transparent;
-  border-bottom: none;
-  border-left: 8px solid transparent;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-.drop-down-toggle:hover:after {
-  border-top: 8px solid #c60c30;
-  border-right: 8px solid transparent;
-  border-bottom: none;
-  border-left: 8px solid transparent;
-}
-.drop-down-toggle.activated:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #981e32;
   border-left: 8px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.drop-down-toggle.activated:hover:after {
+.drop-down-toggle:before {
+  content: "Click to expand";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: #981e32;
+  font-size: 12px;
+  text-transform: none;
+  opacity: 0;
+  -webkit-transform: translate(-35px, -50%);
+  -moz-transform: translate(-35px, -50%);
+  transform: translate(-35px, -50%);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.drop-down-toggle:hover:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #c60c30;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle:hover:before {
+  opacity: 0.5;
+}
+.drop-down-toggle.activated:after {
+  border-top: 8px solid #981e32;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:before {
+  content: "Click to collapse";
+}
+.drop-down-toggle.activated:hover:after {
+  border-top: 8px solid #c60c30;
+  border-right: 8px solid transparent;
+  border-bottom: none;
   border-left: 8px solid transparent;
 }
 .flipped-content-back {
@@ -3942,7 +4041,7 @@ div#post-welcome-message > h3 {
   font-weight: bold;
   text-align: center;
 }
-@media screen and (max-width: 695px), screen and (min-width: 792px) and (max-width: 895px) {
+@media screen and (max-width: 695px), screen and (min-width: 990px) and (max-width: 895px) {
   div.column table.navigational-map {
     display: block;
   }
