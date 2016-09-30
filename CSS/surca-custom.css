@@ -6047,6 +6047,9 @@ div#post-welcome-message > h3 {
   font-weight: bold;
   text-align: center;
 }
+div.column table.navigational-map tbody > td p {
+  margin-bottom: 0 !important;
+}
 @media screen and (max-width: 695px), screen and (min-width: 990px) and (max-width: 895px) {
   div.column table.navigational-map {
     display: block;
