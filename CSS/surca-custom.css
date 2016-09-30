@@ -6014,8 +6014,8 @@ div#post-welcome-message {
   box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
 }
 div#post-welcome-message > h3 {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
   font-family: 'Open Sans Condensed';
   font-weight: bold;
   text-align: center;
