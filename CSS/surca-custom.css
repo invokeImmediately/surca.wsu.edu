@@ -4537,7 +4537,7 @@ div.column table.navigational-map td p {
   text-align: inherit;
 }
 div.column table.navigational-map td p:not(:last-child) {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   border-bottom: 1px solid #d7dadb;
 }
 div.column table.navigational-map td:nth-child(4n+3) {
