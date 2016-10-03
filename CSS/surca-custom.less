@@ -275,33 +275,11 @@ div#post-welcome-message {
     border: 1px solid #aec7cb;
     box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
     & > h3 {
-        margin-top: 1em;
-         margin-bottom: 1em;
+        margin-top: 0.75em;
+		margin-bottom: 0.75em;
         font-family: 'Open Sans Condensed';
         font-weight: bold;
         text-align: center;
-    }
-}
-
-@media screen {
-    @media (max-width: 695px), (min-width: (@v-spn-thrshld + 1)) and (max-width: 895px) {
-        div.column table.navigational-map {
-            display: block;
-            thead, tr, th {
-                display: block;
-            }
-            tbody {
-                display: none;
-            }
-            th {
-                border: none;
-                text-align: center;
-                text-transform: none;
-                &.table-spacer, br {
-                    display: none;
-                }
-            }
-        }
     }
 }
 
@@ -314,3 +292,5 @@ h3.drop-down-toggle {
         color: @hex-light-crimson;
     }
 }
+
+.uses-navigational-map-tables();
