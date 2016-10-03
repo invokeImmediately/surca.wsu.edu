@@ -2694,7 +2694,7 @@ div.column .has-larger-text {
   font-size: larger;
 }
 div.column .has-smaller-text {
-  font-size: smaller;
+  font-size: smaller !important;
 }
 @media (min-width: 1050px) {
   div.column .large-format-friendly {
@@ -3582,7 +3582,7 @@ div.column ul {
 }
 div.column ul ol,
 div.column ul ul {
-  font-size: inherit;
+  font-size: inherit  !important;
 }
 div.column ul.centered {
   text-align: center;
@@ -3838,7 +3838,7 @@ div.column ol li {
 }
 div.column ol ol,
 div.column ol ul {
-  font-size: inherit;
+  font-size: inherit !important;
 }
 div.column ol ol {
   list-style-type: lower-alpha;
