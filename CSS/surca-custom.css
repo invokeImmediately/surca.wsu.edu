@@ -3917,9 +3917,9 @@ div.column ol ol ol {
  */
 div.column dl.faq dt {
   position: relative;
-  width: 100%;
-  padding: 5px 20px 5px 10px;
-  margin: 5px -10px;
+  width: calc(100% - 50px);
+  padding: 5px 40px 5px 10px;
+  margin: 5px 0;
   background-color: #d7dadb;
   font-weight: bold;
   -webkit-transition: all 0.25s linear;
@@ -4010,7 +4010,10 @@ div.column dl.faq dt.activated:hover:after {
   border-bottom: 8px solid #fff;
   border-left: 8px solid transparent;
 }
-div.column dl.toggled dd {
+dd:not(:last-child) div.column dl.faq > p:last-child {
+  margin-bottom: 1rem;
+}
+div.column dl.faq.toggled dd {
   display: none;
 }
 /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
