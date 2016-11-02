@@ -4011,7 +4011,7 @@ div.column dl.faq dt.activated:hover:after {
   border-left: 8px solid transparent;
 }
 dd:not(:last-child) div.column dl.faq > p:last-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 div.column dl.faq.toggled dd {
   display: none;
