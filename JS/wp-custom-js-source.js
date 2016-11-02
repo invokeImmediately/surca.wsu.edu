@@ -1161,8 +1161,8 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
             if(countdownTarget && pendingMsg && expiredMsg) {
                 $countdownClock.countdown(countdownTarget).on("update.countdown", function(event) {
                     var format = "%H:%M:%S";
-                    if(event.offset.days > 0) {
-                        format = "%-d day%!d and " + format;
+                    if(event.offset.totalDays > 0) {
+                        format = "%-D day%!D and " + format;
                     }
                     format = format + pendingMsg;
                     $(this).html(event.strftime(format));
