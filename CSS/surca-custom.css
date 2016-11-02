@@ -5059,8 +5059,11 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required ul.gfield_radio:
  */
 .drop-down-toggle {
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.transition(~"all 0.3s ease") .drop-down-toggle:after {
+.drop-down-toggle:after {
   content: "";
   position: absolute;
   right: 10px;
