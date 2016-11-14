@@ -6106,6 +6106,10 @@ div.column table.navigational-map a {
   border-bottom: 1px dotted rgba(152, 30, 50, 0);
   color: inherit;
 }
+div.column table.navigational-map th,
+div.column table.navigational-map td {
+  max-width: 200px;
+}
 div.column table.navigational-map th {
   border-bottom: 1px solid #b5babe;
   font-size: 1.1em;
