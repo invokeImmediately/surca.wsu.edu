@@ -4891,7 +4891,7 @@ div.column li.gfield.uses-rich-editor span.gp-word-count-label {
   }
 }
 @media only screen and (min-width: 641px) {
-  div.column li.gfield.gf_left_half.expands-to-two-thirds + gf_right_half {
+  div.column li.gfield.gf_left_half.expands-to-two-thirds + li.gfield.gf_right_half {
     width: 33% !important;
   }
 }
