@@ -4895,14 +4895,14 @@ div.column li.gfield.uses-rich-editor span.gp-word-count-label {
     width: 33% !important;
   }
 }
-@media only screen and (min-width: 1073px) {
-  div.column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 23px;
-  }
-}
 @media only screen and (min-width: 641px) {
   div.column li.gfield.has-label-spacer > div.ginput_container {
     margin-top: 21px;
+  }
+}
+@media only screen and (min-width: 1073px) {
+  div.column li.gfield.has-label-spacer > div.ginput_container {
+    margin-top: 23px;
   }
 }
 div.column li.gfield > div.ginput_complex > span > label {
