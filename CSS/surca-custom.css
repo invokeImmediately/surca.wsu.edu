@@ -4967,6 +4967,9 @@ div.column ul.gform_fields.top_label > li.gfield + li.gfield:not(.gsection),
 div.column ul.gform_fields.top_label li.gfield:first-child {
   margin-top: 0.5rem;
 }
+div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_line_2 input {
+  background-color: #fff !important;
+}
 div.column ul.gform_fields > li.gfield.gfield_contains_required input,
 div.column ul.gform_fields > li.gfield.gfield_contains_required select,
 div.column ul.gform_fields > li.gfield.gfield_contains_required textarea {
