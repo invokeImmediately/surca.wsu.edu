@@ -2281,7 +2281,7 @@ div.column p.vpue-jump-bar.floating {
 div.column p.vpue-jump-bar.floating span.title {
   display: none;
 }
-div.column p.vpue-jump-bar.floating br {
+div.column p.vpue-jump-bar.floating br:first-of-type {
   display: none;
 }
 @media all {
