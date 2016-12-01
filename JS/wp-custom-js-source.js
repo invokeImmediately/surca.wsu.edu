@@ -348,10 +348,14 @@ function isJQuery($obj) {
 			var $tocClone = $toc.clone().addClass("floating").removeAttr("id").insertAfter($toc);
 			$tocClone.find("span.title + br").remove();
 			$tocClone.find("span.title").remove();
+			var counter = 1;
 			$tocClone.find("br").each(function () {
-				$(this).prepend(" //&nbsp;");
+				if (counter % 2 != 0) {
+					$(this).before(" //");
+				}
+				$(this).remove();
+				counter++;
 			});
-			//$tocClone.find("br").remove();
 			if($linkToTop.length === 1) {
 				var linkText = $linkToTop.text();
 				var idxMatched = linkText.search(/\u2014Back to ([^\u2014]+)\u2014/);
