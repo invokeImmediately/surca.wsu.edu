@@ -351,7 +351,7 @@ function isJQuery($obj) {
 			$tocClone.find("br").each(function () {
 				$(this).prepend(" //&nbsp;");
 			});
-			$tocClone.find("br").remove();
+			//$tocClone.find("br").remove();
 			if($linkToTop.length === 1) {
 				var linkText = $linkToTop.text();
 				var idxMatched = linkText.search(/\u2014Back to ([^\u2014]+)\u2014/);
