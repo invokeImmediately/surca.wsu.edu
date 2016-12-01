@@ -3966,6 +3966,7 @@ div.column dl.faq dt {
   width: calc(100% - 50px);
   padding: 5px 40px 5px 10px;
   margin: 5px 0;
+  border: 1px solid #afb5b7;
   background-color: #d7dadb;
   font-weight: bold;
   -webkit-transition: all 0.25s linear;
