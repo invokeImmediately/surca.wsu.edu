@@ -2301,6 +2301,9 @@ div.column p.vpue-jump-bar.floating br:first-of-type {
     -webkit-transform: translateX(-50%) translateY(-100%) translateY(20px);
     -moz-transform: translateX(-50%) translateY(-100%) translateY(20px);
     transform: translateX(-50%) translateY(-100%) translateY(20px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
   div.column p.vpue-jump-bar.floating:hover {
     -webkit-transform: translateX(-50%);
