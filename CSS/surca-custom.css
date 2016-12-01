@@ -6220,6 +6220,7 @@ div.column table.navigational-map td:nth-child(4n+3) {
     display: none;
   }
   div.column table.navigational-map th {
+    max-width: none;
     border: none;
     text-align: center;
     text-transform: none;
