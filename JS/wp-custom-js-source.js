@@ -348,7 +348,9 @@ function isJQuery($obj) {
 			var $tocClone = $toc.clone().addClass("floating").removeAttr("id").insertAfter($toc);
 			$tocClone.find("span.title + br").remove();
 			$tocClone.find("span.title").remove();
-			$tocClone.find("br").prepend(" //&nbsp;");
+			$tocClone.find("br").each(function () {
+				$(this).prepend(" //&nbsp;");
+			}
 			$tocClone.find("br").remove();
 			if($linkToTop.length === 1) {
 				var linkText = $linkToTop.text();
