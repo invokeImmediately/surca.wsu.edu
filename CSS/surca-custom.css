@@ -4058,7 +4058,7 @@ div.column dl.faq dt.activated:hover:after {
   border-bottom: 8px solid #fff;
   border-left: 8px solid transparent;
 }
-div.column dl.faq.blue {
+div.column dl.faq.blue dt {
   background-color: #d8ecf3;
   border-color: #9ed0e1;
 }
