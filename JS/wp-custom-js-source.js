@@ -350,7 +350,7 @@ function isJQuery($obj) {
 			$tocClone.find("span.title").remove();
 			var counter = 1;
 			$tocClone.find("br").each(function () {
-				if (counter % 2 != 0) {
+				if (counter % 2 == 0) {
 					$(this).before(" //");
 				}
 				$(this).remove();
