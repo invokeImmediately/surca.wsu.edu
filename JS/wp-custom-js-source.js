@@ -1022,7 +1022,7 @@
     | Highlight required INPUTS until a value has been properly entered                                  |
     \****************************************************************************************************/
     function checkRqrdInpts ($fields) {
-        if (isJQueryObj($fields)) {
+        if ($.isJQueryObj($fields)) {
             $fields.each(function () {
                 var $thisInput = $(this);
 				if ($thisInput.val() == "") {
@@ -1036,7 +1036,7 @@
     }
 	
     function hghlghtRqrdInpts ($fields) {
-        if (isJQueryObj($fields)) {
+        if ($.isJQueryObj($fields)) {
             $fields.each(function () {
                 var $thisInput = $(this);
 				$thisInput.blur(function () {
@@ -1055,7 +1055,7 @@
     | Highlight required CHECKBOXES until at least one has been checked                                  |
     \****************************************************************************************************/
     function checkRqrdChckbxs ($fields) {
-        if (isJQueryObj($fields)) {
+        if ($.isJQueryObj($fields)) {
             $fields.each(function () {
                 var $this = $(this);
                 var $inputs = $this.find("input");
@@ -1076,7 +1076,7 @@
 	}
 
     function hghlghtRqrdChckbxs ($fields) {
-        if (isJQueryObj($fields)) {
+        if ($.isJQueryObj($fields)) {
             $fields.each(function () {
                 var $this = $(this);
                 var $inputs = $this.find("input");
@@ -1120,7 +1120,7 @@
     | Highlight required RICH TEXT EDITOR containters until a value has been properly entered            |
     \****************************************************************************************************/
 	function hghlghtRqrdRchTxtEdtrs($fields) {
-        if (isJQueryObj($fields) && $fields.length > 0) {
+        if ($.isJQueryObj($fields) && $fields.length > 0) {
             $fields.each(function () {
 				var $edtrFrm = $(this).find("iframe");
 				$edtrFrm.each(function () {
@@ -1144,7 +1144,7 @@
     | Highlight required SELECTS until at least one has been checked                                     |
     \****************************************************************************************************/
     function hghlghtRqrdSelects ($fields) {
-        if (isJQueryObj($fields)) {
+        if ($.isJQueryObj($fields)) {
             $fields.each(function () {
                 var $thisInput = $(this);
 				var $childSlctdOptn = $thisInput.find("option:selected");
