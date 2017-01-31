@@ -547,7 +547,7 @@ div.column article.post + article.post {
  *     │ ++++ SECTION selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
  */
-section.column-one-with-bottom-margin > div.one {
+section.column-one-with-bottom-margin > .column.one {
   margin-bottom: 2rem;
 }
 section:not(.row).article-header {
