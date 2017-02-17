@@ -5063,14 +5063,14 @@ figure figcaption {
  *  │ Theme for WordPress.                                                                         │
  *  ├----------------------------------------------------------------------------------------------┤
  */
-div.column table.plain {
+.column table.plain {
   background: #fff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #5e6a71;
   border-bottom: 1px solid #5e6a71;
 }
-div.column table.plain thead tr th {
+.column table.plain thead tr th {
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
@@ -5078,7 +5078,7 @@ div.column table.plain thead tr th {
   border-bottom: 1px solid #B6BCBF;
   text-align: inherit;
 }
-div.column table.plain tbody tr td {
+.column table.plain tbody tr td {
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
@@ -5088,7 +5088,7 @@ div.column table.plain tbody tr td {
   text-align: inherit;
   vertical-align: top;
 }
-div.column table.plain tbody tr:nth-of-type(2n) td {
+.column table.plain tbody tr:nth-of-type(2n) td {
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
@@ -5098,14 +5098,14 @@ div.column table.plain tbody tr:nth-of-type(2n) td {
   text-align: inherit;
   vertical-align: top;
 }
-div.column table.peopleList {
+.column table.peopleList {
   width: 100%;
   background: #fff;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #e5e5e5;
 }
-div.column table.peopleList tbody td {
+.column table.peopleList tbody td {
   width: 80%;
   padding-bottom: 3pt;
   padding-top: 3pt;
@@ -5113,36 +5113,36 @@ div.column table.peopleList tbody td {
   vertical-align: middle;
   /* background: #c75d61; */
 }
-div.column table.peopleList tbody td:first-of-type {
+.column table.peopleList tbody td:first-of-type {
   width: 20%;
   text-align: center;
 }
-div.column table.wsu-blue-theme {
+.column table.wsu-blue-theme {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #3f6b72;
 }
-div.column table.wsu-blue-theme:not(.no-bottom-border) {
+.column table.wsu-blue-theme:not(.no-bottom-border) {
   border-bottom: 1px solid #3f6b72;
 }
 @media all and (min-width: 891px) {
-  div.column table.wsu-blue-theme {
+  .column table.wsu-blue-theme {
     font-size: 14px;
   }
 }
 @media all and (max-width: 890px) {
-  div.column table.wsu-blue-theme {
+  .column table.wsu-blue-theme {
     font-size: 12px;
   }
 }
-div.column table.wsu-blue-theme > thead > tr > th {
+.column table.wsu-blue-theme > thead > tr > th {
   padding: 3px;
   background-color: #2f5055;
   vertical-align: bottom;
   color: #fff;
 }
-div.column table.wsu-blue-theme > thead > tr.supra-header-row > th {
+.column table.wsu-blue-theme > thead > tr.supra-header-row > th {
   padding-top: 1em;
   padding-right: 0.5em;
   padding-left: 1.5em;
@@ -5153,7 +5153,7 @@ div.column table.wsu-blue-theme > thead > tr.supra-header-row > th {
   font-weight: bold;
   color: #fff;
 }
-div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) > td {
+.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -5163,7 +5163,7 @@ div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) >
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n + 1) > td {
+.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n + 1) > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -5173,7 +5173,7 @@ div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n + 
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr > td {
+.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -5183,7 +5183,7 @@ div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr > td {
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > td {
+.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > td {
   padding-top: 3px;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
@@ -5193,7 +5193,7 @@ div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > t
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-gray-theme {
+.column table.wsu-gray-theme {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -5202,22 +5202,22 @@ div.column table.wsu-gray-theme {
   vertical-align: top;
 }
 @media all and (min-width: 891px) {
-  div.column table.wsu-gray-theme {
+  .column table.wsu-gray-theme {
     font-size: 14px;
   }
 }
 @media all and (max-width: 890px) {
-  div.column table.wsu-gray-theme {
+  .column table.wsu-gray-theme {
     font-size: 12px;
   }
 }
-div.column table.wsu-gray-theme > thead > tr > th {
+.column table.wsu-gray-theme > thead > tr > th {
   padding: 3px;
   background-color: #5e6a71;
   vertical-align: top;
   color: #fff;
 }
-div.column table.wsu-gray-theme > thead > tr.sub-heading-row > th {
+.column table.wsu-gray-theme > thead > tr.sub-heading-row > th {
   padding: 3px;
   background-color: #000;
   vertical-align: bottom;
@@ -5225,13 +5225,13 @@ div.column table.wsu-gray-theme > thead > tr.sub-heading-row > th {
   font-weight: bold;
   color: #fff;
 }
-div.column table.wsu-gray-theme > tbody > tr:nth-child(2n) > td {
+.column table.wsu-gray-theme > tbody > tr:nth-child(2n) > td {
   padding: 3px;
   background-color: #fff;
   vertical-align: top;
   line-height: normal;
 }
-div.column table.wsu-gray-theme > tbody > tr:nth-child(2n + 1) > td {
+.column table.wsu-gray-theme > tbody > tr:nth-child(2n + 1) > td {
   padding: 3px;
   background-color: #d7dadb;
   vertical-align: top;
@@ -6794,7 +6794,7 @@ h3.drop-down-toggle:hover {
  *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.             ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-div.column table.navigational-map {
+.column table.navigational-map {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -6802,16 +6802,16 @@ div.column table.navigational-map {
   text-align: left;
   color: #981e32;
 }
-div.column table.navigational-map a {
+.column table.navigational-map a {
   border-bottom: 1px dotted rgba(152, 30, 50, 0);
   color: inherit;
   box-shadow: none;
 }
-div.column table.navigational-map th,
-div.column table.navigational-map td {
+.column table.navigational-map th,
+.column table.navigational-map td {
   max-width: 200px;
 }
-div.column table.navigational-map th {
+.column table.navigational-map th {
   border-bottom: 1px solid #b5babe;
   font-size: 1.1em;
   line-height: 1.275em;
@@ -6819,55 +6819,55 @@ div.column table.navigational-map th {
   text-transform: uppercase;
   vertical-align: bottom;
 }
-div.column table.navigational-map th.table-spacer {
+.column table.navigational-map th.table-spacer {
   width: 15px;
 }
-div.column table.navigational-map th:nth-child(4n+1) {
+.column table.navigational-map th:nth-child(4n+1) {
   color: #4e2a32;
 }
-div.column table.navigational-map th:nth-child(4n+1) a:hover {
+.column table.navigational-map th:nth-child(4n+1) a:hover {
   background-color: rgba(239, 120, 121, 0.2);
 }
-div.column table.navigational-map th:nth-child(4n+3) {
+.column table.navigational-map th:nth-child(4n+3) {
   color: #781d31;
 }
-div.column table.navigational-map th:nth-child(4n+3) a:hover {
+.column table.navigational-map th:nth-child(4n+3) a:hover {
   background-color: rgba(239, 120, 121, 0.3);
   color: #d13c59;
 }
-div.column table.navigational-map td p {
+.column table.navigational-map td p {
   padding-top: 2px;
   padding-bottom: 3px;
   font-size: inherit;
   text-align: inherit;
 }
-div.column table.navigational-map td p:not(:last-child) {
+.column table.navigational-map td p:not(:last-child) {
   margin-bottom: 0 !important;
   border-bottom: 1px solid #d7dadb;
 }
-div.column table.navigational-map td:nth-child(4n+3) {
+.column table.navigational-map td:nth-child(4n+3) {
   color: #c60c30;
 }
 @media screen and (max-width: 695px), screen and (min-width: 990px) and (max-width: 895px) {
-  div.column table.navigational-map {
+  .column table.navigational-map {
     display: block;
   }
-  div.column table.navigational-map thead,
-  div.column table.navigational-map tr,
-  div.column table.navigational-map th {
+  .column table.navigational-map thead,
+  .column table.navigational-map tr,
+  .column table.navigational-map th {
     display: block;
   }
-  div.column table.navigational-map tbody {
+  .column table.navigational-map tbody {
     display: none;
   }
-  div.column table.navigational-map th {
+  .column table.navigational-map th {
     max-width: none;
     border: none;
     text-align: center;
     text-transform: none;
   }
-  div.column table.navigational-map th.table-spacer,
-  div.column table.navigational-map th br {
+  .column table.navigational-map th.table-spacer,
+  .column table.navigational-map th br {
     display: none;
   }
 }
