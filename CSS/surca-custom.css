@@ -6805,6 +6805,7 @@ div.column table.navigational-map {
 div.column table.navigational-map a {
   border-bottom: 1px dotted rgba(152, 30, 50, 0);
   color: inherit;
+  box-shadow: none;
 }
 div.column table.navigational-map th,
 div.column table.navigational-map td {
