@@ -6751,6 +6751,7 @@ div.column ul li {
   border-radius: 10px;
   background-color: #edf3f4;
   box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
+  overflow: hidden;
 }
 #post-welcome-message:before {
   content: "";
