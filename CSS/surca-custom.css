@@ -6733,14 +6733,14 @@ div.column ul li {
  *  ║ after a slight delay. As the h1 fades away, a div element fades in to take its place.        ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-h1#welcome-message {
+#welcome-message {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-family: 'Open Sans Condensed';
   font-size: 5rem;
   text-align: center;
 }
-div#post-welcome-message {
+#post-welcome-message {
   display: none;
   position: relative;
   padding-right: 8px;
@@ -6752,7 +6752,7 @@ div#post-welcome-message {
   background-color: #edf3f4;
   box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
 }
-div#post-welcome-message:before {
+#post-welcome-message:before {
   content: "";
   position: absolute;
   top: 2px;
@@ -6763,7 +6763,7 @@ div#post-welcome-message:before {
   border-top-right-radius: 10px;
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 }
-div#post-welcome-message:after {
+#post-welcome-message:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -6774,7 +6774,7 @@ div#post-welcome-message:after {
   border-bottom-right-radius: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
 }
-div#post-welcome-message > h3 {
+#post-welcome-message > h3 {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
   font-family: 'Open Sans Condensed';
