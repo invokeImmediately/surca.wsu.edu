@@ -6741,7 +6741,7 @@ div.column ul li {
   text-align: center;
 }
 #post-welcome-message {
-  display: none !important;
+  display: none;
   position: relative;
   padding-right: 8px;
   padding-left: 8px;
