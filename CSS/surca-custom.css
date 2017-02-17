@@ -6752,6 +6752,7 @@ div.column ul li {
   background-color: #edf3f4;
   box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
   overflow: hidden;
+  opacity: 0;
 }
 #post-welcome-message:before {
   content: "";
@@ -6763,6 +6764,7 @@ div.column ul li {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+  opacity: inherit;
 }
 #post-welcome-message:after {
   content: "";
@@ -6774,6 +6776,7 @@ div.column ul li {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  opacity: inherit;
 }
 #post-welcome-message > h3 {
   margin-top: 0.75em;
@@ -6781,6 +6784,7 @@ div.column ul li {
   font-family: 'Open Sans Condensed';
   font-weight: bold;
   text-align: center;
+  opacity: inherit;
 }
 h3.drop-down-toggle {
   transition: all 0.3s ease;
