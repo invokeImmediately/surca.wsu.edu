@@ -4592,9 +4592,21 @@ div.recent-updates p.recent-update-3 {
  */
 /*     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
  */
-/*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
- *         │ ···· HYPERLINK elements contained within div.column elements ·························· │
- *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++++++ HYPERLINKS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     ├-------------------------------------------------------------------------------------------------┤
+ *     │ Rule-sets for styling hyperlink elements within OUE pages built using the WSU Spine theme for   │
+ *     │ WordPress.                                                                                      │
+ *     │  ╘═» This file assumes the following LESS files have been imported upstream:                    │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                            │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                         │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                 │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                │
+ *     ├-------------------------------------------------------------------------------------------------┤
+ */
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· HYPERLINK elements contained within .column classed elements ····················· │
+ *         └-----------------------------------------------------------------------------------------┘
  */
 .column a {
   border-bottom-right-radius: 0.25em;
@@ -4724,6 +4736,10 @@ div.recent-updates p.recent-update-3 {
 .gform_heading h3.gform_title > a:not(.stays-underlined):hover {
   background: transparent;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· CSS3-DRIVEN TOOLTIPS ····························································· │
+ *         └-----------------------------------------------------------------------------------------┘
+ */
 a.vpue-tooltip {
   position: relative;
   border-bottom: dotted 1px #b67233;
@@ -4804,6 +4820,12 @@ a.vpue-tooltip span b {
   border-top: 1px solid #925b29;
   border-right: 1px solid #925b29;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· INCLUSIONAL MIXINS ······························································· │
+ *         └-----------------------------------------------------------------------------------------┘
+ */
+/*     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 strong.opening-line {
   font-size: 1.0625em;
   color: #72652a;
@@ -5057,13 +5079,17 @@ figure figcaption {
   font-size: 0.85em;
   text-align: center;
 }
-/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
- *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *  │ ++++++++ TABLES     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *  ├----------------------------------------------------------------------------------------------┤
- *  │ Styling for tables intended as children of div.column elements as defined in the WSU Spine   │
- *  │ Theme for WordPress.                                                                         │
- *  ├----------------------------------------------------------------------------------------------┤
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++++++ TABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     ├-------------------------------------------------------------------------------------------------┤
+ *     │ Rule-sets for styling table elements within OUE pages built using the WSU Spine theme for       │
+ *     │ WordPress.                                                                                      │
+ *     │  ╘═» This file assumes the following LESS files have been imported upstream:                    │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                            │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                         │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                 │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                │
+ *     ├-------------------------------------------------------------------------------------------------┤
  */
 .column table.plain {
   background: #fff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
@@ -5239,6 +5265,10 @@ figure figcaption {
   vertical-align: top;
   line-height: normal;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· INCLUSIONAL MIXINS ······························································· │
+ *         └-----------------------------------------------------------------------------------------┘
+ */
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
