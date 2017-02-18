@@ -258,14 +258,14 @@ div.column ul li { list-style-image: url(/wp-content/uploads/sites/706/2015/12/i
  *  ║ after a slight delay. As the h1 fades away, a div element fades in to take its place.        ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-h1#welcome-message {
+#welcome-message {
     margin-top: 2rem;
      margin-bottom: 2rem;
     font-family: 'Open Sans Condensed';
     font-size: 5rem;
     text-align: center;
 }
-div#post-welcome-message {
+#post-welcome-message {
     display: none;
 	position: relative;
     padding-right: 8px;
@@ -276,6 +276,7 @@ div#post-welcome-message {
 	border-radius: 10px;
     background-color: #edf3f4;
     box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
+	overflow: hidden;
 	&:before {
 		content: "";
 		position: absolute;
@@ -285,7 +286,7 @@ div#post-welcome-message {
 		height: 30px;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.1));		
+		background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.1));
 	}
 	&:after {
 		content: "";
