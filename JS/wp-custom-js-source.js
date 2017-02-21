@@ -1814,7 +1814,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			var noticeExpiration = $pageNotice.data("noticeExpiresAfter");
 			if (noticeExpiration) {
 				var expirationDate = new Date(noticeExpiration);
-				if (rightNow.getTime() > cookieExpiration.getTime()) {
+				if (rightNow.getTime() > expirationDate.getTime()) {
 					noticeNowExpired = true;
 				}
 			}
