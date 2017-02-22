@@ -230,8 +230,20 @@ section.article-notice {
             letter-spacing: 0.5px;
             color: @hex-darker-gray;
             .rgb-white(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
-            &:first-child { padding-top: @v-btm-pads; } // Use same amount of top padding as that typically used for bottom of paragraph.
         }
+		& > :first-child {
+			padding-top: @v-btm-pads !important;
+			@media all and (max-width: @v-rghtclmn-thrshld) {
+				padding-top: (@v-btm-pads / 3) !important;
+			}
+		}
+		& > :last-child {
+			padding-bottom: @v-btm-pads !important;
+			margin-bottom: 0 !important;
+			@media all and (max-width: @v-rghtclmn-thrshld) {
+				padding-bottom: (@v-btm-pads / 3) !important;
+			}
+		}
     }
     &.ruby div.column {
         background: @hex-light-crimson url("/@{url-ruby-texture}") no-repeat scroll left top;
@@ -316,6 +328,22 @@ h3.drop-down-toggle {
     &:hover {
         color: @hex-light-crimson;
     }
+}
+
+.abstract-submission-reminder {
+	p {
+		padding-left: 2rem;
+		padding-right: 2rem;
+		@media all and (max-width: @v-lg-mbl-thrshld) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+	img {
+		@media all and (max-width: @v-lg-mbl-thrshld) {
+			width: 64px;
+		}
+	}
 }
 
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
