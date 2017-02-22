@@ -7035,8 +7035,25 @@ section.article-notice div.column>p {
 	text-shadow: 0 1px 1px rgba(255,255,255,.5);
 }
 
-section.article-notice div.column>p:first-child {
-	padding-top: 1rem;
+section.article-notice div.column>:first-child {
+	padding-top: 1rem !important;
+}
+
+@media all and (max-width:693px) {
+	section.article-notice div.column>:first-child {
+		padding-top: .33333333rem !important;
+	}
+}
+
+section.article-notice div.column>:last-child {
+	padding-bottom: 1rem !important;
+	margin-bottom: 0 !important;
+}
+
+@media all and (max-width:693px) {
+	section.article-notice div.column>:last-child {
+		padding-bottom: .33333333rem !important;
+	}
 }
 
 section.article-notice.ruby div.column {
