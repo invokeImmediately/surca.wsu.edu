@@ -4503,11 +4503,19 @@ div.page-covering-notice-js {
 	text-align: center;
 }
 
+div.page-covering-notice-js.left-aligned {
+	text-align: left;
+}
+
 div.page-covering-notice-js div.notice-content {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	text-align: center;
+	width: 100%;
+	padding: 2rem;
+	text-align: inherit;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
 
@@ -4517,12 +4525,18 @@ div.page-covering-notice-js div.notice-content img {
 
 div.page-covering-notice-js div.notice-content p {
 	font-size: 2rem !important;
-	line-height: 1.35em !important;
+	line-height: 1.275em !important;
 	text-align: inherit !important;
 }
 
+@media all and (max-width:480px) {
+	div.page-covering-notice-js div.notice-content p {
+		font-size: 1rem !important;
+	}
+}
+
 div.page-covering-notice-js div.notice-content p+p {
-	margin-top: 2.7rem !important;
+	margin-top: 1em !important;
 }
 
 div.recent-updates {
@@ -7101,6 +7115,24 @@ h3.drop-down-toggle {
 
 h3.drop-down-toggle:hover {
 	color: #c60c30;
+}
+
+.abstract-submission-reminder p {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+@media all and (max-width:480px) {
+	.abstract-submission-reminder p {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+@media all and (max-width:480px) {
+	.abstract-submission-reminder img {
+		width: 64px;
+	}
 }
 
 .column table.navigational-map {
