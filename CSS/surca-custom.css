@@ -2501,6 +2501,11 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 .column p.vpue-jump-bar.floating br:first-of-type {
   display: none;
 }
+@media all and (min-width: 481px) {
+  body.admin-bar .column p.vpue-jump-bar.floating {
+    top: 32px;
+  }
+}
 @media all and (max-width: 480px) {
   .column p.vpue-jump-bar.floating {
     padding-bottom: calc( 0.75rem  + 5px);
