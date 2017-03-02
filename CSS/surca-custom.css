@@ -5278,6 +5278,9 @@ figure figcaption {
   vertical-align: top;
   line-height: normal;
 }
+.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr.alt > td {
+  background-color: #f2f2f2;
+}
 .column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > td {
   padding-top: 3px;
   padding-right: 0.5em;
@@ -5287,6 +5290,9 @@ figure figcaption {
   text-indent: -1em;
   vertical-align: top;
   line-height: normal;
+}
+.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr.alt > td {
+  background-color: #c3d6d9;
 }
 .column table.wsu-gray-theme {
   width: 100%;
