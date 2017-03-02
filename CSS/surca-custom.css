@@ -2504,9 +2504,9 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all and (max-width: 480px) {
   .column p.vpue-jump-bar.floating {
     padding-bottom: calc( 0.75rem  + 5px);
-    -webkit-transform: translateX(-50%) translateY(-100%) translateY(20px);
-    -moz-transform: translateX(-50%) translateY(-100%) translateY(20px);
-    transform: translateX(-50%) translateY(-100%) translateY(20px);
+    -webkit-transform: translateX(-50%) translateY(-100%) translateY(15px);
+    -moz-transform: translateX(-50%) translateY(-100%) translateY(15px);
+    transform: translateX(-50%) translateY(-100%) translateY(15px);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -2522,9 +2522,9 @@ p.article-tagline:not(.has-no-bordering).alt:after {
     border-right: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid transparent;
-    -webkit-transform: translate(-50%, 50%) translateY(-2px);
-    -moz-transform: translate(-50%, 50%) translateY(-2px);
-    transform: translate(-50%, 50%) translateY(-2px);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
   }
   .column p.vpue-jump-bar.floating:hover {
     -webkit-transform: translateX(-50%);
@@ -2536,6 +2536,9 @@ p.article-tagline:not(.has-no-bordering).alt:after {
     border-right: 5px solid transparent;
     border-bottom: 5px solid #2a3033;
     border-left: 5px solid transparent;
+    -webkit-transform: translate(-50%, -5px);
+    -moz-transform: translate(-50%, -5px);
+    transform: translate(-50%, -5px);
   }
 }
 @media all {
