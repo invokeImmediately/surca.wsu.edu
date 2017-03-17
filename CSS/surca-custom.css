@@ -6932,7 +6932,7 @@ section.article-notice.ruby div.column > p {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### LIST STYLES ########################################################################### ║
+ *  ║ #### SURCA LIST STYLES ##################################################################### ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
  *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
@@ -6940,6 +6940,16 @@ section.article-notice.ruby div.column > p {
  */
 div.column ul li {
   list-style-image: url(/wp-content/uploads/sites/706/2015/12/ico-cougar-bullet-point.png);
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SURCA IFRAME STYLES ################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+.column .pdf-wrapper.landscape.live-stream {
+  padding-bottom: 56.206089%;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SURCA WELCOME MESSAGE ################################################################# ║
