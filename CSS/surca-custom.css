@@ -569,6 +569,9 @@ section:not(.row).article-header {
   margin-bottom: 1rem;
   background-size: auto 100% !important;
 }
+body.blog section:not(.row).article-header {
+  margin-bottom: 0;
+}
 section:not(.row).article-header .header-content {
   position: relative;
   top: 50%;
