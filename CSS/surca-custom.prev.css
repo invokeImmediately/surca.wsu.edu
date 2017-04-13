@@ -7175,12 +7175,32 @@ section.article-notice.ruby div.column>p {
 	text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 
-div.column ul li {
+.column ul li {
 	list-style-image: url(/wp-content/uploads/sites/706/2015/12/ico-cougar-bullet-point.png);
 }
 
 .column .pdf-wrapper.landscape.live-stream {
 	padding-bottom: 56.206089%;
+}
+
+.column table.award-winners {
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+}
+
+.column table.award-winners td {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+
+.column table.award-winners tr.gray {
+	background-color: #e1e1e1;
+}
+
+.column table.award-winners tr.gray td {
+	background-color: inherit;
 }
 
 #welcome-message {
