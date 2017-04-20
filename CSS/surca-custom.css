@@ -613,18 +613,18 @@ div.column article.post {
 div.column article.post + article.post {
   margin-top: 1.5em;
 }
-/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
- *     │ ++++++++ SECTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *     ├-------------------------------------------------------------------------------------------------┤
- *     │ Rule-sets for styling section elements within OUE pages built using the WSU Spine theme for     │
- *     │ WordPress.                                                                                      │
- *     │  ╘═» This file assumes the following LESS files have been imported upstream:                    │
- *     │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                            │
- *     │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                         │
- *     │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                 │
- *     │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                │
- *     ├-------------------------------------------------------------------------------------------------┤
- */
+/*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*    │ ++++++++ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*    ├------------------------------------------------------------------------------------------------------------------┤
+*    │ Rule-sets for styling section elements within OUE pages built using the Builder template within the Spine theme  │
+*    │ for WordPress.                                                                                                   │
+*    │  ╘═» This file assumes the following LESS files have been imported upstream:                                     │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                                             │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                                          │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                                  │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                                 │
+*    ├------------------------------------------------------------------------------------------------------------------┤
+*/
 section.column-one-with-bottom-margin > .column.one {
   margin-bottom: 2rem;
 }
@@ -1136,8 +1136,8 @@ main section.row > .column table > tbody > tr > td > div > ol:last-child {
  *         │ ···· LINKED COLUMNS content group ····················································· │
  *         └-----------------------------------------------------------------------------------------┘
  */
-/*     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
- */
+/*!  └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -5412,8 +5412,9 @@ figure figcaption {
   color: #fff;
 }
 .column table.wsu-blue-theme > thead > tr.supra-header-row > th {
-  padding-top: 1em;
+  padding-top: 0.6em;
   padding-right: 0.5em;
+  padding-bottom: 0.4em;
   padding-left: 1.5em;
   background-color: #203639;
   vertical-align: bottom;
@@ -5421,6 +5422,7 @@ figure figcaption {
   font-variant: small-caps;
   font-weight: bold;
   color: #fff;
+  font-size: 1.4em;
 }
 .column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) > td {
   padding-top: 3px;
