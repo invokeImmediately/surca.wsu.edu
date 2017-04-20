@@ -481,10 +481,10 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
     border-color: rgba(141, 203, 241, 0.5);
   }
 }
-:target {
+:target:not(.no-anchor-highlighting) {
   position: relative;
 }
-:target:before {
+:target:not(.no-anchor-highlighting):before {
   content: "";
   position: absolute;
   top: -1rem;
@@ -594,7 +594,7 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
     border-color: rgba(219, 120, 121, 0);
   }
 }
-.row:not(.clear-none):target:before {
+.row:not(.clear-none):target:not(.no-anchor-highlighting):before {
   content: "";
   width: auto;
   height: auto;
