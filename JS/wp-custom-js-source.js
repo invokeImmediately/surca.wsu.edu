@@ -610,9 +610,11 @@
     function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
 		var $toggles =  $(slctrToggle);
 		$toggles.attr("tabindex", 0);
+		$toggles.addClass("no-anchor-highlighting");
 		effectDropDownTogglePermanence($toggles, slctrWhatsToggled, activatingClass, animDuration);
         $toggles.click(function () {
             var $this = $(this);
+			$this.blur();
             $this.toggleClass(activatingClass);
             $this.next(slctrWhatsToggled).toggle(animDuration);
 			setupDropDownTogglePermanence($this, activatingClass);
