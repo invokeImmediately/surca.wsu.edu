@@ -6140,6 +6140,7 @@ div.read-more-target {
 }
 .drop-down-toggle.boxed.blue {
   background-color: rgba(0, 165, 189, 0.1);
+  color: #0076bd;
 }
 .drop-down-toggle.boxed.blue:after,
 .drop-down-toggle.boxed.blue:before {
