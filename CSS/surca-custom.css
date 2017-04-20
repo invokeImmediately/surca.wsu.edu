@@ -6138,6 +6138,31 @@ div.read-more-target {
 .drop-down-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed {
   margin-top: 0.5rem;
 }
+.drop-down-toggle.boxed.blue {
+  background-color: rgba(0, 165, 189, 0.1);
+}
+.drop-down-toggle.boxed.blue:after,
+.drop-down-toggle.boxed.blue:before {
+  background-color: #0076bd;
+}
+.drop-down-toggle.boxed.blue:hover {
+  background-color: rgba(0, 165, 189, 0.3);
+}
+.drop-down-toggle.boxed.blue:hover:after,
+.drop-down-toggle.boxed.blue:hover:before {
+  background-color: #449bcf;
+}
+.drop-down-toggle.boxed.blue.activated {
+  background-color: rgba(0, 165, 189, 0.2);
+}
+.drop-down-toggle.boxed.blue.activated:hover {
+  background-color: rgba(0, 165, 189, 0.3);
+}
+.drop-down-toggle.boxed.blue + .toggled-panel {
+  border-right: 1px solid rgba(0, 165, 189, 0.2);
+  border-bottom: 1px solid rgba(0, 165, 189, 0.2);
+  border-left: 1px solid rgba(0, 165, 189, 0.2);
+}
 .flipped-content-back {
   display: none;
   width: 100%;
