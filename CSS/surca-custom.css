@@ -1942,7 +1942,8 @@ body.blog .article-summary aside {
 }
 .column h2:first-child,
 .column header:first-child + h2,
-.column header:first-child + h2.fancy.with-top-border:not(:first-child) {
+.column header:first-child + h2.fancy.with-top-border:not(:first-child),
+.column header:first-child + h2.solid:not(:first-child) {
   margin-top: 0;
 }
 .column h1 + h2 {
@@ -2080,6 +2081,7 @@ h2.article-title a {
 .column h3:first-child,
 .column header:first-child + h3,
 .column header:first-child + h3.fancy.with-top-border:not(:first-child),
+.column header:first-child + h3.solid:not(:first-child),
 .column hr:not(.subSection) + h3,
 .gform_heading h3.gform_title:first-child {
   margin-top: 0;
