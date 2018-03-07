@@ -1942,8 +1942,7 @@ body.blog .article-summary aside {
 }
 .column h2:first-child,
 .column header:first-child + h2,
-.column header:first-child + h2.fancy.with-top-border:not(:first-child),
-.column header:first-child + h2.solid:not(:first-child) {
+.column header:first-child + h2.fancy.with-top-border:not(:first-child) {
   margin-top: 0;
 }
 .column h1 + h2 {
@@ -2081,7 +2080,6 @@ h2.article-title a {
 .column h3:first-child,
 .column header:first-child + h3,
 .column header:first-child + h3.fancy.with-top-border:not(:first-child),
-.column header:first-child + h3.solid:not(:first-child),
 .column hr:not(.subSection) + h3,
 .gform_heading h3.gform_title:first-child {
   margin-top: 0;
@@ -8119,6 +8117,10 @@ h3.drop-down-toggle:hover {
   }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ANNOUNCEMENTS ######################################################################### ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CUSTOM layouts ######################################################################## ║
  *  ╠==============================================================================================╣
  *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.   ║
@@ -8200,4 +8202,57 @@ h3.drop-down-toggle:hover {
   .column table.navigational-map th br {
     display: none;
   }
+}
+.column p.notice {
+  position: relative;
+  width: 80%;
+  width: calc(90% - 2 * 1rem - 32px);
+  padding: 1rem;
+  padding-right: calc(1rem + 32px);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(198, 12, 48, 0.2);
+  border-radius: 10px;
+}
+.column p.notice:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: rgba(152, 30, 50, 0.3333) url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png) 4px 1rem no-repeat;
+}
+.column p.notice.linked a {
+  display: none;
+}
+.column p.notice.linked a:first-of-type {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: none;
+  border-radius: 10px;
+  background-blend-mode: multiply;
+  color: transparent;
+  box-shadow: none;
+  z-index: 1;
+}
+.column p.notice.linked a:first-of-type:hover {
+  background-color: rgba(255, 255, 255, 0.33);
+  text-shadow: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.column p.notice.linked .hyperlink-simulator {
+  border-bottom-right-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+  border-bottom: 0.0625em solid #981e32;
+  box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
+  color: #981e32;
 }
