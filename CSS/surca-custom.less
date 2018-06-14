@@ -1,24 +1,25 @@
 @grid-behavior: "hybrid";
+@oue-rules-wrapper: ~"";
+
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
- *  ║ #### SURCA-SPECIFIC LESS VARIABLES ######################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+*** ║ #### SURCA-SPECIFIC LESS VARIABLES ######################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 @url-gold-texture: "wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png";
 @url-ruby-texture: "wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png";
 @url-sandstone-texture: "wp-content/uploads/sites/706/2016/03/texture_sandstone.png";
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 body {
-    /* REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should 
-     * disappear when the screen is narrow enough.
-     * background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) 
-     *	left top fixed repeat;
-     */
+    // REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should 
+    // disappear when the screen is narrow enough.
+    // background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) 
+    //	left top fixed repeat;
     background: @hex-bright-gray;
     font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
@@ -54,13 +55,13 @@ header.main-header {
     color: #fff !important;
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SECTION HEADERS ####################################################################### ║
- *  ╠==============================================================================================╣
- *  ║ Style definitions of unique banner headers that serve to visually distinguish each grouping  ║
- *  ║ of pages on the SURCA website.                                                               ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SECTION HEADERS ####################################################################### ║
+*** ╠==============================================================================================╣
+*** ║ Style definitions of unique banner headers that serve to visually distinguish each grouping  ║
+*** ║ of pages on the SURCA website.                                                               ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 div.column {
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 	section {
@@ -98,12 +99,12 @@ div.column {
     }
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA SIDEBARS #########################################################################║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA SIDEBARS #########################################################################║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 // TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
-// TODO: Pull these classes into an imported *.LESS file ■
+// TODO: Pull these classes into an imported**.LESS file ■
 div.green-marble-sidebar {
 	padding-top: 2rem;
 	 padding-right: 2rem;
@@ -169,10 +170,10 @@ div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-side
 	}*/
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 div.column {
 	aside.article-sidebar {
 		float: right;
@@ -207,7 +208,7 @@ div.column {
 section {
     &.side-right.large-format-friendly, &.row.side-right.large-format-friendly {
         @media all {
-            @media (min-width: (@v-lrgfrmt-thrshld + 1)) {
+            @media (min-width: (@large-format-threshold + 1)) {
                 div.column.two:before {
                     background: @hex-lighter-gray url("/@{url-sandstone-texture}");
                 }
@@ -229,21 +230,21 @@ section {
         color: @hex-darker-gray;
         & > p {
             &:extend(.has-alt-font);
-            font-size: (@v-p-sz * @v-scl-up  * @v-scl-up);
+            font-size: (@v-p-sz***@v-scl-up ***@v-scl-up);
             letter-spacing: 0.5px;
             color: @hex-darker-gray;
             .rgb-white(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
         }
 		& > :first-child {
 			padding-top: @v-btm-pads !important;
-			@media all and (max-width: @v-rghtclmn-thrshld) {
+			@media all and (max-width: @column-floating-threshold) {
 				padding-top: (@v-btm-pads / 3) !important;
 			}
 		}
 		& > :last-child {
 			padding-bottom: @v-btm-pads !important;
 			margin-bottom: 0 !important;
-			@media all and (max-width: @v-rghtclmn-thrshld) {
+			@media all and (max-width: @column-floating-threshold) {
 				padding-bottom: (@v-btm-pads / 3) !important;
 			}
 		}
@@ -260,28 +261,28 @@ section {
 	}
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA LIST STYLES ##################################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA LIST STYLES ##################################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 .column ul li {
 	list-style-image: url(/wp-content/uploads/sites/706/2015/12/
 		ico-cougar-bullet-point.png);
 }
 
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA IFRAME STYLES ################################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA IFRAME STYLES ################################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 .column .pdf-wrapper.landscape.live-stream {
 	padding-bottom: 56.206089%;
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA TABLE STYLES #################################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA TABLE STYLES #################################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 .column table.award-winners {
 	width: 100%;
 	text-align: center;
@@ -299,13 +300,13 @@ section {
 	}
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA WELCOME MESSAGE ################################################################# ║
- *  ╠==============================================================================================╣
- *  ║ The SURCA website displays an h1 element as a welcome message that automatically fades out   ║
- *  ║ after a slight delay. As the h1 fades away, a div element fades in to take its place.        ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### SURCA WELCOME MESSAGE ################################################################# ║
+*** ╠==============================================================================================╣
+*** ║ The SURCA website displays an h1 element as a welcome message that automatically fades out   ║
+*** ║ after a slight delay. As the h1 fades away, a div element fades in to take its place.        ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 #welcome-message {
     margin-top: 2rem;
      margin-bottom: 2rem;
@@ -370,33 +371,33 @@ h3.drop-down-toggle {
 	p {
 		padding-left: 2rem;
 		padding-right: 2rem;
-		@media all and (max-width: @v-lg-mbl-thrshld) {
+		@media all and (max-width: @large-mobile-screen-width) {
 			padding-left: 1rem;
 			padding-right: 1rem;
 		}
 	}
 	img {
-		@media all and (max-width: @v-lg-mbl-thrshld) {
+		@media all and (max-width: @large-mobile-screen-width) {
 			width: 64px;
 		}
 	}
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ANNOUNCEMENTS ######################################################################### ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### ANNOUNCEMENTS ######################################################################### ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 // #announcement {
 // 	@media all {
 // 		@media (min-width: )
 // 	}
 // }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### CUSTOM layouts ######################################################################## ║
- *  ╠==============================================================================================╣
- *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.   ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/** ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*** ║ #### CUSTOM layouts ######################################################################## ║
+*** ╠==============================================================================================╣
+*** ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.   ║
+*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+**/
 .use-navigational-map-tables();
 .use-paragraph-notices(url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png));
