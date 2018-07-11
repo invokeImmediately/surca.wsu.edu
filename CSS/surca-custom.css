@@ -8526,7 +8526,8 @@ div.auto-scroller ul li {
 ***   §10: Drop down toggles..................................................................394
 ***   §11: Abstract submission reminder.......................................................408
 ***   §12: Announcements......................................................................428
-***   §13: Included optional layouts..........................................................438
+***   §13: Banner slideshows..................................................................438
+***   §14: Included optional layouts..........................................................438
 ***   ───────────────────────────────────────────────────────────────────────────────────────────
 **/
 /** ================================================================================================
@@ -8862,7 +8863,18 @@ h3.drop-down-toggle:hover {
 *** §12: Announcements
 **/
 /** ================================================================================================
-*** §13: Included optional layouts
+*** §13: Banner slideshows
+**/
+.column .builder-banner-inner-content,
+.column .builder-banner-content:hover > div.builder-banner-inner-content {
+  background-color: transparent;
+}
+.builder-section-banner .cycle-prev:before,
+.builder-section-banner .cycle-next:before {
+  color: #000;
+}
+/** ================================================================================================
+*** §14: Included optional layouts
 **/
 .column table.navigational-map {
   width: 100%;
