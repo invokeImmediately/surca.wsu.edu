@@ -60,7 +60,7 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jQuery.cookieObjs.js',
 			'./WSU-UE---JS/jquery.media.js',
 			'../jQuery.countdown/dist/jquery.countdown.min.js',
-			'./WSU-UE---JS/jQuery.countdown-custom.js'
+			'./WSU-UE---JS/jQuery.countdown-custom.js',
 			'../imagesloaded/imagesloaded.pkgd.min.js',
 			'../masonry/dist/masonry.pkgd.min.js',
 			'./WSU-UE---JS/jQuery.masonry-custom.js',
@@ -70,7 +70,7 @@ function getJsBuildSettings() {
 		compiledJsFileName: 'surca-build.js',
 		destFolder: './JS/',
 		minJsFileExtension: '.min.js',
-		replaceCallback: fixFileHeaderComments
+		replaceCallback: gulpBuilder.fixFileHeaderComments
 	};
 }
 
