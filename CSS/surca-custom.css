@@ -8462,10 +8462,6 @@ h3.drop-down-toggle:hover {
 .column .builder-banner-content:hover > div.builder-banner-inner-content {
   background-color: transparent;
 }
-.builder-section-banner .cycle-prev:before,
-.builder-section-banner .cycle-next:before {
-  color: #000;
-}
 .column table.navigational-map {
   width: 100%;
   margin: 0 auto;
