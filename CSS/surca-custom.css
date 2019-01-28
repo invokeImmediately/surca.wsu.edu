@@ -1,20 +1,33 @@
 /*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/surca.wsu.edu] for a repository of source code. */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif');
 /*! ================================================================================================
-*** MASTER STYLE SHEET for WSU Office of Undergraduate Education (OUE) Websites
+*** Styles common to all WSU Office of Undergraduate Education (OUE) websites
 *** ================================================================================================
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
-***
-***   SUMMARY: CSS code built from precompiled CSS that was written in the Less language extension
-***     of CSS.
+***   SUMMARY: CSS code designed for use on all OUE websites that was built from precompiled CSS
+**     written in the Less language extension of CSS.
 ***
 ***   DESCRIPTION: Intended for use with all WSUWP websites associated with the WSU Office of 
 ***     Undergraduate Education, a unit within the Office of the Provost. (Please see 
 ***     https://web.wsu.edu and https://vpue.wsu.edu/oue for more information.) It is designed to 
-***     be applied via the WSUWP CSS Stylesheet Editor functioning in in add-on mode.
+***     be applied via the WSUWP CSS Stylesheet Editor functioning in add-on mode.
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
 ***
 ***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
 ***     (Please see above git repository for fully documented, precompiled source code.)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 .has-dflt-font,
@@ -8160,9 +8173,30 @@ div.auto-scroller ul li {
 .bgc--orange--tint {
   background-color: #feefe2;
 }
-/*! ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
-*** ║ #### SURCA-SPECIFIC STYLE RULES ############################################################ ║
-*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/*! ================================================================================================
+*** Styles specific to the WSU SURCA website
+*** ================================================================================================
+***   SUMMARY: CSS code designed for use on the SURCA website that was built from precompiled CSS
+**     written in the Less language extension of CSS.
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
+***     (Please see above git repository for fully documented, precompiled source code.)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
 **/
 body {
   background: #eff0f1;
@@ -8210,82 +8244,6 @@ div.column section.header-judges {
 div.column section.header-pastEvents {
   background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
 }
-div.green-marble-sidebar {
-  padding-top: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2em;
-  padding-left: 1rem;
-  margin-right: 10px;
-  background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/
-		seamless-marble-texture_528x528.png) left top repeat;
-  border: 1px solid #afa370;
-  box-shadow: 3px 3px 3px rgba(57, 50, 21, 0.3333);
-  font-size: 0.9em;
-  color: #2a3033;
-}
-div.bluish-gray-acrylic-sidebar {
-  background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/
-		vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-  background-size: 100% auto;
-  border: 1px solid #464e54;
-  box-shadow: 3px 3px 3px rgba(42, 48, 51, 0.3333);
-  color: #2a3033;
-  font-size: 0.9em;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-}
-div.gray-acrylic-sidebar {
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1em;
-  padding-left: 1rem;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  background: #fff url(/wp-content/uploads/sites/51/2015/04/
-		vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-  background-size: 100% auto;
-  border: 1px solid #464e54;
-  box-shadow: 3px 3px 3px rgba(42, 48, 51, 0.3333);
-  font-size: 0.9em;
-  color: #2a3033;
-}
-div.bluish-gray-acrylic-sidebar,
-div.green-marble-sidebar,
-div.gray-acrylic-sidebar {
-  /*div.bluish-gray-acrylic-sidebar p~hr {
-		margin-top: 0;
-	}*/
-}
-div.bluish-gray-acrylic-sidebar p,
-div.green-marble-sidebar p,
-div.gray-acrylic-sidebar p {
-  font-size: 0.75rem;
-}
-div.bluish-gray-acrylic-sidebar h2,
-div.green-marble-sidebar h2,
-div.gray-acrylic-sidebar h2 {
-  margin-bottom: 0;
-}
-div.bluish-gray-acrylic-sidebar h2 + hr,
-div.green-marble-sidebar h2 + hr,
-div.gray-acrylic-sidebar h2 + hr {
-  margin-top: 0;
-  background-color: rgba(70, 78, 84, 0.75);
-}
-div.bluish-gray-acrylic-sidebar h3,
-div.green-marble-sidebar h3,
-div.gray-acrylic-sidebar h3 {
-  font-size: 1.275rem;
-}
-div.bluish-gray-acrylic-sidebar h4,
-div.green-marble-sidebar h4,
-div.gray-acrylic-sidebar h4 {
-  font-size: 1.05rem;
-}
 div.column aside.article-sidebar,
 div.column aside.important-reminder {
   float: right;
@@ -8303,7 +8261,7 @@ div.column aside.important-reminder {
 div.column aside.important-reminder {
   border: 1px solid #f77891;
   background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/
-        	tileable-concrete-texture_128x128.png) left top repeat;
+			tileable-concrete-texture_128x128.png) left top repeat;
   box-shadow: 1px 1px 2px rgba(247, 120, 145, 0.5);
 }
 div.column aside.important-reminder p {
@@ -8313,27 +8271,21 @@ div.column aside.important-reminder p {
 div.column aside.important-reminder p:last-child {
   padding-bottom: 0;
 }
-@media all and (min-width: 1051px) {
-  section.side-right.large-format-friendly div.column.two:before,
-  section.row.side-right.large-format-friendly div.column.two:before {
-    background: #d7dadb url("/wp-content/uploads/sites/706/2016/03/texture_sandstone.png");
-  }
-}
 .row.article-notice.has-countdown {
   display: none;
 }
 .row.article-notice .column {
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
   background: #e9c024 url("/wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png") no-repeat scroll left top;
   background-size: cover;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   color: #464e54;
 }
 .row.article-notice .column > p {
+  color: #464e54;
   font-size: 1.13656512em;
   letter-spacing: 0.5px;
-  color: #464e54;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 .row.article-notice .column > :first-child {
@@ -8370,14 +8322,14 @@ div.column aside.important-reminder p:last-child {
   padding-bottom: 56.206089%;
 }
 .column table.award-winners {
-  width: 100%;
   text-align: center;
   vertical-align: top;
+  width: 100%;
 }
 .column table.award-winners td {
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  padding-bottom: 5px;
 }
 .column table.award-winners tr.gray {
   background-color: #e1e1e1;
@@ -8386,26 +8338,26 @@ div.column aside.important-reminder p:last-child {
   background-color: inherit;
 }
 #welcome-message {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   font-family: 'Open Sans Condensed';
   font-size: 5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   text-align: center;
 }
 #post-welcome-message {
-  display: none;
-  position: relative;
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  background-color: #edf3f4;
   border: 1px solid #aec7cb;
   border-radius: 10px;
-  background-color: #edf3f4;
   box-shadow: 2px 2px 4px rgba(63, 107, 114, 0.5);
+  display: none;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
 }
-#post-welcome-message:before {
+#post-welcome-message::before {
   content: "";
   position: absolute;
   top: 2px;
@@ -8416,7 +8368,7 @@ div.column aside.important-reminder p:last-child {
   border-top-right-radius: 10px;
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 }
-#post-welcome-message:after {
+#post-welcome-message::after {
   content: "";
   position: absolute;
   bottom: 0;
