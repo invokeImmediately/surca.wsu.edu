@@ -1,11 +1,7 @@
 /** ┌────────────────────────────────────────────────────────────────────────────────────────────┐
-*** │ FILENAME: article.less                                                                     │
+*** │ FILENAME: surca-custom.less                                                                │
 *** │                                                                                            │
-*** │ AUTHOR: Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)         │
-*** │                                                                                            │
-*** │ DESCRIPTION: Consists of styles for section elements of WSU Office of Undergraduate        │
-*** │   Education web pages built using the builder template of the Spine parent theme of WSUWP. │
-*** │   Styles are designed to accompany or supersede styling associated with the theme.         │
+*** │ See persistent comment below for additional information and license.                       │
 *** └────────────────────────────────────────────────────────────────────────────────────────────┘
 **/
 
@@ -14,28 +10,48 @@
 
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
-/*! ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
-*** ║ #### SURCA-SPECIFIC STYLE RULES ############################################################ ║
-*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/*! ================================================================================================
+*** Styles specific to the WSU SURCA website
+*** ================================================================================================
+***   SUMMARY: CSS code designed for use on the SURCA website that was built from precompiled CSS
+**     written in the Less language extension of CSS.
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
+***     (Please see above git repository for fully documented, precompiled source code.)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
 **/
 
 /**  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: SURCA-specific Less variables.........................................................43
-***  §2: Body, main, and site header...........................................................51
-***  §3: Page headers..........................................................................93
-***  §4: Sidebars.............................................................................134
-***  §5: Article sidebars.....................................................................210
-***  §6: Lists................................................................................301
-***  §7: Iframes..............................................................................310
-***  §8: Tables...............................................................................318
-***  §9: Welcome message......................................................................339
-***  §10: Drop down toggles...................................................................394
-***  §11: Abstract submission reminder........................................................408
-***  §12: Announcements.......................................................................428
-***  §13: Banner slideshows...................................................................438
-***  §14: Included optional layouts...........................................................447
+***  §1: SURCA-specific Less variables.........................................................59
+***  §2: Body, main, and site header...........................................................67
+***  §3: Page headers.........................................................................109
+***  §4: Article sidebars.....................................................................150
+***  §5: Lists................................................................................241
+***  §6: Iframes..............................................................................250
+***  §7: Tables...............................................................................258
+***  §8: Welcome message......................................................................282
+***  §9: Drop down toggles....................................................................340
+***  §10: Abstract submission reminder........................................................354
+***  §11: Announcements.......................................................................374
+***  §12: Banner slideshows...................................................................384
+***  §13: Included optional layouts...........................................................393
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -52,41 +68,41 @@
 **/
 
 body {
-    // REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should 
-    // disappear when the screen is narrow enough.
-    // background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) 
-    //	left top fixed repeat;
-    background: @hex-bright-gray;
-    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+	// REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should 
+	// disappear when the screen is narrow enough.
+	// background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) 
+	//	left top fixed repeat;
+	background: @hex-bright-gray;
+	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
 
 main {
-    background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
+	background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
 }
 
 #jacket {
-    background-position: right bottom;
-     background-attachment: fixed;
-     background-repeat: no-repeat;
+	background-position: right bottom;
+	 background-attachment: fixed;
+	 background-repeat: no-repeat;
 }
 
 header.main-header {
 	height: 110px;
-    background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) 
-    	left bottom/270px auto no-repeat;
-    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-    color: #fff !important;
-    text-shadow: .5px .5px 1px #000;
+	background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) 
+		left bottom/270px auto no-repeat;
+	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+	color: #fff !important;
+	text-shadow: .5px .5px 1px #000;
 }
 
 @media print {
-    header.main-header {
-        background: @hex-darkest-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
-    }
+	header.main-header {
+		background: @hex-darkest-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
+	}
 }
 
 .main-header sub:not(.unset), .main-header sup:not(.unset) {
-    color: #fff !important;
+	color: #fff !important;
 }
 
 /** ================================================================================================
@@ -96,118 +112,42 @@ header.main-header {
 div.column {
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 	section {
-        &.header-newsEvents {
-            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-            		left top,
-                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-                url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
-        }
-        &.header-attending {
-            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-            		left top,
-                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-                url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
-        }
-        &.header-participants {
-            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-            		left top,
-                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-                url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
-        }
-        &.header-judges {
-            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-            		left top,
-                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-                url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
-        }
-        &.header-pastEvents {
-            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-            		left top,
-                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-                url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
-        
-        }
-    }
+		&.header-newsEvents {
+			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
+					left top,
+				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+				url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+		}
+		&.header-attending {
+			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
+					left top,
+				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+				url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
+		}
+		&.header-participants {
+			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
+					left top,
+				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+				url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
+		}
+		&.header-judges {
+			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
+					left top,
+				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+				url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
+		}
+		&.header-pastEvents {
+			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
+					left top,
+				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+				url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
+		
+		}
+	}
 }
 
 /** ================================================================================================
-*** §4: Sidebars
-**/
-
-// TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
-// TODO: Pull these classes into an imported**.LESS file ■
-div.green-marble-sidebar {
-	padding-top: 2rem;
-	 padding-right: 2rem;
-	 padding-bottom: 2em;
-	 padding-left: 1rem;
-	margin-right: 10px;
-	background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/
-		seamless-marble-texture_528x528.png) left top repeat;
-	border: 1px solid #afa370;
-	box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
-	font-size: .9em;
-	color: #2a3033;
-}
-
-div.bluish-gray-acrylic-sidebar {
-	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/
-		vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1rem;
-}
-
-div.gray-acrylic-sidebar {
-	padding-top: 1rem;
-	 padding-right: 1rem;
-	 padding-bottom: 1em;
-	 padding-left: 1rem;
-	margin-right: 10px;
-	 margin-bottom: 10px;
-	background: #fff url(/wp-content/uploads/sites/51/2015/04/
-		vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	 background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	font-size: .9em;
-	color: #2a3033;
-}
-
-div.bluish-gray-acrylic-sidebar,
-div.green-marble-sidebar,
-div.gray-acrylic-sidebar {
-	p {
-		font-size: .75rem;
-	}
-    h2 {
-        margin-bottom: 0;
-    }
-	h2 + hr {
-		margin-top: 0;
-		background-color: rgba(70,78,84,0.75);
-	}
-	h3 {
-		font-size: 1.275rem;
-	}
-	h4 {
-		font-size: 1.05rem;
-	}
-	/*div.bluish-gray-acrylic-sidebar p~hr {
-		margin-top: 0;
-	}*/
-}
-
-/** ================================================================================================
-*** §5: Article sidebars
+*** §4: Article sidebars
 **/
 
 div.column {
@@ -227,78 +167,78 @@ div.column {
 }
 
 div.column {
-    aside.important-reminder {
-        &:extend(div.column aside.article-sidebar);
+	aside.important-reminder {
+		&:extend(div.column aside.article-sidebar);
 		border: 1px solid #f77891;
-        background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/
-        	tileable-concrete-texture_128x128.png) left top repeat;
+		background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/
+			tileable-concrete-texture_128x128.png) left top repeat;
 		box-shadow: 1px 1px 2px rgba(247,120,145,0.5);
-        p {
-            padding-right: 1em;
-             padding-left: 1em;
-            &:last-child { padding-bottom: 0; }
-        }
-    }
-}
-
-section {
-    &.side-right.large-format-friendly, &.row.side-right.large-format-friendly {
-        @media all {
-            @media (min-width: (@large-format-threshold + 1)) {
-                div.column.two:before {
-                    background: @hex-lighter-gray url("/@{url-sandstone-texture}");
-                }
-            }
-        }
-    }
+		p {
+			padding-right: 1em;
+			 padding-left: 1em;
+			&:last-child { padding-bottom: 0; }
+		}
+	}
 }
 
 .row.article-notice {
-    &.has-countdown {
-        display: none;
-    }
-    .column {
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        background: @hex-gold url("/@{url-gold-texture}") no-repeat scroll left top;
-        background-size: cover;
-        .rgb-black(); box-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.3);
-        color: @hex-darker-gray;
-        & > p {
-            &:extend(.has-alt-font);
-            font-size: (@v-p-sz * @v-scl-up * @v-scl-up);
-            letter-spacing: 0.5px;
-            color: @hex-darker-gray;
-            .rgb-white(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
-        }
+	&.has-countdown {
+		display: none;
+	}
+
+	.column {
+		.rgb-black();
+		background: @hex-gold url("/@{url-gold-texture}") no-repeat scroll left top;
+		background-size: cover;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		box-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.3);
+		color: @hex-darker-gray;
+
+		& > p {
+			&:extend(.has-alt-font);
+			.rgb-white();
+			color: @hex-darker-gray;
+			font-size: (@v-p-sz * @v-scl-up * @v-scl-up);
+			letter-spacing: 0.5px;
+			text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
+		}
+
 		& > :first-child {
 			padding-top: @v-btm-pads !important;
+
 			@media all and (max-width: @column-floating-threshold) {
 				padding-top: (@v-btm-pads / 3) !important;
 			}
 		}
+
 		& > :last-child {
 			padding-bottom: @v-btm-pads !important;
 			margin-bottom: 0 !important;
+
 			@media all and (max-width: @column-floating-threshold) {
 				padding-bottom: (@v-btm-pads / 3) !important;
 			}
 		}
-    }
-    &.ruby div.column {
-        background: @hex-light-crimson url("/@{url-ruby-texture}") no-repeat scroll left top;
-        & > p {
-            color: @hex-white;
-            .rgb-black(); text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
-        }
-    }
+	}
+
+	&.ruby div.column {
+		background: @hex-light-crimson url("/@{url-ruby-texture}") no-repeat scroll left top;
+
+		& > p {
+			.rgb-black();
+			color: @hex-white;
+			text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
+		}
+	}
+
 	#countdown-clock {
 		font-size: 1.8em;
 	}
 }
 
 /** ================================================================================================
-*** §6: Lists
+*** §5: Lists
 **/
 
 .column ul li {
@@ -307,7 +247,7 @@ section {
 
 
 /** ================================================================================================
-*** §7: Iframes
+*** §6: Iframes
 **/
 
 .column .pdf-wrapper.landscape.live-stream {
@@ -315,20 +255,23 @@ section {
 }
 
 /** ================================================================================================
-*** §8: Tables
+*** §7: Tables
 **/
 
 .column table.award-winners {
-	width: 100%;
 	text-align: center;
 	vertical-align: top;
+	width: 100%;
+
 	td {
+		padding-bottom: 5px;
 		padding-left: 5px;
 		padding-right: 5px;
-		padding-bottom: 5px;
 	}
+
 	tr.gray {
 		background-color: #e1e1e1;
+
 		td {
 			background-color: inherit;
 		}
@@ -336,30 +279,31 @@ section {
 }
 
 /** ================================================================================================
-*** §9: Welcome message
+*** §8: Welcome message
 **/
 
 #welcome-message {
-    margin-top: 2rem;
-     margin-bottom: 2rem;
-    font-family: 'Open Sans Condensed';
-    font-size: 5rem;
-    text-align: center;
+	font-family: 'Open Sans Condensed';
+	font-size: 5rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	text-align: center;
 }
 
 #post-welcome-message {
-    display: none;
-	position: relative;
-    padding-right: 8px;
-     padding-left: 8px;
-    margin-top: 2rem;
-     margin-bottom: 2rem;
-    border: 1px solid #aec7cb;
+	background-color: #edf3f4;
+	border: 1px solid #aec7cb;
 	border-radius: 10px;
-    background-color: #edf3f4;
-    box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
+	box-shadow: 2px 2px 4px rgba(63,107,114,0.5);
+	display: none;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	overflow: hidden;
-	&:before {
+	padding-left: 8px;
+	padding-right: 8px;
+	position: relative;
+
+	&::before {
 		content: "";
 		position: absolute;
 		top: 2px;
@@ -370,7 +314,8 @@ section {
 		border-top-right-radius: 10px;
 		background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.1));
 	}
-	&:after {
+
+	&::after {
 		content: "";
 		position: absolute;
 		bottom: 0;
@@ -381,31 +326,32 @@ section {
 		border-bottom-right-radius: 10px;
 		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.05), rgba(0,0,0,0));
 	}
-    & > h3 {
-        margin-top: 0.75em;
+
+	& > h3 {
+		margin-top: 0.75em;
 		margin-bottom: 0.75em;
-        font-family: 'Open Sans Condensed';
-        font-weight: bold;
-        text-align: center;
-    }
+		font-family: 'Open Sans Condensed';
+		font-weight: bold;
+		text-align: center;
+	}
 }
 
 /** ================================================================================================
-*** §10: Drop down toggles
+*** §9: Drop down toggles
 **/
 
 h3.drop-down-toggle {
-    transition: all 0.3s ease;
-     -webkit-transition: all 0.3s ease;
-     -moz-transition: all 0.3s ease;
-     -o-transition: all 0.3s ease;    
-    &:hover {
-        color: @hex-light-crimson;
-    }
+	transition: all 0.3s ease;
+	 -webkit-transition: all 0.3s ease;
+	 -moz-transition: all 0.3s ease;
+	 -o-transition: all 0.3s ease;    
+	&:hover {
+		color: @hex-light-crimson;
+	}
 }
 
 /** ================================================================================================
-*** §11: Abstract submission reminder
+*** §10: Abstract submission reminder
 **/
 
 .abstract-submission-reminder {
@@ -425,7 +371,7 @@ h3.drop-down-toggle {
 }
 
 /** ================================================================================================
-*** §12: Announcements
+*** §11: Announcements
 **/
 
 // #announcement {
@@ -435,7 +381,7 @@ h3.drop-down-toggle {
 // }
 
 /** ================================================================================================
-*** §13: Banner slideshows
+*** §12: Banner slideshows
 **/
 
 .column .builder-banner-inner-content,
@@ -444,7 +390,7 @@ h3.drop-down-toggle {
 }
 
 /** ================================================================================================
-*** §14: Included optional layouts
+*** §13: Included optional layouts
 **/
 
 .use-navigational-map-tables();
