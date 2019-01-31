@@ -61,9 +61,6 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jquery.media.js',
 			'../jQuery.countdown/dist/jquery.countdown.min.js',
 			'./WSU-UE---JS/jQuery.countdown-custom.js',
-			'../imagesloaded/imagesloaded.pkgd.min.js',
-			'../masonry/dist/masonry.pkgd.min.js',
-			'./WSU-UE---JS/jQuery.masonry-custom.js',
 			'./JS/surca-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
