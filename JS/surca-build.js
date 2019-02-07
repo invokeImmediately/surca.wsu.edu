@@ -24,42 +24,39 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-//   §1: Addition of functions to jQuery......................................................70
-//     §1.1: jQuery.isCssClass................................................................73
-//     §1.2: jQuery.isJQueryObj...............................................................91
-//     §1.3: jQuery.logError.................................................................103
-//   §2: OUE website initilization modules...................................................174
-//     §2.1: OueDropDownToggle class.........................................................177
-//     §2.2: OueEventCalendarFixer class.....................................................423
-//       §2.2.1: Constructor.................................................................434
-//       §2.2.2: Public members..............................................................452
-//       §2.2.3: Lexically scoped supporting functions.......................................502
-//   §3: After dom is ready excution section.................................................523
-//   §4: After window loaded event bindings..................................................683
-//   §5: Window resize event bindings........................................................729
-//   §6: Function declarations...............................................................737
-//     §6.1: addA11yTabPressListener.........................................................740
-//     §6.2: addDefinitionListButtons........................................................754
-//     §6.3: checkForLrgFrmtSingle...........................................................868
-//     §6.4: finalizeLrgFrmtSideRight........................................................885
-//     §6.5: fixDogears......................................................................905
-//     §6.6: fixEventCalendars...............................................................930
-//     §6.7: handleMouseClickForA11y.........................................................939
-//     §6.8: handleTabPressForA11y...........................................................948
-//     §6.9: initContentFlippers.............................................................959
-//     §6.10: initDefinitionLists............................................................975
-//     §6.11: initDropDownToggles...........................................................1025
-//     §6.12: initFancyHrH2Motif............................................................1048
-//     §6.13: initFancyHrH3Motif............................................................1057
-//     §6.14: initHrH2Motif.................................................................1066
-//     §6.15: initHrH3Motif.................................................................1081
-//     §6.16: initQuickTabs.................................................................1090
-//     §6.17: initReadMoreToggles...........................................................1154
-//     §6.18: initTocFloating...............................................................1174
-//     §6.19: initTriggeredByHover..........................................................1251
-//     §6.20: initWelcomeMessage............................................................1270
-//     §6.21: resizeLrgFrmtSideRight........................................................1280
-//     §6.22: showDefinitionListButtons.....................................................1288
+//   §1: Addition of functions to jQuery......................................................67
+//     §1.1: jQuery.isCssClass................................................................70
+//     §1.2: jQuery.isJQueryObj...............................................................88
+//     §1.3: jQuery.logError.................................................................100
+//   §2: OUE website initilization modules...................................................171
+//     §2.1: OueDropDownToggle class.........................................................174
+//     §2.2: OueEventCalendarFixer class.....................................................420
+//       §2.2.1: Constructor.................................................................431
+//       §2.2.2: Public members..............................................................449
+//       §2.2.3: Lexically scoped supporting functions.......................................499
+//   §3: DOM-Ready execution sequence........................................................520
+//   §4: Window-loaded event binding.........................................................670
+//   §5: Window-resized event binding........................................................705
+//   §6: Function declarations...............................................................712
+//     §6.1: addA11yTabPressListener.........................................................715
+//     §6.2: addDefinitionListButtons........................................................729
+//     §6.3: fixDogears......................................................................843
+//     §6.4: fixEventCalendars...............................................................868
+//     §6.5: handleMouseClickForA11y.........................................................877
+//     §6.6: handleTabPressForA11y...........................................................886
+//     §6.7: initContentFlippers.............................................................897
+//     §6.8: initDefinitionLists.............................................................913
+//     §6.9: initDropDownToggles.............................................................965
+//     §6.10: initFancyHrH2Motif.............................................................988
+//     §6.11: initFancyHrH3Motif.............................................................997
+//     §6.12: initHrH2Motif.................................................................1006
+//     §6.13: initHrH3Motif.................................................................1021
+//     §6.14: initQuickTabs.................................................................1030
+//     §6.15: initReadMoreToggles...........................................................1094
+//     §6.16: initTocFloating...............................................................1114
+//     §6.17: initTriggeredByHover..........................................................1191
+//     §6.18: initWelcomeMessage............................................................1210
+//     §6.19: showDefinitionListButtons.....................................................1220
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $, thisFileName ) {
@@ -520,7 +517,7 @@ var OueEventCalendarFixer = ( function( $, thisFileName ) {
 } )( jQuery, 'jQuery.oue-custom.js' );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: AFTER DOM IS READY excution section
+// §3: DOM-Ready execution sequence
 
 ( function( $, thisFileName ) {
 
@@ -543,16 +540,6 @@ $( function () {
 		sepLocationText: '.tribe-events-meta-group-venue .tribe-venue a',
 		sepEventSchedule: '.tribe-events-schedule h2'
 	} );
-
-	argsList.checkForLrgFrmtSingle = {
-		slctrSingle: ".single.large-format-friendly",
-		slctrMainHdr: "header.main-header",
-		slctrHdrGroup: ".header-group",
-		centeringClass: "centered"
-	};
-	args = argsList.checkForLrgFrmtSingle;
-	checkForLrgFrmtSingle( args.slctrSingle, args.slctrMainHdr, args.slctrHdrGroup, 
-		args.centeringClass );
 
 	argsList.initHrH2Motif = {
 		slctrStandardH2: ".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
@@ -680,22 +667,11 @@ $( function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §4: AFTER WINDOW LOADED event bindings
+// §4: Window-loaded event binding
 
 $( window ).on( "load", function () {
 	var argsList = new Object();
 	var args;
-
-	argsList.finalizeLrgFrmtSideRight = {
-		slctrSideRight: ".side-right.large-format-friendly",
-		slctrColOne: ".column.one",
-		slctrColTwo: ".column.two",
-		trggrWidth: 1051,
-		animDuration: 100
-	};
-	args = argsList.finalizeLrgFrmtSideRight;
-	finalizeLrgFrmtSideRight( args.slctrSideRight, args.slctrColOne, args.slctrColTwo, 
-		args.trggrWidth, args.animDuration );
 
 	argsList.showDefinitionListButtons = {
 		slctrDefList: "dl.toggled",
@@ -726,15 +702,14 @@ $( window ).on( "load", function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §5: WINDOW RESIZE event bindings
+// §5: Window-resized event binding
 
 $( window ).resize( function () {
-	resizeLrgFrmtSideRight( ".side-right.large-format-friendly", "div.column.one",
-		"div.column.two", 1051, 100 );
+	// TODO: Add code as needed.
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §6: FUNCTION DECLARATIONS
+// §6: Function declarations
 
 ////////
 // §6.1: addA11yTabPressListener
@@ -865,44 +840,7 @@ parental definition list within the DOM."
 }
 
 ////////
-// §6.3: checkForLrgFrmtSingle
-
-function checkForLrgFrmtSingle( slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass ) {
-	var $lrgFrmtSnglSctns;
-	var $mainHeader;
-	var $mnHdrChldDiv;
-
-	$lrgFrmtSnglSctns = $( slctrSingle );
-	if ( $lrgFrmtSnglSctns.length > 0 ) {
-		$mainHeader = $( slctrMainHdr );
-		$mainHeader.addClass( centeringClass );
-		$mnHdrChldDiv = $mainHeader.find( slctrHdrGroup );
-		$mnHdrChldDiv.addClass( centeringClass );
-	}
-}
-
-////////
-// §6.4: finalizeLrgFrmtSideRight
-
-function finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, 
-		animDuration ) {
-	if( $( window ).width() >= trggrWidth ) {
-		$( slctrSideRight + ">" + slctrColTwo ).each( function () {
-			var $this = $( this );
-			var $thisPrev = $this.prev( slctrColOne );
-			if( $this.height() != $thisPrev.height() ) {
-				$this.height( $thisPrev.height() );
-			}
-			var crrntOpacity = $this.css( "opacity" );
-			if ( crrntOpacity == 0 ) {
-				$this.animate( {opacity: 1.0}, animDuration );
-			}
-		} );
-	}
-}
-
-////////
-// §6.5: fixDogears
+// §6.3: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
@@ -927,7 +865,7 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 }
 
 ////////
-// §6.6: fixEventCalendars
+// §6.4: fixEventCalendars
 
 function fixEventCalendars( sels ) {
 	var fixer = new OueEventCalendarFixer( sels );
@@ -936,7 +874,7 @@ function fixEventCalendars( sels ) {
 }
 
 ////////
-// §6.7: handleMouseClickForA11y
+// §6.5: handleMouseClickForA11y
 
 function handleMouseClickForA11y( e ) {
 	$( "body" ).removeClass( "user-is-tabbing" );
@@ -945,7 +883,7 @@ function handleMouseClickForA11y( e ) {
 }
 
 ////////
-// §6.8: handleTabPressForA11y
+// §6.6: handleTabPressForA11y
 
 function handleTabPressForA11y( e ) {
 	if ( e.keyCode === 9 ) {
@@ -956,7 +894,7 @@ function handleTabPressForA11y( e ) {
 }
 
 ////////
-// §6.9: initContentFlippers
+// §6.7: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -972,8 +910,10 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 }
 
 ////////
-// §6.10: initDefinitionLists
+// §6.8: initDefinitionLists
 
+// TODO: Add inline documentation in JSDoc3 format.
+// TODO: Remove slctrLrgFrmtSection, slctrColOne, and slctrColTwo and related code.
 function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo,
  dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
 	var $listDts = $( slctrDefList + " dt" );
@@ -1022,7 +962,7 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 }
 
 ////////
-// §6.11: initDropDownToggles
+// §6.9: initDropDownToggles
 
 /**
  * Initialize drop down toggle elements to respond to user interaction.
@@ -1045,7 +985,7 @@ function initDropDownToggles( selToggles, selContainers, selTargets, activatingC
 }
 
 ////////
-// §6.12: initFancyHrH2Motif
+// §6.10: initFancyHrH2Motif
 
 function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH2 ).each( function () {
@@ -1054,7 +994,7 @@ function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.13: initFancyHrH3Motif
+// §6.11: initFancyHrH3Motif
 
 function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH3 ).each( function () {
@@ -1063,7 +1003,7 @@ function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.14: initHrH2Motif
+// §6.12: initHrH2Motif
 
 function initHrH2Motif( slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded,
 		animAddDrtn ) {
@@ -1078,7 +1018,7 @@ function initHrH2Motif( slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesA
 }
 
 ////////
-// §6.15: initHrH3Motif
+// §6.13: initHrH3Motif
 
 function initHrH3Motif( slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrStandardH3 ).each( function () {
@@ -1087,7 +1027,7 @@ function initHrH3Motif( slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrt
 }
 
 ////////
-// §6.16: initQuickTabs
+// §6.14: initQuickTabs
 
 // TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
@@ -1151,7 +1091,7 @@ function initQuickTabs( slctrQtSctn ) {
 }
 
 ////////
-// §6.17: initReadMoreToggles
+// §6.15: initReadMoreToggles
 
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
@@ -1171,7 +1111,7 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 }
 
 ////////
-// §6.18: initTocFloating
+// §6.16: initTocFloating
 
 function initTocFloating( slctrToc, slctrBackToToc ) {
 	var thisFuncName = "initTocFloating";
@@ -1248,7 +1188,7 @@ contents elements; this function only works with one table of contents.' }" );
 }
 
 ////////
-// §6.19: initTriggeredByHover
+// §6.17: initTriggeredByHover
 
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
@@ -1267,7 +1207,7 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 }
 
 ////////
-// §6.20: initWelcomeMessage
+// §6.18: initWelcomeMessage
 
 function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration, 
 		fadeInDuration ) {
@@ -1277,15 +1217,7 @@ function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDu
 }
 
 ////////
-// §6.21: resizeLrgFrmtSideRight
-
-function resizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth,
-		animDuration ) {
-	finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration );
-}
-
-////////
-// §6.22: showDefinitionListButtons
+// §6.19: showDefinitionListButtons
 
 /**
  * Display expand/collapse all buttons, which were initially hidden
@@ -1315,169 +1247,253 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 	
 } )( jQuery, 'jQuery.oue-custom.js' );
 
-/*!*
+/*!
  * jQuery.textResize.js
- * Released under GNU GPLv2
  *
- * Based on FitText.js 1.2 (https://github.com/davatron5000/FitText.js) by Dave Rupert
- *  (http://daverupert.com).
+ * SUMMARY: Automatically scale the font size of an element based on either its own width or the
+ * width of one of its parents.
+ *
+ * DESCRIPTION: Adapted from FitText.js 1.2 (https://github.com/davatron5000/FitText.js) by Dave
+ * Rupert (http://daverupert.com).
+ *
+ * AUTHOR: Daniel Rieck <danielcrieck@gmail.com> (https://github.com/invokeImmediately)
+ *
+ * LICENSE: Released under GNU GPLv2
  */
-(function($){
-    $.fn.textResize = function( scalingFactor, options ) {
-        // Set up default options in case the caller passed no attributes
-        var scalingAmount = scalingFactor || 1,
-            settings = $.extend({
-                "minFontSize" : Number.NEGATIVE_INFINITY,
-                "maxFontSize" : Number.POSITIVE_INFINITY,
-				"againstSelf" : true
-            }, options);
-        return this.each(function () {
-            var $this = $(this);
+( function( $ ) {
+	// TODO: Modify with enhancement by adding an option to specify the selector for the basis of
+	// the resizing, such as a parent column.
+	$.fn.textResize = function( scalingFactor, options ) {
+		// Set up default options in case the caller passed no attributes
+		var scalingAmount = scalingFactor || 1,
+			settings = $.extend( {
+				'minFontSize' : Number.NEGATIVE_INFINITY,
+				'maxFontSize' : Number.POSITIVE_INFINITY,
+				'againstSelf' : true
+			}, options );
+
+		return this.each( function () {
+			var $this = $( this );
 			var $parent = undefined;
-			if (!settings.againstSelf) {
-				$parent = $this.parents(".column").first();
+
+			if ( !settings.againstSelf ) {
+				$parent = $this.parents( '.column' ).first();
 			}
-          
-            // Resizer() keeps font-size proportional to object width as constrainted by the user
-            var resizer = function () {
-				if(!settings.againstSelf) {
-					$this.css("font-size", Math.max(Math.min($parent.innerWidth() / (scalingAmount*10),
-						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+
+			// Resizer() keeps font-size proportional to object width as constrainted by the user
+			var resizer = function () {
+				if( !settings.againstSelf ) {
+					$this.css('font-size', Math.max(
+						Math.min(
+							$parent.innerWidth() / ( scalingAmount * 10 ),
+							parseFloat( settings.maxFontSize )
+						),
+						parseFloat( settings.minFontSize ) ) );
 				}
 				else {
-					$this.css("font-size", Math.max(Math.min($this.width() / (scalingAmount*10),
-						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+					$this.css('font-size', Math.max(
+						Math.min(
+							$this.width() / ( scalingAmount * 10 ),
+							parseFloat( settings.maxFontSize )
+						),
+						parseFloat( settings.minFontSize ) ) );
 				}
-            };
-          
-            // Call once to set the object's font size based on current window size, then call as resize or orientation-change events are triggered.
-            resizer();
-            $(window).on("resize.textresize orientationchange.textresize", resizer);
-        });
-    };
-})(jQuery);
+			};
 
-// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the following statement if you are going to utilize this plugin on your own site).
-(function($){
-	var clmnWidth = 926; // px - default column width
-	var dfltSpineWidth = 198; // px - default width of spine
+			// Call once to set the object's font size based on current window size, then call as
+			// resize or orientation-change events are triggered.
+			resizer();
+			$( window ).on( 'resize.textresize orientationchange.textresize' , resizer );
+		} );
+	};
+} )( jQuery );
+
+// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
+// following statement if you are going to utilize this plugin on your own site).
+// TODO: Pass in default maximum column, spine widths
+( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, filename ) {
+
+try {
+	var clmnWidth; 
+	var dfltSpineWidth; // px - default width of spine
 	
-    $(document).ready(function () {
-		initArticleHeaderText();
-		initTextAutoResizers(".auto-fits-text");
-    });
+	if ( typeof themeMinColumnWidth !== 'number' || typeof themeSpineWidth !== 'number' ||
+			typeof resizersClass !== 'string' ) {
+		throw 'I was not set up with properly typed initialization parameters and am unable to proc\
+eed.';
+	}
 
-	function initArticleHeaderText() {
-		//TODO: Refactor to rely on auto
-		var $columns = $(".column");
-        $columns.find(".article-header .header-content h1").each(function () {
-            $(this).textResize(1.277142857142857, {"minFontSize" : "34.8"});
-        });
-        $columns.find(".article-header .header-content h2").each(function () {
-            $(this).textResize(1.847840465639262, {"minFontSize" : "24.0"});
-        });
-        $columns.find(".article-header .header-content h3").each(function () {
-            $(this).textResize(4.110097222222222, {"minFontSize" : "10.7"});
-        });
+	// Set the default column width in pixels (passed in based on the theme)
+	clmnWidth = themeMinColumnWidth;
+
+	// Set the default width of the Spine in pixels (passed in based on the theme)
+	dfltSpineWidth = themeSpineWidth;
+
+	$( document ).ready( function () {
+		initArticleHeaderText( resizersClass );
+		initTextAutoResizers( '.' + resizersClass );
+	} );
+
+	function initArticleHeaderText( resizersClass ) {
+		//TODO: Refactor to prefer relying on functionality mediated by auto-fits-text class
+		var $columns = $( '.column' );
+		var $this = $( this );
+
+		$columns.find( '.article-header .header-content h1' ).each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.277142857142857, {'minFontSize' : '34.8' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h2').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.847840465639262, { 'minFontSize' : '28' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h3').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 4.110097222222222, {'minFontSize' : '16' } );
+			}
+		} );
 	}
 	
-	function initTextAutoResizers(cssClass) {
-		var $textAutoResizers = new TextAutoResizers(cssClass, dfltSpineWidth);
+	function initTextAutoResizers( cssClass ) {
+		var $textAutoResizers = new TextAutoResizers( cssClass, dfltSpineWidth );
+
 		$textAutoResizers.initTextAutoResizing();
 	}
 	
-	function TextAutoResizers(cssClass, spineWidth) {	
+	// TODO: Refactor class design for improved efficiency, lower overhead
+	function TextAutoResizers( cssClass, spineWidth ) {	
 		var $resizers = $(cssClass);
 		
 		this.initTextAutoResizing = function () {
-			$resizers.each(function() {
-				var textAutoResizer = new TextAutoResizingElem($(this), spineWidth);
-			});
+			$resizers.each( function() {
+				var textAutoResizer = new TextAutoResizingElem( $( this ), spineWidth );
+			} );
 		}		
 		
-		function TextAutoResizingElem($jqObj, spineWidth) {
+		function TextAutoResizingElem( $jqObj, spineWidth ) {
 			var $this = $jqObj;
 			initTextAutoResizing();
 			
 			function initTextAutoResizing() {
-				if ($.isJQueryObj($this)) {
-					var fontSz = parseFloat($this.css("font-size"));
-					var scalingAmt = calculateScalingAmount(fontSz);
-					if ($this.hasClass("has-max-size")) {
-						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
+				if ( $.isJQueryObj( $this ) ) {
+					var fontSz = parseFloat( $this.css( 'font-size' ) );
+					var scalingAmt = calculateScalingAmount( fontSz );
+
+					if ( $this.hasClass( 'has-max-size' ) )  {
+						$this.textResize( scalingAmt, {
+							'minFontSize' : '10.7px',
+							'maxFontSize' : fontSz,
+							'againstSelf' : 0
+						} );
 					} else {
-						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
+						$this.textResize( scalingAmt, {
+							'minFontSize' : '10.7px',
+							'againstSelf' : 0
+						} );
 					}					
 				}
 			}
 			
-			function calculateScalingAmount(fontSz) {
+			function calculateScalingAmount( fontSz ) {
 				var maxColumnWidth = findMaxColumnWidth();
-				return maxColumnWidth / (fontSz * 10);
+
+				return maxColumnWidth / ( fontSz * 10 );
 			}
 			
 			function findMaxColumnWidth() {
-				var $parentCol = $this.parents(".column").first();
-				var maxColWidth = findMaxColWidth($parentCol);
+				var $parentCol = $this.parents( '.column' ).first();
+				var maxColWidth = findMaxColWidth( $parentCol );
+
 				return maxColWidth;
 			}
 			
-			function findMaxColWidth($parentCol) {
-				var maxRowWidth = 990; // Sets the default max row width.
-				var maxWidthCss = $parentCol.css("max-width"); // In case the max width was explicitly set for the parental column...
-				if (maxWidthCss != "none") {
-					maxRowWidth = parseFloat(maxWidthCss);
+			function findMaxColWidth( $parentCol ) {
+				var maxRowWidth;
+				var maxWidthCss;
+
+				// Set the default max row width to the lowest possible amount based on the
+				// WordPress theme. It will be overwitten below if appropriate.
+				maxRowWidth = 990;
+
+				// Use the max width for parental column if it was explicitly set
+				maxWidthCss = $parentCol.css( 'max-width' );
+				if ( maxWidthCss != 'none' ) {
+					maxRowWidth = parseFloat( maxWidthCss );
 				} else {
-					maxRowWidth = findMaxRowWidthFromBinder(maxRowWidth); // In case the max width was implicitly set...
+					// Calculate maximum column width if it can be implied from a maximum row width
+					maxRowWidth = findMaxRowWidthFromBinder( maxRowWidth );
 				}
-				return divideUpMaxRowWidth(maxRowWidth, $parentCol); // Return the max column width by dividing up the max row width as needed.
+
+				// Return the max column width by dividing up the max row width as needed
+				return divideUpMaxRowWidth( maxRowWidth, $parentCol );
 			}
 			
-			function findMaxRowWidthFromBinder(dfltMaxRowWidth) {
+			function findMaxRowWidthFromBinder( dfltMaxRowWidth ) {
 				var maxRowWidth = dfltMaxRowWidth;
 				var maxCssWidth = findBindersMaxWidthCss();
-				if (maxCssWidth != "none") {
-					maxRowWidth = parseFloat(maxCssWidth) - spineWidth; // The binder's max width includes the spine's fixed width, so subtract it off to achieve actual max width of row.
+
+				if ( maxCssWidth != 'none' ) {
+					// The binder's max width includes the spine's fixed width, so subtract it off
+					// to achieve actual max width of row
+					maxRowWidth = parseFloat( maxCssWidth ) - spineWidth;
 				}
-				return maxRowWidth; // i.e., returns the max width in numerical form.
+
+				// Return the max width in numerical form
+				return maxRowWidth;
 			}
 			
 			function findBindersMaxWidthCss() {
-				var maxWidthCss = "none";
-				var $binder = $("#binder");
+				var maxWidthCss = 'none';
+				var $binder = $( '#binder' );
+
 				if ($binder.length == 1) {
-					if ($binder.hasClass("max-1188")) {
-						maxWidthCss = "1188";
-					} else if ($binder.hasClass("max-1386")) {
-						maxWidthCss = "1386";						
-					} else if ($binder.hasClass("max-1584")) {
-						maxWidthCss = "1584";						
-					} else if ($binder.hasClass("max-1782")) {
-						maxWidthCss = "1782";						
-					} else if ($binder.hasClass("max-1980")) {
-						maxWidthCss = "1980";						
+					if ( $binder.hasClass( 'max-1188' ) ) {
+						maxWidthCss = '1188';
+					} else if ( $binder.hasClass( 'max-1386' ) ) {
+						maxWidthCss = '1386';
+					} else if ( $binder.hasClass( 'max-1584' ) ) {
+						maxWidthCss = '1584';
+					} else if ( $binder.hasClass( 'max-1782' ) ) {
+						maxWidthCss = '1782';
+					} else if ( $binder.hasClass( 'max-1980' ) ) {
+						maxWidthCss = '1980';
 					}
 				}
-				return maxWidthCss; // i.e., returns a string containing the parental binder's max width as specified in CSS
+
+				// Return a string containing the parental binder's max width as specified in CSS
+				return maxWidthCss;
 			}
 			
-			function divideUpMaxRowWidth(maxRowWidth, $parentCol) {
+			function divideUpMaxRowWidth( maxRowWidth, $parentCol ) {
 				var maxColWidth = maxRowWidth;
-				var $parentRow = ($.isJQueryObj($parentCol)) ? $parentCol.parent(".row") : undefined;
-				if ($parentCol.css("max-width") == "none" && $.isJQueryObj($parentRow)) {
-					if ($parentRow.hasClass("halves")) {
+				var $parentRow = ( $.isJQueryObj( $parentCol ) ) ?
+					$parentCol.parent( '.row' ) :
+					undefined;
+
+				if ( $parentCol.css( 'max-width' ) == 'none' && $.isJQueryObj( $parentRow ) ) {
+					if ( $parentRow.hasClass( 'halves' ) ) {
 						maxColWidth /= 2;
-					} else if ($parentRow.hasClass("thirds")) {
+					} else if ($parentRow.hasClass( 'thirds' ) ) {
 						maxColWidth /= 3;
-					} else if ($parentRow.hasClass("quarters")) {
+					} else if ($parentRow.hasClass( 'quarters' ) ) {
 						maxColWidth /= 4;
 					}
 				}
+
 				return maxColWidth;
 			}
 		}
 	}
-})(jQuery);
+} catch ( errMsg ) {
+	console.log( 'Error in ' + fileName + ':' + errMsg );
+}
+
+} )( jQuery, 990, 198, 'auto-fits-text', 'jQuery.textResize.js' );
 
 /*!*************************************************************************************************
  * jQuery.forms.js
@@ -3039,657 +3055,116 @@ function QTipContent( $qTipSlctr ) {
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 !function(a){"use strict";"function"==typeof define&&define.amd?define(["jquery"],a):a(jQuery)}(function(a){"use strict";function b(a){if(a instanceof Date)return a;if(String(a).match(g))return String(a).match(/^[0-9]*$/)&&(a=Number(a)),String(a).match(/\-/)&&(a=String(a).replace(/\-/g,"/")),new Date(a);throw new Error("Couldn't cast `"+a+"` to a date object.")}function c(a){var b=a.toString().replace(/([.?*+^$[\]\\(){}|-])/g,"\\$1");return new RegExp(b)}function d(a){return function(b){var d=b.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);if(d)for(var f=0,g=d.length;f<g;++f){var h=d[f].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/),j=c(h[0]),k=h[1]||"",l=h[3]||"",m=null;h=h[2],i.hasOwnProperty(h)&&(m=i[h],m=Number(a[m])),null!==m&&("!"===k&&(m=e(l,m)),""===k&&m<10&&(m="0"+m.toString()),b=b.replace(j,m.toString()))}return b=b.replace(/%%/,"%")}}function e(a,b){var c="s",d="";return a&&(a=a.replace(/(:|;|\s)/gi,"").split(/\,/),1===a.length?c=a[0]:(d=a[0],c=a[1])),Math.abs(b)>1?c:d}var f=[],g=[],h={precision:100,elapse:!1,defer:!1};g.push(/^[0-9]*$/.source),g.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),g.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),g=new RegExp(g.join("|"));var i={Y:"years",m:"months",n:"daysToMonth",d:"daysToWeek",w:"weeks",W:"weeksToMonth",H:"hours",M:"minutes",S:"seconds",D:"totalDays",I:"totalHours",N:"totalMinutes",T:"totalSeconds"},j=function(b,c,d){this.el=b,this.$el=a(b),this.interval=null,this.offset={},this.options=a.extend({},h),this.firstTick=!0,this.instanceNumber=f.length,f.push(this),this.$el.data("countdown-instance",this.instanceNumber),d&&("function"==typeof d?(this.$el.on("update.countdown",d),this.$el.on("stoped.countdown",d),this.$el.on("finish.countdown",d)):this.options=a.extend({},h,d)),this.setFinalDate(c),this.options.defer===!1&&this.start()};a.extend(j.prototype,{start:function(){null!==this.interval&&clearInterval(this.interval);var a=this;this.update(),this.interval=setInterval(function(){a.update.call(a)},this.options.precision)},stop:function(){clearInterval(this.interval),this.interval=null,this.dispatchEvent("stoped")},toggle:function(){this.interval?this.stop():this.start()},pause:function(){this.stop()},resume:function(){this.start()},remove:function(){this.stop.call(this),f[this.instanceNumber]=null,delete this.$el.data().countdownInstance},setFinalDate:function(a){this.finalDate=b(a)},update:function(){if(0===this.$el.closest("html").length)return void this.remove();var a,b=new Date;return a=this.finalDate.getTime()-b.getTime(),a=Math.ceil(a/1e3),a=!this.options.elapse&&a<0?0:Math.abs(a),this.totalSecsLeft===a||this.firstTick?void(this.firstTick=!1):(this.totalSecsLeft=a,this.elapsed=b>=this.finalDate,this.offset={seconds:this.totalSecsLeft%60,minutes:Math.floor(this.totalSecsLeft/60)%60,hours:Math.floor(this.totalSecsLeft/60/60)%24,days:Math.floor(this.totalSecsLeft/60/60/24)%7,daysToWeek:Math.floor(this.totalSecsLeft/60/60/24)%7,daysToMonth:Math.floor(this.totalSecsLeft/60/60/24%30.4368),weeks:Math.floor(this.totalSecsLeft/60/60/24/7),weeksToMonth:Math.floor(this.totalSecsLeft/60/60/24/7)%4,months:Math.floor(this.totalSecsLeft/60/60/24/30.4368),years:Math.abs(this.finalDate.getFullYear()-b.getFullYear()),totalDays:Math.floor(this.totalSecsLeft/60/60/24),totalHours:Math.floor(this.totalSecsLeft/60/60),totalMinutes:Math.floor(this.totalSecsLeft/60),totalSeconds:this.totalSecsLeft},void(this.options.elapse||0!==this.totalSecsLeft?this.dispatchEvent("update"):(this.stop(),this.dispatchEvent("finish"))))},dispatchEvent:function(b){var c=a.Event(b+".countdown");c.finalDate=this.finalDate,c.elapsed=this.elapsed,c.offset=a.extend({},this.offset),c.strftime=d(this.offset),this.$el.trigger(c)}}),a.fn.countdown=function(){var b=Array.prototype.slice.call(arguments,0);return this.each(function(){var c=a(this).data("countdown-instance");if(void 0!==c){var d=f[c],e=b[0];j.prototype.hasOwnProperty(e)?d[e].apply(d,b.slice(1)):null===String(e).match(/^[$A-Z_][0-9A-Z_$]*$/i)?(d.setFinalDate.call(d,e),d.start()):a.error("Method %s does not exist on jQuery.countdown".replace(/\%s/gi,e))}else new j(this,b[0],b[1])})}});
-/*!*************************************************************************************************
- * jQuery.countdown-custom.js 
- * -------------------------------------------------------------------------------------------------
- * DESCRIPTION: Application of "The Final Countdown" jQuery plugin, written by Edson Hilios, to WSU
- *   OUE websites. (Please see https://github.com/hilios/jQuery.countdown for Edson's repository for
- *   "The Final Countdown.")
+/*!
+ * jQuery.countdown-custom.js
+ * --------------------------
+ * DESCRIPTION:
+ *     Application of "The Final Countdown" jQuery plugin, written by Edson Hilios, to WSU OUE
+ *     websites. (Please see https://github.com/hilios/jQuery.countdown for Edson's repository for
+ *     "The Final Countdown.")
  *
  * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *
- * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
- *
- * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
- *
- *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
- *   without fee is hereby granted, provided that the above copyright notice and this permission
- *   notice appear in all copies.
- *
- *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
- *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
- *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
- *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- *   PERFORMANCE OF THIS SOFTWARE.
- **************************************************************************************************/
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// TABLE OF CONTENTS
-// -----------------
-//   §1: Modules used to initialize countdown timers...........................................43
-//      §1.1: CountdownTimerSelectors class....................................................46
-//   §2: Initilization of countdown timers....................................................172
-//      §2.1: Document-ready execution sequence...............................................182
-//      §2.2: Window-loaded execution sequence................................................190
-//      §2.3: Class definitions...............................................................198
-//         §2.3.1: Private properties.........................................................210
-//         §2.3.2: Public properties..........................................................217
-//         §2.3.3: Main constructor execution sequence........................................224
-//         §2.3.4: Private function definitions...............................................232
-//      §2.3: Function definitions............................................................439
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §1: Modules for initializing countdown timers
-
-////////
-// §1.1: CountdownTimerSelectors class
-
-/**
- * Module for storing validated settings for OUE countdown timers designed to be functionalized via
- * jQuery class selectors.
- *
- * @class
  */
-
-var CountdownTimerSelectors = ( function( $, thisFile ) {
-
-	'use strict';
-	/**
-	 * Validated settings for OUE countdown timers designed to be functionalized via jQuery class
-	 * selectors.
-	 *
-	 * @param {string} timer - Class-based selector for isolating countdown timer elements.
-	 * @param {string} container - Class-based selector for obtaining the container component of a
-	 *     countdown timer.
-	 * @param {string} message -  Class-based selector targeting the message component of a countdown
-	 *     timer.
-	 * @param {string} prependedHtml - Class-based selector for isolating the component of a countdown
-	 *     timer that contains HTML to be prepended to the inner HTML of the message.
-	 * @param {string} appendedHtml - Class-based selector for isolating the component of a countdown
-	 *     timer that contains HTML to be appended to the inner HTML of the message.
-	 *
-	 * @throws {object} If the type of any argument is invalid and/or an argument is not a properly
-	 *     formatted class selector, an object will be thrown containing four string-typed parameters:
-	 *     fileName, fName, fDesc, and errorMsg. The thrown object is thus meant to be utilized with the
-	 *     jQuery.logError function.
-	 */
-	function CountdownTimerSelectors( timer, container, message, prependedHtml, appendedHtml ) {
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// PUBLIC PROPERTIES
-
-		this.timer = timer;
-		this.container = container;
-		this.message = message;
-		this.prependedHtml = prependedHtml;
-		this.prependedHtml = appendedHtml;
-
-		this.argTypeMask = 0;
-		this.validSelectorMask = 0;
-		this.validSelectorNeedle = /\.[a-zA-Z0-9\-_]+$/;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// MAIN CONSTRUCTOR EXECUTION
-
-		this.validate();
-	}
-
-	CountdownTimerSelectors.prototype.validate = function () {
-		initErrorMessages(this);
-		checkArgTypes(this);
-		checkSelectorStructure(this);
-		throwAnyErrors(this);		
-	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////
-	// PRIVATE FUNCTION DEFINITIONS
-
-	/**
-	 *
-	 */
-	function checkArgTypes( obj ) {
-		obj.argTypeMask = typeof obj.timer === 'string';
-		obj.argTypeMask = ( obj.argTypeMask << 1 ) | typeof obj.container === 'string';
-		obj.argTypeMask = ( obj.argTypeMask << 1 ) | typeof obj.message === 'string';
-		obj.argTypeMask = ( obj.argTypeMask << 1 ) | typeof obj.prependedHtml === 'string';
-		obj.argTypeMask = ( obj.argTypeMask << 1 ) | typeof obj.appendedHtml === 'string';
-	}
-
-	/**
-	 *
-	 */
-	function checkSelectorStructure( obj ) {
-		obj.validSelectorMask = !!obj.validSelectorNeedle.exec( obj.timer );
-		obj.validSelectorMask = ( obj.validSelectorMask << 1 ) |
-			!!obj.validSelectorNeedle.exec( obj.container );
-		obj.validSelectorMask = ( obj.validSelectorMask << 1 ) |
-			!!obj.validSelectorNeedle.exec( obj.message );
-		obj.validSelectorMask = ( obj.validSelectorMask << 1 ) |
-			!!obj.validSelectorNeedle.exec( obj.prependedHtml );
-		obj.validSelectorMask = ( obj.validSelectorMask << 1 ) |
-			!!obj.validSelectorNeedle.exec( obj.appendedHtml );
-	}
-
-	function initErrorMessages( obj ) {
-		try {
-			obj.error = {
-				fileName: thisFile,
-				fName: 'CountdownTimerSelectors',
-				fDesc: 'Validated settings for class-based OUE countdown timers.',
-				errorMsg: ''
-			};
-		} catch ( e ) {
-			obj.error = {
-				fileName: 'Unidentified file',
-				fName: 'CountdownTimerSelectors',
-				fDesc: 'Validated settings for class-based OUE countdown timers.',
-				errorMsg: ''
-			};
-		}
-	}
-
-	function throwAnyErrors( obj ) {
-		if ( !obj.argTypeMask || !obj.validSelectorMask ) {
-			if ( !obj.argTypeMask ) {
-				obj.error.errorMsg = 'I encountered a wrongly typed argument during construction.';
-				if ( !obj.validSelectorMask ) {
-					obj.error.errorMsg += ' Also, ';
-				}
-			}
-			if ( !obj.validSelectorMask ) {
-				obj.error.errorMsg += 'I found that at least one of my arguments did not contain a \
-properly formed class selector as required.';
-			}
-			throw obj.error;
-		}
-	}
-
-	return CountdownTimerSelectors;
-
-} )( jQuery, 'jQuery.countdown-custom.js' );
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §2: Initialization of countdown timers
-
 ( function ( $ ) {
 
-var $countdownTimerById;
-var $countdownTimersByClass;
-var animationTiming = 400;	// Controls the speed at which jQuery-induced countdown animations occur
 var thisFileName = 'jQuery.countdown-custom';
+var animationTiming = 400;      // Controls the speed at which jQuery-induced countdown animations occur
 
-////////
-// §2.1: Document-ready execution sequence
-
+// ---- DOM IS READY: Code executed after the DOM is ready for use. --------------------------------
 $( function () {
-	$countdownTimerById = processCountdownTimerById( '#countdown-clock' );
-	// TODO: $countdownTimersByClass = processCountdownTimersByClass( … );
+
+        // TODO: Also implement a class based approach
+        var $countdownClock = $( '#countdown-clock' );
+        processCountdownTimerMsg( $countdownClock );
 } );
 
-////////
-// §2.2: Window-loaded execution sequence
-
+// ---- WINDOW LOADED: Code executed after the browser window has fully loaded ---------------------
 $( window ).on( 'load', function () {
-	showIdSelectedCountdownTimer( $countdownTimerById, animationTiming );
-	// TODO: showClassSelectedCountdownTimers( $countdownTimersByClass );
+        var $countdownClock = $( '#countdown-clock' );
+        var $countdownParent = $countdownClock.parents( 'section' ).first();
+
+        //TODO: Implement showing/hiding times for countdown timers.
+//      var hideUntilTime = $countdownClock.data( 'hide-until' );
+//      var showUntilTime = $countdownClock.data( 'show-until' );
+        var hideCountdown = false;
+
+//      if (hideUntilTime) {
+//
+//      }
+
+        if ( !hideCountdown ) {
+                $countdownParent.show( animationTiming );
+        }
 } );
 
-////////
-// §2.3: Class definitions
+// ---- IIFE-localized definitions of FUNCTIONS USED IN THIS SCRIPT --------------------------------
 
 /**
- * Collection of jQuery objects that represent the components of a single countdown timer.
+ *  processCountdownTimer DESCRIPTION: Invokes the "The Final Countdown" jQuery plugin on
+ *      appropriate elements within the DOM.
  *
- * @param {CountdownTimerSelectors} selectors - Collection of class selectors for isolating
- *     countdown timer components.
- *
- * TODO: @throws {?} ?
- */
-function CountdownTimerObjs( selectors ) {
-	////////
-	// §2.3.1: Private properties
-
-	var _argTypeMask = 0;
-	var _objFoundMask = undefined;
-	var _error;
-
-	////////
-	// §2.3.2:  Public properties
-
-	this.selectors = undefined;
-	this.$timers = undefined;
-	this.timerComponents = undefined;
-
-	////////
-	// §2.3.3: Main constructor execution sequence
-
-	_initErrorMessages();
-	_checkArgType();
-	_findJQueryObjs();
-	_throwAnyErrors();
-
-	////////
-	// §2.3.4: Private function definitions
-
-	function _checkArgTypes() {
-		_argTypeMask = selectors instanceof CountdownTimerSelectors;
-		if ( _argTypeMask ) {
-			this.selectors = selectors;
-		}
-	}
-
-	/**
-	 * Find the appended HTML component element associated with a previously selected countdown
-	 * timer element.
-	 *
-	 * It is assumed that the appended HTML component should be a child element of the timer.
-	 *
-	 * @param {jQuery} $timer - The previously selected timer element.
-	 * @param {string} selector - Class-based selector for the timer's appended HTML component.
-	 *
-	 * @return {(jQuery|undefined)} Either a jQuery object representing the appended HTML component
-	 *     or undefined if nothing was found.
-	 */
-	function _findAppendedHtml( $timer, selector ) {
-		var $obj;
-
-		// Step[0]: Look for the appended HTML component among the children of the timer
-		// element.
-		$obj = $timer.find( selector );
-		if ( !$obj.length ) {
-			// Step[1]: No appended HTML component was found, ∴ return undefined instead of
-			// empty jQuery object.
-			$obj = undefined;
-		}
-
-		return $obj;
-	}
-
-	/**
-	 * Find the container component element associated with a previously selected countdown timer
-	 * element.
-	 *
-	 * It is assumed that the container component should either be the same element as the timer or
-	 * a child of it.
-	 *
-	 * @param {jQuery} $timer - The previously selected timer element.
-	 * @param {string} selector - Class-based selector for the timer's container component.
-	 *
-	 * @return {(jQuery|undefined)} Either a jQuery object representing the container component or
-	 *     undefined if nothing was found.
-	 */
-	function _findContainer( $timer, selector ) {
-		var $obj;
-
-		// Step[0]: First check the originally selected timer element to see if it is also the
-		// container.
-		if ( $timer.hasClass( selector ) ) {
-			$obj = $timer;
-		} else {
-			// Step[1]: Now try looking for the container among the children of the timer element.
-			$obj = $timer.find( selector );
-			if ( !$obj.length ) {
-				// Step[2]: No container was found, ∴ return undefined instead of empty jQuery
-				// object.
-				$obj = undefined;
-			}
-		}
-
-		return $obj;
-	}
-
-	/**
-	 * Find all countdown timer elements within the document, along with their components, using the
-	 * selectors specified during construction.
-	 */
-	// TODO: Finish writing function.
-	function _findJQueryObjs() {
-		var $timer_i;
-		var components_i = {
-			$timer: undefined,
-			$container: undefined,
-			$message: undefined,
-			$prependedHtml: undefined,
-			$appendedHtml: undefined
-		}
-		var timerComponents;
-
-		if ( _argTypeMask ) {
-			timerComponents = [];
-			this.$timers = $( selectors.timer );
-			this.$timers.each( function() {
-				components_i.$timer = $timer_i = $( this );
-				components_i.$container = _findContainer( $timer_i, selectors.container );
-				components_i.$message = _findMessage( $timer_i, selectors.message );
-				components_i.$prependedHtml = _findPrependedHtml( $timer_i,
-					selectors.prependedHtml );
-				components_i.$appendedHtml = _findAppendedHtml( $timer_i, selectors.appendedHtml );
-				timerComponents.push( components_i );
-			} );
-			this.timerComponents = timerComponents;
-
-			// TODO: Set _objFoundMask based on results.
-/*TODO*/			_validateFoundObjects();
-		}
-	}
-
-	/**
-	 * Find the message component element associated with a previously selected countdown timer
-	 * element.
-	 *
-	 * It is assumed that the message component should be a child element of the timer.
-	 *
-	 * @param {jQuery} $timer - The previously selected timer element.
-	 * @param {string} selector - Class-based selector for the timer's message component.
-	 *
-	 * @return {(jQuery|undefined)} Either a jQuery object representing the message component or
-	 *     undefined if nothing was found.
-	 */
-	function _findMessage( $timer, selector ) {
-		var $obj;
-
-		// Step[0]: Look for the message component among the children of the timer element.
-		$obj = $timer.find( selector );
-		if ( !$obj.length ) {
-			// Step[1]: No message component was found, ∴ return undefined instead of empty
-			// jQuery object.
-			$obj = undefined;
-		}
-		// …
-
-		return $obj;
-	}
-
-	/**
-	 * Find the prepended HTML component element associated with a previously selected countdown
-	 * timer element.
-	 *
-	 * It is assumed that the prepended HTML component should be a child element of the timer.
-	 *
-	 * @param {jQuery} $timer - The previously selected timer element.
-	 * @param {string} selector - Class-based selector for the timer's prepended HTML component.
-	 *
-	 * @return {(jQuery|undefined)} Either a jQuery object representing the prepended HTML component
-	 *     or undefined if nothing was found.
-	 */
-	function _findPrependedHtml( $timer, selector ) {
-		var $obj;
-
-		// Step[0]: Look for the prepended HTML component among the children of the timer
-		// element.
-		$obj = $timer.find( selector );
-		if ( !$obj.length ) {
-			// Step[1]: No prepended HTML component was found, ∴ return undefined instead of
-			// empty jQuery object.
-			$obj = undefined;
-		}
-
-
-		return $obj;
-	}
-
-	/**
-	 * Set default values for the private member that internally tracks errors.
-	 */
-	function _initErrorMessages() {
-		try {
-			_error = {
-				fileName: thisFileName,
-				fName: 'CountdownTimerObjs',
-				fDesc: 'Collection of jQuery objects that represent countdown timer elements and th\
-eir components.',
-				errorMsg: ''
-			};
-		} catch ( e ) {
-			_error = {
-				fileName: 'Unidentified file',
-				fName: 'CountdownTimerObjs',
-				fDesc: 'Collection of jQuery objects that represent countdown timer elements and th\
-eir components.',
-				errorMsg: ''
-			};
-		}
-	}
-
-	// TODO: Copied from CountdownTimerSelectors; rewrite.
-	function _throwAnyErrors() {
-		if ( !argTypeMask || !validSelectorMask ) {
-			if ( !argTypeMask ) {
-				_error.errorMsg = 'I encountered a wrongly typed argument during construction.';
-				if ( !validSelectorMask ) {
-					_error.errorMsg += ' Also, ';
-				}
-			}
-			if ( !validSelectorMask ) {
-				_error.errorMsg += 'I found that at least one of my arguments did not contain a pro\
-perly formed class selector as required.';
-			}
-			throw _error;
-		}
-	}
-
-	function _validateFoundObjects() {
-		var timerComponents;
-	}
-}
-
-////////
-// §2.4: Function definitions
-
-/**
- * Find and process a countdown timer element that has been marked with the ID attribute.
- *
- * @param {CountdownTimerSelectors} selectors - Selectors necessary for isolating and initializing
- *     the countdown timer.
- */
-function processCountdownTimersByClass( selectors ) {
-	var $components;
-	var error = {
-		fileName: thisFileName,
-		fName: 'processCountdownTimersByClass',
-		fDesc: 'Find and process a countdown timer element that has been marked with an ID attribut\
-e.',
-		msg: ''
-	};
-
-	try {
-		if (selectors instanceof CountdownTimerSelectors) {
-			// TODO: Get components.
-		} else {
-			error.msg = 'I was passed an invalidly typed argument.';
-			throw error;
-		}
-	} catch ( thrownError ) {
-		$.logError( thrownError.fileName, thrownError.fName, thrownError.fDesc, thrownError.msg );
-	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	// SUB FUNCTIONS
-// TODO:
-//	function …( … ) {
-//		…
-//	}
-}
-
-/**
- * Find and process a countdown timer element that has been marked with the ID attribute.
- * 
- * @param {string} selectorStr - Selector string for isolating countdown timer elements within the
- *     DOM.
- *
- * @return {(undefined|jQuery)} Either a jQuery object representing the element identified by ID as
- *     a countdown timer or undefined if an error condition was encountered.
- */
-function processCountdownTimerById( selectorStr ) {
-	var $countdownClockById = undefined;
-	var argIsIdSelector;
-	var errMsg;
-	var error = {
-		fileName: thisFileName,
-		fName: 'processCountdownTimerById',
-		fDesc: 'Find and process a countdown timer element that has been marked with an ID attribut\
-e.',
-		msg: ''
-	};
-	var validArgType;
-
-	validArgType = typeof selectorStr === 'string';
-	argIsIdSelector = validArgType ?
-		( /^#/ ).exec( selectorString ) :
-		false;
-	try {
-		if ( validArgType && argIsIdSelector ) {
-			$countdownClockById = $( selectorStr );
-			if ( $countdownClockById.length === 1 ) {
-				processCountdownTimerMsg( $countdownClock );
-			} else if ( $countdownClockById.length > 1 ) {
-				error.msg = 'I found ' + ($countdownClockById.length).toString() + ' instead of the\
- required 1 ID-labeled countdown timers.'
-				throw error;
-			}
-		} else {
-			if ( validArgType ) {
-				error.msg += 'I was passed a selector string argument that was typed as ' +
-					( typeof selectorStr ) + ' instead of string.';
-			}
-			if ( argIsIdSelector ) {
-				if ( validArgType ) {
-					error.msg += ' Also, '
-				}
-				error.msg += 'I was passed a selector string argument that did not contain a simple \
-ID-based selector.';
-			}
-			throw error;
-		}
-	} catch ( thrownError ) {
-		$.logError( thrownError.fileName, thrownError.fName, thrownError.fDesc, thrownError.msg );
-	}
-
-	return $countdownClockById;
-}
-
-/**
- *  Invokes the "The Final Countdown" jQuery plugin on appropriate elements within the DOM.
- *  
- *  @param {jQuery} $countdownTimer - A single jQuery object containing an element on which the
- *      plugin will be invoked.
+ *  ARGUMENTS:
+ *      $countdownTimer: a single jQuery object containing an element on which the plugin will be
+ *                       invoked.
  */
 function processCountdownTimerMsg ( $countdownTimerMsg ) {
-	var countdownTarget;
-	var expiredMsg;
-	var fnctnDesc = 'Invokes the "The Final Countdown" jQuery plugin on appropriate elements within\
- the DOM.';
-	var fnctnName = 'processCountdownTimer';
-	var format;
-	var parsedMsg;
-	var pendingMsg;
+        var fnctnName = 'processCountdownTimer';
+        var fnctnDesc = 'Invokes the "The Final Countdown" jQuery plugin on appropriate elements ' +
+                                        'within the DOM.';
+        var countdownTarget;
+        var pendingMsg;
+        var expiredMsg;
+        var parsedMsg;
+        var format;
 
-	// Check integrity of argument
-	if ( $.isJQueryObj( $countdownTimerMsg ) ) {
-		// Invoke The Final Countdown plugin on the object after parsing the necessary data.
-		countdownTarget = $countdownTimerMsg.data( 'countdown' );
+        // Check integrity of argument
+        if ( $.isJQueryObj( $countdownTimerMsg ) && $countdownTimerMsg.length === 1 ) {
 
-		// TODO: Add appending and prepending of message strings
-		pendingMsg = $countdownTimerMsg.data( 'pending-message' );
-		expiredMsg = $countdownTimerMsg.data( 'expired-message' );
-		// TODO: Refactor this function for improved performance:
-		// * Parse the messages only once
-		// * Add spans as children to the element and label them with identifying classes
-		// * Update the html of only the countdown span each clock cycle
-		if ( countdownTarget && pendingMsg && expiredMsg ) {
-			$countdownTimerMsg.countdown( countdownTarget ).on( 'update.countdown', 
-					function( event ) {
-				parsedMsg = pendingMsg.replace( /\[/g, '<' ).replace( /\]/g, '>' );
-				format = '%H:%M:%S';
-				if ( event.offset.totalDays > 0 ) {
-					format = '%-D day%!D and ' + format;
-				}
-				format = '<strong>' + format + '</strong>' + parsedMsg;
-				$( this ).html( event.strftime( format ) );
-			} ).on( 'finish.countdown', function( event ) {
-				parsedMsg = expiredMsg.replace( /\[/g, '<' ).replace( /\]/g, '>' );
-				$( this ).html( parsedMsg );
-			} );
-		} else {
-			// TODO: Expand error reporting to achieve optimal granularity for troubleshooting.
-			$.logError( thisFileName, fnctnName, fnctnDesc,
-				'Because I encountered a problem with expected data attributes, I am unable to proc\
-eed with invocation of The Final Countdown on the jQuery object I am currently working with.\n\tHer\
-e\'s information on the variables I am handling:'
-			);
-			console.log( $countdownTimerMsg, pendingMsg, expiredMsg );
-		}
-	} else {
-		$.logError( thisFileName, fnctnName, fnctnDesc,
-			'I was passed an invalid argument for $countdownTimerMsg, which appears below:'
-		);
-		console.log( $countdownTimerMsg );
-	}
-}
+                // Invoke The Final Countdown plugin on the object after parsing the necessary data.
+                countdownTarget = $countdownTimerMsg.data( 'countdown' );
 
-/**
- * Find and process countdown timer elements whose components have been marked with the class
- * attribute.
- * 
- * @param {string} selectorStr - Selector string for isolating countdown timer elements within the
- *     DOM.
- *
- * @return {(undefined|jQuery)} Either a jQuery object representing the elements identified by class
- *     as countdown timers or undefined if an error condition was encountered.
- */
-// TODO: function processCountdownTimersByClass( … ) { … }
+                // TODO: Add appending and prepending of message strings
+                pendingMsg = $countdownTimerMsg.data( 'pending-message' );
+                expiredMsg = $countdownTimerMsg.data( 'expired-message' );
+                if ( countdownTarget && pendingMsg && expiredMsg ) {
+                        $countdownTimerMsg.countdown( countdownTarget ).on( 'update.countdown', function( event ) {
+                                parsedMsg = pendingMsg.replace( /\[/g, '<' ).replace( /\]/g, '>' );
+                                format = '%H:%M:%S';
+                                if ( event.offset.totalDays > 0 ) {
+                                        format = '%-D day%!D and ' + format;
+                                }
+                                format = '<strong>' + format + '</strong>' + parsedMsg;
+                                $( this ).html( event.strftime( format ) );
+                        } ).on( 'finish.countdown', function( event ) {
+                                parsedMsg = expiredMsg.replace( /\[/g, '<' ).replace( /\]/g, '>' );
+                                $( this ).html( parsedMsg );
+                        } );
+                } else {
 
-/**
- * Show a countdown timer that was marked by its ID attribute.
- *
- * @param {undefined|jQuery} $countdownClock - Either a jQuery object representing the element
- *     identified by ID as a countdown timer or undefined if no such element was found.
- * @param {number} animationTiming - The duration of the show animation in milliseconds.
- */
-function showIdSelectedCountdownTimer( $countdownClock, animationTiming ) {
-	var $countdownParent;
-	var hideCountdown = false;
-	var validArgTypes = {};
-	var error = {
-		fileName: thisFileName,
-		fName: 'showIdSelectedCountdownTimer',
-		fDesc: 'Show a countdown timer that was marked by its ID attribute.',
-		msg: ''
-	};
+                        // TODO: Expand error reporting to achieve optimal granularity for troubleshooting.
+                        $.logError( thisFileName, fnctnName, fnctnDesc,
+                                'Because I encountered a problem with expected data attributes, I am unable to ' +
+                                'proceed with invocation of The Final Countdown on the jQuery object I am ' +
+                                'currently working with.\n\tHere\'s information on the variables I am handling:'
+                        );
+                        console.log( $countdownTimerMsg, pendingMsg, expiredMsg );
+                }
+        } else if ($countdownTimerMsg.length != 0) {
 
-//	var hideUntilTime = $countdownClock.data( 'hide-until' );
-//	var showUntilTime = $countdownClock.data( 'show-until' );
-
-	//TODO: Implement showing/hiding times for countdown timers.
-	try {
-		validArgTypes[ '$countdownClock' ] = $.isJQueryObj( $countdownClock );
-		validArgTypes[ 'animationTiming' ] = typeof animationTiming === 'number';
-		if ( $countdownClock && validArgTypes [ '$countdownClock' ] &&
-				validArgTypes[ 'animationTiming' ] ) {
-			$countdownParent = $countdownClock.parents( 'section' ).first();
-			if ( !hideCountdown ) {
-				$countdownParent.show( animationTiming );
-			}
-		} else {
-			if ( $countdownClock ) {
-				if ( !validArgTypes[ '$countdownClock' ] ) {
-					error.msg = 'I was passed a purported jQuery object representing the countdown \
-timer, but it turned out to not actually be a jQuery object.';
-				}
-				if ( !validArgTypes[ 'animationTiming' ] ) {
-					if ( error.msg == '' ) {
-						error.msg += ' Also, ';
-					}
-					error.msg += 'I was passed a non-number argument for the show animation timing \
-that turned out to be typed as ' + ( typeof animationTiming ) +  '.';
-				}
-				throw error;
-			}
-		}
-	} catch ( thrownError ) {
-		$.logError( thrownError.fileName, thrownError.fName, thrownError.fDesc, thrownError.msg );
-	}
+                // Report appropriate problem with argument integrity
+                if ( !$.isJQueryObj( $countdownTimerMsg ) ) {
+                        errorMsg =
+                        $.logError( thisFileName, fnctnName, fnctnDesc,
+                                'I was passed an invalid argument for $countdownTimerMsg, which appears below:'
+                        );
+                        console.log( $countdownTimerMsg );
+                } else {
+                        $.logError( thisFileName, fnctnName, fnctnDesc,
+                                'I was expecting a single jQuery object as an argument for $countdownTimerMsg. ' +
+                                'Instead, I was passed a jQuery object with a length of ' + $countdownTimerMsg.length
+                        );
+                }
+        }
 }
 
 } )( jQuery );
