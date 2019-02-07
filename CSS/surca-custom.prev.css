@@ -2,20 +2,33 @@
 
 /*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/surca.wsu.edu] for a repository of source code. */
 /*! ================================================================================================
-*** MASTER STYLE SHEET for WSU Office of Undergraduate Education (OUE) Websites
+*** Styles common to all WSU Office of Undergraduate Education (OUE) websites
 *** ================================================================================================
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
-***
-***   SUMMARY: CSS code built from precompiled CSS that was written in the Less language extension
-***     of CSS.
+***   SUMMARY: CSS code designed for use on all OUE websites that was built from precompiled CSS
+**     written in the Less language extension of CSS.
 ***
 ***   DESCRIPTION: Intended for use with all WSUWP websites associated with the WSU Office of 
 ***     Undergraduate Education, a unit within the Office of the Provost. (Please see 
 ***     https://web.wsu.edu and https://vpue.wsu.edu/oue for more information.) It is designed to 
-***     be applied via the WSUWP CSS Stylesheet Editor functioning in in add-on mode.
+***     be applied via the WSUWP CSS Stylesheet Editor functioning in add-on mode.
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
 ***
 ***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
 ***     (Please see above git repository for fully documented, precompiled source code.)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 .column,.column h1,.column h2,.column h3,.column h4,.ff--sans,.gform_heading h3.gform_title,.has-dflt-font,body {
@@ -58,283 +71,6 @@
 .for-screen-readers.row {
 	margin: 0 !important;
 	padding: 0 !important;
-}
-
-#binder.fluid.max-1188 .row.halves .column img.auto-scaled,.column .margin-centered,.margin-centered,img.shift-to-center,img.shiftToCenter {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.column .spaces-top-full,.spaces-top-full {
-	margin-top: 4rem;
-}
-
-.column .spaces-top-full.forces-spacing,.spaces-top-full.forces-spacing {
-	margin-top: 4rem !important;
-}
-
-.column .spaces-rgt-full,.spaces-rgt-full {
-	margin-right: 4rem;
-}
-
-.column .spaces-rgt-full.forces-spacing,.spaces-rgt-full.forces-spacing {
-	margin-right: 4rem !important;
-}
-
-.column .spaces-btm-full,.spaces-btm-full {
-	margin-bottom: 4rem;
-}
-
-.column .spaces-btm-full.forces-spacing,.spaces-btm-full.forces-spacing {
-	margin-bottom: 4rem !important;
-}
-
-.column .spaces-lft-full,.spaces-lft-full {
-	margin-left: 4rem;
-}
-
-.column .spaces-lft-full.forces-spacing,.spaces-lft-full.forces-spacing {
-	margin-left: 4rem !important;
-}
-
-.column .spaces-top-nrml,.spaces-top-nrml {
-	margin-top: 2rem;
-}
-
-.column .spaces-top-nrml.forces-spacing,.spaces-top-nrml.forces-spacing {
-	margin-top: 2rem !important;
-}
-
-.column .spaces-rgt-nrml,.spaces-rgt-nrml {
-	margin-right: 2rem;
-}
-
-.column .spaces-rgt-nrml.forces-spacing,.spaces-rgt-nrml.forces-spacing {
-	margin-right: 2rem !important;
-}
-
-.column .spaces-btm-nrml,.spaces-btm-nrml {
-	margin-bottom: 2rem;
-}
-
-.column .spaces-btm-nrml.forces-spacing,.spaces-btm-nrml.forces-spacing {
-	margin-bottom: 2rem !important;
-}
-
-.column .spaces-lft-nrml,.spaces-lft-nrml {
-	margin-left: 2rem;
-}
-
-.column .spaces-lft-nrml.forces-spacing,.spaces-lft-nrml.forces-spacing {
-	margin-left: 2rem !important;
-}
-
-.column .spaces-top-half,.spaces-top-half {
-	margin-top: 1rem;
-}
-
-.column .spaces-top-half.forces-spacing,.spaces-top-half.forces-spacing {
-	margin-top: 1rem !important;
-}
-
-.column .spaces-rgt-half,.spaces-rgt-half {
-	margin-right: 1rem;
-}
-
-.column .spaces-rgt-half.forces-spacing,.spaces-rgt-half.forces-spacing {
-	margin-right: 1rem !important;
-}
-
-.column .spaces-btm-half,.spaces-btm-half {
-	margin-bottom: 1rem;
-}
-
-.column .spaces-btm-half.forces-spacing,.spaces-btm-half.forces-spacing {
-	margin-bottom: 1rem !important;
-}
-
-.column .spaces-lft-half,.spaces-lft-half {
-	margin-left: 1rem;
-}
-
-.column .spaces-lft-half.forces-spacing,.spaces-lft-half.forces-spacing {
-	margin-left: 1rem !important;
-}
-
-.column .spaces-top-qrtr,.spaces-top-qrtr {
-	margin-top: .5rem;
-}
-
-.column .spaces-top-qrtr.forces-spacing,.spaces-top-qrtr.forces-spacing {
-	margin-top: .5rem !important;
-}
-
-.column .spaces-rgt-qrtr,.spaces-rgt-qrtr {
-	margin-right: .5rem;
-}
-
-.column .spaces-rgt-qrtr.forces-spacing,.spaces-rgt-qrtr.forces-spacing {
-	margin-right: .5rem !important;
-}
-
-.column .spaces-btm-qrtr,.spaces-btm-qrtr {
-	margin-bottom: .5rem;
-}
-
-.column .spaces-btm-qrtr.forces-spacing,.spaces-btm-qrtr.forces-spacing {
-	margin-bottom: .5rem !important;
-}
-
-.column .spaces-lft-qrtr,.spaces-lft-qrtr {
-	margin-left: .5rem;
-}
-
-.column .spaces-lft-qrtr.forces-spacing,.spaces-lft-qrtr.forces-spacing {
-	margin-left: .5rem !important;
-}
-
-.column .spaces-top-8th,.spaces-top-8th {
-	margin-top: .25rem;
-}
-
-.column .spaces-top-8th.forces-spacing,.spaces-top-8th.forces-spacing {
-	margin-top: .25rem !important;
-}
-
-.column .spaces-rgt-8th,.spaces-rgt-8th {
-	margin-right: .25rem;
-}
-
-.column .spaces-rgt-8th.forces-spacing,.spaces-rgt-8th.forces-spacing {
-	margin-right: .25rem !important;
-}
-
-.column .spaces-btm-8th,.spaces-btm-8th {
-	margin-bottom: .25rem;
-}
-
-.column .spaces-btm-8th.forces-spacing,.spaces-btm-8th.forces-spacing {
-	margin-bottom: .25rem !important;
-}
-
-.column .spaces-lft-8th,.spaces-lft-8th {
-	margin-left: .25rem;
-}
-
-.column .spaces-lft-8th.forces-spacing,.spaces-lft-8th.forces-spacing {
-	margin-left: .25rem !important;
-}
-
-.column .spaces-top-none,.spaces-top-none {
-	margin-top: 0 !important;
-}
-
-.column .spaces-top-none.forces-spacing,.spaces-top-none.forces-spacing {
-	margin-top: 0 !important;
-}
-
-.column .spaces-rgt-none,.spaces-rgt-none {
-	margin-right: 0 !important;
-}
-
-.column .spaces-rgt-none.forces-spacing,.spaces-rgt-none.forces-spacing {
-	margin-right: 0 !important;
-}
-
-.column .spaces-btm-none,.spaces-btm-none {
-	margin-bottom: 0 !important;
-}
-
-.column .spaces-btm-none.forces-spacing,.spaces-btm-none.forces-spacing {
-	margin-bottom: 0 !important;
-}
-
-.column .spaces-lft-none,.spaces-lft-none {
-	margin-left: 0 !important;
-}
-
-.column .spaces-lft-none.forces-spacing,.spaces-lft-none.forces-spacing {
-	margin-left: 0 !important;
-}
-
-.column .pads-top-full,.pads-top-full {
-	padding-top: 4rem;
-}
-
-.column .pads-rgt-full,.pads-rgt-full {
-	padding-right: 4rem;
-}
-
-.column .pads-btm-full,.pads-btm-full {
-	padding-bottom: 4rem;
-}
-
-.column .pads-lft-full,.pads-lft-full {
-	padding-right: 4rem;
-}
-
-.column .pads-top-nrml,.pads-top-nrml {
-	padding-top: 2rem;
-}
-
-.column .pads-rgt-nrml,.pads-rgt-nrml {
-	padding-right: 2rem;
-}
-
-.column .pads-btm-nrml,.pads-btm-nrml {
-	padding-bottom: 2rem;
-}
-
-.column .pads-lft-nrml,.pads-lft-nrml {
-	padding-right: 2rem;
-}
-
-.column .pads-top-half,.pads-top-half {
-	padding-top: 1rem;
-}
-
-.column .pads-rgt-half,.pads-rgt-half {
-	padding-right: 1rem;
-}
-
-.column .pads-btm-half,.pads-btm-half {
-	padding-bottom: 1rem;
-}
-
-.column .pads-lft-half,.pads-lft-half {
-	padding-right: 1rem;
-}
-
-.column .pads-top-qrtr,.pads-top-qrtr {
-	padding-top: .5rem;
-}
-
-.column .pads-rgt-qrtr,.pads-rgt-qrtr {
-	padding-right: .5rem;
-}
-
-.column .pads-btm-qrtr,.pads-btm-qrtr {
-	padding-bottom: .5rem;
-}
-
-.column .pads-lft-qrtr,.pads-lft-qrtr {
-	padding-right: .5rem;
-}
-
-.column .pads-top-8th,.pads-top-8th {
-	padding-top: .25rem;
-}
-
-.column .pads-rgt-8th,.pads-rgt-8th {
-	padding-right: .25rem;
-}
-
-.column .pads-btm-8th,.pads-btm-8th {
-	padding-bottom: .25rem;
-}
-
-.column .pads-lft-8th,.pads-lft-8th {
-	padding-right: .25rem;
 }
 
 .column .indent-1x,.indent-1x {
@@ -1425,10 +1161,6 @@ h1.crimson-text.solid,h2.crimson-text.solid,h3.crimson-text.solid,h4.crimson-tex
 h1.crimson-text.solid::before,h2.crimson-text.solid::before,h3.crimson-text.solid::before,h4.crimson-text.solid::before,h5.crimson-text.solid::before,h6.crimson-text.solid::before {
 	border-top: 2px solid rgba(152,30,50,.6667);
 	border-bottom: 1px solid rgba(152,30,50,.3333);
-}
-
-h1,h2,h3 {
-	text-transform: uppercase;
 }
 
 header.main-header .sup-header-default {
@@ -5779,11 +5511,6 @@ div.auto-scroller ul li {
 	margin-top: 4em;
 }
 
-.margin--centered {
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .mh--auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -6737,9 +6464,30 @@ div.auto-scroller ul li {
 	background-color: #feefe2;
 }
 
-/*! ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
-*** ║ #### SURCA-SPECIFIC STYLE RULES ############################################################ ║
-*** ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/*! ================================================================================================
+*** Styles specific to the WSU SURCA website
+*** ================================================================================================
+***   SUMMARY: CSS code designed for use on the SURCA website that was built from precompiled CSS
+**     written in the Less language extension of CSS.
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
+***     (Please see above git repository for fully documented, precompiled source code.)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
 **/
 body {
 	background: #eff0f1;
@@ -6792,70 +6540,6 @@ div.column section.header-pastEvents {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
 }
 
-div.green-marble-sidebar {
-	padding-top: 2rem;
-	padding-right: 2rem;
-	padding-bottom: 2em;
-	padding-left: 1rem;
-	margin-right: 10px;
-	background: #e3dfcd url('/wp-content/uploads/sites/51/2015/04/		seamless-marble-texture_528x528.png') left top repeat;
-	border: 1px solid #afa370;
-	box-shadow: 3px 3px 3px rgba(57,50,21,.3333);
-	font-size: .9em;
-	color: #2a3033;
-}
-
-div.bluish-gray-acrylic-sidebar {
-	background: #edf3f4 url('/wp-content/uploads/sites/51/2015/04/		vertically-tileable-gray-acrylic_opacity-0.15.png') left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1rem;
-}
-
-div.gray-acrylic-sidebar {
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1em;
-	padding-left: 1rem;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	background: #fff url('/wp-content/uploads/sites/51/2015/04/		vertically-tileable-gray-acrylic_opacity-0.15.png') left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,.3333);
-	font-size: .9em;
-	color: #2a3033;
-}
-
-div.bluish-gray-acrylic-sidebar p,div.gray-acrylic-sidebar p,div.green-marble-sidebar p {
-	font-size: .75rem;
-}
-
-div.bluish-gray-acrylic-sidebar h2,div.gray-acrylic-sidebar h2,div.green-marble-sidebar h2 {
-	margin-bottom: 0;
-}
-
-div.bluish-gray-acrylic-sidebar h2+hr,div.gray-acrylic-sidebar h2+hr,div.green-marble-sidebar h2+hr {
-	margin-top: 0;
-	background-color: rgba(70,78,84,.75);
-}
-
-div.bluish-gray-acrylic-sidebar h3,div.gray-acrylic-sidebar h3,div.green-marble-sidebar h3 {
-	font-size: 1.275rem;
-}
-
-div.bluish-gray-acrylic-sidebar h4,div.gray-acrylic-sidebar h4,div.green-marble-sidebar h4 {
-	font-size: 1.05rem;
-}
-
 div.column aside.article-sidebar,div.column aside.important-reminder {
 	float: right;
 	width: 33%;
@@ -6871,7 +6555,7 @@ div.column aside.article-sidebar,div.column aside.important-reminder {
 
 div.column aside.important-reminder {
 	border: 1px solid #f77891;
-	background: #fcd5dc url('/wp-content/uploads/sites/51/2015/04/ tileable-concrete-texture_128x128.png') left top repeat;
+	background: #fcd5dc url('/wp-content/uploads/sites/51/2015/04/			tileable-concrete-texture_128x128.png') left top repeat;
 	box-shadow: 1px 1px 2px rgba(247,120,145,.5);
 }
 
@@ -6889,18 +6573,18 @@ div.column aside.important-reminder p:last-child {
 }
 
 .row.article-notice .column {
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
 	background: #e9c024 url(/wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png) no-repeat scroll left top;
 	background-size: cover;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 	box-shadow: 0 1px 1px rgba(0,0,0,.3);
 	color: #464e54;
 }
 
 .row.article-notice .column>p {
+	color: #464e54;
 	font-size: 1.13656512em;
 	letter-spacing: .5px;
-	color: #464e54;
 	text-shadow: 0 1px 1px rgba(255,255,255,.5);
 }
 
@@ -6935,15 +6619,15 @@ div.column aside.important-reminder p:last-child {
 }
 
 .column table.award-winners {
-	width: 100%;
 	text-align: center;
 	vertical-align: top;
+	width: 100%;
 }
 
 .column table.award-winners td {
+	padding-bottom: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
-	padding-bottom: 5px;
 }
 
 .column table.award-winners tr.gray {
@@ -6955,28 +6639,28 @@ div.column aside.important-reminder p:last-child {
 }
 
 #welcome-message {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
 	font-family: 'Open Sans Condensed';
 	font-size: 5rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	text-align: center;
 }
 
 #post-welcome-message {
-	display: none;
-	position: relative;
-	padding-right: 8px;
-	padding-left: 8px;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	background-color: #edf3f4;
 	border: 1px solid #aec7cb;
 	border-radius: 10px;
-	background-color: #edf3f4;
 	box-shadow: 2px 2px 4px rgba(63,107,114,.5);
+	display: none;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	overflow: hidden;
+	padding-left: 8px;
+	padding-right: 8px;
+	position: relative;
 }
 
-#post-welcome-message:before {
+#post-welcome-message::before {
 	content: "";
 	position: absolute;
 	top: 2px;
@@ -6988,7 +6672,7 @@ div.column aside.important-reminder p:last-child {
 	background: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.1));
 }
 
-#post-welcome-message:after {
+#post-welcome-message::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -7322,18 +7006,6 @@ h3.drop-down-toggle:hover {
 		-webkit-transform: translateX(-50%);
 		-moz-transform: translateX(-50%);
 		transform: translateX(-50%);
-	}
-	
-	.column .large-format-friendly {
-		margin-right: auto;
-		margin-left: auto;
-		max-width: 800px;
-	}
-}
-
-@media all and (min-width:1051px) {
-	section.row.side-right.large-format-friendly div.column.two:before,section.side-right.large-format-friendly div.column.two:before {
-		background: #d7dadb url(/wp-content/uploads/sites/706/2016/03/texture_sandstone.png);
 	}
 }
 
@@ -8422,12 +8094,6 @@ h3.drop-down-toggle:hover {
 	.builder-banner-slide:hover .builder-banner-content {
 		font-size: 3.4379vw;
 		line-height: 4.6411vw;
-	}
-}
-
-@media all and (min-width:792px) and (max-width:1049px) {
-	.column .large-format-friendly {
-		max-width: 792px;
 	}
 }
 
