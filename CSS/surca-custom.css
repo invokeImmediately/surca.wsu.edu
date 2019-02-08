@@ -1497,7 +1497,7 @@ h3.solid,
 h4.solid,
 h5.solid,
 h6.solid {
-  padding: 0.1em 0.25em 0.11em;
+  padding: 0.1em 0.25em 0.11em 5px;
   position: relative;
 }
 h1.solid::before,
