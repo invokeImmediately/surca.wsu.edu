@@ -51,6 +51,7 @@ function getJsBuildSettings() {
 	return {
 		buildDependenciesList: [
 			'./WSU-UE---JS/jQuery.oue-custom.js',
+			'./WSU-UE---JS/jQuery.css-data.js',
 			'./WSU-UE---JS/jQuery.textResize.js',
 			'./WSU-UE---JS/jQuery.forms.js',
 			'../jQuery.AreYouSure/jquery.are-you-sure.js',
@@ -60,7 +61,8 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jQuery.cookieObjs.js',
 			'./WSU-UE---JS/jquery.media.js',
 			'../jQuery.countdown/dist/jquery.countdown.min.js',
-			'./WSU-UE---JS/jQuery.countdown-custom.js',
+//			'./WSU-UE---JS/jQuery.countdown-custom.js',
+			'./Local/jQuery.countdown-custom_2017-10-18.prev.js',
 			'./JS/surca-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
