@@ -4275,6 +4275,10 @@ div.read-more-target {
     opacity: 1;
   }
 }
+.post-password-required {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
 .drop-down-toggle {
   position: relative;
   transition: all 0.3s ease;
@@ -6233,7 +6237,7 @@ div.column aside.important-reminder p:last-child {
   }
 }
 .row.article-notice.ruby div.column {
-  background: #c60c30 url("/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png") no-repeat scroll left top;
+  background: #c60c30 url("/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png") no-repeat scroll left top / cover;
 }
 .row.article-notice.ruby div.column > p {
   color: #fff;
