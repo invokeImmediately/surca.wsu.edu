@@ -1,4 +1,4 @@
-﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
+﻿@import  "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif";
 
 /*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/surca.wsu.edu] for a repository of source code. */
 /*! ================================================================================================
@@ -3403,6 +3403,11 @@ div.read-more-target {
 	}
 }
 
+.post-password-required {
+	padding-left: 2rem;
+	padding-top: 2rem;
+}
+
 .drop-down-toggle {
 	position: relative;
 	transition: all .3s ease;
@@ -5732,7 +5737,7 @@ div.column aside.important-reminder p:last-child {
 }
 
 .row.article-notice.ruby div.column {
-	background: #c60c30 url(/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png) no-repeat scroll left top;
+	background: #c60c30 url(/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png) no-repeat scroll left top/cover;
 }
 
 .row.article-notice.ruby div.column>p {
@@ -6981,4 +6986,8 @@ h3.drop-down-toggle:hover {
 	header.main-header {
 		background: #2a3033 url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
 	}
+}
+
+.wsuwp-json--headlines * + .wsuwp-content-syndicate-item {
+	margin-top: 1em;
 }
