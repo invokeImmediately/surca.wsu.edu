@@ -426,10 +426,6 @@ main .row {
 	font-size: 1rem;
 }
 
-main .row>.column table>tbody>tr>td>div>ol:last-child,main .row>.column table>tbody>tr>td>div>p:last-child,main .row>.column table>tbody>tr>td>div>ul:last-child,main .row>.column table>tbody>tr>td>ol:last-child,main .row>.column table>tbody>tr>td>p:last-child,main .row>.column table>tbody>tr>td>section>ol:last-child,main .row>.column table>tbody>tr>td>section>p:last-child,main .row>.column table>tbody>tr>td>section>ul:last-child,main .row>.column table>tbody>tr>td>ul:last-child {
-	margin-bottom: 0;
-}
-
 .h1-header+section.pad-top .column {
 	padding-top: 2rem;
 }
@@ -1637,12 +1633,19 @@ ol {
 	list-style-image: none !important;
 }
 
+.wsuwp-json--headlines *+.wsuwp-content-syndicate-item {
+	margin-top: 1em;
+}
+
 .wsuwp-json--headlines .wsuwp-content-syndicate-list {
 	display: flex;
 	flex-wrap: wrap;
-	font-size: .9em;
 	list-style-type: none;
 	padding: 0;
+}
+
+.wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-list {
+	font-size: .9em;
 }
 
 .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
@@ -2757,8 +2760,8 @@ span.accentuated-text.gray.brighter {
 span.has-tool-tip,span.has-tooltip {
 	position: relative;
 	margin-bottom: -3px;
-	border-bottom: 1px dotted rgba(0,165,189,.25);
-	color: #00a5bd;
+	border-bottom: 1px dotted rgba(0,70,189,.85);
+	color: #0046bd;
 	transition-property: color, background, border-color;
 	-webkit-transition-property: color, background, border-color;
 	transition-duration: .3s, .3s, .3s;
@@ -2768,9 +2771,9 @@ span.has-tool-tip,span.has-tooltip {
 }
 
 span.has-tool-tip:hover,span.has-tooltip:hover {
-	background-color: rgba(0,165,189,.2);
-	border-color: rgba(0,165,189,.67);
-	color: #2f5055;
+	background-color: rgba(88,149,255,.1);
+	border-color: rgba(88,149,255,.85);
+	color: #5895ff;
 }
 
 cite.article-author {
@@ -6988,6 +6991,38 @@ h3.drop-down-toggle:hover {
 	}
 }
 
-.wsuwp-json--headlines * + .wsuwp-content-syndicate-item {
-	margin-top: 1em;
+/* New print styles added 2019-05-23. */
+@media print {
+	#fund-announcement {
+		display: none;
+	}
+	
+	body.blog .row.side-right .column.one {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right .column.two {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right p {
+		max-width: none;
+	}
+	
+	body.blog .row.side-right .article-thumbnail {
+		margin-left: 1em;
+	}
+	
+	body.home #wsuwp-main {
+		width: calc(100% - 198px) !important;
+		margin-left: 198px;
+	}
+	
+	body.home #spine {
+		display: block !important;
+	}
+	
+	body.home #spine nav ul ul li {
+		display: block !important;
+	}
 }
