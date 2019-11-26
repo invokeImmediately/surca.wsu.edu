@@ -32,9 +32,26 @@ Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
 			'stopAfterFirstMatch': true
 		};
 	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
-se see [https://github.com/invokeImmediately/surca.wsu.edu] for a repository of source code. */\r\n\
-';
+	var minCssFileHeaderStr = '/*! ====================================================================\
+============================\r\n*** Media queries section\r\n*** ==================================\
+==============================================================\r\n***   SUMMARY: Media queries buil\
+t from precompiled CSS written in the Less language extension of\r\n***    CSS. Queries in this sec\
+tion are a combination of those designed for use on DAESA websites***\r\n    and those intended spe\
+cifically for use on the SURCA website.\r\n***\r\n***   DESCRIPTION: Fully documented, precompiled \
+source code from which this section of the custom\r\n***    stylesheet was built is developed and m\
+aintained on the following two GitHub projects:\r\n***    https://github.com/invokeImmediately/WSU-\
+UE---CSS/\r\n***    https://github.com/invokeImmediately/surca.wsu.edu/\r\\n***   AUTHOR: Daniel Ri\
+eck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)\r\n***\r\n***   LICENSE: ISC - Co\
+pyright (c) 2019 Daniel C. Rieck.\r\n***\r\n***     Permission to use, copy, modify, and/or distrib\
+ute this software for any purpose with or\r\n***     without fee is hereby granted, provided that t\
+he above copyright notice and this permission\r\n***     notice appear in all copies.\r\n***\r\n***\
+     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO\r\n*\
+**     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT\r\
+\n***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES \
+OR\r\n***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACT\
+ION OF\r\n***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WI\
+TH THE USE\r\n***     OR PERFORMANCE OF THIS SOFTWARE.\r\n*** =====================================\
+===========================================================\r\n**/';
  	var sourceFile = './CSS/surca-custom.less';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
