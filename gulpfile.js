@@ -24,15 +24,7 @@ function getCssBuildSettings() {
 Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
 	var insertingMediaQuerySectionHeader = {
 			'before': /^@media/,
-			'lineBefore': '/*! ╔═══════════════════════════════════════════════════════════════════\
-════════════════════════════════════════════════════╗\r\n*   ║ MEDIA QUERIES ######################\
-################################################################################# ║\r\n*   ╚═══════\
-═══════════════════════════════════════════════════════════════════════════════════════════════════\
-═════════════╝\r\n*/',
-			'stopAfterFirstMatch': true
-		};
-	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '/*! ====================================================================\
+			'lineBefore': '/*! ====================================================================\
 ============================\r\n*** Media queries section\r\n*** ==================================\
 ==============================================================\r\n***   SUMMARY: Media queries buil\
 t from precompiled CSS written in the Less language extension of\r\n***    CSS. Queries in this sec\
@@ -51,7 +43,11 @@ he above copyright notice and this permission\r\n***     notice appear in all co
 OR\r\n***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACT\
 ION OF\r\n***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WI\
 TH THE USE\r\n***     OR PERFORMANCE OF THIS SOFTWARE.\r\n*** =====================================\
-===========================================================\r\n**/';
+===========================================================\r\n**/',
+			'stopAfterFirstMatch': true
+		};
+	var minCssFileExtension = '.min.css';
+	var minCssFileHeaderStr = '';
  	var sourceFile = './CSS/surca-custom.less';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
