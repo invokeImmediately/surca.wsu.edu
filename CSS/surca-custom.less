@@ -1,8 +1,30 @@
-/** ┌────────────────────────────────────────────────────────────────────────────────────────────┐
-*** │ FILENAME: surca-custom.less                                                                │
-*** │                                                                                            │
-*** │ See persistent comment below for additional information and license.                       │
-*** └────────────────────────────────────────────────────────────────────────────────────────────┘
+/** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+*** │ FILENAME: surca-custom.less                                                                  │
+*** │                                                                                              │
+*** │ See persistent section header comment below (§2) for additional information and license.     │
+*** └──────────────────────────────────────────────────────────────────────────────────────────────┘
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Build entry point from DAESA's CSS development project................................27
+***  §2: Persistent section header comment for unit specific styling...........................37
+***  §3: SURCA-specific Less variables.........................................................68
+***  §4: Body, main, and site header...........................................................76
+***  §5: Page headers.........................................................................118
+***  §6: Article sidebars.....................................................................159
+***  §7: Lists................................................................................250
+***  §8: Iframes..............................................................................259
+***  §9: Tables...............................................................................267
+***  §10: Welcome message.....................................................................291
+***  §11: Drop down toggles...................................................................349
+***  §12: Abstract submission reminder........................................................363
+***  §13: Announcements.......................................................................383
+***  §14: Banner slideshows...................................................................393
+***  §15: Included optional layouts...........................................................402
+***  ───────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
+/** ================================================================================================
+*** §1: Build entry point from DAESA's CSS development project 
 **/
 
 @grid-behavior: "hybrid";
@@ -11,16 +33,22 @@
 @import "..\WSU-UE---CSS\variables";
 @import "..\WSU-UE---CSS\css-build-entry-point.less";
 
+/** ================================================================================================
+*** §2: Persistent section header comment for unit specific styling
+**/
+
 /*! ================================================================================================
-*** Styles specific to the WSU SURCA website
+*** SURCA Styling Section
 *** ================================================================================================
-***   SUMMARY: CSS code designed for use on the SURCA website that was built from precompiled CSS
-**     written in the Less language extension of CSS.
+***   SUMMARY: CSS code designed for use on Washington State University's [SURCA website](https://su
+***    rca.wsu.edu/) that was built from precompiled CSS written in the Less language extension of
+***    CSS.
+***
+***   DESCRIPTION: Fully documented, precompiled source code from which this section of the
+***    custom stylesheet was built is developed and maintained on the following GitHub project:
+***    https://github.com/invokeImmediately/surca.wsu.edu/
 ***
 ***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
-***
-***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
-***     (Please see above git repository for fully documented, precompiled source code.)
 ***
 ***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
 ***
@@ -37,27 +65,8 @@
 *** ================================================================================================
 **/
 
-/**  ───────────────────────────────────────────────────────────────────────────────────────────────
-***  TABLE OF CONTENTS:
-***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: SURCA-specific Less variables.........................................................60
-***  §2: Body, main, and site header...........................................................68
-***  §3: Page headers.........................................................................110
-***  §4: Article sidebars.....................................................................151
-***  §5: Lists................................................................................242
-***  §6: Iframes..............................................................................251
-***  §7: Tables...............................................................................259
-***  §8: Welcome message......................................................................283
-***  §9: Drop down toggles....................................................................341
-***  §10: Abstract submission reminder........................................................355
-***  §11: Announcements.......................................................................375
-***  §12: Banner slideshows...................................................................385
-***  §13: Included optional layouts...........................................................394
-***  ───────────────────────────────────────────────────────────────────────────────────────────────
-**/
-
 /** ================================================================================================
-*** §1: SURCA-specific Less variables
+*** §3: SURCA-specific Less variables
 **/
 
 @url-gold-texture: "wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png";
@@ -65,7 +74,7 @@
 @url-sandstone-texture: "wp-content/uploads/sites/706/2016/03/texture_sandstone.png";
 
 /** ================================================================================================
-*** §2: Body, main, and site header
+*** §4: Body, main, and site header
 **/
 
 body {
@@ -107,7 +116,7 @@ header.main-header {
 }
 
 /** ================================================================================================
-*** §3: Page headers
+*** §5: Page headers
 **/
 
 div.column {
@@ -148,7 +157,7 @@ div.column {
 }
 
 /** ================================================================================================
-*** §4: Article sidebars
+*** §6: Article sidebars
 **/
 
 div.column {
@@ -239,7 +248,7 @@ div.column {
 }
 
 /** ================================================================================================
-*** §5: Lists
+*** §7: Lists
 **/
 
 .column ul li {
@@ -248,7 +257,7 @@ div.column {
 
 
 /** ================================================================================================
-*** §6: Iframes
+*** §8: Iframes
 **/
 
 .column .pdf-wrapper.landscape.live-stream {
@@ -256,7 +265,7 @@ div.column {
 }
 
 /** ================================================================================================
-*** §7: Tables
+*** §9: Tables
 **/
 
 .column table.award-winners {
@@ -280,7 +289,7 @@ div.column {
 }
 
 /** ================================================================================================
-*** §8: Welcome message
+*** §10: Welcome message
 **/
 
 #welcome-message {
@@ -338,7 +347,7 @@ div.column {
 }
 
 /** ================================================================================================
-*** §9: Drop down toggles
+*** §11: Drop down toggles
 **/
 
 h3.drop-down-toggle {
@@ -352,7 +361,7 @@ h3.drop-down-toggle {
 }
 
 /** ================================================================================================
-*** §10: Abstract submission reminder
+*** §12: Abstract submission reminder
 **/
 
 .abstract-submission-reminder {
@@ -372,7 +381,7 @@ h3.drop-down-toggle {
 }
 
 /** ================================================================================================
-*** §11: Announcements
+*** §13: Announcements
 **/
 
 // #announcement {
@@ -382,7 +391,7 @@ h3.drop-down-toggle {
 // }
 
 /** ================================================================================================
-*** §12: Banner slideshows
+*** §14: Banner slideshows
 **/
 
 .column .builder-banner-inner-content,
@@ -391,7 +400,7 @@ h3.drop-down-toggle {
 }
 
 /** ================================================================================================
-*** §13: Included optional layouts
+*** §15: Included optional layouts
 **/
 
 .use-navigational-map-tables();
