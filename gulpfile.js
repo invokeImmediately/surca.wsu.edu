@@ -32,13 +32,13 @@ tion are a combination of those designed for use on DAESA websites***\r\n    and
 cifically for use on the SURCA website.\r\n***\r\n***   DESCRIPTION: Fully documented, precompiled \
 source code from which this section of the custom\r\n***    stylesheet was built is developed and m\
 aintained on the following two GitHub projects:\r\n***    https://github.com/invokeImmediately/WSU-\
-UE---CSS/\r\n***    https://github.com/invokeImmediately/surca.wsu.edu/\r\\n***   AUTHOR: Daniel Ri\
-eck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)\r\n***\r\n***   LICENSE: ISC - Co\
-pyright (c) 2019 Daniel C. Rieck.\r\n***\r\n***     Permission to use, copy, modify, and/or distrib\
-ute this software for any purpose with or\r\n***     without fee is hereby granted, provided that t\
-he above copyright notice and this permission\r\n***     notice appear in all copies.\r\n***\r\n***\
-     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO\r\n*\
-**     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT\r\
+UE---CSS/\r\n***    https://github.com/invokeImmediately/surca.wsu.edu/\r\n***   AUTHOR: Daniel Rie\
+ck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)\r\n***\r\n***   LICENSE: ISC - Cop\
+yright (c) 2019 Daniel C. Rieck.\r\n***\r\n***     Permission to use, copy, modify, and/or distribu\
+te this software for any purpose with or\r\n***     without fee is hereby granted, provided that th\
+e above copyright notice and this permission\r\n***     notice appear in all copies.\r\n***\r\n*** \
+    THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO\r\n**\
+*     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT\r\
 \n***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES \
 OR\r\n***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACT\
 ION OF\r\n***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WI\
