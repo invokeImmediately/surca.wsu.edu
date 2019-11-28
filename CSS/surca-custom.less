@@ -7,24 +7,24 @@
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
 ***  §1: Build entry point from DAESA's CSS development project................................27
 ***  §2: Persistent section header comment for unit specific styling...........................37
-***  §3: SURCA-specific Less variables.........................................................68
-***  §4: Body, main, and site header...........................................................76
-***  §5: Page headers.........................................................................118
-***  §6: Article sidebars.....................................................................159
-***  §7: Lists................................................................................250
-***  §8: Iframes..............................................................................259
-***  §9: Tables...............................................................................267
-***  §10: Welcome message.....................................................................291
-***  §11: Drop down toggles...................................................................349
-***  §12: Abstract submission reminder........................................................363
-***  §13: Announcements.......................................................................383
-***  §14: Banner slideshows...................................................................393
-***  §15: Included optional layouts...........................................................402
+***  §3: SURCA-specific Less variables.........................................................69
+***  §4: Body, main, and site header...........................................................77
+***  §5: Page headers.........................................................................119
+***  §6: Article sidebars.....................................................................156
+***  §7: Lists................................................................................247
+***  §8: Iframes..............................................................................256
+***  §9: Tables...............................................................................264
+***  §10: Welcome message.....................................................................288
+***  §11: Drop down toggles...................................................................346
+***  §12: Abstract submission reminder........................................................360
+***  §13: Announcements.......................................................................380
+***  §14: Banner slideshows...................................................................390
+***  §15: Included optional layouts...........................................................399
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
 /** ================================================================================================
-*** §1: Build entry point from DAESA's CSS development project 
+*** §1: Build entry point from DAESA's CSS development project
 **/
 
 @grid-behavior: "hybrid";
@@ -48,7 +48,7 @@
 ***    custom stylesheet was built is developed and maintained on the following GitHub project:
 ***    https://github.com/invokeImmediately/surca.wsu.edu/
 ***
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
 ***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
 ***
@@ -78,9 +78,9 @@
 **/
 
 body {
-	// REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should 
+	// REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should
 	// disappear when the screen is narrow enough.
-	// background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg) 
+	// background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg)
 	//	left top fixed repeat;
 	background: @hex-bright-gray;
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
@@ -98,7 +98,7 @@ main {
 
 header.main-header {
 	height: 110px;
-	background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) 
+	background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png)
 		left bottom/270px auto no-repeat;
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 	color: #fff !important;
@@ -119,40 +119,36 @@ header.main-header {
 *** §5: Page headers
 **/
 
-div.column {
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-	section {
-		&.header-newsEvents {
-			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-					left top,
-				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-				url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
-		}
-		&.header-attending {
-			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-					left top,
-				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-				url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
-		}
-		&.header-participants {
-			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-					left top,
-				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-				url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
-		}
-		&.header-judges {
-			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-					left top,
-				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-				url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
-		}
-		&.header-pastEvents {
-			background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat 
-					left top,
-				url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
-				url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
-		
-		}
+.column {
+	.header-newsEvents {
+		background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat
+				left top,
+			url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+			url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+	}
+	.header-attending {
+		background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat
+				left top,
+			url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+			url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
+	}
+	.header-participants {
+		background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat
+				left top,
+			url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+			url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
+	}
+	.header-judges {
+		background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat
+				left top,
+			url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+			url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
+	}
+	.header-pastEvents {
+		background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat
+				left top,
+			url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+			url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
 	}
 }
 
@@ -160,8 +156,8 @@ div.column {
 *** §6: Article sidebars
 **/
 
-div.column {
-	aside.article-sidebar {
+.column {
+	.article-sidebar {
 		float: right;
 		width: 33%;
 		padding: .8rem;
@@ -176,8 +172,8 @@ div.column {
 	}
 }
 
-div.column {
-	aside.important-reminder {
+.column {
+	.important-reminder {
 		&:extend(div.column aside.article-sidebar);
 		border: 1px solid #f77891;
 		background: #fcd5dc url(/wp-content/uploads/sites/51/2015/04/
@@ -191,7 +187,7 @@ div.column {
 	}
 }
 
-.row.article-notice {
+.article-notice {
 	&.has-countdown {
 		display: none;
 	}
@@ -232,10 +228,10 @@ div.column {
 		}
 	}
 
-	&.ruby div.column {
+	&.ruby .column {
 		background: @hex-light-crimson url("/@{url-ruby-texture}") no-repeat scroll left top/cover;
 
-		& > p {
+		& > * {
 			.rgb-black();
 			color: @hex-white;
 			text-shadow: 0 1px 1px rgba(@rval, @gval, @bval, 0.5);
@@ -354,7 +350,7 @@ h3.drop-down-toggle {
 	transition: all 0.3s ease;
 	 -webkit-transition: all 0.3s ease;
 	 -moz-transition: all 0.3s ease;
-	 -o-transition: all 0.3s ease;    
+	 -o-transition: all 0.3s ease;
 	&:hover {
 		color: @hex-light-crimson;
 	}
