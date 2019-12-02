@@ -1,7 +1,8 @@
 ﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
 
-/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/surca.wsu.edu] for a repository of source code. */
 /*! ================================================================================================
+*** WSU DAESA Styling Section
+*** ================================================================================================
 ***   SUMMARY: The following section of this stylesheet contains CSS code written for use on all
 ***    websites designed, built, and maintained by the Divsion of Academic Engagement and Student
 ***    Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
@@ -10,7 +11,7 @@
 ***     in the Less language extension of CSS. It is designed to be applied via the WSUWP CSS
 ***     Stylesheet Editor functioning in add-on mode.
 ***
-***     Please refer to the git repository at https://github.com/invokeImmediately/WSU-UE---CSS/
+***     Please refer to the GitHub proejct at https://github.com/invokeImmediately/WSU-UE---CSS/
 ***     for fully documented, precompiled source code.  
 ***     
 ***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
@@ -284,7 +285,7 @@
 }
 
 html {
-	font-size: 106.25%;
+	font-size: 100%;
 }
 
 .column article.post {
@@ -906,9 +907,6 @@ footer.article-footer div.author-info {
 	display: none;
 }
 
-/*!     ····························································································
-***     >>> §1.1: Component-based styling
-**/
 .article-deck {
 	color: #72652a;
 }
@@ -1071,9 +1069,6 @@ h1+.article-tagline:not(.alt),h2+.article-tagline:not(.alt),h3+.article-tagline:
 	margin-top: 1.33333333rem;
 }
 
-/*!     ····························································································
-***     >>> §2.1: Style Defaults
-**/
 p {
 	font-size: 1em;
 	line-height: 1.5em;
@@ -1101,6 +1096,15 @@ hr {
 	position: relative;
 }
 
+hr.bc--crimson {
+	border-bottom: 1px solid rgba(198,12,48,.25);
+	border-top: 1px solid #981e32;
+}
+
+hr.spacer {
+	border: none;
+}
+
 hr.sub-section,hr.subSection {
 	width: 85%;
 	margin: 2rem auto;
@@ -1109,10 +1113,6 @@ hr.sub-section,hr.subSection {
 	border-top: 1px dashed rgba(94,106,113,.5);
 	border-bottom: 1px dashed rgba(160,160,160,.25);
 	text-align: center;
-}
-
-hr.spacer {
-	border: none;
 }
 
 hr.thicker {
@@ -4308,6 +4308,18 @@ div.auto-scroller ul li {
 	max-width: 64px !important;
 }
 
+.w--80px {
+	width: 80px;
+}
+
+.mnw--80px {
+	min-width: 80px;
+}
+
+.mw--80px {
+	max-width: 80px !important;
+}
+
 .w--96px {
 	width: 96px;
 }
@@ -4318,6 +4330,18 @@ div.auto-scroller ul li {
 
 .mw--96px {
 	max-width: 96px !important;
+}
+
+.w--112px {
+	width: 112px;
+}
+
+.mnw--112px {
+	min-width: 112px;
+}
+
+.mw--112px {
+	max-width: 112px !important;
 }
 
 .w--128px {
@@ -4332,6 +4356,18 @@ div.auto-scroller ul li {
 	max-width: 128px !important;
 }
 
+.w--144px {
+	width: 144px;
+}
+
+.mnw--144px {
+	min-width: 144px;
+}
+
+.mw--144px {
+	max-width: 144px !important;
+}
+
 .w--160px {
 	width: 160px;
 }
@@ -4342,6 +4378,18 @@ div.auto-scroller ul li {
 
 .mw--160px {
 	max-width: 160px !important;
+}
+
+.w--176px {
+	width: 176px;
+}
+
+.mnw--176px {
+	min-width: 176px;
+}
+
+.mw--176px {
+	max-width: 176px !important;
 }
 
 .w--192px {
@@ -4356,6 +4404,18 @@ div.auto-scroller ul li {
 	max-width: 192px !important;
 }
 
+.w--208px {
+	width: 208px;
+}
+
+.mnw--208px {
+	min-width: 208px;
+}
+
+.mw--208px {
+	max-width: 208px !important;
+}
+
 .w--224px {
 	width: 224px;
 }
@@ -4366,6 +4426,18 @@ div.auto-scroller ul li {
 
 .mw--224px {
 	max-width: 224px !important;
+}
+
+.w--240px {
+	width: 240px;
+}
+
+.mnw--240px {
+	min-width: 240px;
+}
+
+.mw--240px {
+	max-width: 240px !important;
 }
 
 .w--256px {
@@ -4440,75 +4512,75 @@ div.auto-scroller ul li {
 	max-width: 512px !important;
 }
 
-.w--576px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
 	width: 576px;
 }
 
-.mnw--576px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
 	min-width: 576px;
 }
 
-.mw--576px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
 	max-width: 576px !important;
 }
 
-.w--640px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
 	width: 640px;
 }
 
-.mnw--640px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
 	min-width: 640px;
 }
 
-.mw--640px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
 	max-width: 640px !important;
 }
 
-.w--768px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
 	width: 768px;
 }
 
-.mnw--768px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
 	min-width: 768px;
 }
 
-.mw--768px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
 	max-width: 768px !important;
 }
 
-.w--832px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
 	width: 832px;
 }
 
-.mnw--832px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
 	min-width: 832px;
 }
 
-.mw--832px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
 	max-width: 832px !important;
 }
 
-.w--896px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
 	width: 896px;
 }
 
-.mnw--896px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
 	min-width: 896px;
 }
 
-.mw--896px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
 	max-width: 896px !important;
 }
 
-.w--960px {
+.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
 	width: 960px;
 }
 
-.mnw--960px {
+.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
 	min-width: 960px;
 }
 
-.mw--960px {
+.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
 	max-width: 960px !important;
 }
 
@@ -4848,36 +4920,116 @@ div.auto-scroller ul li {
 	display: flex;
 }
 
-.fw--no-wrap {
+.flxd--row {
+	flex-direction: row;
+}
+
+.flxd--row-reverse {
+	flex-direction: row-reverse;
+}
+
+.flxd--column {
+	flex-direction: column;
+}
+
+.flxd--column-reverse {
+	flex-direction: column;
+}
+
+.flxw--no-wrap {
 	flex-wrap: nowrap;
 }
 
-.fw--wrap {
+.flxw--wrap {
 	flex-wrap: wrap;
 }
 
-.fw--wrap-reverse {
+.flxw--wrap-reverse {
 	flex-wrap: wrap;
 }
 
-.jc--start {
+.flxjc--start {
 	justify-content: start;
 }
 
-.jc--center {
+.flxjc--center {
 	justify-content: center;
 }
 
-.jc--space-between {
+.flxjc--space-between {
 	justify-content: space-between;
 }
 
-.jc--space-around {
+.flxjc--space-around {
 	justify-content: space-around;
 }
 
-.jc--space-evenly {
+.flxjc--space-evenly {
 	justify-content: space-evenly;
+}
+
+.flxai--flex-start {
+	align-items: flex-start;
+}
+
+.flxai--flex-end {
+	align-items: flex-end;
+}
+
+.flxai--stretch {
+	align-items: stretch;
+}
+
+.flxai--center {
+	align-items: center;
+}
+
+.flxac--flex-start {
+	align-content: flex-start;
+}
+
+.flxac--flex-end {
+	align-content: flex-end;
+}
+
+.flxac--center {
+	align-content: center;
+}
+
+.flxac--space-between {
+	align-content: space-between;
+}
+
+.flxac--space-around {
+	align-content: space-around;
+}
+
+.flxb--0 {
+	flex-basis: 0;
+}
+
+.flxb--auto {
+	flex-basis: auto;
+}
+
+.flxb--content {
+	flex-basis: content;
+}
+
+.flxg--0 {
+	flex-grow: 0;
+}
+
+.flxg--1 {
+	flex-grow: 1;
+}
+
+.flxs--0 {
+	flex-shrink: 0;
+}
+
+.flxs--1 {
+	flex-shrink: 1;
 }
 
 .ma--0mx {
@@ -5658,15 +5810,17 @@ div.auto-scroller ul li {
 }
 
 /*! ================================================================================================
-*** Styles specific to the WSU SURCA website
+*** SURCA Styling Section
 *** ================================================================================================
-***   SUMMARY: CSS code designed for use on the SURCA website that was built from precompiled CSS
-**     written in the Less language extension of CSS.
+***   SUMMARY: CSS code designed for use on Washington State University's [SURCA website](https://su
+***    rca.wsu.edu/) that was built from precompiled CSS written in the Less language extension of
+***    CSS.
+***
+***   DESCRIPTION: Fully documented, precompiled source code from which this section of the
+***    custom stylesheet was built is developed and maintained on the following GitHub project:
+***    https://github.com/invokeImmediately/surca.wsu.edu/
 ***
 ***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
-***
-***   GIT REPOSITORY: https://github.com/invokeImmediately/wsu-ue---css/
-***     (Please see above git repository for fully documented, precompiled source code.)
 ***
 ***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
 ***
@@ -6127,10 +6281,33 @@ h3.drop-down-toggle:hover {
 	position: relative;
 }
 
-/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-*   ║ MEDIA QUERIES ####################################################################################################### ║
-*   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-*/
+/*! ================================================================================================
+*** Media queries section
+*** ================================================================================================
+***   SUMMARY: Media queries built from precompiled CSS written in the Less language extension of
+***    CSS. Queries in this section are a combination of those designed for use on DAESA websites***
+    and those intended specifically for use on the SURCA website.
+***
+***   DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***    stylesheet was built is developed and maintained on the following two GitHub projects:
+***    https://github.com/invokeImmediately/WSU-UE---CSS/
+***    https://github.com/invokeImmediately/surca.wsu.edu/
+\n***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
 @media all and (min-width:481px) {
 	.interactively-flipped-panels .container .panel-wrapper:hover .panel .front {
 		transition-property: opacity, z-index;
