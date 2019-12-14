@@ -20,8 +20,9 @@ function getCssBuildSettings() {
 	var commentRemovalNeedle = /^(?:[ \t]*)?\/\*[^!].*$\n(?:^\*\*?[^/].*$\n)*\*\*?\/\n\n?/gm;
 	var dependenciesPath = './WSU-UE---CSS/';
 	var destFolder = './CSS/';
-	var fontImportStr = '@import url(\'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|\
-Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
+	var fontImportStr = '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,4\
+00,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i\
+,700,700i&display=swap\');\r\n';
 	var insertingMediaQuerySectionHeader = {
 			'before': /^@media/,
 			'lineBefore': '/*! ====================================================================\
