@@ -42,7 +42,7 @@
 	font-family: 'PT Serif', Palatino, serif;
 }
 
-.article-tagline.article-tagline--sans,.article-tagline.sans,.ff--condensed,.has-alt-font,.row.article-notice .column>p,span.accentuated-text {
+.article-notice .column>p,.article-tagline.article-tagline--sans,.article-tagline.sans,.ff--condensed,.has-alt-font,span.accentuated-text {
 	font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 }
 
@@ -337,52 +337,6 @@ html {
 
 section.column-one-with-bottom-margin>.column.one {
 	margin-bottom: 2rem;
-}
-
-section:not(.row).article-header {
-	background-size: auto 100% !important;
-	height: 120px;
-	margin-bottom: 1rem;
-	max-width: 922px;
-}
-
-body.blog section:not(.row).article-header,body.single-post section:not(.row).article-header {
-	margin-bottom: 0;
-}
-
-section:not(.row).article-header .header-content {
-	margin-left: 1rem;
-	margin-right: 1rem;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-section:not(.row).article-header .header-content h1,section:not(.row).article-header .header-content h2,section:not(.row).article-header .header-content h3 {
-	font-size: 2.826rem;
-	line-height: .9em;
-	text-transform: uppercase;
-}
-
-section:not(.row).article-header .header-content h1+h2 {
-	font-style: normal;
-}
-
-section:not(.row).article-header .header-content h1 .subtitle,section:not(.row).article-header .header-content h1+h2,section:not(.row).article-header .header-content h2+h3 {
-	font-size: 1.261rem;
-	line-height: .9em;
-	margin-top: 0;
-}
-
-section:not(.row).article-header .header-content .title,section:not(.row).article-header .header-content h2:first-child {
-	background-color: rgba(0,0,0,.7);
-	border: 1px solid #fff;
-	border-bottom-color: transparent;
-	padding: 4px 4px 9px;
-}
-
-section:not(.row).article-header .header-content .subtitle,section:not(.row).article-header .header-content .title {
-	display: block;
 }
 
 .row.has-charcoal-background {
@@ -903,6 +857,58 @@ h1.crimson-text.solid::before,h2.crimson-text.solid::before,h3.crimson-text.soli
 	margin-bottom: .5rem;
 }
 
+.article-header:not(.row) {
+	background-size: cover;
+}
+
+.article-header:not(.row):not([class*=h--]) {
+	height: 120px;
+}
+
+.article-header:not(.row):not([class*=mw--]) {
+	max-width: 922px;
+}
+
+.article-header:not(.row) .header-content {
+	margin-left: 1rem;
+	margin-right: 1rem;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.article-header:not(.row) .header-content.align-bottom {
+	top: 50%;
+	transform: translateY(-100%) translateY(-1rem);
+}
+
+.article-header:not(.row) .header-content h1,.article-header:not(.row) .header-content h2,.article-header:not(.row) .header-content h3 {
+	font-size: 2.826rem;
+	line-height: .9em;
+	text-transform: uppercase;
+}
+
+.article-header:not(.row) .header-content h1+h2 {
+	font-style: normal;
+}
+
+.article-header:not(.row) .header-content h1 .subtitle,.article-header:not(.row) .header-content h1+h2,.article-header:not(.row) .header-content h2+h3 {
+	font-size: 1.261rem;
+	line-height: .9em;
+	margin-top: 0;
+}
+
+.article-header:not(.row) .header-content .title,.article-header:not(.row) .header-content h2:first-child {
+	background-color: rgba(0,0,0,.7);
+	border: 1px solid #fff;
+	border-bottom-color: transparent;
+	padding: 4px 4px 9px;
+}
+
+.article-header:not(.row) .header-content .subtitle,.article-header:not(.row) .header-content .title {
+	display: block;
+}
+
 footer.article-footer div.author-info {
 	display: none;
 }
@@ -1150,86 +1156,6 @@ ul {
 	margin-top: .5em;
 }
 
-ul.content-boxes {
-	font-size: .925em;
-	line-height: 1.5em;
-	padding-left: 0;
-	padding-right: 0;
-}
-
-ul.content-boxes>li {
-	list-style-type: none;
-	position: relative;
-}
-
-ul.content-boxes>li p.email {
-	font-size: .9em;
-	font-weight: 700;
-}
-
-ul.content-boxes>li>img {
-	left: 10px;
-	left: calc(.5rem + 10px);
-	position: absolute;
-	top: 24px;
-	top: calc(1rem + 7px);
-	width: 106px;
-}
-
-ul.content-boxes>li>.content {
-	left: 121px;
-	min-width: 189px;
-	padding: 0 0 10px;
-	position: relative;
-	width: calc(100% - 136px);
-}
-
-ul.content-boxes>li+li {
-	margin-top: 2rem;
-}
-
-ul.external-links li {
-	list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
-}
-
-ul.cascaded-layout>li {
-	list-style-type: none;
-}
-
-ul.cascaded-layout>li.cascade-sizer,ul.cascaded-layout>li.gutter-sizer {
-	background: 0 0 !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 0 !important;
-	min-height: 0 !important;
-	padding: 0 !important;
-}
-
-ul.cascaded-layout>li.gutter-sizer {
-	width: 2% !important;
-}
-
-ul.cascaded-layout.blank {
-	font-size: 1rem !important;
-	margin-top: 1rem !important;
-	padding: 0;
-}
-
-ul.cascaded-layout.blank>li {
-	float: left;
-	list-style-type: none;
-	margin-bottom: 3%;
-	width: 48.5%;
-}
-
-ul.cascaded-layout.blank>li+li {
-	margin-top: 0;
-}
-
-ul.cascaded-layout.blank>li.gutter-sizer {
-	width: 3% !important;
-}
-
 ol {
 	font-size: 1em;
 	line-height: 1.5em;
@@ -1267,6 +1193,10 @@ ol {
 
 .column p+ol {
 	margin-top: .5em;
+}
+
+ol li,ul li {
+	padding: 0 0 .5em;
 }
 
 .column dl.faq {
@@ -1419,6 +1349,44 @@ ol {
 
 .column *+dl {
 	margin-top: 1em;
+}
+
+ul.cascaded-layout>li {
+	list-style-type: none;
+}
+
+ul.cascaded-layout>li.cascade-sizer,ul.cascaded-layout>li.gutter-sizer {
+	background: 0 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 0 !important;
+	min-height: 0 !important;
+	padding: 0 !important;
+}
+
+ul.cascaded-layout>li.gutter-sizer {
+	width: 2% !important;
+}
+
+ul.cascaded-layout.blank {
+	font-size: 1rem !important;
+	margin-top: 1rem !important;
+	padding: 0;
+}
+
+ul.cascaded-layout.blank>li {
+	float: left;
+	list-style-type: none;
+	margin-bottom: 3%;
+	width: 48.5%;
+}
+
+ul.cascaded-layout.blank>li+li {
+	margin-top: 0;
+}
+
+ul.cascaded-layout.blank>li.gutter-sizer {
+	width: 3% !important;
 }
 
 .column>*+div {
@@ -4512,75 +4480,75 @@ div.auto-scroller ul li {
 	max-width: 512px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
+.w--576px {
 	width: 576px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
+.mnw--576px {
 	min-width: 576px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,19) {
+.mw--576px {
 	max-width: 576px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
+.w--640px {
 	width: 640px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
+.mnw--640px {
 	min-width: 640px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,20) {
+.mw--640px {
 	max-width: 640px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
+.w--768px {
 	width: 768px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
+.mnw--768px {
 	min-width: 768px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,21) {
+.mw--768px {
 	max-width: 768px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
+.w--832px {
 	width: 832px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
+.mnw--832px {
 	min-width: 832px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,22) {
+.mw--832px {
 	max-width: 832px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
+.w--896px {
 	width: 896px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
+.mnw--896px {
 	min-width: 896px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,23) {
+.mw--896px {
 	max-width: 896px !important;
 }
 
-.w--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
+.w--960px {
 	width: 960px;
 }
 
-.mnw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
+.mnw--960px {
 	min-width: 960px;
 }
 
-.mw--extract(64px,80px,96px,112px,128px,144px,160px,176px,192px,208px,224px,240px,256px,288px,320px,384px,448px,512px,24) {
+.mw--960px {
 	max-width: 960px !important;
 }
 
@@ -4594,6 +4562,94 @@ div.auto-scroller ul li {
 
 .w--auto {
 	width: auto !important;
+}
+
+.h--64px {
+	height: 64px;
+}
+
+.h--80px {
+	height: 80px;
+}
+
+.h--96px {
+	height: 96px;
+}
+
+.h--112px {
+	height: 112px;
+}
+
+.h--128px {
+	height: 128px;
+}
+
+.h--144px {
+	height: 144px;
+}
+
+.h--160px {
+	height: 160px;
+}
+
+.h--176px {
+	height: 176px;
+}
+
+.h--192px {
+	height: 192px;
+}
+
+.h--208px {
+	height: 208px;
+}
+
+.h--224px {
+	height: 224px;
+}
+
+.h--240px {
+	height: 240px;
+}
+
+.h--256px {
+	height: 256px;
+}
+
+.h--272px {
+	height: 272px;
+}
+
+.h--288px {
+	height: 288px;
+}
+
+.h--304px {
+	height: 304px;
+}
+
+.h--320px {
+	height: 320px;
+}
+
+.h--336px {
+	height: 336px;
+}
+
+.h--352px {
+	height: 352px;
+}
+
+.h--368px {
+	height: 368px;
+}
+
+.h--384px {
+	height: 384px;
+}
+
+.h--400px {
+	height: 400px;
 }
 
 .font-size--400mx,.fs--400mx {
@@ -5820,7 +5876,7 @@ div.auto-scroller ul li {
 ***    custom stylesheet was built is developed and maintained on the following GitHub project:
 ***    https://github.com/invokeImmediately/surca.wsu.edu/
 ***
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
 ***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
 ***
@@ -5863,31 +5919,27 @@ header.main-header {
 	color: #fff !important;
 }
 
-div.column {
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-}
-
-div.column section.header-newsEvents {
+.column .header-newsEvents {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
 }
 
-div.column section.header-attending {
+.column .header-attending {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
 }
 
-div.column section.header-participants {
+.column .header-participants {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
 }
 
-div.column section.header-judges {
+.column .header-judges {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
 }
 
-div.column section.header-pastEvents {
+.column .header-pastEvents {
 	background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/12/wpbg-past-events.png) no-repeat center;
 }
 
-div.column aside.article-sidebar,div.column aside.important-reminder {
+.column .article-sidebar {
 	float: right;
 	width: 33%;
 	padding: .8rem;
@@ -5900,26 +5952,26 @@ div.column aside.article-sidebar,div.column aside.important-reminder {
 	color: #464e54;
 }
 
-div.column aside.important-reminder {
+.column .important-reminder {
 	border: 1px solid #f77891;
 	background: #fcd5dc url('/wp-content/uploads/sites/51/2015/04/			tileable-concrete-texture_128x128.png') left top repeat;
 	box-shadow: 1px 1px 2px rgba(247,120,145,.5);
 }
 
-div.column aside.important-reminder p {
+.column .important-reminder p {
 	padding-right: 1em;
 	padding-left: 1em;
 }
 
-div.column aside.important-reminder p:last-child {
+.column .important-reminder p:last-child {
 	padding-bottom: 0;
 }
 
-.row.article-notice.has-countdown {
+.article-notice.has-countdown {
 	display: none;
 }
 
-.row.article-notice .column {
+.article-notice .column {
 	background: #e9c024 url(/wp-content/uploads/sites/706/2016/03/texture_brushed-gold.png) no-repeat scroll left top;
 	background-size: cover;
 	border-bottom-left-radius: 15px;
@@ -5928,32 +5980,32 @@ div.column aside.important-reminder p:last-child {
 	color: #464e54;
 }
 
-.row.article-notice .column>p {
+.article-notice .column>p {
 	color: #464e54;
 	font-size: 1.265625em;
 	letter-spacing: .5px;
 	text-shadow: 0 1px 1px rgba(255,255,255,.5);
 }
 
-.row.article-notice .column>:first-child {
+.article-notice .column>:first-child {
 	padding-top: 1rem !important;
 }
 
-.row.article-notice .column>:last-child {
+.article-notice .column>:last-child {
 	padding-bottom: 1rem !important;
 	margin-bottom: 0 !important;
 }
 
-.row.article-notice.ruby div.column {
+.article-notice.ruby .column {
 	background: #c60c30 url(/wp-content/uploads/sites/706/2016/03/texture_unheated-ruby.png) no-repeat scroll left top/cover;
 }
 
-.row.article-notice.ruby div.column>p {
+.article-notice.ruby .column>* {
 	color: #fff;
 	text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 
-.row.article-notice #countdown-clock {
+.article-notice #countdown-clock {
 	font-size: 1.8em;
 }
 
@@ -6029,14 +6081,6 @@ div.column aside.important-reminder p:last-child {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.05),rgba(0,0,0,0));
-}
-
-#post-welcome-message>h3 {
-	margin-top: .75em;
-	margin-bottom: .75em;
-	font-family: 'Open Sans Condensed';
-	font-weight: 700;
-	text-align: center;
 }
 
 h3.drop-down-toggle {
@@ -6292,7 +6336,7 @@ h3.drop-down-toggle:hover {
 ***    stylesheet was built is developed and maintained on the following two GitHub projects:
 ***    https://github.com/invokeImmediately/WSU-UE---CSS/
 ***    https://github.com/invokeImmediately/surca.wsu.edu/
-\n***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
 ***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
 ***
@@ -6499,10 +6543,6 @@ h3.drop-down-toggle:hover {
 }
 
 @media all and (max-width:1205px) {
-	ul.content-boxes>li {
-		overflow-x: auto;
-	}
-	
 	ul.cascaded-layout.blank>li {
 		overflow-x: visible;
 	}
@@ -6613,11 +6653,11 @@ h3.drop-down-toggle:hover {
 		display: none;
 	}
 	
-	.row.article-notice .column>:first-child {
+	.article-notice .column>:first-child {
 		padding-top: .33333333rem !important;
 	}
 	
-	.row.article-notice .column>:last-child {
+	.article-notice .column>:last-child {
 		padding-bottom: .33333333rem !important;
 	}
 }
@@ -6636,15 +6676,6 @@ h3.drop-down-toggle:hover {
 }
 
 @media all and (max-width:480px) {
-	ul.content-boxes>li>img {
-		left: calc(.5rem + 7px);
-		width: 84px;
-	}
-	
-	ul.content-boxes>li>.content {
-		left: 99px;
-	}
-	
 	.article-summary .article-thumbnail img {
 		width: 96px;
 	}
@@ -7179,40 +7210,95 @@ h3.drop-down-toggle:hover {
 	}
 }
 
+@media print {
+	.main-header {
+		background: 0 0 !important;
+		border-bottom: 1px solid #000;
+		border-top: 1px solid #000;
+		margin-bottom: 1em;
+		padding-top: 1em;
+	}
+	
+	.main-header .sub-header-default,.main-header .sup-header-default {
+		text-shadow: none;
+		color: #000;
+	}
+	
+	.article-header:not(.row) {
+		background: 0 0 !important;
+	}
+	
+	.article-header:not(.row) .header-content {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.article-header:not(.row) .header-content h2,.article-header:not(.row) .header-content h3 {
+		padding-left: 0;
+	}
+	
+	ul.cascaded-layout[style] {
+		height: auto !important;
+	}
+	
+	ul.cascaded-layout>li {
+		display: block !important;
+		float: left;
+		left: 0 !important;
+		position: relative !important;
+		top: auto !important;
+		width: 100% !important;
+	}
+	
+	.column a {
+		border: none;
+		box-shadow: none;
+		text-decoration: underline;
+	}
+	
+	.column .decoration {
+		display: none;
+	}
+	
+	header.main-header {
+		background: #2a3033 url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
+	}
+}
+
 @media all {
-	section:not(.row).article-header .header-content h1,section:not(.row).article-header .header-content h2 {
+	.main-header .sub-header,.main-header .sub-header-default {
+		line-height: .9em;
+	}
+	
+	.article-header:not(.row) .header-content h1,.article-header:not(.row) .header-content h2 {
 		font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 		color: #fff;
 	}
 	
-	section:not(.row).article-header .header-content h3 {
+	.article-header:not(.row) .header-content h3 {
 		color: #fff;
 	}
 	
-	section:not(.row).article-header .header-content h1 {
+	.article-header:not(.row) .header-content h1 {
 		text-shadow: 0 .5px 0 #afafaf, 0 1px 0 #989898, 0 1.5px 0 #7f7f7f, 0 2px 0 #686868, 0 2.5px 0 #4f4f4f, 0 3px .5px rgba(0,0,0,.1), 0 0 2.5px rgba(0,0,0,.1), 0 .5px 1.5px rgba(0,0,0,.3), 0 1.5px 2.5px rgba(0,0,0,.2), 0 2.5px 5px rgba(0,0,0,.25), 0 5px 5px rgba(0,0,0,.2), 0 10px 10px rgba(0,0,0,.15);
 	}
 	
-	section:not(.row).article-header .header-content h2 {
+	.article-header:not(.row) .header-content h2 {
 		text-shadow: 0 .5px 0 #afafaf, 0 1px 0 #989898, 0 1.5px 0 #7f7f7f, 0 2px 0 #686868, 0 2.5px 0 #4f4f4f, 0 3px .5px rgba(0,0,0,.1), 0 0 2.5px rgba(0,0,0,.1), 0 .5px 1.5px rgba(0,0,0,.3), 0 1.5px 2.5px rgba(0,0,0,.2), 0 2.5px 5px rgba(0,0,0,.25), 0 5px 5px rgba(0,0,0,.2), 0 10px 10px rgba(0,0,0,.15);
 	}
 	
-	section:not(.row).article-header .header-content h1 .subtitle,section:not(.row).article-header .header-content h1+h2,section:not(.row).article-header .header-content h3 {
+	.article-header:not(.row) .header-content h1 .subtitle,.article-header:not(.row) .header-content h1+h2,.article-header:not(.row) .header-content h3 {
 		text-shadow: 0 .3333px 0 #afafaf, 0 .6667px 0 #989898, 0 1px 0 #7f7f7f, 0 1.3333px 0 #686868, 0 1.6667px 0 #4f4f4f, 0 2px .3333px rgba(0,0,0,.1), 0 0 1.6667px rgba(0,0,0,.1), 0 .3333px 1px rgba(0,0,0,.3), 0 1px 1.6667px rgba(0,0,0,.2), 0 1.6667px 3.3333px rgba(0,0,0,.25), 0 3.3333px 3.3333px rgba(0,0,0,.2), 0 6.6667px 6.6667px rgba(0,0,0,.15);
 	}
 	
-	section:not(.row).article-header .header-content .subtitle,section:not(.row).article-header .header-content h1+h2,section:not(.row).article-header .header-content h2+h3 {
+	.article-header:not(.row) .header-content .subtitle,.article-header:not(.row) .header-content h1+h2,.article-header:not(.row) .header-content h2+h3 {
 		background-color: rgba(152,30,50,.95);
 		border: 1px solid #fff;
 		padding: 4px 4px 5px;
 	}
 	
-	section:not(.row).article-header .header-content mark.highlight {
+	.article-header:not(.row) .header-content .highlight {
 		text-shadow: 0 .3333px 0 #77898b, 0 .6667px 0 #687779, 0 1px 0 #576365, 0 1.3333px 0 #475153, 0 1.6667px 0 #363e3f, 0 2px .3333px rgba(0,0,0,.1), 0 0 1.6667px rgba(0,0,0,.1), 0 .3333px 1px rgba(0,0,0,.3), 0 1px 1.6667px rgba(0,0,0,.2), 0 1.6667px 3.3333px rgba(0,0,0,.25), 0 3.3333px 3.3333px rgba(0,0,0,.2), 0 6.6667px 6.6667px rgba(0,0,0,.15);
-	}
-	
-	.main-header .sub-header,.main-header .sub-header-default {
-		line-height: .9em;
 	}
 	
 	.single .article-deck {
@@ -7261,60 +7347,5 @@ h3.drop-down-toggle:hover {
 		padding-bottom: 45%;
 		position: relative;
 		width: 30%;
-	}
-}
-
-@media print {
-	section:not(.row).article-header {
-		background: 0 0 !important;
-	}
-	
-	section:not(.row).article-header .header-content {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	
-	section:not(.row).article-header .header-content h2,section:not(.row).article-header .header-content h3 {
-		padding-left: 0;
-	}
-	
-	.main-header {
-		background: 0 0 !important;
-		border-bottom: 1px solid #000;
-		border-top: 1px solid #000;
-		margin-bottom: 1em;
-		padding-top: 1em;
-	}
-	
-	.main-header .sub-header-default,.main-header .sup-header-default {
-		text-shadow: none;
-		color: #000;
-	}
-	
-	ul.cascaded-layout[style] {
-		height: auto !important;
-	}
-	
-	ul.cascaded-layout>li {
-		display: block !important;
-		float: left;
-		left: 0 !important;
-		position: relative !important;
-		top: auto !important;
-		width: 100% !important;
-	}
-	
-	.column a {
-		border: none;
-		box-shadow: none;
-		text-decoration: underline;
-	}
-	
-	.column .decoration {
-		display: none;
-	}
-	
-	header.main-header {
-		background: #2a3033 url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
 	}
 }
