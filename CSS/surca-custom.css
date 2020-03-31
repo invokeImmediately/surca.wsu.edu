@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap');
 /*! ================================================================================================
 *** WSU DAESA Styling Section
 *** ================================================================================================
@@ -6563,14 +6563,15 @@ h3.drop-down-toggle:hover {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
-  font-size: 13px;
   text-align: left;
   color: #981e32;
 }
 .column table.navigational-map a {
-  border-bottom: 1px dotted rgba(152, 30, 50, 0);
   color: inherit;
   box-shadow: none;
+}
+.column table.navigational-map a:not(:hover) {
+  border-bottom-color: transparent;
 }
 .column table.navigational-map th,
 .column table.navigational-map td {
@@ -6601,8 +6602,8 @@ h3.drop-down-toggle:hover {
   color: #d13c59;
 }
 .column table.navigational-map td p {
-  padding-top: 2px;
-  padding-bottom: 3px;
+  padding-top: 4px;
+  padding-bottom: 7px;
   font-size: inherit;
   text-align: inherit;
 }
@@ -6635,79 +6636,6 @@ h3.drop-down-toggle:hover {
   .column table.navigational-map th br {
     display: none;
   }
-}
-.column .notice {
-  background-color: #fef1f4;
-  border: 1px solid #a60f2d;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  padding: 1rem;
-  padding-right: calc(1rem + 32px);
-  position: relative;
-  width: 80%;
-  width: calc(90% - 2 * 1rem - 32px);
-}
-.column .notice::before {
-  bottom: 0;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 32px;
-  background: rgba(152, 30, 50, 0.3333) url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png) 4px 1rem no-repeat;
-}
-.column .notice.linked a {
-  display: none;
-}
-.column .notice.linked a:first-of-type {
-  border-color: transparent;
-  border-radius: 10px;
-  box-shadow: none;
-  color: transparent;
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-.column .notice.linked a:first-of-type::before {
-  border-bottom: 3px solid #981e32;
-  bottom: -5px;
-  box-sizing: border-box;
-  content: "";
-  height: 3px;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  transition: all 0.25s linear;
-  width: 100%;
-}
-.column .notice.linked a:first-of-type:hover {
-  background-color: rgba(255, 255, 255, 0.33);
-  text-shadow: none;
-  transition: all 0.25s linear;
-}
-.column .notice.linked a:first-of-type:hover::before {
-  border-bottom: 10px solid #b96875;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  height: 10px;
-  width: 10px;
-}
-.column .notice.linked .hyperlink-simulator {
-  border-bottom: 0.0625em solid #981e32;
-  border-bottom-left-radius: 0.25em;
-  border-bottom-right-radius: 0.25em;
-  box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
-  color: #981e32;
 }
 .column a.recommend-button,
 .column a.glass-button {
@@ -6789,4 +6717,89 @@ h3.drop-down-toggle:hover {
 .glass-button {
   display: block;
   position: relative;
+}
+.column .notice {
+  background-color: #fef1f4;
+  border: 1px solid #a60f2d;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 1rem;
+  padding-right: calc(1rem + 32px);
+  position: relative;
+  width: 80%;
+  width: calc(90% - 2 * 1rem - 32px);
+}
+.column .notice.full-width {
+  width: 100%;
+}
+.column .notice::before {
+  bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  background: rgba(152, 30, 50, 0.3333) url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png) 4px 1rem no-repeat;
+}
+.column .notice.linked a {
+  display: none;
+}
+.column .notice.linked a:first-of-type {
+  border-color: transparent;
+  border-radius: 10px;
+  box-shadow: none;
+  color: transparent;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.column .notice.linked a:first-of-type::before {
+  border-bottom: 3px solid #981e32;
+  bottom: -5px;
+  box-sizing: border-box;
+  content: "";
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: all 0.25s linear;
+  width: 100%;
+}
+.column .notice.linked a:first-of-type:hover {
+  background-color: rgba(255, 255, 255, 0.33);
+  text-shadow: none;
+  transition: all 0.25s linear;
+}
+.column .notice.linked a:first-of-type:hover::before {
+  border-bottom: 10px solid #b96875;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  height: 10px;
+  width: 10px;
+}
+.column .notice.linked .hyperlink-simulator {
+  border-bottom: 0.0625em solid #981e32;
+  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
+  color: #981e32;
+}
+.column .notice.information {
+  background-color: #f8feff;
+  border-color: #00a5bd;
+  padding-right: calc(1rem + 32px);
+}
+.column .notice.information::before {
+  width: 32px;
+  background: #6decff url(https://s3.wp.wsu.edu/uploads/sites/52/2020/03/icon_genericons-neue_info-blue.png) 4px 1rem no-repeat;
 }
