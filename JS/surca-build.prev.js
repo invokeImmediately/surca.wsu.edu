@@ -1,4 +1,4 @@
-/*!*************************************************************************************************
+﻿/*!*************************************************************************************************
  * jQuery.oue-custom.js
  * -------------------------------------------------------------------------------------------------
  * SUMMARY: Custom JS code common to all WSU Undergraduate Education websites.
@@ -161,4 +161,27 @@ h=jQuery,d="jQuery.countdown-custom",h(function(){var t,e,i,n,s,o,a,r,l=h("#coun
 /*!*********************************************************************************************************************
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
-function(t){"use strict";t(document).ready(function(){switch(window.location.pathname){case"/news/":t("div.column.one").first().parent("section").before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>')}})}(jQuery);
+( function ( $ ) {
+    "use strict";
+
+	$( function () {
+		insertHeaderIntoNewsPages( '<section class="row single gutter pad-top"><div class="column o\
+ne"><section class="article-header header-attending mw--80ch" style="padding-top: 0;"><div class="h\
+eader-content"><h1 class="auto-fits-text data-min-fs-28 data-resize-against-article-header"><span c\
+lass="title">News<span class="for-screen-readers">:</span></span> <span class="subtitle auto-fits-t\
+ext data-min-fs-18 data-resize-against-article-header">What We and Our Students Have Accomplished</\
+span></h1></div></section>' );
+	} );
+
+	function insertHeaderIntoNewsPages( htmlInserted ) {
+		var relUrl = window.location.pathname;
+		if ( relUrl == '/news/' ) {
+			$('div.column.one').first().parent('section').before( htmlInserted );
+		} else {
+			var $body = $( 'body' ).first();
+			if ( $body.hasClass( 'single-post' ) || $body.hasClass( 'archive' ) ) {
+				$body.find( '.column.one' ).first().parent( '.row' ).before( htmlInserted );
+			}			
+		}
+	}
+} )( jQuery );
