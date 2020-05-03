@@ -1,22 +1,21 @@
 /*!*************************************************************************************************
- * jQuery.oue-custom.js
+ * https://github.com/invokeImmediately/WSU-UE---JS/jQuery.oue-custom.js ↓↓↓
  * -------------------------------------------------------------------------------------------------
- * SUMMARY: Custom JS code common to all WSU Undergraduate Education websites.
+ * SUMMARY: Custom JS code common to all websites of the WSU Division of Academic Engagement and
+ *   Student Achievement (DAESA) in the Provost's Office.
  *
  * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  *
- * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
- *
- * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+ * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
  *
  *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
  *   without fee is hereby granted, provided that the above copyright notice and this permission
  *   notice appear in all copies.
  *
- *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
- *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
- *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+ *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+ *   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+ *   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+ *   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
  *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  *   PERFORMANCE OF THIS SOFTWARE.
  **************************************************************************************************/
@@ -24,10 +23,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-//   §1: Addition of functions to jQuery......................................................70
-//     §1.1: jQuery.isCssClass................................................................73
-//     §1.2: jQuery.isJQueryObj...............................................................91
-//     §1.3: jQuery.logError.................................................................103
+//   §1: Addition of functions to jQuery......................................................66
+//     §1.1: jQuery.isCssClass................................................................69
+//     §1.2: jQuery.isJQueryObj...............................................................87
+//     §1.3: jQuery.logError..................................................................99
 //   §2: OUE website initilization modules...................................................174
 //     §2.1: OueDropDownToggle class.........................................................177
 //     §2.2: OueEventCalendarFixer class.....................................................423
@@ -39,27 +38,24 @@
 //       §2.3.2: Public members..............................................................550
 //       §2.3.3: Lexically scoped supporting functions.......................................596
 //   §3: DOM-Ready execution sequence........................................................610
-//   §4: Window-loaded event binding.........................................................745
-//   §5: Window-resized event binding........................................................780
-//   §6: Function declarations...............................................................787
-//     §6.1: addA11yTabPressListener.........................................................790
-//     §6.2: addDefinitionListButtons........................................................804
-//     §6.3: fixDogears......................................................................918
-//     §6.4: fixEventCalendars...............................................................943
-//     §6.5: handleMouseClickForA11y.........................................................952
-//     §6.6: handleTabPressForA11y...........................................................961
-//     §6.7: initContentFlippers.............................................................972
-//     §6.8: initDefinitionLists.............................................................988
-//     §6.9: initDropDownToggles............................................................1032
-//     §6.10: initFancyHrH2Motif............................................................1055
-//     §6.11: initFancyHrH3Motif............................................................1064
-//     §6.12: initPrintThisPageLinks........................................................1073
-//     §6.13: initQuickTabs.................................................................1082
-//     §6.14: initReadMoreToggles...........................................................1146
-//     §6.15: initTocFloating...............................................................1166
-//     §6.16: initTriggeredByHover..........................................................1243
-//     §6.17: initWelcomeMessage............................................................1262
-//     §6.18: showDefinitionListButtons.....................................................1272
+//   §4: Window-loaded event binding.........................................................736
+//   §5: Window-resized event binding........................................................774
+//   §6: Function declarations...............................................................781
+//     §6.1: addDefinitionListButtons........................................................784
+//     §6.2: fixDogears......................................................................900
+//     §6.3: fixEventCalendars...............................................................925
+//     §6.4: initContentFlippers.............................................................934
+//     §6.5: initDefinitionLists.............................................................950
+//     §6.6: initDropDownToggles.............................................................994
+//     §6.7: initFancyHrH2Motif.............................................................1017
+//     §6.8: initFancyHrH3Motif.............................................................1026
+//     §6.9: initPrintThisPageLinks.........................................................1035
+//     §6.10: initQuickTabs.................................................................1044
+//     §6.11: initReadMoreToggles...........................................................1108
+//     §6.12: initTocFloating...............................................................1128
+//     §6.13: initTriggeredByHover..........................................................1205
+//     §6.14: initWelcomeMessage............................................................1224
+//     §6.15: showDefinitionListButtons.....................................................1234
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $, thisFileName ) {
@@ -113,59 +109,63 @@ $.isJQueryObj = function ( $obj ) {
 $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	var thisFuncName = "jQuery.logError";
 	var thisFuncDesc = "Log an error using the browser console in JSON notation.";
-	var bitMask;
-	
-	bitMask = typeof fileName === "string";
+	var bitMask = typeof fileName === "string";
 	bitMask = ( typeof fnctnName === "string" ) | ( bitMask << 1 );
 	bitMask = ( typeof fnctnDesc === "string" ) | ( bitMask << 1 );
 	bitMask = ( typeof errorMsg === "string" || typeof errorMsg === "object" ) | ( bitMask << 1 );
-	if ( bitMask === 15 ) {
+
+	// Output a properly formed error message.
+	if ( bitMask === 15 && typeof errorMsg === "string" ) {
 		console.log( "error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + fnctnName +
 			"'\n\tfunctionDesc: '" + fnctnDesc + "'\n\terrorMessage: '" + errorMsg + "'\n\t};" );
-		if (typeof errorMsg === "object") {
-			console.log( errorMsg );
-		}
-	} else {
-		var incorrectTypings;
-		var bitMaskCopy;
-		var newErrorMsg;
-		
-		// Determine how many incorrectly typed arguments were encountered
-		for ( var i=0, incorrectTypings = 0, bitMaskCopy = bitMask; i < 4; i++ ) {
-			incorrectTypings += bitMaskCopy & 1;
-			bitMaskCopy = bitMaskCopy >> 1;
-		}
-		
-		// Construct a new error message
-		if ( incorrectTypings == 1 ) {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly typed\
- argument.\n"
-		} else {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed ar\
-guments.\n"
-		}
-		newErrorMsg += "Here are the arguments that were passed to jQuery.logError:\n";
-		newErrorMsg += "\t\tfileName = " + fileName + "\n";
-		if ( !( ( bitMask & 8 ) >> 3 ) ) {
-			newErrorMsg += "\t\ttypeof filename = " + ( typeof fileName ) + "\n";
-			fileName = thisFileName;
-		}
-		newErrorMsg += "\t\tfnctnName = " + fnctnName + "\n";
-		if( !( ( bitMask & 4 ) >> 2 ) ) {
-			newErrorMsg += "\t\ttypeof fnctnName = " + ( typeof fnctnName ) + "\n";
-			fnctnName = thisFuncName;
-		}
-		newErrorMsg += "\t\tfnctnDesc = " + fnctnDesc + "\n";
-		if( !( ( bitMask & 2 ) >> 1 ) ) {
-			newErrorMsg += "\t\ttypeof fnctnDesc = " + ( typeof fnctnDesc ) + "\n";
-			fnctnDesc = thisFuncDesc;
-		}
-		newErrorMsg += "\t\terrorMsg = " + errorMsg + "\n";
-		if( !( bitMask & 1 ) ) {
-			newErrorMsg += "\t\ttypeof errorMsg = " + ( typeof errorMsg ) + "\n";
-		}
-		console.log(newErrorMsg);
+		return;
+	} else if ( bitMask === 15 ) {
+		console.log( "error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + fnctnName +
+			"'\n\tfunctionDesc: '" + fnctnDesc + "'\n\terror object: See following.'\n\t};" );
+		console.log( errorMsg );
+		return;
 	}
+
+	// Handle the case where
+	var incorrectTypings;
+	var bitMaskCopy;
+	var newErrorMsg;
+		
+	// Determine how many incorrectly typed arguments were encountered
+	for ( var i=0, incorrectTypings = 0, bitMaskCopy = bitMask; i < 4; i++ ) {
+		incorrectTypings += bitMaskCopy & 1;
+		bitMaskCopy = bitMaskCopy >> 1;
+	}
+		
+	// Construct a new error message
+	if ( incorrectTypings == 1 ) {
+		newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly typed" +
+			" argument.\n"
+	} else {
+		newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed" +
+			" arguments.\n"
+	}
+	newErrorMsg += "Here are the arguments that were passed to jQuery.logError:\n" +
+		"\t\tfileName = " + fileName + "\n";
+	if ( !( ( bitMask & 8 ) >> 3 ) ) {
+		newErrorMsg += "\t\ttypeof filename = " + ( typeof fileName ) + "\n";
+		fileName = thisFileName;
+	}
+	newErrorMsg += "\t\tfnctnName = " + fnctnName + "\n";
+	if( !( ( bitMask & 4 ) >> 2 ) ) {
+		newErrorMsg += "\t\ttypeof fnctnName = " + ( typeof fnctnName ) + "\n";
+		fnctnName = thisFuncName;
+	}
+	newErrorMsg += "\t\tfnctnDesc = " + fnctnDesc + "\n";
+	if( !( ( bitMask & 2 ) >> 1 ) ) {
+		newErrorMsg += "\t\ttypeof fnctnDesc = " + ( typeof fnctnDesc ) + "\n";
+		fnctnDesc = thisFuncDesc;
+	}
+	newErrorMsg += "\t\terrorMsg = " + errorMsg + "\n";
+	if( !( bitMask & 1 ) ) {
+		newErrorMsg += "\t\ttypeof errorMsg = " + ( typeof errorMsg ) + "\n";
+	}
+	console.log(newErrorMsg);
 }
 
 } )( jQuery, 'jQuery.oue-custom.js' );
@@ -768,12 +768,6 @@ $( window ).on( "load", function () {
 	args = argsList.initWelcomeMessage;
 	initWelcomeMessage( args.slctrWlcmMsg, args.slctrPostWlcmMsg, args.msgDelay, 
 		args.fadeOutDuration, args.fadeInDuration );
-
-	argsList.addA11yTabPressListener = {
-		listenerCallback: handleTabPressForA11y
-	}
-	args = argsList.addA11yTabPressListener;
-	addA11yTabPressListener( args.listenerCallback );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -787,21 +781,7 @@ $( window ).resize( function () {
 // §6: Function declarations
 
 ////////
-// §6.1: addA11yTabPressListener
-
-/**
- * Add an event listener to handle for keyboard navigation implied by tab presses. 
- *
- * Intended to support accessibility design.
- *
- * @param {function} listenerCallback - Function callback triggered on keydown event.
- */
-function addA11yTabPressListener( listenerCallback ) {
-	window.addEventListener( "keydown", listenerCallback );
-}
-
-////////
-// §6.2: addDefinitionListButtons
+// §6.1: addDefinitionListButtons
 
 /**
  * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
@@ -820,8 +800,8 @@ function addA11yTabPressListener( listenerCallback ) {
 function addDefinitionListButtons( slctrDefList, expandAllClass, collapseAllClass, 
 		btnDisablingClass, dtActivatingClass, ddRevealingClass, animSldDrtn ) {
 	var thisFuncName = "addDefinitionListButtons";
-	var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons \
-designed for improving UX of OUE site definition lists";
+	var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons "
+		+ "designed for improving UX of OUE site definition lists";
 	
 	// Find and remove any pre-existing expand/collapse all buttons
 	var $lists = $( slctrDefList );
@@ -831,22 +811,24 @@ designed for improving UX of OUE site definition lists";
 		$existingExpandAlls.remove();
 		$.logError( 
 			thisFileName, thisFuncName, thisFuncDesc,
-			"Expand all buttons were already discovered in the DOM upon document initialization; \
-please remove all buttons from the HTML source code to avoid wasting computational resources."
+			"Expand all buttons were already discovered in the DOM upon document initialization; "
+				+ "please remove all buttons from the HTML source code to avoid wasting "
+				+ "computational resources."
 		);
 	}
 	if ( $existingCollapseAlls.length > 0 ) {
 		$existingCollapseAlls.remove();
 		$.logError( 
 			thisFileName, thisFuncName, thisFuncDesc,
-			"Collapse all buttons were already discovered in the DOM upon document initialization; \
-please remove all buttons from the HTML source code to avoid wasting computational resources."
+			"Collapse all buttons were already discovered in the DOM upon document initialization; "
+				+ "please remove all buttons from the HTML source code to avoid wasting "
+				+ "computational resources."
 		);
 	}
 	
 	// Add initially hidden ( via CSS ) expand/collapse all buttons to definition lists
-	$lists.prepend( '<div class="collapse-all-button">[-] Collapse All</div>' );
-	$lists.prepend( '<div class="expand-all-button">[+] Expand All</div>' );
+	$lists.prepend( '<button type="button" class="collapse-all-button">Collapse All -</button>' );
+	$lists.prepend( '<button type="button" class="expand-all-button">Expand All +</button>' );
 	var slctrExpandAll = slctrDefList + " > ." + expandAllClass;
 	var $expandAlls = $( slctrExpandAll );
 	var slctrCollapseAll = slctrDefList + " > ." + collapseAllClass;
@@ -915,7 +897,7 @@ parental definition list within the DOM."
 }
 
 ////////
-// §6.3: fixDogears
+// §6.2: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
@@ -940,7 +922,7 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 }
 
 ////////
-// §6.4: fixEventCalendars
+// §6.3: fixEventCalendars
 
 function fixEventCalendars( sels ) {
 	var fixer = new OueEventCalendarFixer( sels );
@@ -949,27 +931,7 @@ function fixEventCalendars( sels ) {
 }
 
 ////////
-// §6.5: handleMouseClickForA11y
-
-function handleMouseClickForA11y( e ) {
-	$( "body" ).removeClass( "user-is-tabbing" );
-	window.removeEventListener( "mousedown", handleMouseClickForA11y );
-	window.addEventListener( "keydown", handleTabPressForA11y );
-}
-
-////////
-// §6.6: handleTabPressForA11y
-
-function handleTabPressForA11y( e ) {
-	if ( e.keyCode === 9 ) {
-		$( "body" ).addClass( "user-is-tabbing" );
-		window.removeEventListener( "keydown", handleTabPressForA11y );
-		window.addEventListener( "mousedown", handleMouseClickForA11y );
-	}
-}
-
-////////
-// §6.7: initContentFlippers
+// §6.4: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -985,7 +947,7 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 }
 
 ////////
-// §6.8: initDefinitionLists
+// §6.5: initDefinitionLists
 
 // TODO: Add inline documentation in JSDoc3 format.
 function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
@@ -1029,7 +991,7 @@ function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass,
 }
 
 ////////
-// §6.9: initDropDownToggles
+// §6.6: initDropDownToggles
 
 /**
  * Initialize drop down toggle elements to respond to user interaction.
@@ -1052,7 +1014,7 @@ function initDropDownToggles( selToggles, selContainers, selTargets, activatingC
 }
 
 ////////
-// §6.10: initFancyHrH2Motif
+// §6.7: initFancyHrH2Motif
 
 function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH2 ).each( function () {
@@ -1061,7 +1023,7 @@ function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.11: initFancyHrH3Motif
+// §6.8: initFancyHrH3Motif
 
 function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH3 ).each( function () {
@@ -1070,7 +1032,7 @@ function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.12: initPrintThisPageLinks
+// §6.9: initPrintThisPageLinks
 
 function initPrintThisPageLinks( sels ) {
 	var printThisPageLinks = new OuePrintThisPage( sels );
@@ -1079,7 +1041,7 @@ function initPrintThisPageLinks( sels ) {
 }
 
 ////////
-// §6.13: initQuickTabs
+// §6.10: initQuickTabs
 
 // TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
@@ -1143,7 +1105,7 @@ function initQuickTabs( slctrQtSctn ) {
 }
 
 ////////
-// §6.14: initReadMoreToggles
+// §6.11: initReadMoreToggles
 
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
@@ -1163,7 +1125,7 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 }
 
 ////////
-// §6.15: initTocFloating
+// §6.12: initTocFloating
 
 function initTocFloating( slctrToc, slctrBackToToc ) {
 	var thisFuncName = "initTocFloating";
@@ -1240,7 +1202,7 @@ contents elements; this function only works with one table of contents.' }" );
 }
 
 ////////
-// §6.16: initTriggeredByHover
+// §6.13: initTriggeredByHover
 
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
@@ -1259,7 +1221,7 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 }
 
 ////////
-// §6.17: initWelcomeMessage
+// §6.14: initWelcomeMessage
 
 function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration, 
 		fadeInDuration ) {
@@ -1269,7 +1231,7 @@ function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDu
 }
 
 ////////
-// §6.18: showDefinitionListButtons
+// §6.15: showDefinitionListButtons
 
 /**
  * Display expand/collapse all buttons, which were initially hidden
@@ -1298,6 +1260,11 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 }
 	
 } )( jQuery, 'jQuery.oue-custom.js' );
+
+/*!
+ * ↑↑↑ jQuery.oue-custom.js
+ * -------------------------------------------------------------------------------------------------
+ */
 
 /*!
  * jQuery.css-data.js
@@ -1553,65 +1520,10 @@ ing jQuery object against its own width.' );
 	};
 } )( jQuery, '.column', 'jQuery.textResize.js' );
 
-// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
-// following statement if you are going to utilize this plugin on your own site).
-// TODO: Pass in default maximum column, spine widths
-( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, dfltBasisSlctr, fileName ) {
+var TextAutoResizers = ( function( $ ) {
 
-try {
-	var clmnWidth; 
-	var dfltSpineWidth; // px - default width of spine
-	
-	if ( typeof themeMinColumnWidth !== 'number' || typeof themeSpineWidth !== 'number' ||
-			typeof resizersClass !== 'string' ) {
-		throw 'I was not set up with properly typed initialization parameters and am unable to proc\
-eed.';
-	}
-
-	// Set the default column width in pixels (passed in based on the theme)
-	clmnWidth = themeMinColumnWidth;
-
-	// Set the default width of the Spine in pixels (passed in based on the theme)
-	dfltSpineWidth = themeSpineWidth;
-
-	$( function () {
-		initArticleHeaderText( resizersClass );
-		initTextAutoResizers( '.' + resizersClass );
-	} );
-
-	function initArticleHeaderText( resizersClass ) {
-		//TODO: Refactor to prefer relying on functionality mediated by auto-fits-text class
-		var $columns = $( '.column' );
-		var $this;
-
-		$columns.find( '.article-header .header-content h1' ).each( function () {
-			$this = $( this );
-			if ( !$this.hasClass( resizersClass ) ) {
-				$this.textResize( 1.277142857142857, {'minFontSize' : '34.8' } );
-			}
-		} );
-		$columns.find( '.article-header .header-content h2').each( function () {
-			$this = $( this );
-			if ( !$this.hasClass( resizersClass ) ) {
-				$this.textResize( 1.847840465639262, { 'minFontSize' : '28' } );
-			}
-		} );
-		$columns.find( '.article-header .header-content h3').each( function () {
-			$this = $( this );
-			if ( !$this.hasClass( resizersClass ) ) {
-				$this.textResize( 4.110097222222222, {'minFontSize' : '16' } );
-			}
-		} );
-	}
-	
-	function initTextAutoResizers( cssClass ) {
-		var $textAutoResizers = new TextAutoResizers( cssClass, dfltSpineWidth );
-
-		$textAutoResizers.initTextAutoResizing();
-	}
-	
 	// TODO: Refactor class design for improved efficiency, lower overhead
-	function TextAutoResizers( cssClass, spineWidth ) {	
+	function TextAutoResizers( cssClass, spineWidth, dfltBasisSlctr ) {	
 		var $resizers = $( cssClass );
 		
 		this.initTextAutoResizing = function () {
@@ -1639,7 +1551,8 @@ eed.';
 
 					resizeOptions = {
 						minFontSize: '14',
-						againstSelf: false
+						againstSelf: false,
+						basisSelector: dfltBasisSlctr
 					};
 					fontSz = parseFloat( $this.css( 'font-size' ) );
 					if ( $this.hasClass( 'has-max-size' ) )  {
@@ -1759,6 +1672,66 @@ eed.';
 			}
 		}
 	}
+
+	return TextAutoResizers;
+} )( jQuery );
+
+// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
+// following statement if you are going to utilize this plugin on your own site).
+// TODO: Pass in default maximum column, spine widths
+( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, dfltBasisSlctr, fileName ) {
+
+try {
+	var clmnWidth;
+	var dfltSpineWidth; // px - default width of spine
+
+	if ( typeof themeMinColumnWidth !== 'number' || typeof themeSpineWidth !== 'number' ||
+			typeof resizersClass !== 'string' ) {
+		throw 'I was not set up with properly typed initialization parameters and am unable to proc\
+eed.';
+	}
+
+	// Set the default column width in pixels (passed in based on the theme)
+	clmnWidth = themeMinColumnWidth;
+
+	// Set the default width of the Spine in pixels (passed in based on the theme)
+	dfltSpineWidth = themeSpineWidth;
+
+	$( function () {
+		initArticleHeaderText( resizersClass );
+		initTextAutoResizers( '.' + resizersClass );
+	} );
+
+	function initArticleHeaderText( resizersClass ) {
+		//TODO: Refactor to prefer relying on functionality mediated by auto-fits-text class
+		var $columns = $( '.column' );
+		var $this;
+
+		$columns.find( '.article-header .header-content h1' ).each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.277142857142857, {'minFontSize' : '34.8' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h2').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.847840465639262, { 'minFontSize' : '28' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h3').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 4.110097222222222, {'minFontSize' : '16' } );
+			}
+		} );
+	}
+
+	function initTextAutoResizers( cssClass ) {
+		var $textAutoResizers = new TextAutoResizers( cssClass, dfltSpineWidth, dfltBasisSlctr );
+
+		$textAutoResizers.initTextAutoResizing();
+	}
 } catch ( errMsg ) {
 	console.log( 'Error in ' + fileName + ':' );
 	console.log( errMsg );
@@ -1770,14 +1743,14 @@ eed.';
  * jQuery.forms.js
  * -------------------------------------------------------------------------------------------------
  * PROJECT SUMMARY: Enhancements mediated by jQuery to dynamic behavior of Gravity Forms and
- * intended for Washington State University (WSU) websites built in the WSU WordPress platform.
- * Designed especially for the websites of the WSU Office of Undergraduate Education.
+ *   intended for Washington State University (WSU) websites built in the WSU WordPress platform.
+ *   Designed especially for the websites of the WSU Office of Undergraduate Education.
  *
  * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  *
  * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
  *
- * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+ * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
  *
  *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
  *   without fee is hereby granted, provided that the above copyright notice and this permission
@@ -1794,30 +1767,22 @@ eed.';
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-// §1: Gravity Forms enhancement modules........................................................56
-//     §1.1: EmailConfirmations class...........................................................59
-//         §1.1.1: Public properties............................................................83
-//         §1.1.2: Public methods...............................................................99
-//     §1.2: GfCheckboxValidators class........................................................131
-//         §1.2.1: Private properties..........................................................149
-//         §1.2.2: Public properties...........................................................154
-//         §1.2.3: Privileged methods..........................................................159
-//         §1.2.4: Constructor's main execution section........................................175
-//         §1.2.5: Public methods..............................................................181
-//     §1.3: OueGFs class......................................................................309
-//         §1.3.1: Public properties...........................................................326
-//         §1.3.2: Public methods..............................................................355
-//         §1.3.3: Lexically scoped supporting functions.......................................382
-//     §1.4: WsuIdInputs class.................................................................409
-//         §1.4.1: Public properties...........................................................429
-//         §1.4.2: Public methods..............................................................444
-//         §1.4.3: Lexically scoped supporting functions.......................................541
-// §2: Application of OUE-wide Gravity Forms enhancements......................................566
-//     §2.1: Application of OueGFs module......................................................572
-//     §2.2: Document ready bindings...........................................................580
-//     §2.3: Binding of Handlers to Window Load................................................601
-//     §2.4: Window Load Event Bindings........................................................613
-//     §2.5: Function declarations.............................................................620
+// §1: Gravity Forms enhancement modules........................................................48
+//     §1.1: EmailConfirmations class...........................................................51
+//         §1.1.1: Public properties............................................................75
+//         §1.1.2: Public methods...............................................................91
+//     §1.2: OueGFs class......................................................................123
+//         §1.2.1: Public properties...........................................................140
+//         §1.2.2: Public methods..............................................................169
+//         §1.2.3: Lexically scoped supporting functions.......................................196
+//     §1.2: WsuIdInputs class.................................................................223
+//         §1.3.1: Public properties...........................................................243
+//         §1.3.2: Public methods..............................................................258
+//         §1.3.3: Lexically scoped supporting functions.......................................355
+// §2: Application of OUE-wide Gravity Forms enhancements......................................380
+//     §2.1: Application of OueGFs module......................................................386
+//     §2.2: Binding of handlers to Gravity Forms post-render event............................394
+//     §2.3: Function declarations.............................................................413
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1895,186 +1860,8 @@ var EmailConfirmations = ( function( $ ) {
 	return EmailConfirmations;
 } )( jQuery );
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-// §1.2: GfCheckboxValidators
-
-/**
- * Gravity Forms enhancement module for validating checkbox input containers wherein all checkboxes
- * must be checked.
- *
- * Links the state of a Gravity Forms checkbox field to a subsequent (and ideally hidden) validator
- * field. Currently, all of the checkboxes must be selected for the field to be validated.
- *
- * @class
- */
-var GfCheckboxValidators = ( function( $ ) {
-	
-	'use strict';
-
-	function GfCheckboxValidators( sels ) {
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.1: Private properties
-
-		var _$form;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.2: Public properties
-
-		this.sels = sels;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.3: Privileged methods
-
-		this.get$form = function () {
-			return _$form;
-		}
-
-		this.findForm = function () {
-			if ( this.IsObjValid() ) {
-				_$form = $ ( this.sels.formContainer )
-			} else {
-				console.log( "Object wasn't valid." );
-				_$form = $( [] );
-			}
-		}
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.4: Constructor's main execution section
-
-		this.findForm();
-	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.2.5: Public methods
-
-	/**
-	 * Finish the process of hiding validator fields from the user.
-	 *
-	 * Removes tab indexing from the field so that JavaScript can safely automate population of the
-	 * validator field with input based on the state of the preceding checkbox field.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 */
-	GfCheckboxValidators.prototype.finishHidingValidators = function () {
-		var $form;
-		var $field;
-		var $validator;
-		var $validator_input;
-
-		$form = this.get$form();
-		if ( this.IsObjValid() && $form.length) {
-			// Isolate validator and its target field in the DOM.
-			$field = $form.find( this.sels.validatedField );
-			$validator = $field.next( this.sels.validator );
-
-			// Disable tab indexing to form validators.
-			if ( $field.length && $validator.length ) {
-				$validator_input = $validator.find( "input" );
-				$validator_input.attr( 'tabindex', '-1' );
-			}
-		}
-	};
-
-	/**
-	 * Initialize validation of validated checkbox fields by their subsequent validator fields.
-	 *
-	 * The validator's input element will be set to "validated" if all checkboxes are checked,
-	 * otherwise it will be set to an empty string.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 *
-	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
-	 * @throws {Error} The specified validated and validator fields must be found within the form,
-	 *     and each validated field must be followed by a validator field as a sibling.
-	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
-	 *     must contain a single input element.
-	 */
-	GfCheckboxValidators.prototype.initValidation = function() {
-		var $form;
-		var sels = this.sels;
-		var stillValid;
-
-		stillValid = this.IsObjValid();
-		if ( !stillValid ) {
-			throw Error( "Object properties did not pass validity check." );
-		} else {
-			// Find the form appropriate fields within the form.
-			$form = this.get$form();
-			$form.on('change', sels.validatedField + " :checkbox", function () {
-				var $checkBoxes;
-				var $parentField;
-				var $this;
-				var $validator_input;
-				var allChecked = true;
-				var stillValid = true;
-
-				$this = $( this );
-				$parentField = $this.parents( sels.validatedField );
-				$checkBoxes = $parentField.find( " :checkbox" );
-				$validator_input = $parentField.next( sels.validator ).find( "input" );
-				stillValid = $validator_input.length === 1;
-				try {
-					if ( !stillValid ) {
-						throw Error( "Found a validated field in the DOM that was not followed by a\
- matching, properly formed validator sibling; checkbox state cannot be properly validated." );
-					} else {
-						// Check the state of all the checkbox inputs within the validated field.
-						$checkBoxes.each( function () {
-							if ( allChecked && !this.checked) {
-								allChecked = false;
-							}
-						} );
-
-						// Appropriately set the state of the validator's input element.
-						if ( allChecked && $validator_input.val() != "validated" ) {
-							$validator_input.val( "validated" );
-						} else if ( $validator_input.val() != "" ) {
-							$validator_input.val( "" );
-						}
-					}
-				} catch ( err ) {
-					console.log(err.name + ": " + err.message);
-				}
-			} );
-		}
-	};
-
-	/**
-	 * Check the validity of the instance based on the types and values of its members.
-	 *
-	 * @return {boolean} Returns true if members are properly typed and their values conform to
-	 *     expectations. Returns false otherwise.
-	 */
-	GfCheckboxValidators.prototype.IsObjValid = function() {
-		var stillValid = true;
-		var selsProps;
-
-		if ( !( typeof this.sels === 'object' ) ) {
-			stillValid = false
-		} else if ( stillValid ) {
-			selsProps = Object.getOwnPropertyNames( this.sels );
-		}
-		if ( stillValid && !( selsProps.length === 3 &&
-				selsProps.find( function( elem ) { return elem === 'formContainer'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validatedField'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validator'; } ) ) ) {
-			stillValid = false;
-		}
-		// TODO: Check for properly formed selector strings.
-
-		return stillValid;
-	};
-
-	return GfCheckboxValidators;
-} )( jQuery );
-
 ////////////////////////////////////////////////////////////////////////////////////////////
-// §1.3: OueGFs
+// §1.2: OueGFs
 
 /**
  * Module for adding enhancements to Gravity Forms found on OUE websites.
@@ -2091,7 +1878,7 @@ var OueGFs = ( function( $ ) {
 	function OueGFs() {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.3.1: Public properties
+		// §1.2.1: Public properties
 
 		/**
 		 * Collection of selectors used to find form elements in the DOM.
@@ -2120,7 +1907,7 @@ var OueGFs = ( function( $ ) {
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.3.2: Public methods
+	// §1.2.2: Public methods
 
 	/**
 	 * Initialize Gravity Forms found on the page.
@@ -2147,7 +1934,7 @@ var OueGFs = ( function( $ ) {
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.3.3: Lexically scoped supporting functions
+	// §1.2.3: Lexically scoped supporting functions
 
 	/**
 	 * Initialize inputs accepting WSU ID numbers.
@@ -2174,7 +1961,7 @@ var OueGFs = ( function( $ ) {
 } )( jQuery );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// §1.4: WsuIdInputs
+// §1.3: WsuIdInputs
 
 /**
  * Provides RegEx mediated validation of gravity form inputs that accept WSU ID numbers.
@@ -2194,7 +1981,7 @@ var WsuIdInputs = ( function ( $ ) {
 	function WsuIdInputs( selGfield ) {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.4.1: Public properties
+		// §1.3.1: Public properties
 
 		/**
 		 * The collection of selectors used to find inputs accepting WSU ID numbers in the DOM.
@@ -2209,7 +1996,7 @@ var WsuIdInputs = ( function ( $ ) {
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.4.2: Public methods
+	// §1.3.2: Public methods
 
 	/**
 	 * Initializes RegEx mediated validation of inputs accepting WSU ID numbers.
@@ -2241,9 +2028,9 @@ var WsuIdInputs = ( function ( $ ) {
 		if ( inputText != '' ) {
 			if ( frep.exec( inputText ) == null ) {
 				$this.val( '' );
-				alert( 'The WSU ID you entered did not follow the correct pattern; please try again\
-. When the leading zero is included, WSU ID numbers are 9 digits long. You can also drop the leadin\
-g zero and enter in 8 digits.' );
+				alert( 'The WSU ID you entered did not follow the correct pattern; please try' +
+					' again. When the leading zero is included, WSU ID numbers are 9 digits long.' +
+					' You can also drop the leading zero and enter in 8 digits.' );
 			}
 		}
 	};
@@ -2292,21 +2079,21 @@ g zero and enter in 8 digits.' );
 				$this.val( inputText.slice( 0, 9 ) );
 				errorMsg += ' Also, they must be no greater than nine (9) digits in length.';
 			}
-			errorMsg += ' What you pasted will automatically be corrected; please check the result \
-to see if further corrections are needed.';
+			errorMsg += ' What you pasted will automatically be corrected; please check the' +
+				' result to see if further corrections are needed.';
 			alert( errorMsg );
 		} else if ( inputText.length > 9 ) {
 			e.stopPropagation();
 			e.preventDefault();
 			$this.val( inputText.slice( 0,9 ) );
-			alert( 'WSU ID numbers are no greater than nine (9) digits in length. What you pasted w\
-ill automatically be corrected. Please check the result to see if further corrections are needed.'
-				);
+			alert( 'WSU ID numbers are no greater than nine (9) digits in length. What you pasted' +
+				' will automatically be corrected. Please check the result to see if further' +
+				' corrections are needed.' );
 		}
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.4.3: Lexically scoped supporting functions
+	// §1.3.3: Lexically scoped supporting functions
 
 	/**
 	 * Obtains the regular expression pattern representing valid complete or incomple WSU ID input.
@@ -2345,47 +2132,26 @@ ill automatically be corrected. Please check the result to see if further correc
 	oueGfs.init();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	// §2.2: Document ready bindings
-
-	$( function () {
-		var $requiredFields;
-		if ( $( '.gform_body' ).length > 0 ) {
-			setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
-			setupActvtrChain( '.oue-gf-actvtr-chain' );
-			setupUploadChain( '.oue-gf-upload-chain' );
-			
-			// TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine
-			//   how to handle object by finding div children with gfield_container_class. Best to
-			//   implement as a class.
-			$requiredFields =  $( 'li.gfield_contains_required' );
-			hghlghtRqrdInpts( $requiredFields.find( 'input' ) );
-			hghlghtRqrdChckbxs( $requiredFields.find( 'ul.gfield_checkbox, ul.gfield_radio' ) );
-			hghlghtRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
-			hghlghtRqrdSelects( $requiredFields.find( 'select' ) );
-		}
-	} );
-
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// §2.3: Binding of Handlers to Window Load
+	// §2.2: Binding of handlers to Gravity Forms post-render event
 
 	$( document ).on( 'gform_post_render', function () {
-		var $requiredFields =  $( 'li.gfield_contains_required' );
-
-		checkRqrdInpts( $requiredFields.find( 'input' ) );
-		checkRqrdChckbxs( $requiredFields.find( 'ul.gfield_checkbox, ul.gfield_radio' ) );
+		setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
+		setupActvtrChain( '.oue-gf-actvtr-chain' );
+		setupUploadChain( '.oue-gf-upload-chain' );
+		var $requiredFields = $( '.gfield_contains_required' );
+		checkRqrdInpts( $requiredFields.find( 'input[type="text"]' ) );
+		checkRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
 		checkRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
-	} );
-
-
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// §2.4: Window Load Event Bindings
-
-	$( window ).load( function () {
+		hghlghtRqrdInpts( $requiredFields.find( 'input' ) );
+		hghlghtRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
+		hghlghtRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
+		hghlghtRqrdSelects( $requiredFields.find( 'select' ) );
 		hghlghtRqrdRchTxtEdtrs( $( '.gfield_contains_required.uses-rich-editor' ) );
 	} );
 
+
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	// §2.5: Function declarations
+	// §2.3: Function declarations
 
 	/**
 	 * Check each input element within a required gravity form field to determine if an entry has
@@ -2395,16 +2161,17 @@ ill automatically be corrected. Please check the result to see if further correc
 	 *     fields.
 	 */
 	function checkRqrdInpts ( $inputs ) {
-		if ( $.isJQueryObj( $inputs ) ) {
-			$inputs.each( function () {
-				var $thisInput = $( this );
-				if ( $thisInput.val() == '' ) {
-					$thisInput.removeClass( 'gf-value-entered' );
-				} else {
-					$thisInput.addClass( 'gf-value-entered' );
-				}
-			} );
+		if ( !$.isJQueryObj( $inputs ) ) {
+			return;
 		}
+		$inputs.each( function () {
+			var $thisInput = $( this );
+			if ( $thisInput.val() == '' ) {
+				$thisInput.removeClass( 'gf-value-entered' );
+			} else {
+				$thisInput.addClass( 'gf-value-entered' );
+			}
+		} );
 	}
 	
 	/**
@@ -2415,18 +2182,19 @@ ill automatically be corrected. Please check the result to see if further correc
 	 *     fields.
 	 */
 	function hghlghtRqrdInpts ( $inputs ) {
-		if ( $.isJQueryObj( $inputs ) ) {
-			$inputs.each( function () {
-				var $thisInput = $( this );
-				$thisInput.blur( function () {
-					if ( $thisInput.val() == '' ) {
-						$thisInput.removeClass( 'gf-value-entered' );
-					} else {
-						$thisInput.addClass( 'gf-value-entered' );
-					}
-				} );
-			} );
+		if ( !$.isJQueryObj( $inputs ) ) {
+			return;
 		}
+		$inputs.each( function () {
+			var $thisInput = $( this );
+			$thisInput.blur( function () {
+				if ( $thisInput.val() == '' ) {
+					$thisInput.removeClass( 'gf-value-entered' );
+				} else {
+					$thisInput.addClass( 'gf-value-entered' );
+				}
+			} );
+		} );
 	}
 
 	/**
@@ -2437,23 +2205,24 @@ ill automatically be corrected. Please check the result to see if further correc
 	 *     required gravity form fields.
 	 */
 	function checkRqrdChckbxs ( $lists ) {
-		if ( $.isJQueryObj( $lists ) ) {
-			$lists.each(function () {
-				var $this = $( this );
-				var $inputs = $this.find( 'input' );
-				var inputReady = false;
-				$inputs.each( function () {
-					if ( $( this ).prop( 'checked' ) == true && !inputReady ) {
-						inputReady = true;
-					}
-				} );
-				if ( inputReady ) {
-					$this.addClass( 'gf-value-entered' );
-				} else {
-					$this.removeClass( 'gf-value-entered' );
+		if ( !$.isJQueryObj( $lists ) ) {
+			return;
+		}
+		$lists.each(function () {
+			var $this = $( this );
+			var $inputs = $this.find( 'input' );
+			var inputReady = false;
+			$inputs.each( function () {
+				if ( $( this ).prop( 'checked' ) == true && !inputReady ) {
+					inputReady = true;
 				}
 			} );
-		}
+			if ( inputReady ) {
+				$this.addClass( 'gf-value-entered' );
+			} else {
+				$this.removeClass( 'gf-value-entered' );
+			}
+		} );
 	}
 
 	/**
@@ -2464,36 +2233,37 @@ ill automatically be corrected. Please check the result to see if further correc
 	 *     required gravity form fields.
 	 */
 	function hghlghtRqrdChckbxs ( $lists ) {
-		if ( $.isJQueryObj( $lists ) ) {
-			$lists.each( function () {
-				var $inputs;
-				var $this;
+		if ( !$.isJQueryObj( $lists ) ) {
+			return;
+		}
+		$lists.each( function () {
+			var $inputs;
+			var $this;
 
-				$this = $( this );
-				$inputs = $this.find( 'input' );
-				$inputs.each( function () {
-					var $thisChild = $( this );
-					$thisChild.change( function () {
-						var $parentsInputs;
-						var $thisParent;
-						var inputReady = false;
+			$this = $( this );
+			$inputs = $this.find( 'input' );
+			$inputs.each( function () {
+				var $thisChild = $( this );
+				$thisChild.change( function () {
+					var $parentsInputs;
+					var $thisParent;
+					var inputReady = false;
 
-						$thisParent = $thisChild.parents( 'ul.gfield_checkbox, ul.gfield_radio' );
-						$parentsInputs = $thisParent.find( 'input' );
-						$parentsInputs.each(function () {
-							if ( $( this ).prop( 'checked' ) == true && !inputReady ) {
-								inputReady = true;
-							}
-						} );
-						if ( inputReady ) {
-							$thisParent.addClass( 'gf-value-entered' );
-						} else {
-							$thisParent.removeClass( 'gf-value-entered' );
+					$thisParent = $thisChild.parents( 'ul.gfield_checkbox, ul.gfield_radio' );
+					$parentsInputs = $thisParent.find( 'input' );
+					$parentsInputs.each(function () {
+						if ( $( this ).prop( 'checked' ) == true && !inputReady ) {
+							inputReady = true;
 						}
 					} );
+					if ( inputReady ) {
+						$thisParent.addClass( 'gf-value-entered' );
+					} else {
+						$thisParent.removeClass( 'gf-value-entered' );
+					}
 				} );
 			} );
-		}
+		} );
 	}
 
 	/**
@@ -2531,17 +2301,19 @@ ill automatically be corrected. Please check the result to see if further correc
 				var $editorForm = $( this ).find( 'iframe' );
 				$editorForm.each( function () {
 					var $editorBody = $( this ).contents().find( '#tinymce' );
-					$editorBody.css( {
-						 backgroundColor: 'rgba(255,0,0,0.1)',
-						 fontFamily: '"Open sans", sans-serif'
-					} );
+					$editorBody.css( 'fontFamily', '"Open sans", sans-serif' );
+					if ( $editorBody.text().replace( /\n|\uFEFF/g, '' ) == ''  ) {
+						$editorBody.css( 'background', '#fff linear-gradient(to bottom,' +
+							' rgba(255,0,0,0.1), rgba(255,0,0,0)) no-repeat' );
+					}
 					$editorBody.focus( function () {
-						$( this ).css( 'background-color', 'rgba(255,255,255,1)' );
+						$( this ).css( 'background', '#fff' );
 					} );
 					$editorBody.blur( function () {
 						var $this = $( this );
 						if ( $this.text().replace( /\n|\uFEFF/g, '' ) == '' ) {
-							$this.css( 'background-color', 'rgba(255,0,0,0.1)' );
+							$this.css( 'background', '#fff linear-gradient(to bottom,' +
+								' rgba(255,0,0,0.1), rgba(255,0,0,0)) no-repeat' );
 						}
 					} );
 				} );
@@ -2663,7 +2435,9 @@ ill automatically be corrected. Please check the result to see if further correc
 									$thisSblng.find( "input[type='file']" ).first();
 								if ( $thisSblngInput.prop( 'files' ) != null &&
 										$thisSblngInput.prop( 'files' ).length > 0 ) {
-									var thisFileName = $thisSblngInput.prop( 'files' ).item( 0 ).name;
+									var thisFileName = $thisSblngInput.prop(
+											'files'
+										).item( 0 ).name;
 									valuePassed = originalFileName != thisFileName;
 								}
 							}
@@ -2671,7 +2445,9 @@ ill automatically be corrected. Please check the result to see if further correc
 						$parentNextSblngs.each( function () {
 							if ( valuePassed ) {
 								var $thisSblng = $( this );
-								var $thisSblngInput = $thisSblng.find( "input[type='file']" ).first();
+								var $thisSblngInput = $thisSblng.find(
+										"input[type='file']"
+									).first();
 								if ( $thisSblngInput.prop( 'files' ) != null &&
 										$thisSblngInput.prop( 'files' ).length > 0) {
 									var thisFileName = $thisSblngInput.prop( 'files' ).item(0).name;
@@ -2684,8 +2460,8 @@ ill automatically be corrected. Please check the result to see if further correc
 						$thisInput.addClass( 'gf-value-entered' );
 						$parentNextSblngs.first().removeClass( 'gf-hidden' );
 					} else {
-						alert('A file with the same name has already been uploaded; please choose a\
- different file.');
+						alert( 'A file with the same name has already been uploaded; please' +
+							' choose a different file.' );
 						$thisInput.get(0).value = '';
 					}
 				} else {
@@ -2889,39 +2665,76 @@ ill automatically be corrected. Please check the result to see if further correc
   };
 })(jQuery);
 
-/*!
- * jQuery.are-you-sure.js: Application of Are-You-Sure jQuery Plugin to WSU OUE websites. Please see
- *     https://github.com/codedance/jquery.AreYouSure/ for more details.
- * Author:  Daniel Rieck (danielcrieck@gmail.com) [https://github.com/invokeImmediately]
- * Version: 2.0.0
+/*!*************************************************************************************************
+ * jQuery.forms.js, v2.1.0
+ * -------------------------------------------------------------------------------------------------
+ * PROJECT SUMMARY: Application of Are-You-Sure jQuery Plugin to WSU DAESA websites.
  *
- * Published under the MIT license.
- * https://opensource.org/licenses/MIT
- */
+ * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *
+ * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
+ *
+ * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+ *
+ *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+ *   without fee is hereby granted, provided that the above copyright notice and this permission
+ *   notice appear in all copies.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+ *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+ *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+ *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ *   PERFORMANCE OF THIS SOFTWARE.
+ **************************************************************************************************/
+
 ( function( $ ) {
 
+// Define script's execution context
 var thisFileName = 'jquery.are-you-sure.js';
+var dirtyFormIndicator = 'dirty';
 
-// Code executed after the browser loads the DOM.
-$( function() {
-	var thisFuncName = 'DOM loaded';
-	var thisFuncDesc = 'Code executed after the DOM has loaded';
-	var $gForms;
-	
+function checkLoadedForm( $gForm, current_page ) {
+	if ( !$.isJQueryObj( $gForm ) || $gForm.hasClass( dirtyFormIndicator ) ) {
+		return;
+	}
+	var pg1FilledFields = 0;
+	if ( current_page == 1 ) {
+		var $filledFields = $gForm.find( '.gfield_contains_required .gf-value-entered' );
+		pg1FilledFields = $filledFields.length;
+	}
+	if ( current_page > 1 || pg1FilledFields > 0 ) {
+		$gForm.addClass( dirtyFormIndicator );
+	}
+}
+
+// Use Gravity Forms' post-rendering event as a hook for setting up form invalidation
+$( document ).on( 'gform_post_render', function ( event, form_id, current_page ) {
+	var thisFuncName = 'Gravity Forms post-render event handler';
+	var thisFuncDesc = 'Code executed after a Gravity Forms form has rendered';
 	try {
-		assertAreYouSureLoaded();
-		$gForms = $( '.gform_wrapper > form' );
-		$gForms.areYouSure();		
-	} catch (errorMsg) {
+
+		// Make sure thejQuery plugin required for form invalidation has been loaded.
+		if ( !$.fn.areYouSure ) {
+			throw 'The Are-You-Sure jQuery plugin, which I am programmed to rely on as my form' +
+				' invalidation mechanism, is missing. The web development team should verify that' +
+				' it was included as a JS development dependency.';
+		}
+
+		// Set up automatic form invalidation on the form
+		var gFormSel = '#gform_' + form_id.toString();
+		var $gForm = $( gFormSel );
+		$gForm.areYouSure( {
+			dirtyClass: dirtyFormIndicator
+		} );
+
+		// Based on the form's state, ensure invalidation is properly handled
+		checkLoadedForm( $gForm, current_page );
+		setTimeout( checkLoadedForm, 5000, $gForm, current_page );
+	} catch ( errorMsg ) {
 		$.logError( thisFileName, thisFuncName, thisFuncDesc, errorMsg );
 	}
 } );
-
-function assertAreYouSureLoaded() {
-	if ( !$.fn.areYouSure ) {
-		throw 'The Are-You-Sure jQuery plugin is missing; please verify that you included it as a build dependency.';
-	}
-}
 
 } )( jQuery );
 
@@ -3440,20 +3253,50 @@ function processCountdownTimerMsg ( $countdownTimerMsg ) {
 
 } )( jQuery );
 
-/*!*********************************************************************************************************************
- CUSTOM JQUERY-BASED DYNAMIC CONTENT
- *********************************************************************************************************************/
-(function ($) {
+/*!*************************************************************************************************
+ * surca-custom.js
+ * -------------------------------------------------------------------------------------------------
+ * SUMMARY: Custom JS code used specifically on the WSU SURCA website.
+ *
+ * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *
+ * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
+ *
+ * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+ *
+ *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+ *   without fee is hereby granted, provided that the above copyright notice and this permission
+ *   notice appear in all copies.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+ *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+ *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+ *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ *   PERFORMANCE OF THIS SOFTWARE.
+ **************************************************************************************************/
+
+( function ( $ ) {
     "use strict";
-	$(document).ready(function () {
-			/**********************************************************************************************
-			 * Tweak HTML source to work around some quirks of the WordPress setup                        *
-			 **********************************************************************************************/
-			var surcaSiteURL = window.location.pathname;
-			switch(surcaSiteURL) {
-				case '/news/':
-					$('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>');
-					break;
-			}
-	});
-})(jQuery);
+
+	$( function () {
+		insertHeaderIntoNewsPages( '<section class="row single gutter pad-top"><div class="column o\
+ne"><section class="article-header header-attending mw--80ch" style="padding-top: 0;"><div class="h\
+eader-content"><h1 class="auto-fits-text data-min-fs-28 data-resize-against-article-header"><span c\
+lass="title">News<span class="for-screen-readers">:</span></span> <span class="subtitle auto-fits-t\
+ext data-min-fs-18 data-resize-against-article-header">What We and Our Students Have Accomplished</\
+span></h1></div></section>' );
+	} );
+
+	function insertHeaderIntoNewsPages( htmlInserted ) {
+		var relUrl = window.location.pathname;
+		if ( relUrl == '/news/' ) {
+			$('div.column.one').first().parent('section').before( htmlInserted );
+		} else {
+			var $body = $( 'body' ).first();
+			if ( $body.hasClass( 'single-post' ) || $body.hasClass( 'archive' ) ) {
+				$body.find( '.column.one' ).first().parent( '.row' ).before( htmlInserted );
+			}			
+		}
+	}
+} )( jQuery );
