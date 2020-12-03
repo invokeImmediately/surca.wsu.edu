@@ -1,18 +1,10 @@
 <title>SURCA: Showcase for Undergraduate Research and Creative Activities | Washington State University</title>
 <!--...-->
-<body class="home page-template page-template-template-builder page-template-template-builder-php page page-id-2 logged-in admin-bar no-customize-support tribe-no-js domain-surca-wsu-edu path-none opensansy single five1 ten2 twenty9 depth-0 section- page- use-max-width-1386">
+<body class="home page-template page-template-template-builder page-template-template-builder-php page page-id-2 logged-in admin-bar no-customize-support tribe-no-js domain-surca-wsu-edu path-none opensansy single five4 ten10 twenty14 depth-0 section- page- use-max-width-1386">
 	<!--...-->
 	<section id="builder-section-1585631794998" class="row single article-notice fade-in ruby">
 		<div style="" class="column one ta--center">
 			<p class="mw--none">Save the date for SURCA 2021: <br /><strong class="dy--block fs--1400mx">Monday, March 29, 2021</strong></p>
-		</div>
-	</section>
-	<section id="builder-section-1584985832084" class="row halves gutter pad-top">
-		<div style="" class="column one ">
-			<p id="abstract-book-release-notice" class="full-width information notice"><span class="fs--1400mx lh--1500mx"><strong>Available now:</strong> The <a href="https://surca.wsu.edu/documents/2020/03/surca-2020_abstract-book.pdf">SURCA 2020 abstract book</a> is ready to download.</span> Get your copy today and learn about the research, scholarship, and creative activity that our undergraduate students have been engaged in.</p>
-		</div>
-		<div style="" class="column two ">
-			<p id="covid-19-notice" class="full-width notice">Along with other Showcase poster sessions, <strong>SURCA has been canceled</strong> over concerns about the risk that the COVID-19 outbreak presents to the health of Showcase participants and attendees. <a href="https://surca.wsu.edu/overview/welcome-info/covid-19-and-surca/">Read more about this cancellation</a>.</p>
 		</div>
 	</section>
 	<section id="builder-section-1447105471924" class="row single gutter">
@@ -36,7 +28,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<p class="sv--0mx"><a href="https://surca.wsu.edu/documents/2020/03/surca-2020_abstract-book.pdf"><strong>SURCA 2020 Abstract Book</strong></a></p>
+								<p class="sv--0mx"><a href="https://surca.wsu.edu/documents/2020/03/surca-2020_abstract-book.pdf?ver=2"><strong>SURCA 2020 Abstract Book</strong></a></p>
 								<p class="sv--0mx"><a href="/categories/">Participation Categories</a></p>
 								<p class="sv--0mx"><a href="/calendar/">Calendar</a></p>
 								<p class="sv--0mx"><a href="/awards/">Awards</a></p>
@@ -84,10 +76,19 @@
 			#builder-section-1481744590144 .builder-banner-slide {
 			padding-bottom: 20.833333333333%;
 		}
+	.wsu-cycle-pause {
+		position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background-color: #fff;
+	z-index: 1000;
+	font-size: 0.7rem;
+	padding: 0.25rem 0.5rem;
+	}
 	</style>
 	<section id="builder-section-1481744590144" class="row single builder-section gutter pad-top  builder-section-prev-wsuwpsingle builder-section-banner builder-section-next-wsuwphalves">
 		<div class="column one ">
-			<div class="builder-section-content cycle-slideshow" data-cycle-log="false" data-cycle-slides="div.builder-banner-slide" data-cycle-swipe="true" data-cycle-timeout="6000" data-cycle-fx="scrollHorz">
+			<div class="builder-section-content cycle-slideshow" data-cycle-log="false" data-cycle-slides="div.builder-banner-slide" data-cycle-swipe="true" data-cycle-timeout="6000" data-cycle-fx="scrollHorz" >
 				<div class="builder-banner-slide content-position-none first-slide" style="background-image: url(&#039;https://s3.wp.wsu.edu/uploads/sites/706/2016/12/SURCA-2017_Homepage-Banner_Slide-1.png&#039;);">
 					<div class="builder-banner-content">
 						<div class="builder-banner-inner-content">
@@ -106,8 +107,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="cycle-prev"></div>
-				<div class="cycle-next"></div>
+				<div class="cycle-prev" tabindex="0" aria-label="Previous Slide" ></div>
+				<div class="cycle-next" tabindex="0" aria-label="Previous Slide"></div>
+				<button class="wsu-cycle-pause" data-cycle-cmd="pause">Pause</button>
 			</div>
 		</div>
 	</section>
