@@ -108,8 +108,21 @@
 	border: 1px solid rgba(42,48,51,.5);
 }
 
+.fade-in {
+	animation: anim-fade-in 1s linear 1;
+}
+
+@keyframes anim-fade-in {
+	0% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
 .fade-in-from-top {
-	opacity: 0;
 	animation: anim-fade-in-from-top 1s linear 1;
 }
 
@@ -6219,15 +6232,17 @@ h3.drop-down-toggle:hover {
 	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 20px;
-	font-size: 13px;
 	text-align: left;
 	color: #981e32;
 }
 
 .column table.navigational-map a {
-	border-bottom: 1px dotted rgba(152,30,50,0);
 	color: inherit;
 	box-shadow: none;
+}
+
+.column table.navigational-map a:not(:hover) {
+	border-bottom-color: transparent;
 }
 
 .column table.navigational-map td,.column table.navigational-map th {
@@ -6265,8 +6280,8 @@ h3.drop-down-toggle:hover {
 }
 
 .column table.navigational-map td p {
-	padding-top: 2px;
-	padding-bottom: 3px;
+	padding-top: 4px;
+	padding-bottom: 7px;
 	font-size: inherit;
 	text-align: inherit;
 }
