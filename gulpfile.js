@@ -42,7 +42,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: Gulp task dependencies
 
-var gulpBuilder = require( './WSU-UE---JS/gulpBuilder.js' );
+var gulpBuilder = require( './WSU-DAESA-JS/gulpBuilder.js' );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: Specificiation of build settings
@@ -57,7 +57,7 @@ var gulpBuilder = require( './WSU-UE---JS/gulpBuilder.js' );
  */
 function getCssBuildSettings() {
 	var commentRemovalNeedle = /^(?:[ \t]*)?\/\*[^!].*$\n(?:^\*\*?[^/].*$\n)*\*\*?\/\n\n?/gm;
-	var dependenciesPath = './WSU-UE---CSS/';
+	var dependenciesPath = './WSU-DAESA-CSS/';
 	var destFolder = './CSS/';
 	var fontImportStr = '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i' +
 		',400,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700' +
@@ -113,18 +113,18 @@ function getCssBuildSettings() {
 function getJsBuildSettings() {
 	return {
 		buildDependenciesList: [
-			'./WSU-UE---JS/jQuery.oue-custom.js',
-			'./WSU-UE---JS/jQuery.css-data.js',
-			'./WSU-UE---JS/jQuery.textResize.js',
-			'./WSU-UE---JS/jQuery.forms.js',
+			'./WSU-DAESA-JS/jQuery.oue-custom.js',
+			'./WSU-DAESA-JS/jQuery.css-data.js',
+			'./WSU-DAESA-JS/jQuery.textResize.js',
+			'./WSU-DAESA-JS/jQuery.forms.js',
 			'../jQuery.AreYouSure/jquery.are-you-sure.js',
-			'./WSU-UE---JS/jQuery.are-you-sure.js',
+			'./WSU-DAESA-JS/jQuery.are-you-sure.js',
 			'../qTip2/dist/jquery.qtip.min.js',
-			'./WSU-UE---JS/jQuery.qTip.js',
-			'./WSU-UE---JS/jQuery.cookieObjs.js',
-			'./WSU-UE---JS/jquery.media.js',
+			'./WSU-DAESA-JS/jQuery.qTip.js',
+			'./WSU-DAESA-JS/jQuery.cookieObjs.js',
+			'./WSU-DAESA-JS/jquery.media.js',
 			'../jQuery.countdown/dist/jquery.countdown.min.js',
-//			'./WSU-UE---JS/jQuery.countdown-custom.js',
+//			'./WSU-DAESA-JS/jQuery.countdown-custom.js',
 			'./Local/jQuery.countdown-custom_2017-10-18.prev.js',
 			'./JS/surca-custom.js'
 		],
