@@ -82,16 +82,15 @@ function addNewsHeaderViaLocation( markup ) {
 
 $( function () {
 	addPageHeaderOnNewsPages( {
-		htmlNewsHeader: '<section class="row single gutter pad-top">\n' +
-			'\t<div class="column one">' +
-			'\t\t<section class="article-header header-attending mw--80ch" style="padding-top: 0;">' +
-			'\t\t\t<div class="header-content">\n' +
-			'\t\t\t\t<h1 class="auto-fits-text data-min-fs-28 data-resize-against-article-header">' +
-			'<span class="title">News<span class="for-screen-readers">:</span></span> ' +
-			'<span class="subtitle auto-fits-text data-min-fs-18 data-resize-against-article-header">' +
-			'What We and Our Students Have Accomplished</span></h1>\n' +
-			'\t\t\t</div>\n' +
-			'\t\t</section>\n' +
+		htmlNewsHeader: '<section class="row single article-header article-header--colored' +
+				' h--192px">\n' +
+			'\t<div class="column one gray-darker-back">\n' +
+			'\t\t<div class="gray-er-text wrapper">\n' +
+			'\t\t\t<ol class="breadcrumb-list">\n' +
+			'\t\t\t\t<li class="breadcrumb-list__breadcrumb"><a class="breadcrumb-list__link"' +
+				' href="/">SURCA Home</a></li>\n' +
+			'\t\t\t</ol>\n' +
+			'\t\t	<h1 class="tt--uppercase">News</h1>\n' +
 			'\t</div>\n' +
 			'</section>'
 	} );
