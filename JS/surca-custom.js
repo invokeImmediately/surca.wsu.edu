@@ -27,7 +27,7 @@
 // TABLE OF CONTENTS
 // -----------------
 //   §1: Function declarations................................................................37
-//   §2: Main execution section...............................................................81
+//   §2: Main execution section..............................................................100
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $ ) {
@@ -36,20 +36,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: Function Declarations
 
-function addPageHeaderOnCalendarPages( params ) {
-	let headerMarkup = params.htmlCalendarHeader;
-	addCalendarHeaderViaClassUtilization( headerMarkup );
-}
-
 /**
- * Add page headers to news pages.
+ * Inspect the body tag to add a header to news pages when certain classes are in use.
  *
- * @param {String} htmlNewsHeader - The HTML comprising the page header to be added to the DOM.
+ * @param {String} markup - The HTML comprising the page header to be added to the DOM.
  */
-function addPageHeaderOnNewsPages( params ) {
-	var headerMarkup = params.htmlNewsHeader;
-	addNewsHeaderViaLocation( headerMarkup );
-	addNewsHeaderViaClassUtilization( headerMarkup );
+function addCalendarHeaderViaClassUtilization( markup ) {
+	let $body = $( 'body' ).first();
+	if ( $body.hasClass( 'single-tribe_events' ) ||
+			$body.hasClass( 'post-type-archive-tribe_events' ) ||
+			$body.hasClass( 'tribe_venue-template-default' ) ) {
+		$body.find( '.column.one' ).first().parent( '.row' ).before( markup );
+	}
 }
 
 /**
@@ -71,19 +69,59 @@ function addNewsHeaderViaClassUtilization( markup ) {
  * @param {String} markup - The HTML comprising the page header to be added to the DOM.
  */
 function addNewsHeaderViaLocation( markup ) {
-	var siteURL = window.location.pathname;
+	let siteURL = window.location.pathname;
 	if ( siteURL == '/news/' ) {
 		$( '.column.one' ).first().parent( '.row' ).before( markup );
 	}
+}
+
+/**
+ * Add page headers to calendar pages.
+ *
+ * @param {String} htmlNewsHeader - The HTML comprising the page header to be added to the DOM.
+ */
+function addPageHeaderOnCalendarPages( params ) {
+	let headerMarkup = params.htmlCalendarHeader;
+	addCalendarHeaderViaClassUtilization( headerMarkup );
+}
+
+/**
+ * Add page headers to news pages.
+ *
+ * @param {String} htmlNewsHeader - The HTML comprising the page header to be added to the DOM.
+ */
+function addPageHeaderOnNewsPages( params ) {
+	let headerMarkup = params.htmlNewsHeader;
+	addNewsHeaderViaLocation( headerMarkup );
+	addNewsHeaderViaClassUtilization( headerMarkup );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: Main execution section
 
 $( function () {
+
+	// Add page headers to SURCA web pages in the calendar section of the website, which are missing
+	//   by default.
+	addPageHeaderOnCalendarPages( {
+		htmlCalendarHeader: '<section id="calendar-page-header" class="row single article-header' +
+				' article-header--colored h--192px">\n' +
+			'\t<div class="column one gray-darker-back">\n' +
+			'\t\t<div class="gray-er-text wrapper">\n' +
+			'\t\t\t<ol class="breadcrumb-list">\n' +
+			'\t\t\t\t<li class="breadcrumb-list__breadcrumb"><a class="breadcrumb-list__link"' +
+				' href="/">SURCA Home</a></li>\n' +
+			'\t\t\t</ol>\n' +
+			'\t\t	<h1 class="tt--uppercase">Calendar</h1>\n' +
+			'\t</div>\n' +
+			'</section>'
+	} );
+
+	// Add page headers to SURCA web pages in the news section of the website, which are missing by
+	//   default.
 	addPageHeaderOnNewsPages( {
-		htmlNewsHeader: '<section class="row single article-header article-header--colored' +
-				' h--192px">\n' +
+		htmlNewsHeader: '<section id="news-page-header" class="row single article-header' +
+				' article-header--colored h--192px">\n' +
 			'\t<div class="column one gray-darker-back">\n' +
 			'\t\t<div class="gray-er-text wrapper">\n' +
 			'\t\t\t<ol class="breadcrumb-list">\n' +
