@@ -3283,7 +3283,7 @@ function processCountdownTimerMsg ( $countdownTimerMsg ) {
  * ▄▀▀▀ █  █ █▀▀▄ ▄▀▀▀ ▄▀▀▄    ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌      █ ▄▀▀▀
  * ▀▀▀█ █  █ █▄▄▀ █    █▄▄█ ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
  * ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
- * -------------------------------------------------------------------------------------------------
+ *
  * Custom JS code specfically written for use on the WSU SURCA website. The code is meant to be
  *   applied to the site via the Custom JavaScript Editor page in the WordPress dashboard.
  *
@@ -3308,7 +3308,7 @@ function processCountdownTimerMsg ( $countdownTimerMsg ) {
 // TABLE OF CONTENTS
 // -----------------
 //   §1: Function declarations................................................................37
-//   §2: Main execution section...............................................................81
+//   §2: Main execution section..............................................................100
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $ ) {
