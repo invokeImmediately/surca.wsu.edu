@@ -29,8 +29,8 @@
 // §1: Gulp task dependencies...................................................................41
 // §2: Specificiation of build settings ........................................................46
 //   §2.1: getCssBuildSettings()................................................................49
-//   §2.2: getJsBuildSettings()................................................................124
-// §3: Entry point: Set up of build taks.......................................................158
+//   §2.2: getJsBuildSettings()................................................................127
+// §3: Entry point: Set up of build taks.......................................................161
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function() {
@@ -58,9 +58,10 @@ function getCssBuildSettings() {
 		commentRemovalNeedle: /^(?:[ \t]*)?\/\*[^!].*$\n(?:^\*\*?[^/].*$\n)*\*\*?\/\n\n?/gm,
 		dependenciesPath: './WSU-DAESA-CSS/',
 		destFolder: './CSS/',
-		fontImportStr: '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i' +
-			',400,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700' +
-			'i|Roboto+Mono:400,400i,700,700i&display=swap\');\r\n',
+		fontImportStr: '@import url(\'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wgh' +
+			't@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,' +
+			'700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Rob' +
+			'oto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap\');\r\n',
 		insertingMediaQuerySectionHeader: {
 				before: /^@media/,
 				lineBefore: '/*! ========================================================================' +
@@ -102,7 +103,8 @@ function getCssBuildSettings() {
 					'***     substantial portions of the Software.\r\n' +
 					'***   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR' +
 						' IMPLIED, INCLUDING\r\n' +
-					'***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\r\n' +
+					'***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR' +
+						' PURPOSE AND\r\n' +
 					'***     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE' +
 						' FOR ANY\r\n' +
 					'***     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR' +
