@@ -1,25 +1,27 @@
 /** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
-*** │ FILENAME: surca-custom.less                                                                  │
-*** │                                                                                              │
-*** │ See persistent section header comment below (§2) for additional information and license.     │
+***   ▄▀▀▀ █  █ █▀▀▄ ▄▀▀▀ ▄▀▀▄    ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+***   ▀▀▀█ █  █ █▄▄▀ █    █▄▄█ ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+***   ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀ 
+*** 
+***   See persistent section header comment below (§2) for additional information and license.
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................27
-***  §2: Persistent section header comment for unit specific styling...........................37
-***  §3: SURCA-specific Less variables.........................................................69
-***  §4: Body, main, and site header...........................................................77
-***  §5: Page headers.........................................................................119
-***  §6: Article sidebars.....................................................................156
-***  §7: Lists................................................................................247
-***  §8: Iframes..............................................................................256
-***  §9: Tables...............................................................................264
-***  §10: Welcome message.....................................................................288
-***  §11: Drop down toggles...................................................................346
-***  §12: Abstract submission reminder........................................................360
-***  §13: Announcements.......................................................................380
-***  §14: Banner slideshows...................................................................390
-***  §15: Included optional layouts...........................................................399
+***  §1: Build entry point from DAESA's CSS development project................................29
+***  §2: Persistent section header comment for unit specific styling...........................49
+***  §3: SURCA-specific Less variables.........................................................83
+***  §4: Body, main, and site header...........................................................91
+***  §5: Page headers.........................................................................124
+***  §6: Article sidebars.....................................................................161
+***  §7: Lists................................................................................252
+***  §8: Iframes..............................................................................261
+***  §9: Tables...............................................................................269
+***  §10: Welcome message.....................................................................293
+***  §11: Drop down toggles...................................................................343
+***  §12: Abstract submission reminder........................................................357
+***  §13: Announcements.......................................................................377
+***  §14: Banner slideshows...................................................................387
+***  §15: Included optional layouts...........................................................396
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -27,41 +29,53 @@
 *** §1: Build entry point from DAESA's CSS development project
 **/
 
+// Set Grid behavior to match the Spine theme's hybrid mode.
 @grid-behavior: "hybrid";
+
+// Specify an empty OUE rules wrapping class, as one is not needed on the SURCA website.
 @oue-rules-wrapper: ~"";
 
-@import "..\WSU-UE---CSS\variables";
-@import "..\WSU-UE---CSS\css-build-entry-point.less";
+// Pull in our default build settings.
+@import "..\WSU-DAESA-CSS\build-settings.less";
+
+// Specify any overrides to the default build settings.
+@use-design__daesa-main-headers: false;
+@use-design__provost-main-headers: true;
+
+// Pull in the custom styling that is used on all DAESA websites.
+@import "..\WSU-DAESA-CSS\build-entry-point.less";
 
 /** ================================================================================================
 *** §2: Persistent section header comment for unit specific styling
 **/
 
 /*! ================================================================================================
-*** SURCA Styling Section
+*** ▄▀▀▀ █  █ █▀▀▄ ▄▀▀▀ ▄▀▀▄   ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   ▄▀▀▀▐▀█▀▌█  █ █    ▀█▀ ▐▀▀▄ █▀▀▀
+*** ▀▀▀█ █  █ █▄▄▀ █    █▄▄█   █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▀▀▀█  █  ▀▄▄█ █  ▄  █  █  ▐ █ ▀▄
+*** ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀    ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀   ▀▀▀   █  ▄▄▄▀ ▀▀▀  ▀▀▀ ▀  ▐ ▀▀▀▀
 *** ================================================================================================
-***   SUMMARY: CSS code designed for use on Washington State University's [SURCA website](https://su
-***    rca.wsu.edu/) that was built from precompiled CSS written in the Less language extension of
-***    CSS.
+*** CSS code designed for use on Washington State University's SURCA website that was built from
+***   precompiled CSS written in the Less language extension of CSS.
 ***
-***   DESCRIPTION: Fully documented, precompiled source code from which this section of the
-***    custom stylesheet was built is developed and maintained on the following GitHub project:
-***    https://github.com/invokeImmediately/surca.wsu.edu/
+*** Fully documented, precompiled source code from which this section of the custom stylesheet was ***   built is developed and maintained on the linked GitHub project.
 ***
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
-***
-***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
-***
-***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
-***     without fee is hereby granted, provided that the above copyright notice and this permission
-***     notice appear in all copies.
-***
-***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
-***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
-***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
-***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
-***     OR PERFORMANCE OF THIS SOFTWARE.
+*** @link https://surca.wsu.edu
+*** @link https://github.com/invokeImmediately/surca.wsu.edu/
+*** @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+*** @license MIT Copyright (c) 2020 Washington State University
+***   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+***     and associated documentation files (the "Software"), to deal in the Software without
+***     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+***     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+***     the Software is furnished to do so, subject to the following conditions:
+***   The above copyright notice and this permission notice shall be included in all copies or
+***     substantial portions of the Software.
+***   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+***     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+***     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+***     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+***     SOFTWARE.
 *** ================================================================================================
 **/
 
@@ -74,46 +88,37 @@
 @url-sandstone-texture: "wp-content/uploads/sites/706/2016/03/texture_sandstone.png";
 
 /** ================================================================================================
-*** §4: Body, main, and site header
+*** §4: SURCA site branding
 **/
 
-body {
-	// REMOVED FOR NOW: Main page background is too distracting on certain viewport widths; should
-	// disappear when the screen is narrow enough.
-	// background: url(/wp-content/uploads/sites/706/2015/11/main-page-background.jpg)
-	//	left top fixed repeat;
-	background: @hex-bright-gray;
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-}
-
-main {
-	background: #fff url(/wp-content/uploads/sites/706/2015/11/bg-gray-diagonal-hatching_lower-fading.jpg) left top fixed repeat-x;
-}
-
-#jacket {
-	background-position: right bottom;
-	 background-attachment: fixed;
-	 background-repeat: no-repeat;
-}
-
-header.main-header {
-	height: 110px;
-	background: @hex-darker-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png)
-		left bottom/270px auto no-repeat;
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-	color: #fff !important;
-	text-shadow: .5px .5px 1px #000;
-}
-
-@media print {
-	header.main-header {
-		background: @hex-darkest-gray url(/wp-content/uploads/sites/706/2015/11/surca-logo-swish.png) left top repeat;
+@rs-surca-sitewide-branding: {
+	body.home:not(.has-background-image) #jacket, #jacket {
+		background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-jacket-4.jpg) no-repeat right top;
+		background-attachment: fixed;
 	}
-}
 
-.main-header sub:not(.unset), .main-header sup:not(.unset) {
-	color: #fff !important;
-}
+	#jacket {
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-attachment: fixed;
+	}
+
+	#spine #glue:before {
+		border-right: 1px solid #e5e5e5;
+		background: #fff url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-spine_daesa.png) no-repeat left bottom;
+		background-attachment: fixed;
+
+		@media only screen and (max-width: 1544px) {
+			background: #fff;
+		}
+	}
+
+	main {
+		background: @hex-white;
+		border-left: 1px solid @hex-bright-gray;
+	}
+};
+@rs-surca-sitewide-branding();
 
 /** ================================================================================================
 *** §5: Page headers
@@ -407,3 +412,5 @@ h3.drop-down-toggle {
 	24px,
 	@v-btm-mrgns
 );
+
+.use-sectional-article-headers();
