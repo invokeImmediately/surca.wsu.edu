@@ -6,6 +6,8 @@
  * Gulp automation task definition file for setting up tasks that build CSS and JS files for use on
  *   the WSUWP website of the Showcase of Undergradaute Research and Creative Activities (SURCA).
  *
+ * @version 1.0.0
+ *
  * @link https://github.com/invokeImmediately/surca.wsu.edu/blob/master/gulpfile.js
  * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  * @license MIT - Copyright (c) 2021 Washington State University
