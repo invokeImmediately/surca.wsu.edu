@@ -83,7 +83,7 @@ function getCssBuildSettings() {
 					'*** Fully documented, precompiled source code from which this section of stylesheet' +
 						' was developed\r\n' +
 					'***   is maintained on the following two GitHub projects:\r\n' +
-					'***   - https://github.com/invokeImmediately/WSU-UE---CSS/\r\n' +
+					'***   - https://github.com/invokeImmediately/WSU-DAESA-CSS/\r\n' +
 					'***   - https://github.com/invokeImmediately/surca.wsu.edu/\r\n' +
 					'***\r\n' +
 					'*** @author Daniel Rieck [daniel.rieck@wsu.edu]' +
