@@ -7,21 +7,23 @@
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................29
-***  §2: Persistent section header comment for unit specific styling...........................49
-***  §3: SURCA-specific Less variables.........................................................85
-***  §4: Body, main, and site header...........................................................93
-***  §5: Page headers.........................................................................126
-***  §6: Article sidebars.....................................................................163
-***  §7: Lists................................................................................254
-***  §8: Iframes..............................................................................263
-***  §9: Tables...............................................................................271
-***  §10: Welcome message.....................................................................295
-***  §11: Drop down toggles...................................................................345
-***  §12: Abstract submission reminder........................................................359
-***  §13: Announcements.......................................................................379
-***  §14: Banner slideshows...................................................................389
-***  §15: Included optional layouts...........................................................398
+***  §1: Build entry point from DAESA's CSS development project................................31
+***  §2: Persistent section header comment for unit specific styling...........................51
+***  §3: SURCA-specific Less variables.........................................................87
+***  §4: Body, main, and site header...........................................................95
+***  §5: Page headers.........................................................................128
+***  §6: Article sidebars.....................................................................165
+***  §7: Lists................................................................................256
+***  §8: Iframes..............................................................................265
+***  §9: Tables...............................................................................273
+***  §10: Welcome message.....................................................................297
+***  §11: Drop down toggles...................................................................347
+***  §12: Abstract submission reminder........................................................361
+***  §13: Announcements.......................................................................381
+***  §14: Banner slideshows...................................................................391
+***  §15: Included optional layouts...........................................................400
+***  §16: Styling of specific components......................................................423
+***    >>> §16.1: DAESA staff list............................................................427
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -416,3 +418,96 @@ h3.drop-down-toggle {
 );
 
 .use-sectional-article-headers();
+
+/** ================================================================================================
+*** §16: Styling of specific components
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §16.1: DAESA staff list
+**/
+
+// Define and execute a rule set for specifing the layout and formatting of a SURCA committee list.
+@rs-surca-committee-list: {
+
+	// Define a BEM block name for use in constructing selectors according to the BEM paradigm.
+	@bem-block: surca-committee-list;
+
+	// Set the background color and border radius for list members.
+	@member-fgc: black;
+	@member-bgc: #fdf1eb;
+	@member-br: .3rem;
+	@member-pad: .6rem;
+
+	// Style the root block representing the SURCA committee list.
+	.@{bem-block} {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		max-width: none;
+		padding-left: 0;
+	}
+
+	// Cancel out the default application from §7 of the cougar head image as a bullet to lists.
+	.column ul.@{bem-block} > li {
+		list-style-image: none;
+	}
+
+	// Style elements of the committee list block representing members.
+	.@{bem-block}__member {
+		box-sizing: border-box;
+		color: @member-fgc;
+
+		// On larger screens, the committee should adopt a two-column layout.
+		@media screen and (min-width: (@large-mobile-screen-width + 1)) {
+			width: 50%;
+
+			&:nth-child(2n) {
+				padding-left: 1rem;
+			}
+
+			&:nth-child(2n + 1) {
+				padding-right: 1rem;
+			}
+
+			&:nth-child(2) ~ & {
+				margin-top: 2rem;
+			}
+		}
+
+		// On smaller screens, a single-column layout is appropriate.
+		@media screen and (max-width: @large-mobile-screen-width) {
+			width: 100%;
+
+			& ~ & {
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	// Style staff identity elements of the SURCA committee list.
+	.@{bem-block}__email,
+	.@{bem-block}__name,
+	.@{bem-block}__role,
+	.@{bem-block}__title {
+		display: block;
+		margin-left: 1rem;
+		text-indent: -1rem;
+	}
+
+	// Staff names should be visually emphasized.
+	.@{bem-block}__name {
+		.fw--semi-bold;
+	}
+
+	// Style the background of list members.
+	.@{bem-block}__member-bg {
+		background-color: @member-bgc;
+		border-radius: @member-br;
+		box-sizing: border-box;
+		display: block;
+		height: 100%;
+		padding: @member-pad;
+	}
+};
+@rs-surca-committee-list();
