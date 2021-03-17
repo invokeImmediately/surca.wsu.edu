@@ -1,0 +1,331 @@
+/*!*************************************
+█▀▀▀▐▄ ▄▌▐▀█▀▌█▀▀▄ ▄▀▀▄   ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+█▀▀   █    █  █▄▄▀ █▄▄█   █    ▀▀▀█ ▀▀▀█
+▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
+FOR THE SURCA WEBSITE
+---------------------
+@version 1.0.0
+@author Daniel Rieck
+  [daniel.rieck@wsu.edu]
+  (https://github.com/invokeImmediately)
+@license MIT - Copyright © 2021
+  Washington State University
+  https://mit-license.org/
+***************************************/
+
+/*!*************************************
+ * COUNTDOWN TIMER MODIFICATIONS
+ **************************************/
+
+.countdown-timer {
+	background: #333333 url(https://s3.wp.wsu.edu/uploads/sites/706/2020/12/texture_quad-lit-dielectric_scratched_dark-gray_1188w674h.png) center center/cover no-repeat;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	color: white;
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+}
+
+.countdown-timer .countdown-timer__content {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.countdown-timer__text {
+	color: white;
+}
+
+/*!*************************************
+ * ABSTRACT INTERFACE LAYOUT
+ **************************************/
+
+/* Reset some default styles for the abstract interface. */
+.abst-intf p,
+.abst-intf ul,
+.abst-intf ol {
+	max-width: none;
+}
+
+/* Force the abstract interface to always be full-width. */
+.abst-intf {
+	display: block;
+	width: 100% !important;
+}
+
+/* Remove TablePress' default bordering for the abstract interface. */
+.abst-intf > thead {
+	border: 0;
+	display: block;
+}
+
+/* Tweak the label on the table filtering field. */
+
+#tablepress-6_filter label:before {
+	content: "Project Details and Abstract Word ";
+}
+
+/* Set up a flexbox layout on the sorting buttons. */
+.abst-intf .row-1 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+/* Make the sorting buttons look more conventional. */
+
+.abst-intf .row-1 th {
+	border-radius: 5px;
+	border-bottom: 3px solid #f3f3f3;
+	border-bottom-color: #a5a5a5;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.abst-intf .row-1 .sorting_asc,
+.abst-intf .row-1 .sorting_desc {
+	background-color: #f5b497;
+	border-bottom-color: #aa8875;
+}
+
+.abst-intf .row-1 th:focus,
+.abst-intf .row-1 th:hover {
+	background-color: #fce8df;
+	border-bottom-color: #a9a09b;
+	box-shadow: 0 3px 5px rgba(58,21,5,0.15);
+	color: #4c1c07;
+}
+
+.abst-intf .row-1 th:hover:after {
+	color: #db5215;
+}
+
+/* Don't show a sorting button for presenters list, mentors list, abstract, or zoom link. */
+.abst-intf .row-1 .column-4,
+.abst-intf .row-1 .column-7,
+.abst-intf .row-1 .column-10,
+.abst-intf .row-1 .column-11,
+.abst-intf .row-1 .column-13,
+.abst-intf .row-1 .column-14 {
+	display: none
+}
+
+/* Tweak the layout of the sorting buttons. */
+.abst-intf .row-1 th {
+	display: flex;
+	flex-direction: column;
+	font-size: .9rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	width: auto !important;
+}
+
+.abst-intf .row-1 .sorting:last-child {
+	margin-right: 0;
+}
+
+/* Add a label to the sorting buttons. */
+.abst-intf .row-1:before {
+    content: "Sort Projects by: ";
+    display: block;
+    margin-bottom: .5rem;
+    font-size: .9em;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Expand the label on the search box. */
+#tablepress-7_filter label:before {
+	content: "Project Details and Abstract Word ";
+}
+
+/* Set up a Nx3 grid of cards for the presentations. */
+.abst-intf tbody {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
+.abst-intf tbody tr {
+  border: 1px solid rgba(59, 64, 66, 0.15);
+  border-radius: 5px;
+  box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+  padding: 1rem;
+	width: calc(33.3% - 2rem) !important;
+}
+
+/* Switch to a Nx2 layout on smaller screen profiles. */
+
+@media (max-width: 1220px) {
+	.abst-intf tbody tr {
+	width: calc(50% - 2rem) !important;
+	}	
+}
+
+/* Vertically stack the cards on smallest screen profiles. */
+
+@media (max-width: 680px) {
+	.abst-intf tbody tr {
+		margin-right: 0;
+		width: 100% !important;
+	}	
+}
+
+.abst-intf tbody tr td {
+	display: inline-block;
+	border: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	margin-bottom: .5em;
+}
+
+/* Don't show the first student or the first mentor's last names. */
+.abst-intf tbody tr .column-2,
+.abst-intf tbody tr .column-5,
+.abst-intf tbody tr .column-8 {
+	display: none;
+}
+
+/* Make the mentors list, majors list, campus, and Zoom link more understated. */
+
+.abst-intf tbody tr .column-2,
+.abst-intf tbody tr .column-6,
+.abst-intf tbody tr .column-7,
+.abst-intf tbody tr .column-9,
+.abst-intf tbody tr .column-10,
+.abst-intf tbody tr .column-11,
+.abst-intf tbody tr .column-12 {
+	font-size: .85rem;
+	line-height: 1.5em;
+}
+
+/* Stretch out the appropriate pieces of information to full width. */
+
+.abst-intf tbody tr .column-2,
+.abst-intf tbody tr .column-3,
+.abst-intf tbody tr .column-6,
+.abst-intf tbody tr .column-7,
+.abst-intf tbody tr .column-9 {
+	width: 100%;
+}
+
+/* Center the title, category, and Zoom link cells. */
+
+.abst-intf tbody tr .column-1,
+.abst-intf tbody tr .column-2,
+.abst-intf tbody tr .column-14 {
+	text-align: center;
+}
+
+/* Embolden the title. */
+.abst-intf tbody tr .column-1 {
+	font-weight: 700;
+	font-size: 1.3em;
+}
+
+/* Color code the title and category. */
+.abst-intf tbody tr .column-1 {
+	background-color: #f4f4f4;
+	box-sizing: border-box;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	margin-top: -1rem;
+	padding: 1rem 2rem;
+	width: calc(100% + 2rem);
+}
+
+.abst-intf .project__category-desc {
+	font-size: .7em;
+	font-weight: 400;
+	display: block;
+}
+
+.abst-intf tbody tr .column-2 {
+	background-color: #f4f4f4;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	padding-bottom: .5rem;
+	width: calc(100% + 2rem);
+}
+
+/* Embolden project titles to cause them to stand out more. */
+
+.abst-intf tbody tr .column-3 {
+	font-weight: 600;
+}
+
+/* Label the major and offset it back up a little. */
+.abst-intf tbody tr .column-6:before {
+	content: "Major(s): ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-6 {
+	margin-top: -0.5em;
+}
+
+/* Label the mentors list, campus, etc. */
+
+.abst-intf tbody tr .column-6:before {
+	content: "Major(s): ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-7:before {
+	content: "Mentored by: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-9:before {
+	content: "Presentation time: ";
+	font-weight: 600;
+}
+
+/* (BEV'S SUGGESTION: I don't like it.) Don't show the abstract on the cards themselves. */
+.abst-intf .column-13 {
+	display: none;
+}
+
+/* Tastefully limit the visual extent of abstracts when being shown inside a collapsed card. */
+/*.abst-intf tbody .column-13 {
+	box-sizing: border-box;
+	font-size: .9em;
+	max-height: 6em;
+	overflow: hidden;
+	position:relative;
+}
+
+.abst-intf tbody .column-13:before {
+	background: linear-gradient(to bottom, transparent 0, rgba(255,255,255,.85) 50%, white 80%);
+	bottom: 0;
+	content: "[ + ]";
+	font-weight: bold;
+	height: 1.5em;
+	padding-top: 2em;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}*/
+
+/* Optimize the Zoom link. */
+
+.abst-intf tbody tr .column-14 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.abst-intf .project-link-label {
+	display: block;
+	font-size: .85em;
+	font-weight: 600;
+}
