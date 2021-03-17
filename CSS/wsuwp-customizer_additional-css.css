@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0-rc2
+@version 1.0.0-rc3
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -237,13 +237,57 @@ FOR THE SURCA WEBSITE
 }
 
 /* Color code the project ID and category. */
-.abst-intf tbody tr .column-1 {
-	background-color: #f4f4f4;
+.project__category {
+	color: black;
+	display: block;
 	box-sizing: border-box;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	width: 100%;
+}
+
+.project__category--ad {
+	background-color: #fed8d3;
+}
+
+.project__category--as {
+	background-color: #e1ffc2;
+}
+
+.project__category--cmsi {
+	background-color: #dddeff;
+}
+
+.project__category--eps {
+	background-color: #def5d6;
+}
+
+.project__category--hum {
+	background-color: #fed8ea;
+}
+
+.project__category--mccb {
+	background-color: #fbffca;
+}
+
+.project__category--opeb {
+	background-color: #d7f5f8;
+}
+
+.project__category--rp {
+	background-color: #e0e0e4;
+}
+
+.project__category--soc {
+	background-color: #eac8e4;
+}
+
+.abst-intf tbody tr .column-1 {
+	box-sizing: border-box;
+	padding: 0;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	margin-top: -1rem;
-	padding: 1rem 2rem;
 	width: calc(100% + 2rem);
 }
 
@@ -254,7 +298,6 @@ FOR THE SURCA WEBSITE
 }
 
 .abst-intf tbody tr .column-2 {
-	background-color: #f4f4f4;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	padding-bottom: .5rem;
@@ -319,20 +362,51 @@ FOR THE SURCA WEBSITE
 	margin-top: -0.5em;
 }
 
-/* Label the mentors list, campus, etc. */
-
-.abst-intf tbody tr .column-6:before {
-	content: "Major(s): ";
-	font-weight: 600;
-}
+/* Label the mentors list and offset it back up a little. */
 
 .abst-intf tbody tr .column-7:before {
 	content: "Mentored by: ";
 	font-weight: 600;
 }
 
+.abst-intf tbody tr .column-7 {
+	margin-top: -0.5em;
+}
+
+/* Label the campus and offset it a little. */
+.abst-intf tbody tr .column-12:before {
+	content: "Campus: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-12 {
+	margin-top: -0.5em;
+}
+
+/* Lay out the presentation details. */
+
 .abst-intf tbody tr .column-9:before {
 	content: "Presentation time: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-10,
+.abst-intf tbody tr .column-11 {
+	box-sizing: border-box;
+	margin-top: -0.5em;
+}
+
+.abst-intf tbody tr .column-10 {
+	width: 40%;
+}
+
+.abst-intf tbody tr .column-10:before {
+	content: "Zoom mtg.: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-11:before {
+	content: "Breakout room: ";
 	font-weight: 600;
 }
 
