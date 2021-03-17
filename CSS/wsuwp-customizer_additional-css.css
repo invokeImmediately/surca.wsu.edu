@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0
+@version 1.0.0-rc1
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -16,7 +16,6 @@ FOR THE SURCA WEBSITE
 /*!*************************************
  * COUNTDOWN TIMER MODIFICATIONS
  **************************************/
-
 .countdown-timer {
 	background: #333333 url(https://s3.wp.wsu.edu/uploads/sites/706/2020/12/texture_quad-lit-dielectric_scratched_dark-gray_1188w674h.png) center center/cover no-repeat;
 	border-bottom-left-radius: 1rem;
@@ -158,6 +157,7 @@ FOR THE SURCA WEBSITE
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-content: start;
 	margin-right: 2rem;
 	margin-bottom: 2rem;
   padding: 1rem;
@@ -227,13 +227,13 @@ FOR THE SURCA WEBSITE
 	text-align: center;
 }
 
-/* Embolden the title. */
+/* Embolden the project ID. */
 .abst-intf tbody tr .column-1 {
 	font-weight: 700;
 	font-size: 1.3em;
 }
 
-/* Color code the title and category. */
+/* Color code the project ID and category. */
 .abst-intf tbody tr .column-1 {
 	background-color: #f4f4f4;
 	box-sizing: border-box;
@@ -258,10 +258,52 @@ FOR THE SURCA WEBSITE
 	width: calc(100% + 2rem);
 }
 
-/* Embolden project titles to cause them to stand out more. */
+/* Embolden project titles to cause them to stand out more. Also remove some aspects of the button styling. */
 
-.abst-intf tbody tr .column-3 {
+.abst-intf .project-title {
+	background: transparent;
+	border: 0;
 	font-weight: 600;
+	line-height: 1.5em;
+	text-align: left;
+	padding: 0 2.1em 0 0;
+	position: relative;
+	width: 100%;
+}
+
+.abst-intf .project-title:hover {
+	color: #a60f2d;
+}
+
+.abst-intf .project-title:after {
+	content: "+";
+	background: #eff0f1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d7dadb #8d959a #8d959a #d7dadb;
+	border-radius: .5em;
+	height: 1.5em;
+	padding-top: .1em;
+	padding-right: .1em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 1.5em;
+	text-align: center;
+}
+
+.abst-intf .project-title:hover:after,
+.abst-intf .project-title:focus:after {
+    background: #fff;
+    border-color: #8d959a;
+    border-width: 0 2px 2px 0;	
+}
+
+.abst-intf .project-title:active:after {
+	background: #3b4042;
+	border-color: #000;
+	border-width: 2px 0 0 2px;
+	color: #b5babe;
 }
 
 /* Label the major and offset it back up a little. */
