@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0-rc1
+@version 1.0.0-rc2
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -107,7 +107,8 @@ FOR THE SURCA WEBSITE
 .abst-intf .row-1 .column-10,
 .abst-intf .row-1 .column-11,
 .abst-intf .row-1 .column-13,
-.abst-intf .row-1 .column-14 {
+.abst-intf .row-1 .column-14,
+.abst-intf .row-1 .column-15 {
 	display: none
 }
 
@@ -161,6 +162,7 @@ FOR THE SURCA WEBSITE
 	margin-right: 2rem;
 	margin-bottom: 2rem;
   padding: 1rem;
+	position: relative;
 	width: calc(33.3% - 2rem) !important;
 }
 
@@ -223,7 +225,8 @@ FOR THE SURCA WEBSITE
 
 .abst-intf tbody tr .column-1,
 .abst-intf tbody tr .column-2,
-.abst-intf tbody tr .column-14 {
+.abst-intf tbody tr .column-14,
+.abst-intf tbody tr .column-15 {
 	text-align: center;
 }
 
@@ -333,7 +336,7 @@ FOR THE SURCA WEBSITE
 	font-weight: 600;
 }
 
-/* (BEV'S SUGGESTION: I don't like it.) Don't show the abstract on the cards themselves. */
+/* Don't show the abstract on the cards themselves when an abstract is collapsed. */
 .abst-intf .column-13 {
 	display: none;
 }
@@ -359,15 +362,27 @@ FOR THE SURCA WEBSITE
 	width: 100%;
 }*/
 
-/* Optimize the Zoom link. */
+/* Use a placeholder copy to optimize the layout of Zoom link. */
 
-.abst-intf tbody tr .column-14 {
-	margin-left: auto;
-	margin-right: auto;
+.abst-intf tbody tr .column-14,
+.abst-intf tbody tr .column-15 {
+	box-sizing: border-box;
+	width: 100%;
 }
 
-.abst-intf .project-link-label {
+.abst-intf .project-link-label,
+.abst-intf .link-placeholder-label {
 	display: block;
 	font-size: .85em;
 	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-14 {
+	visibility: hidden;
+}
+
+.abst-intf tbody tr .column-15 {
+	bottom: 1rem;
+	left: 0;
+	position: absolute;
 }
