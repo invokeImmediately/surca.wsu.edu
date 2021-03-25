@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0-rc3
+@version 1.0.0-rc4
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -12,6 +12,16 @@ FOR THE SURCA WEBSITE
   Washington State University
   https://mit-license.org/
 ***************************************/
+
+/*!*************************************
+ * SPINE THEME COLOR OVERRIDES
+ * Tweaks to the default Spine Theme palette that make better use of color theory.
+ * @version Added on 2021-02-08.
+ * @author Daniel Rieck
+ **************************************/
+.orange-text {
+	color: #a63d0f;
+}
 
 /*!*************************************
  * COUNTDOWN TIMER MODIFICATIONS
@@ -56,12 +66,6 @@ FOR THE SURCA WEBSITE
 .abst-intf > thead {
 	border: 0;
 	display: block;
-}
-
-/* Tweak the label on the table filtering field. */
-
-#tablepress-6_filter label:before {
-	content: "Project Details and Abstract Word ";
 }
 
 /* Set up a flexbox layout on the sorting buttons. */
@@ -138,8 +142,9 @@ FOR THE SURCA WEBSITE
 }
 
 /* Expand the label on the search box. */
+
 #tablepress-7_filter label:before {
-	content: "Project Details and Abstract Word ";
+	content: "Project Details, Names, and Word ";
 }
 
 /* Set up a Nx3 grid of cards for the presentations. */
@@ -151,6 +156,7 @@ FOR THE SURCA WEBSITE
 }
 
 .abst-intf tbody tr {
+	background-color: white;
   border: 1px solid rgba(59, 64, 66, 0.15);
   border-radius: 5px;
   box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
@@ -312,7 +318,8 @@ FOR THE SURCA WEBSITE
 	font-weight: 600;
 	line-height: 1.5em;
 	text-align: left;
-	padding: 0 2.1em 0 0;
+	margin: -3px;
+	padding: 3px 2.1em 3px 3px;
 	position: relative;
 	width: 100%;
 }
@@ -321,20 +328,27 @@ FOR THE SURCA WEBSITE
 	color: #a60f2d;
 }
 
+.abst-intf .project-title:focus {
+	outline-color: rgba(0,0,0,0.85);
+	outline-style: auto;
+	outline-width: 1px;
+}
+
 .abst-intf .project-title:after {
 	content: "+";
 	background: #eff0f1;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #d7dadb #8d959a #8d959a #d7dadb;
-	border-radius: .5em;
+	border-radius: .25em;
+	font-weight: 700;
 	height: 1.5em;
-	padding-top: .1em;
-	padding-right: .1em;
+	padding-left: .25em;
+	padding-right: .25em;
 	position: absolute;
 	right: 0;
-	top: 0;
-	width: 1.5em;
+	top: 1px;
+	width: auto;
 	text-align: center;
 }
 
@@ -374,35 +388,34 @@ FOR THE SURCA WEBSITE
 }
 
 /* Label the campus and offset it a little. */
-.abst-intf tbody tr .column-12:before {
+.abst-intf tbody tr .column-9:before {
 	content: "Campus: ";
 	font-weight: 600;
 }
 
-.abst-intf tbody tr .column-12 {
+.abst-intf tbody tr .column-9 {
 	margin-top: -0.5em;
 }
 
 /* Lay out the presentation details. */
 
-.abst-intf tbody tr .column-9:before {
-	content: "Presentation time: ";
-	font-weight: 600;
-}
-
 .abst-intf tbody tr .column-10,
 .abst-intf tbody tr .column-11 {
 	box-sizing: border-box;
-	margin-top: -0.5em;
+	width: 100%;
 }
 
 .abst-intf tbody tr .column-10 {
-	width: 40%;
+	margin-top: .5em;
 }
 
 .abst-intf tbody tr .column-10:before {
-	content: "Zoom mtg.: ";
+	content: "Zoom meeting: ";
 	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-11 {
+	margin-top: -.5em;
 }
 
 .abst-intf tbody tr .column-11:before {
@@ -410,8 +423,17 @@ FOR THE SURCA WEBSITE
 	font-weight: 600;
 }
 
+.abst-intf tbody tr .column-12:before {
+	content: "Presentation time: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-12 {
+	margin-top: -.5em;
+}
+
 /* Don't show the abstract on the cards themselves when an abstract is collapsed. */
-.abst-intf .column-13 {
+.abst-intf tbody tr:not(.expanded) .column-13 {
 	display: none;
 }
 
@@ -455,8 +477,105 @@ FOR THE SURCA WEBSITE
 	visibility: hidden;
 }
 
-.abst-intf tbody tr .column-15 {
+.abst-intf tbody tr:not(.expanded) .column-15 {
 	bottom: 1rem;
 	left: 0;
 	position: absolute;
+}
+
+/* Create a modal cover with an embedded dismiss button. This cover will be shown when an abstract is being viewed and its behavior is controlled by JavaScript. */
+
+.modal-cover {
+	background-color: rgba(0,0,0,0.85);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99164;
+}
+
+.modal-cover:after {
+	content: "×";
+	background: #eff0f1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d7dadb #8d959a #8d959a #d7dadb;
+	border-radius: .5em;
+	font-weight: 700;
+	height: 1.5em;
+	position: absolute;
+	right: 0;
+	top: 2rem;
+	width: 1em;
+	text-align: center;
+}
+
+.modal-cover:hover:after,
+.modal-cover:focus:after {
+    background: #fff;
+    border-color: #8d959a;
+    border-width: 0 2px 2px 0;
+	color: #a60f2d;
+}
+
+.modal-cover:active:after {
+	background: #3b4042;
+	border-color: #000;
+	border-width: 2px 0 0 2px;
+	color: #b5babe;
+}
+
+.modal-cover:not(.engaged) {
+	display: none;
+}
+
+/* Set up a modal layout for abstracts that are being viewed. This viewing mode is triggered by JavaScript. */
+
+.abst-intf tbody tr.expanded {
+	position: fixed;
+	bottom: 2rem;
+	height: calc( 100vh - 4rem );
+	left: 50%;
+	top: 50%;
+	max-width: 1188px;
+	overflow-y: scroll;
+	transform: translate(-50%,-50%);
+	width: calc( 100% - 4rem ) !important;
+	z-index: 99352;
+}
+
+.abst-intf .expanded .project-title:after {
+	content: "–";
+}
+
+.abst-intf tbody tr.expanded .column-13 {
+	margin-top: .5rem;
+}
+
+.abst-intf tbody tr.expanded .column-14 {
+	display: none;
+}
+
+/* Fix a responsive design issue with the Project Details, Names, and Word Search box. */
+
+.dataTables_filter {
+	white-space: normal;
+}
+
+@media (max-width: 680px) {
+	.dataTables_filter {
+		margin-right: 1rem;
+		margin-top: 1rem;
+	}
+
+	.dataTables_filter label,
+	.dataTables_wrapper .dataTables_filter label input {
+		display: block;
+		width: 100%;
+	}
+	
+	.abst-intf .row-1:before {
+		margin-top: 1rem;
+	}
 }
