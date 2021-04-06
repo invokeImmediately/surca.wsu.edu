@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0-rc4
+@version 1.0.0-rc7
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -43,6 +43,20 @@ FOR THE SURCA WEBSITE
 
 .countdown-timer__text {
 	color: white;
+}
+
+/*!*************************************
+ * HOMEPAGE NOTICES
+ **************************************/
+
+@media (min-width: 694px) {
+	#homepage-notices {
+		display: flex;
+	}
+
+	#homepage-notices .daesa-card {
+		height: 100%;
+	}
 }
 
 /*!*************************************
@@ -106,13 +120,14 @@ FOR THE SURCA WEBSITE
 }
 
 /* Don't show a sorting button for presenters list, mentors list, abstract, or zoom link. */
-.abst-intf .row-1 .column-4,
-.abst-intf .row-1 .column-7,
-.abst-intf .row-1 .column-10,
+.abst-intf .row-1 .column-2,
+.abst-intf .row-1 .column-5,
+.abst-intf .row-1 .column-8,
 .abst-intf .row-1 .column-11,
-.abst-intf .row-1 .column-13,
+.abst-intf .row-1 .column-12,
 .abst-intf .row-1 .column-14,
-.abst-intf .row-1 .column-15 {
+.abst-intf .row-1 .column-15,
+.abst-intf .row-1 .column-16 {
 	display: none
 }
 
@@ -197,47 +212,52 @@ FOR THE SURCA WEBSITE
 	margin-bottom: .5em;
 }
 
+/* Don't show the project's ID number. */
+.abst-intf tbody tr .column-1 {
+	display: none;
+}
+
 /* Don't show the first student or the first mentor's last names. */
-.abst-intf tbody tr .column-2,
-.abst-intf tbody tr .column-5,
-.abst-intf tbody tr .column-8 {
+.abst-intf tbody tr .column-3,
+.abst-intf tbody tr .column-6,
+.abst-intf tbody tr .column-9 {
 	display: none;
 }
 
 /* Make the mentors list, majors list, campus, and Zoom link more understated. */
 
-.abst-intf tbody tr .column-2,
-.abst-intf tbody tr .column-6,
+.abst-intf tbody tr .column-3,
 .abst-intf tbody tr .column-7,
-.abst-intf tbody tr .column-9,
+.abst-intf tbody tr .column-8,
 .abst-intf tbody tr .column-10,
 .abst-intf tbody tr .column-11,
-.abst-intf tbody tr .column-12 {
+.abst-intf tbody tr .column-12,
+.abst-intf tbody tr .column-13 {
 	font-size: .85rem;
 	line-height: 1.5em;
 }
 
 /* Stretch out the appropriate pieces of information to full width. */
 
-.abst-intf tbody tr .column-2,
 .abst-intf tbody tr .column-3,
-.abst-intf tbody tr .column-6,
+.abst-intf tbody tr .column-4,
 .abst-intf tbody tr .column-7,
-.abst-intf tbody tr .column-9 {
+.abst-intf tbody tr .column-8,
+.abst-intf tbody tr .column-10 {
 	width: 100%;
 }
 
 /* Center the title, category, and Zoom link cells. */
 
-.abst-intf tbody tr .column-1,
 .abst-intf tbody tr .column-2,
-.abst-intf tbody tr .column-14,
-.abst-intf tbody tr .column-15 {
+.abst-intf tbody tr .column-3,
+.abst-intf tbody tr .column-15,
+.abst-intf tbody tr .column-16 {
 	text-align: center;
 }
 
 /* Embolden the project ID. */
-.abst-intf tbody tr .column-1 {
+.abst-intf tbody tr .column-2 {
 	font-weight: 700;
 	font-size: 1.3em;
 }
@@ -288,7 +308,7 @@ FOR THE SURCA WEBSITE
 	background-color: #eac8e4;
 }
 
-.abst-intf tbody tr .column-1 {
+.abst-intf tbody tr .column-2 {
 	box-sizing: border-box;
 	padding: 0;
 	margin-left: -1rem;
@@ -303,7 +323,7 @@ FOR THE SURCA WEBSITE
 	display: block;
 }
 
-.abst-intf tbody tr .column-2 {
+.abst-intf tbody tr .column-3 {
 	margin-left: -1rem;
 	margin-right: -1rem;
 	padding-bottom: .5rem;
@@ -367,19 +387,8 @@ FOR THE SURCA WEBSITE
 }
 
 /* Label the major and offset it back up a little. */
-.abst-intf tbody tr .column-6:before {
-	content: "Major(s): ";
-	font-weight: 600;
-}
-
-.abst-intf tbody tr .column-6 {
-	margin-top: -0.5em;
-}
-
-/* Label the mentors list and offset it back up a little. */
-
 .abst-intf tbody tr .column-7:before {
-	content: "Mentored by: ";
+	content: "Major(s): ";
 	font-weight: 600;
 }
 
@@ -387,44 +396,41 @@ FOR THE SURCA WEBSITE
 	margin-top: -0.5em;
 }
 
+/* Label the mentors list and offset it back up a little. */
+
+.abst-intf tbody tr .column-8:before {
+	content: "Mentored by: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-8 {
+	margin-top: -0.5em;
+}
+
 /* Label the campus and offset it a little. */
-.abst-intf tbody tr .column-9:before {
+.abst-intf tbody tr .column-10:before {
 	content: "Campus: ";
 	font-weight: 600;
 }
 
-.abst-intf tbody tr .column-9 {
+.abst-intf tbody tr .column-10 {
 	margin-top: -0.5em;
 }
 
 /* Lay out the presentation details. */
 
-.abst-intf tbody tr .column-10,
-.abst-intf tbody tr .column-11 {
+.abst-intf tbody tr .column-11,
+.abst-intf tbody tr .column-12 {
 	box-sizing: border-box;
 	width: 100%;
 }
 
-.abst-intf tbody tr .column-10 {
+.abst-intf tbody tr .column-11 {
 	margin-top: .5em;
 }
 
-.abst-intf tbody tr .column-10:before {
-	content: "Zoom meeting: ";
-	font-weight: 600;
-}
-
-.abst-intf tbody tr .column-11 {
-	margin-top: -.5em;
-}
-
 .abst-intf tbody tr .column-11:before {
-	content: "Breakout room: ";
-	font-weight: 600;
-}
-
-.abst-intf tbody tr .column-12:before {
-	content: "Presentation time: ";
+	content: "Zoom meeting: ";
 	font-weight: 600;
 }
 
@@ -432,13 +438,27 @@ FOR THE SURCA WEBSITE
 	margin-top: -.5em;
 }
 
+.abst-intf tbody tr .column-12:before {
+	content: "Breakout room: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-13:before {
+	content: "Presentation time: ";
+	font-weight: 600;
+}
+
+.abst-intf tbody tr .column-13 {
+	margin-top: -.5em;
+}
+
 /* Don't show the abstract on the cards themselves when an abstract is collapsed. */
-.abst-intf tbody tr:not(.expanded) .column-13 {
+.abst-intf tbody tr:not(.expanded) .column-14 {
 	display: none;
 }
 
 /* Tastefully limit the visual extent of abstracts when being shown inside a collapsed card. */
-/*.abst-intf tbody .column-13 {
+/*.abst-intf tbody .column-14 {
 	box-sizing: border-box;
 	font-size: .9em;
 	max-height: 6em;
@@ -446,7 +466,7 @@ FOR THE SURCA WEBSITE
 	position:relative;
 }
 
-.abst-intf tbody .column-13:before {
+.abst-intf tbody .column-14:before {
 	background: linear-gradient(to bottom, transparent 0, rgba(255,255,255,.85) 50%, white 80%);
 	bottom: 0;
 	content: "[ + ]";
@@ -460,8 +480,8 @@ FOR THE SURCA WEBSITE
 
 /* Use a placeholder copy to optimize the layout of Zoom link. */
 
-.abst-intf tbody tr .column-14,
-.abst-intf tbody tr .column-15 {
+.abst-intf tbody tr .column-15,
+.abst-intf tbody tr .column-16 {
 	box-sizing: border-box;
 	width: 100%;
 }
@@ -473,11 +493,11 @@ FOR THE SURCA WEBSITE
 	font-weight: 600;
 }
 
-.abst-intf tbody tr .column-14 {
+.abst-intf tbody tr .column-15 {
 	visibility: hidden;
 }
 
-.abst-intf tbody tr:not(.expanded) .column-15 {
+.abst-intf tbody tr:not(.expanded) .column-16 {
 	bottom: 1rem;
 	left: 0;
 	position: absolute;
@@ -549,11 +569,11 @@ FOR THE SURCA WEBSITE
 	content: "–";
 }
 
-.abst-intf tbody tr.expanded .column-13 {
+.abst-intf tbody tr.expanded .column-14 {
 	margin-top: .5rem;
 }
 
-.abst-intf tbody tr.expanded .column-14 {
+.abst-intf tbody tr.expanded .column-15 {
 	display: none;
 }
 
@@ -574,8 +594,18 @@ FOR THE SURCA WEBSITE
 		display: block;
 		width: 100%;
 	}
-	
+
 	.abst-intf .row-1:before {
 		margin-top: 1rem;
 	}
+}
+
+/*!*************************************
+ * EMPTY PARAGRAPH OVERRIDE
+ * Counteract what the default style is
+ *   doing with empty paragraphs.
+ **************************************/
+
+.column p:empty:before {
+	content: none;
 }
