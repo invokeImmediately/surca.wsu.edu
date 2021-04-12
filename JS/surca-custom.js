@@ -3,7 +3,7 @@
  * ▀▀▀█ █  █ █▄▄▀ █    █▄▄█ ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
  * ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
  *
- * @version 1.0.0-rc2
+ * @version 1.0.0-rc3
  *
  * Custom JS code specfically written for use on the WSU SURCA website. The code is meant to be
  *   applied to the site via the Custom JavaScript Editor page in the WordPress dashboard.
@@ -28,9 +28,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-//   §1: Class Declarations...................................................................37
-//   §2: Function Declarations................................................................37
-//   §3: Execution Entry Point...............................................................100
+//   §1: Class Declarations...................................................................48
+//     §1.1: ProjectFinder....................................................................52
+//   §2: Function Declarations...............................................................107
+//     §2.1: addCalendarHeaderViaClassUtilization............................................110
+//     §2.2: addNewsHeaderViaClassUtilization................................................127
+//     §2.3: addNewsHeaderViaLocation........................................................143
+//     §2.4: addPageHeaderOnCalendarPages....................................................158
+//     §2.5: addPageHeaderOnNewsPages........................................................171
+//     §2.6: setUpProjectFinder..............................................................185
+//   §3: Execution Entry Point...............................................................199
+//     §3.1: Document loaded event binding...................................................202
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $ ) {
@@ -38,6 +46,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: Class Declarations
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §1.1: ProjectFinder
 
 class ProjectFinder {
 	// TODO: Implement the actions below through an object-oriented approach.
@@ -94,6 +106,9 @@ class ProjectFinder {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: Function Declarations
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.1: addCalendarHeaderViaClassUtilization
+
 /**
  * Inspect the body tag to add a header to news pages when certain classes are in use.
  *
@@ -108,6 +123,9 @@ function addCalendarHeaderViaClassUtilization( markup ) {
 	}
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.2: addNewsHeaderViaClassUtilization
+
 /**
  * Inspect the body tag to add a header to news pages when certain classes are in use.
  *
@@ -121,6 +139,9 @@ function addNewsHeaderViaClassUtilization( markup ) {
 	}
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.3: addNewsHeaderViaLocation
+
 /**
  * Use the browser's location to add a header to news pages, which lack them by default.
  *
@@ -133,6 +154,9 @@ function addNewsHeaderViaLocation( markup ) {
 	}
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.4: addPageHeaderOnCalendarPages
+
 /**
  * Add page headers to calendar pages.
  *
@@ -142,6 +166,9 @@ function addPageHeaderOnCalendarPages( params ) {
 	let headerMarkup = params.htmlCalendarHeader;
 	addCalendarHeaderViaClassUtilization( headerMarkup );
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.5: addPageHeaderOnNewsPages
 
 /**
  * Add page headers to news pages.
@@ -153,6 +180,9 @@ function addPageHeaderOnNewsPages( params ) {
 	addNewsHeaderViaLocation( headerMarkup );
 	addNewsHeaderViaClassUtilization( headerMarkup );
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §2.6: setUpProjectFinder
 
 /**
  * Look for and set up the project finder interface on SURCA website pages as needed.
@@ -168,10 +198,13 @@ function setUpProjectFinder( params ) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §3: Execution Entry Point
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//// §3.1: Document loaded event binding
+
 $( function () {
 
 	// Add page headers to SURCA web pages in the calendar section of the website, which are missing
-	//   by default.
+	//   by default and cannot be manually added by content creators.
 	addPageHeaderOnCalendarPages( {
 		htmlCalendarHeader: '<section id="calendar-page-header" class="row single article-header' +
 				' article-header--colored h--192px">\n' +
@@ -187,7 +220,7 @@ $( function () {
 	} );
 
 	// Add page headers to SURCA web pages in the news section of the website, which are missing by
-	//   default.
+	//   default and cannot be manually added by content creators.
 	addPageHeaderOnNewsPages( {
 		htmlNewsHeader: '<section id="news-page-header" class="row single article-header' +
 				' article-header--colored h--192px">\n' +
@@ -202,6 +235,7 @@ $( function () {
 			'</section>'
 	} );
 
+	// Check for a project finder interface on the page and if it is present, set it up
 	setUpProjectFinder( {
 		selIntf: '.abst-intf',
 		modalTrigger: 'engaged',
