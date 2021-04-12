@@ -3,7 +3,7 @@
  * ▀▀▀█ █  █ █▄▄▀ █    █▄▄█ ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
  * ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
  *
- * @version 1.0.0-rc3
+ * @version 1.1.0
  *
  * Custom JS code specfically written for use on the WSU SURCA website. The code is meant to be
  *   applied to the site via the Custom JavaScript Editor page in the WordPress dashboard.
