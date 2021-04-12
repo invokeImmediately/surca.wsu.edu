@@ -6,7 +6,7 @@
  * Gulp automation task definition file for setting up tasks that build CSS and JS files for use on
  *   the WSUWP website of the Showcase of Undergradaute Research and Creative Activities (SURCA).
  *
- * @version 1.0.0
+ * @version 1.0.0-rc1
  *
  * @link https://github.com/invokeImmediately/surca.wsu.edu/blob/master/gulpfile.js
  * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
@@ -28,11 +28,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-// §1: Gulp task dependencies...................................................................41
-// §2: Specificiation of build settings ........................................................46
-//   §2.1: getCssBuildSettings()................................................................49
-//   §2.2: getJsBuildSettings()................................................................127
-// §3: Entry point: Set up of build taks.......................................................161
+// §1: Gulp task dependencies...................................................................43
+// §2: Specificiation of build settings ........................................................48
+//   §2.1: getCssBuildSettings()................................................................51
+//   §2.2: getJsBuildSettings()................................................................129
+// §3: Entry point: Set up of build taks.......................................................162
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function() {
@@ -136,9 +136,8 @@ function getCssBuildSettings() {
 function getJsBuildSettings() {
 	return {
 		buildDependenciesList: [
-			'./WSU-DAESA-JS/jQuery.oue-custom.js',
+			'./WSU-DAESA-JS/jQuery.daesa-custom.js',
 			'./WSU-DAESA-JS/jQuery.css-data.js',
-			'./WSU-DAESA-JS/jQuery.textResize.js',
 			'./WSU-DAESA-JS/jQuery.forms.js',
 			'../jQuery.AreYouSure/jquery.are-you-sure.js',
 			'./WSU-DAESA-JS/jQuery.are-you-sure.js',
