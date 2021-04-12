@@ -3,7 +3,7 @@
  * ▀▀▀█ █  █ █▄▄▀ █    █▄▄█ ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
  * ▀▀▀   ▀▀  ▀  ▀▄ ▀▀▀ █  ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
  *
- * @version 1.0.0-rc1
+ * @version 1.0.0-rc2
  *
  * Custom JS code specfically written for use on the WSU SURCA website. The code is meant to be
  *   applied to the site via the Custom JavaScript Editor page in the WordPress dashboard.
@@ -77,7 +77,7 @@ class ProjectFinder {
 			$openAbst.toggleClass( inst.abstTrigger );
 			inst.$modalCover.toggleClass( inst.modalTrigger );
 		} );
-		
+
 		// Find all of the title buttons for the project.
 		this.$titleBtns = this.$abstIntf.find( '.project-title' );
 
