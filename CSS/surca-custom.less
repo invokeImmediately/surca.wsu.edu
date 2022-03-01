@@ -8,22 +8,22 @@
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
 ***  §1: Build entry point from DAESA's CSS development project................................31
-***  §2: Persistent section header comment for unit specific styling...........................51
-***  §3: SURCA-specific Less variables.........................................................87
-***  §4: Body, main, and site header...........................................................95
-***  §5: Page headers.........................................................................128
-***  §6: Article sidebars.....................................................................165
-***  §7: Lists................................................................................256
-***  §8: Iframes..............................................................................265
-***  §9: Tables...............................................................................273
-***  §10: Welcome message.....................................................................297
-***  §11: Drop down toggles...................................................................347
-***  §12: Abstract submission reminder........................................................361
-***  §13: Announcements.......................................................................381
-***  §14: Banner slideshows...................................................................391
-***  §15: Included optional layouts...........................................................400
-***  §16: Styling of specific components......................................................423
-***    >>> §16.1: DAESA staff list............................................................427
+***  §2: Persistent section header comment for unit specific styling...........................58
+***  §3: SURCA-specific Less variables.........................................................94
+***  §4: Body, main, and site header..........................................................102
+***  §5: Page headers.........................................................................135
+***  §6: Article sidebars.....................................................................172
+***  §7: Lists................................................................................263
+***  §8: Iframes..............................................................................272
+***  §9: Tables...............................................................................280
+***  §10: Welcome message.....................................................................304
+***  §11: Drop down toggles...................................................................354
+***  §12: Abstract submission reminder........................................................368
+***  §13: Announcements.......................................................................388
+***  §14: Banner slideshows...................................................................398
+***  §15: Included optional layouts...........................................................407
+***  §16: Styling of specific components......................................................430
+***    >>> §16.1: DAESA staff list............................................................434
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -38,11 +38,18 @@
 @oue-rules-wrapper: ~"";
 
 // Pull in our default build settings.
-@import "..\WSU-DAESA-CSS\build-settings.less";
+@import "..\WSU-DAESA-CSS\Settings\build-settings.less";
 
 // Specify any overrides to the default build settings.
 @use-design__daesa-main-headers: false;
 @use-design__provost-main-headers: true;
+@use-design__gf-progress-indicators: true;
+@use-design__gravity-forms: false;
+@use-design__wds-gravity-forms: true;
+@use-design__gf-highlighting: false;
+@use-design__wds-gf-highlighting: true;
+@use-design__daesa-grids: true;
+@use-wds-color-scheme: true;
 
 // Pull in the custom styling that is used on all DAESA websites.
 @import "..\WSU-DAESA-CSS\build-entry-point.less";
@@ -61,12 +68,11 @@
 ***
 *** Fully documented, precompiled source code from which this section of the custom stylesheet was ***   built is developed and maintained on the linked GitHub project.
 ***
-*** @version 1.1.0
+*** @version 1.2.0
 ***
-*** @link https://surca.wsu.edu
-*** @link https://github.com/invokeImmediately/surca.wsu.edu/
 *** @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
-*** @license MIT Copyright (c) 2021 Washington State University
+*** @link https://github.com/invokeImmediately/surca.wsu.edu/blob/main/CSS/surca-custom.less
+*** @license MIT Copyright (c) 2022 Washington State University
 ***   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 ***     and associated documentation files (the "Software"), to deal in the Software without
 ***     restriction, including without limitation the rights to use, copy, modify, merge, publish,
