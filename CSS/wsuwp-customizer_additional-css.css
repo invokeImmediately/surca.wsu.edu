@@ -4,11 +4,11 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.0.0-rc7
+@version 1.1.0
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
-@license MIT - Copyright © 2021
+@license MIT - Copyright © 2022
   Washington State University
   https://mit-license.org/
 ***************************************/
@@ -21,6 +21,39 @@ FOR THE SURCA WEBSITE
  **************************************/
 .orange-text {
 	color: #a63d0f;
+}
+
+/*!*************************************
+ * BREADCRUMB LINKS TWEAKS
+ * @author Daniel Rieck
+ **************************************/
+.breadcrumb-list__breadcrumb:first-child a {
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:before {
+  background: url(https://repo.wsu.edu/spine/2.0.2/icons/home-white.svg) center/.9em auto;
+  content: "";
+  width: .9em;
+  height: .9em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translate(.2em, .1em);
+}
+
+
+/*.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:hover:before,
+.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:focus:before {
+  background-image: url(https://repo.wsu.edu/spine/2.0.2/icons/home-crimson.svg);
+}*/
+
+.column .breadcrumb-list__link:hover,
+.column .breadcrumb-list__link:focus {
+	background-color: rgba(255, 255, 255, 0.15);
+	color: white;
+	border-bottom-color: white;
 }
 
 /*!*************************************
@@ -601,6 +634,17 @@ FOR THE SURCA WEBSITE
 }
 
 /*!*************************************
+ * SURCA 2021 ABSTRACT INTERFACES
+ **************************************/
+
+/* Hide the Zoom Connect info. */
+
+#tablepress-7.abst-intf .column-15,
+#tablepress-7.abst-intf .column-16 {
+	display:  none;
+}
+
+/*!*************************************
  * EMPTY PARAGRAPH OVERRIDE
  * Counteract what the default style is
  *   doing with empty paragraphs.
@@ -608,4 +652,85 @@ FOR THE SURCA WEBSITE
 
 .column p:empty:before {
 	content: none;
+}
+
+/*!*************************************
+ * SURCA APPLICATION MESSAGES
+ * @author Daniel Rieck
+ **************************************/
+.surca-app-notice {
+	display: grid;
+		grid-template-columns: 1fr 80px;
+		grid-auto-rows: minmax(4.5em, auto);
+		grid-gap: 1rem;
+	max-width: 70ch;
+}
+
+.surca-app-notice__icon,
+.surca-app-notice__icon .wsu-icon {
+	display: block;
+	position: relative;
+	height: 100%;
+	width: 80px;
+}
+
+.surca-app-notice__icon .wsu-icon:before {
+	color: #a60f2d;
+	font-size: 60px;
+	left: 50%;
+	line-height: 1.5em;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*!*************************************
+ * ARTICLE HEADER STYLE ENHANCEMENT
+ * @author Daniel Rieck
+ **************************************/
+
+.row.article-header .column header:first-child+:before, .row.article-header .column>:first-child:before {
+    background: linear-gradient(to right, #a60f2d, #ca1237);
+    border: 1px solid #969696;
+	bottom: -1.5rem;
+    box-shadow: 1px 2px 4px rgb(0 0 0 / 25%);
+    width: 4rem;
+}
+
+/*!*************************************
+ * PAGE INTROS
+ * @author Daniel Rieck
+ **************************************/
+
+.page-intro {
+	display: block;
+	font-size: 1.4em;
+	line-height: 1.5em;
+	position: relative;
+}
+
+.page-intro:not(.page-intro--no-bar) {
+	margin-bottom: 3rem;
+}
+
+.page-intro:not(.page-intro--no-bar):before {
+    background: #eff0f1;
+	border: 1px solid #414141;
+    bottom: -1.5rem;
+    content: "";
+    height: 5px;
+    left: 1.5rem;
+    position: absolute;
+    width: 2.5rem;
+}
+
+/*!*************************************
+ * HOME PAGE LOGO
+ **************************************/
+#home-page-logo {
+	background-size: cover;
+	background position: center center;
+	border-bottom: 1px solid #eff0f1;
+	margin-top: -5rem;
+	padding: 8rem 0 5rem;
 }
