@@ -4,7 +4,7 @@
 ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
 FOR THE SURCA WEBSITE
 ---------------------
-@version 1.1.0
+@version 1.2.0
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (https://github.com/invokeImmediately)
@@ -76,6 +76,38 @@ FOR THE SURCA WEBSITE
 
 .countdown-timer__text {
 	color: white;
+}
+
+.countdown-timer a {
+  color: #5BC3F5 !important;
+  border-bottom-color: #5BC3F5 !important;
+}
+
+.home.domain-surca-wsu-edu .page {
+  position: relative;
+}
+
+.home.domain-surca-wsu-edu .page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.home.domain-surca-wsu-edu .page > .countdown-timer {
+  z-index: 3;
+}
+
+.home.domain-surca-wsu-edu .page:after {
+  background: #b8b8b8;
+  content: "";
+  position: absolute;
+  height: 18rem;
+  width: 100%;
+  top: -5rem;
+  z-index: 1;
+}
+
+.home.domain-surca-wsu-edu .main-header {
+  z-index: 2;
 }
 
 /*!*************************************
@@ -729,8 +761,486 @@ FOR THE SURCA WEBSITE
  **************************************/
 #home-page-logo {
 	background-size: cover;
-	background position: center center;
+	background-position: center 93%;
 	border-bottom: 1px solid #eff0f1;
 	margin-top: -5rem;
 	padding: 8rem 0 5rem;
+}
+
+/*!*************************************
+ * ABSTRACT INTERFACE LAYOUT - 2022 Update
+ **************************************/
+
+/* Reset some default styles for the abstract interface. */
+.abst-intf-2022 p,
+.abst-intf-2022 ul,
+.abst-intf-2022 ol {
+	max-width: none;
+}
+
+/* Force the abstract interface to always be full-width. */
+.abst-intf-2022 {
+	display: block;
+	width: 100% !important;
+}
+
+/* Remove TablePress' default bordering for the abstract interface. */
+.abst-intf-2022 > thead {
+	border: 0;
+	display: block;
+}
+
+/* Set up a flexbox layout on the sorting buttons. */
+.abst-intf-2022 .row-1 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+/* Make the sorting buttons look more conventional. */
+
+.abst-intf-2022 .row-1 th {
+	border-radius: 5px;
+	border-bottom: 3px solid #f3f3f3;
+	border-bottom-color: #a5a5a5;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.abst-intf-2022 .row-1 .sorting_asc,
+.abst-intf-2022 .row-1 .sorting_desc {
+	background-color: #f5b497;
+	border-bottom-color: #aa8875;
+}
+
+.abst-intf-2022 .row-1 th:focus,
+.abst-intf-2022 .row-1 th:hover {
+	background-color: #fce8df;
+	border-bottom-color: #a9a09b;
+	box-shadow: 0 3px 5px rgba(58,21,5,0.15);
+	color: #4c1c07;
+}
+
+.abst-intf-2022 .row-1 th:hover:after {
+	color: #db5215;
+}
+
+/* Don't visibly show a sorting button for presenters list, co-authors list, mentors list, or abstract. */
+.abst-intf-2022 .row-1 .column-4,
+.abst-intf-2022 .row-1 .column-6,
+.abst-intf-2022 .row-1 .column-8,
+.abst-intf-2022 .row-1 .column-11 {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/* Tweak the layout of the sorting buttons. */
+.abst-intf-2022 .row-1 th {
+	display: flex;
+	flex-direction: column;
+	font-size: .9rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	width: auto !important;
+}
+
+.abst-intf-2022 .row-1 .sorting:last-child {
+	margin-right: 0;
+}
+
+/* Add a label to the sorting buttons. */
+.abst-intf-2022 .row-1:before {
+    content: "Sort Projects by: ";
+    display: block;
+    margin-bottom: .5rem;
+    font-size: .9em;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Expand the label on the search box. */
+
+#tablepress-10_filter label:before {
+	content: "Project Details, Names, and Word ";
+}
+
+/* Set up a Nx3 grid of cards for the presentations. */
+.abst-intf-2022 tbody {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
+.abst-intf-2022 tbody tr {
+	background-color: white;
+  border: 1px solid rgba(59, 64, 66, 0.15);
+  border-radius: 5px;
+  box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: start;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+  padding: 1rem;
+	position: relative;
+	width: calc(33.3% - 2rem) !important;
+}
+
+/* Switch to a Nx2 layout on smaller screen profiles. */
+
+@media (max-width: 1220px) {
+	.abst-intf-2022 tbody tr {
+	width: calc(50% - 2rem) !important;
+	}	
+}
+
+/* Vertically stack the cards on smallest screen profiles. */
+
+@media (max-width: 680px) {
+	.abst-intf-2022 tbody tr {
+		margin-right: 0;
+		width: 100% !important;
+	}	
+}
+
+.abst-intf-2022 tbody tr td {
+	display: inline-block;
+	border: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	margin-bottom: .5em;
+}
+
+/* Don't show the first student or the first mentor's last names. */
+.abst-intf-2022 tbody tr .column-5,
+.abst-intf-2022 tbody tr .column-9 {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/* Make the co-authors list, mentors list, majors list, campus, and Zoom link more understated. */
+
+.abst-intf-2022 tbody tr .column-6,
+.abst-intf-2022 tbody tr .column-7,
+.abst-intf-2022 tbody tr .column-8,
+.abst-intf-2022 tbody tr .column-10 {
+	font-size: .85rem;
+	line-height: 1.5em;
+}
+
+/* Stretch out the appropriate pieces of information to full width. */
+
+.abst-intf-2022 tbody tr .column-2,
+.abst-intf-2022 tbody tr .column-3,
+.abst-intf-2022 tbody tr .column-4,
+.abst-intf-2022 tbody tr .column-6,
+.abst-intf-2022 tbody tr .column-7,
+.abst-intf-2022 tbody tr .column-8,
+.abst-intf-2022 tbody tr .column-10 {
+	width: 100%;
+}
+
+/* Center the ID and category. */
+
+.abst-intf-2022 tbody tr .column-1,
+.abst-intf-2022 tbody tr .column-2 {
+	text-align: center;
+}
+
+/* Embolden and enlarge the project ID and category. */
+.abst-intf-2022 tbody tr .column-1,
+.abst-intf-2022 tbody tr .column-2 {
+	font-weight: 700;
+	font-size: 1.3em;
+}
+
+.abst-intf-2022 tbody tr .column-1,
+.abst-intf-2022 tbody tr .column-2 {
+	box-sizing: border-box;
+	padding: 0;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	width: calc(100% + 2rem);
+}
+
+.abst-intf-2022 tbody tr .column-1 {
+	margin-bottom: 0;
+	margin-top: -1rem;
+}
+
+.abst-intf-2022 tbody tr .column-2 {
+	margin-top: -1px;
+	padding-bottom: .5rem;
+}
+
+.abst-intf-2022 .project__category-desc {
+	font-size: .7em;
+	font-weight: 400;
+	display: block;
+}
+
+.abst-intf-2022 .project__category:not(.project__category-desc) {
+	padding-bottom: 0;
+}
+
+.abst-intf-2022 .project__category.project__category-desc {
+	padding-top: 0;
+}
+
+.abst-intf-2022 tbody tr:first-child .column-1 .project__category:before {
+    content: "Poster #: ";
+}
+
+/* Embolden project titles to cause them to stand out more. Also remove some aspects of the button styling. */
+
+.abst-intf-2022 .project-title {
+	background: transparent;
+	border: 0;
+	font-weight: 600;
+	line-height: 1.5em;
+	text-align: left;
+	margin: -3px;
+	padding: 3px 2.1em 3px 3px;
+	position: relative;
+	width: 100%;
+}
+
+.abst-intf-2022 .project-title:hover {
+	color: #a60f2d;
+}
+
+.abst-intf-2022 .project-title:focus {
+	outline-color: rgba(0,0,0,0.85);
+	outline-style: auto;
+	outline-width: 1px;
+}
+
+.abst-intf-2022 .project-title:after {
+	content: "+";
+	background: #eff0f1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d7dadb #8d959a #8d959a #d7dadb;
+	border-radius: .25em;
+	font-weight: 700;
+	height: 1.5em;
+	padding-left: .25em;
+	padding-right: .25em;
+	position: absolute;
+	right: 0;
+	top: 1px;
+	width: auto;
+	text-align: center;
+}
+
+.abst-intf-2022 .project-title:hover:after,
+.abst-intf-2022 .project-title:focus:after {
+    background: #fff;
+    border-color: #8d959a;
+    border-width: 0 2px 2px 0;	
+}
+
+.abst-intf-2022 .project-title:active:after {
+	background: #3b4042;
+	border-color: #000;
+	border-width: 2px 0 0 2px;
+	color: #b5babe;
+}
+
+/* Place more spacing after the presenter list. */
+.abst-intf-2022 tbody tr td.column-4 {
+	margin-bottom: 1em;
+}
+
+/* Label the co-authors list, if present, and offset it back up a little. */
+.abst-intf-2022 tbody tr .column-6:empty {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.abst-intf-2022 tbody tr .column-6:before {
+	content: "Co-author(s): ";
+	font-weight: 600;
+}
+
+.abst-intf-2022 tbody tr .column-6 {
+	margin-top: -0.5em;
+}
+
+/* Label the major and offset it back up a little. */
+.abst-intf-2022 tbody tr .column-7:before {
+	content: "Major(s): ";
+	font-weight: 600;
+}
+
+.abst-intf-2022 tbody tr .column-7 {
+	margin-top: -0.5em;
+}
+
+/* Label the mentors list and offset it back up a little. */
+
+.abst-intf-2022 tbody tr .column-8:before {
+	content: "Mentored by: ";
+	font-weight: 600;
+}
+
+.abst-intf-2022 tbody tr .column-8 {
+	margin-top: -0.5em;
+}
+
+/* Label the campus and offset it a little. */
+.abst-intf-2022 tbody tr .column-10:before {
+	content: "Campus: ";
+	font-weight: 600;
+}
+
+.abst-intf-2022 tbody tr .column-10 {
+	margin-top: -0.5em;
+}
+
+/* Don't show the abstract on the cards themselves when an abstract is collapsed. */
+.abst-intf-2022 tbody tr:not(.expanded) .column-11 {
+	display: none;
+}
+
+/* Set up a modal layout for abstracts that are being viewed. This viewing mode is triggered by JavaScript. */
+
+.abst-intf-2022 tbody tr.expanded {
+	position: fixed;
+	bottom: 2rem;
+	height: calc( 100vh - 4rem );
+	left: 50%;
+	top: 50%;
+	max-width: 1188px;
+	overflow-y: scroll;
+	transform: translate(-50%,-50%);
+	width: calc( 100% - 4rem ) !important;
+	z-index: 99352;
+}
+
+.abst-intf-2022 .expanded .project-title:after {
+	content: "–";
+}
+
+.abst-intf-2022 tbody tr.expanded .column-11 {
+	margin-top: .5rem;
+}
+
+/*!*************************************
+ * GRAVITY FORMS 
+ * @author Daniel Rieck
+ **************************************/
+
+.ginput_container_multiselect .chosen-choices,
+.ginput_container_multiselect .chosen-results {
+	max-width: none;
+}
+
+/*!*************************************
+ * CSS from the WDS Theme
+ * @author Daniel Rieck
+ **************************************/
+
+/* —» EXTENSION: CSS from the WDS 2.0 Theme → Marked heading styles (@author: daniel.rieck) «— */
+.wsu-heading--style-marked::after,
+.wsu-heading--style-marked::before {
+	width: 50px;
+	height: 6px;
+	display: block;
+	background-color: #ca1237;
+	content: '';
+}
+
+.wsu-heading--style-marked::after {
+	margin-top: .75rem;
+	margin-bottom: .75rem;
+}
+
+.wsu-heading--style-marked::before {
+	margin-bottom: .75rem;
+	margin-bottom: .75rem;
+	display: none;
+}
+
+.wsu-heading--mark-centered {
+	text-align: center;
+}
+
+.wsu-heading--mark-centered::after,
+.wsu-heading--mark-centered::before {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wsu-heading--mark-top::after {
+	display: none;
+}
+
+.wsu-heading--mark-top::before {
+	display: block;
+}
+
+.wsu-heading--mark-color-crimson::after,
+.wsu-heading--mark-color-crimson::before {
+	background-color: #a60f2d;
+}
+
+.wsu-heading--mark-color-gray::after,
+.wsu-heading--mark-color-gray::before {
+	background-color: #b3b3b3;
+}
+
+.wsu-heading--mark-color-autumn::after,
+.wsu-heading--mark-color-autumn::before {
+	background-color: #ff6727;
+}
+
+.wsu-heading--mark-color-goldfinch::after,
+.wsu-heading--mark-color-goldfinch::before {
+	background-color: #f3e700;
+}
+
+.wsu-heading--mark-color-vineyard::after,
+.wsu-heading--mark-color-vineyard::before {
+	background-color: #aadc24;
+}
+
+.wsu-heading--mark-color-pacificsky::after,
+.wsu-heading--mark-color-pacificsky::before {
+	background-color: #5bc3f5;
+}
+
+.wsu-heading--mark-color-midnight::after,
+.wsu-heading--mark-color-midnight::before {
+	background-color: #002d61;
 }
